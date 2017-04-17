@@ -1,0 +1,32 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="1" x="38" y="-12">
+    <statement name="CONTENT">
+      <block type="linkit_ble_wait_until_ready" id="2">
+        <next>
+          <block type="linkit_ble_ibeacon" id="3" inline="false">
+            <value name="UUID">
+              <block type="text" id="27">
+                <field name="TEXT">74278BDA-B644-4520-8F0C-720EAF059935</field>
+              </block>
+            </value>
+            <value name="MAJOR">
+              <block type="math_number" id="5">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <value name="MINOR">
+              <block type="math_number" id="6">
+                <field name="NUM">2</field>
+              </block>
+            </value>
+            <value name="RSSI">
+              <block type="math_number" id="7">
+                <field name="NUM">-40</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

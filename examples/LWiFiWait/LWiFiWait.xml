@@ -1,0 +1,27 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="12" x="13" y="-12">
+    <statement name="CONTENT">
+      <block type="linkit_wifi_wait_until_ready" id="1" inline="false">
+        <value name="SSID">
+          <block type="text" id="2">
+            <field name="TEXT">mtklab</field>
+          </block>
+        </value>
+        <value name="PASSWORD">
+          <block type="text" id="3">
+            <field name="TEXT">84149961</field>
+          </block>
+        </value>
+        <next>
+          <block type="serial_println" id="4" inline="false">
+            <value name="CONTENT">
+              <block type="text" id="5">
+                <field name="TEXT">Connected!</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

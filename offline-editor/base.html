@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link href='css/material-icons.css' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/blockly_compressed.js"></script>
+    <script src="js/blocks_compressed.js"></script>
+    <script src="js/arduino_compressed.js"></script>
+    <script src="msg/js/en.js"></script>
+    <script src="js/setCategoryCharacter.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/my_materialize.js"></script>
+</head>
+
+<body>
+    <!-- Modal1 Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <p id="dialog1_title">Delete All Blocks?</p>
+        </div>
+        <div class="modal-footer">
+            <a id="dialog1_yes" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+            <a id="dialog1_no" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">No</a>
+        </div>
+    </div>
+
+    <!-- Modal2 Structure -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <div class="input-field">
+                <input id="dialog2_filename" type="text" class="validate" pattern="^[0-9A-Za-z]+$" required>
+                <label id="dialog2_title" for="dialog2_filename">Filename</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="dialog2_ok" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+            <a id="dialog2_cancel" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">CANCEL</a>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-wrapper blue-grey darken-4">
+            <a href="./" class="brand-logo">LinkIt 7697 BlockyDuino Editor</small></a>
+            <ul class="right">
+                <!-- Modal3 Trigger -->
+                <li><a class="waves-effect waves-light tooltipped" id="open-setting" data-tooltip="I am tooltip"><i class="material-icons">settings</i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Modal3 Structure -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <form action="#">
+                <p id="dialog-lang-title">Language Setting</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input class="with-gap" name="group1" type="radio" id="select-lang-en" value="en" />
+                                <label for="select-lang-en" id="label-en">English</label>
+                            </td>
+                            <td>
+                                <input class="with-gap" name="group1" type="radio" id="select-lang-zh" value="zh">
+                                <label for="select-lang-zh" id="label-zh">繁體中文</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="col s4">
+                        <!-- Switch -->
+                        <div class="switch">
+                            <p id="auto-save-title">Auto Save</p>
+                            <label>
+                                Off
+                                <input id="checkbox-auto-save" type="checkbox">
+                                <span class="lever"></span> On
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col s8">
+                        <p class="range-field" id="range-title">interval (min)
+                            <input type="range" id="save-time" min="1" max="10" />
+                        </p>
+                    </div>
+                </div>
+                <!--
+                <p id="dialog-block-title">Option Blocks</p>
+                <p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_adafruit" value="category_adafruit" />
+                                    <label for="chbox_category_adafruit">adafruit</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_grove" value="category_grove" />
+                                    <label for="chbox_category_grove">grove</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_robot" value="category_robot" />
+                                    <label for="chbox_category_robot">robot</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_ethernet" value="category_ethernet" />
+                                    <label for="chbox_category_ethernet">Ethernet</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_cloud_service" value="category_cloud_service" />
+                                    <label for="chbox_category_cloud_service">category_cloud_service</label>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_servo" value="category_servo" />
+                                    <label for="chbox_category_servo">servo</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_ultrasonic" value="category_ultrasonic" />
+                                    <label for="chbox_category_ultrasonic">ultrasonic</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_lcd" value="category_lcd" />
+                                    <label for="chbox_category_lcd">lcd</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_other_sensor" value="category_other_sensor" />
+                                    <label for="chbox_category_other_sensor">other sensor</label>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                -->
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" id="setting-cancel" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a href="#!" id="setting" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+        </div>
+    </div>
+
+    <!-- Modal4 Structure -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <p id="dialog4_title">Delete All Blocks?</p>
+        </div>
+        <div class="modal-footer">
+            <a id="dialog4_yes" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+            <a id="dialog4_no" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">No</a>
+        </div>
+    </div>
+
+    <!-- modal_import Structure -->
+    <div id="modal_import" class="modal">
+        <div class="modal-content">
+            <div class="input-field">
+                <textarea id="textarea_import" class="materialize-textarea"></textarea>
+                <label id="textarea_import_label" for="textarea_import">Import XML</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="dialog_import_ok" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+            <a id="dialog_import_cancel" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">CANCEL</a>
+        </div>
+    </div>
+
+    <!-- modal_export Structure -->
+    <div id="modal_export" class="modal">
+        <div class="modal-content">
+            <div class="input-field">
+                <textarea id="textarea_export" class="materialize-textarea"></textarea>
+                <label id="textarea_export_label" for="textarea_export">Export XML</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="dialog_export_ok" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+        </div>
+    </div>
+
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!" id="button_import">Import</a>
+        </li>
+        <li class="divider"></li>
+        <li><a href="#!" id="button_export">Export</a>
+        </li>
+        <li class="divider"></li>
+        <li><a href="#!" id="button_discard">Discard</a>
+        </li>
+        <li class="divider"></li>
+        <li><a href="#!" id="button_save_as">Save as..</a>
+        </li>
+    </ul>
+
+    <!-- modal_varialble Structure -->
+    <div id="modal_variable" class="modal">
+        <div class="modal-content">
+            <div class="input-field">
+                <input id="dialog_var_name" type="text" class="validate" pattern="^[0-9A-Za-z]+$" required>
+                <label id="dialog_var_title" for="dialog_var_name">Rename Variable Name</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="dialog_var_ok" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">CANCEL</a>
+        </div>
+    </div>
+
+    <table id="main">
+        <tr>
+            <td>
+                <table id="tab">
+                    <tr id="tabRow">
+                        <td id="tab_blocks" class="tabon">Blocks</td>
+                        <td class="tabmin">&nbsp;</td>
+                        <td id="tab_arduino" class="taboff">Arduino</td>
+                        <td class="tabmin">&nbsp;</td>
+                        <td class="tabmax">
+                            <a href="#" class="hide-link tooltipped" id="button_new" data-tooltip="I am tooltip"><i class="small material-icons">create</i></a>
+                            <a href="#" class="hide-link tooltipped" id="button_open" data-tooltip="I am tooltip"><i class="small material-icons">folder_open</i></a>
+                            <a href="#" class="hide-link tooltipped" data-tooltip="I am tooltip" id="button_save"><i class="small material-icons">save</i></a>
+                            <!-- Dropdown Trigger -->
+                            <a class="hide-link dropdown-button" href="#" data-activates="dropdown1"><i class="small material-icons">arrow_drop_down</i></a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td id="content_area"></td>
+        </tr>
+    </table>
+    <div id="content_blocks" class="content"></div>
+    <textarea id="content_arduino" class="content" readonly wrap="off"></textarea>
+
+    <xml id="toolbox" style="display: none"></xml>
+    <div class="info">
+        <label id="info_filename">Filename:</label><span id="info_title"></span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="13" x="-37" y="-12">
+    <statement name="CONTENT">
+      <block type="linkit_ble_wait_until_ready" id="11">
+        <next>
+          <block type="serial_println" id="7" inline="false">
+            <value name="CONTENT">
+              <block type="text" id="8">
+                <field name="TEXT">BLE Ready!</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

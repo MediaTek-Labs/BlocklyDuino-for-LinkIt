@@ -1,0 +1,30 @@
+{
+   "app": {
+      "background": {
+         "scripts": [ "background.js" ]
+      }
+   },
+   "author": "@x43x61x69",
+   "default_locale": "en",
+   "description": "__MSG_appDesc__",
+   "externally_connectable": {
+      "matches": [ "*://x43x61x69.github.io/*", "*://*.vox.vg/*", "*://*.mediatek.com/*" ]
+   },
+   "file_handlers": {
+      "text": {
+         "types": [ "text/*" ]
+      }
+   },
+   "icons": {
+      "128": "media/icon_128.png"
+   },
+   "manifest_version": 2,
+   "minimum_chrome_version": "33",
+   "name": "__MSG_appName__",
+   "offline_enabled": true,
+   "permissions": [ {
+      "fileSystem": [ "write", "retainEntries", "directory" ]
+   }, "storage", "https://raw.githubusercontent.com/x43x61x69/*", "alarms" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.7.0"
+}

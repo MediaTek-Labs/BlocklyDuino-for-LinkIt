@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="header.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-wrapper blue-grey darken-4">
+            <a href="./" class="brand-logo">LinkIt 7697 BlockyDuino Editor</small></a>
+            <ul class="right show-on-small">
+                <li><a class="waves-effect waves-light modal-trigger tooltipped" id="change-lang" href="#modal1" data-tooltip="I am tooltip"><i class="material-icons">settings</i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <form action="#">
+                <p id="dialog-lang-title">Language Setting</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input class="with-gap" name="group1" type="radio" id="select-lang-en" value="en" />
+                                <label for="select-lang-en" id="label-en">English</label>
+                            </td>
+                            <td>
+                                <input class="with-gap" name="group1" type="radio" id="select-lang-zh" value="zh">
+                                <label for="select-lang-zh" id="label-zh">正體中文</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--
+                <p id="dialog-block-title">Option Blocks</p>
+                <p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_adafruit" value="category_adafruit" />
+                                    <label for="chbox_category_adafruit">adafruit</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_grove" value="category_grove" />
+                                    <label for="chbox_category_grove">grove</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_robot" value="category_robot" />
+                                    <label for="chbox_category_robot">robot</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_ethernet" value="category_ethernet" />
+                                    <label for="chbox_category_ethernet">Ethernet</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_cloud_service" value="category_cloud_service" />
+                                    <label for="chbox_category_cloud_service">category_cloud_service</label>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_servo" value="category_servo" />
+                                    <label for="chbox_category_servo">servo</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_ultrasonic" value="category_ultrasonic" />
+                                    <label for="chbox_category_ultrasonic">ultrasonic</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_lcd" value="category_lcd" />
+                                    <label for="chbox_category_lcd">lcd</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_other_sensor" value="category_other_sensor" />
+                                    <label for="chbox_category_other_sensor">other sensor</label>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                -->
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="change_lang()">OK</a>
+        </div>
+    </div>
+
+    <!-- modal_varialble Structure -->
+    <div id="modal_variable" class="modal">
+        <div class="modal-content">
+            <div class="input-field">
+                <input id="dialog_var_name" type="text" class="validate" pattern="^[0-9A-Za-z]+$" required>
+                <label id="dialog_var_title" for="dialog_var_name">Rename Variable Name</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="set_variable()">OK</a>
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">CANCEL</a>
+        </div>
+    </div>
+
+    <!-- modal_import Structure -->
+    <div id="modal_import" class="modal">
+        <div class="modal-content">
+            <div class="input-field">
+                <textarea id="textarea_import" class="materialize-textarea"></textarea>
+                <label id="textarea_import_label" for="textarea_import">Import XML</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="dialog_import_ok" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="import_xml()">OK</a>
+            <a id="dialog_import_cancel" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">CANCEL</a>
+        </div>
+    </div>
+
+    <!-- modal_import Structure -->
+    <div id="modal_export" class="modal">
+        <div class="modal-content">
+            <div class="input-field">
+                <textarea id="textarea_export" class="materialize-textarea"></textarea>
+                <label id="textarea_export_label" for="textarea_export">Export XML</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="dialog_export_ok" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+        </div>
+    </div>
+
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a class="modal-trigger" href="#modal_import" id="button_import">Import</a>
+        </li>
+        <li class="divider"></li>
+        <li><a class="modal-trigger" href="#!" id="button_export" onclick="export_xml()">Export</a>
+        </li>
+    </ul>
+
+    <table id="main">
+        <tr>
+            <td>
+                <table id="tab">
+                    <tr id="tabRow">
+                        <td id="tab_blocks" class="tabon " onclick="tabClick('blocks')">Blocks</td>
+                        <td class="tabmin">&nbsp;</td>
+                        <td id="tab_arduino" class="taboff" onclick="tabClick('arduino')"></td>
+                        <td class="tabmin">&nbsp;</td>
+                        <td class="tabmax">
+                            <a href="#" class="hide-link tooltipped" id="copy-button" data-tooltip="I am tooltip" data-clipboard-target="content_arduino" data-clipboard-text="Clip Me!"><i class="small material-icons">content_copy</i></a>
+                            <a href="#" class="hide-link tooltipped" id="discard" onclick="discard()" data-tooltip="I am tooltip"><i class="small material-icons">delete</i></a>
+                            <a href="#" class="hide-link tooltipped" data-tooltip="I am tooltip" id="save" onclick="save()"><i class="small material-icons">cloud_download</i></a>
+                            <a href="#" class="hide-link tooltipped" id="fakeload" data-tooltip="I am tooltip"><i class="small material-icons">cloud_upload</i></a>
+                            <a class="hide-link dropdown-button" href="#" data-activates="dropdown1"><i class="small material-icons">arrow_drop_down</i></a>
+                            <input type="file" id="load" style="display: none;" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="99%" id="content_area"></td>
+        </tr>
+    </table>
+    <div id="content_blocks" class="content"></div>
+    <textarea id="content_arduino" class="content" readonly wrap="off"></textarea>
+
+    <xml id="toolbox" style="display: none"></xml>
+
+    <div class="info">
+    </div>
+</body>
+
+</html>

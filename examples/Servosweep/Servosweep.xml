@@ -1,0 +1,88 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="175" x="138" y="63">
+    <statement name="CONTENT">
+      <block type="variables_set" id="180" inline="true">
+        <field name="TYPE">Number</field>
+        <field name="VAR">Servo_Angle</field>
+        <value name="VALUE">
+          <block type="math_number" id="216">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <next>
+      <block type="servo_write" id="28" inline="true">
+        <field name="PIN">7</field>
+        <value name="ANGLE">
+          <block type="variables_get" id="52">
+            <field name="TYPE">Number</field>
+            <field name="VAR">Servo_Angle</field>
+          </block>
+        </value>
+        <next>
+          <block type="delay_custom" id="70" inline="false">
+            <value name="DELAY_TIME">
+              <block type="math_number" id="71">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="134" inline="true">
+                <field name="TYPE">Number</field>
+                <field name="VAR">Servo_Angle</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="147" inline="true">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="variables_get" id="152">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">Servo_Angle</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="173">
+                        <field name="NUM">15</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_if" id="222" inline="false">
+                    <value name="IF0">
+                      <block type="logic_compare" id="300" inline="true">
+                        <field name="OP">GT</field>
+                        <value name="A">
+                          <block type="variables_get" id="301">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">Servo_Angle</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="302">
+                            <field name="NUM">165</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="variables_set" id="307" inline="true">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">Servo_Angle</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="317">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

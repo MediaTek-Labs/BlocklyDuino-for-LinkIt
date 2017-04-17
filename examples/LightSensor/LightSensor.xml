@@ -1,0 +1,71 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="328" inline="true" x="113" y="88">
+    <field name="TYPE">Number</field>
+    <field name="VAR">Sensorvalue</field>
+    <value name="VALUE">
+      <block type="math_map_int" id="329" inline="false">
+        <field name="FROMLOW">0</field>
+        <field name="FROMHIGH">4095</field>
+        <field name="TOLOW">0</field>
+        <field name="TOHIGH">180</field>
+        <value name="VALUE">
+          <block type="inout_analog_read" id="330">
+            <field name="PIN">A2</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="controls_if" id="331" inline="false">
+        <value name="IF0">
+          <block type="logic_compare" id="332" inline="true">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="variables_get" id="333">
+                <field name="TYPE">Number</field>
+                <field name="VAR">Sensorvalue</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="334">
+                <field name="NUM">130</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="inout_digital_write" id="335">
+            <field name="PIN">7</field>
+            <field name="STAT">LOW</field>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="350" inline="false">
+            <value name="IF0">
+              <block type="logic_compare" id="351" inline="true">
+                <field name="OP">LTE</field>
+                <value name="A">
+                  <block type="variables_get" id="352">
+                    <field name="TYPE">Number</field>
+                    <field name="VAR">Sensorvalue</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="353">
+                    <field name="NUM">130</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="inout_digital_write" id="336">
+                <field name="PIN">7</field>
+                <field name="STAT">HIGH</field>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

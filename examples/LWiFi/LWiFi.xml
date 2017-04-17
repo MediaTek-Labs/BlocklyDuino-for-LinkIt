@@ -1,0 +1,43 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="linkit_wifi_ignore_result" id="24" inline="false" x="13" y="13">
+    <value name="SSID">
+      <block type="text" id="4">
+        <field name="TEXT">mtklab</field>
+      </block>
+    </value>
+    <value name="PASSWORD">
+      <block type="text" id="5">
+        <field name="TEXT">84149961</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_while" id="6" inline="false">
+        <value name="BOOL">
+          <block type="logic_negate" id="7" inline="false">
+            <value name="BOOL">
+              <block type="linkit_wifi_ready" id="8"></block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="delay_custom" id="9" inline="false">
+            <value name="DELAY_TIME">
+              <block type="math_number" id="10">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="serial_println" id="11" inline="false">
+            <value name="CONTENT">
+              <block type="text" id="12">
+                <field name="TEXT">Connected!</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

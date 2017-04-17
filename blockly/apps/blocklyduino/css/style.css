@@ -1,0 +1,212 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+  font-family: sans-serif;
+  font-size: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Tabs */
+#tabRow>td {
+  border: 1px solid #ccc;
+  vertical-align: middle;
+}
+
+td.tabon {
+  border-bottom-color: #ddd !important;
+  background-color: #ddd;
+  padding: 5px 10px;
+}
+
+td.taboff {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+td.taboff:hover {
+  background-color: #eee;
+}
+
+td.tabmin {
+  border-top-style: none !important;
+  border-left-style: none !important;
+  border-right-style: none !important;
+}
+
+td.tabmax {
+  border-top-style: none !important;
+  border-left-style: none !important;
+  border-right-style: none !important;
+  width: 99%;
+  text-align: right;
+}
+
+td#content_area{
+  height: 99%;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+table#main{
+  height: 100%;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+table#tab{
+  width: 100%
+}
+
+tr#tabRow{
+  height: 1em;
+}
+
+td {
+  padding: 0;
+  vertical-align: top;
+}
+
+.content {
+  visibility: hidden;
+  margin: 0;
+  padding: 1ex;
+  position: absolute;
+  direction: ltr;
+}
+
+pre.content {
+  overflow: scroll;
+}
+
+#content_blocks {
+  padding: 0;
+}
+
+.blocklySvg {
+  border-top: none !important;
+}
+
+input.blocklyhtmlinput {
+  background-color: white;
+  height: initial;
+}
+
+#content_xml {
+  background-color: #073642;
+  color: #eee8d5;
+  resize: none;
+  outline: none;
+  border: none;
+  font-family: monospace;
+  overflow: scroll;
+}
+
+#content_arduino {
+  resize: none;
+  outline: none;
+  border: none;
+  font-family: monospace;
+  overflow: scroll;
+  background-color: #073642;
+  color: #eee8d5;
+  font-size: 12px;
+  line-height: 12px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+#content_area {
+  height: 99%;
+}
+
+#fakeload {
+  margin-right: 5px;
+}
+
+.modal{
+  z-index: 999;
+}
+
+.dropdown-content{
+  min-width: 200px;  
+} 
+
+.info {
+  font-family: monospace;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 0;
+  background: #002b36;
+  padding: 2px;
+  height: 20px;
+  left: 0;
+  right: 0;
+  color: #eee8d5;
+}
+
+.info label {
+  font-weight: bold;
+}
+
+.dialog2 input {
+  border: 0;
+  padding: 10px;
+  font-size: 100%;
+  font-family: Arial, sans-serif;
+  color: #aaa;
+  border: solid 1px #ccc;
+  margin: 0 0 20px;
+  width: 300px;
+}
+
+.dialog2 button{
+  background: -moz-linear-gradient(top,#586e75 0%,#657b83);
+  background: -webkit-gradient(linear, left top, left bottom, from(#586e75), to(#657b83));
+  border: 1px solid #DDD;
+  color:#FFF;
+}
+
+a.hide-link{
+  color:#263238;
+}
+
+nav .brand-logo{
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  nav .brand-logo{
+    left: 0%;
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    font-size : 20px;
+  }
+  nav ul a{
+    padding:0 5px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  nav .brand-logo{
+    left: 0%;
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+  }
+}
+

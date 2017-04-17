@@ -1,0 +1,73 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="19" x="13" y="13">
+    <statement name="CONTENT">
+      <block type="linkit_ble_periphral" id="20" inline="false">
+        <field name="TYPE">LBLE_READ | LBLE_WRITE</field>
+        <value name="NAME">
+          <block type="text" id="21">
+            <field name="TEXT">LinkIt 7697</field>
+          </block>
+        </value>
+        <value name="SERVICE">
+          <block type="text" id="22">
+            <field name="TEXT">951A6899-6F0F-456F-8AE0-5E0B4352D85B</field>
+          </block>
+        </value>
+        <value name="CHARACTERISTIC">
+          <block type="text" id="23">
+            <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <next>
+      <block type="delay_custom" id="28" inline="false">
+        <value name="DELAY_TIME">
+          <block type="math_number" id="29">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="30" inline="false">
+            <value name="IF0">
+              <block type="linkit_ble_periphral_is_written" id="31"></block>
+            </value>
+            <statement name="DO0">
+              <block type="controls_if" id="37" inline="false">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_compare" id="38" inline="true">
+                    <field name="OP">GT</field>
+                    <value name="A">
+                      <block type="cast_number" id="39" inline="true">
+                        <field name="TYPE">(int)</field>
+                        <value name="VAR">
+                          <block type="linkit_ble_periphral_get_value" id="40"></block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="41">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="inout_buildin_led" id="42">
+                    <field name="STAT">HIGH</field>
+                  </block>
+                </statement>
+                <statement name="ELSE">
+                  <block type="inout_buildin_led" id="43">
+                    <field name="STAT">LOW</field>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

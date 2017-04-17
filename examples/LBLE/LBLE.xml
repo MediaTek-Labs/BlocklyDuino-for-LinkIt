@@ -1,0 +1,35 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_while" id="39" inline="false" x="-12" y="13">
+    <value name="BOOL">
+      <block type="logic_compare" id="83" inline="true">
+        <field name="OP">EQ</field>
+        <value name="A">
+          <block type="linkit_ble_ready" id="77"></block>
+        </value>
+        <value name="B">
+          <block type="logic_boolean" id="96">
+            <field name="BOOL">FALSE</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="delay_custom" id="103" inline="false">
+        <value name="DELAY_TIME">
+          <block type="math_number" id="104">
+            <field name="NUM">1000</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <next>
+      <block type="serial_println" id="125" inline="false">
+        <value name="CONTENT">
+          <block type="text" id="126">
+            <field name="TEXT">BLE Ready!</field>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

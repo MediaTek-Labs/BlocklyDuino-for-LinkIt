@@ -1,0 +1,1045 @@
+<html>
+
+<head>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="header.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-wrapper blue-grey darken-4">
+            <a href="./" class="brand-logo">LinkIt 7697 BlockyDuino Editor</a>
+            <ul class="right show-on-small">
+                <li><a class="waves-effect waves-light modal-trigger tooltipped" id="change-lang" href="#modal1" data-tooltip="I am tooltip"><i class="material-icons">settings</i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <form action="#">
+                <p id="dialog-lang-title">Language Setting</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input class="with-gap" name="group1" type="radio" id="select-lang-en" value="en">
+                                <label for="select-lang-en" id="label-en">English</label>
+                            </td>
+                            <td>
+                                <input class="with-gap" name="group1" type="radio" id="select-lang-zh" value="zh">
+                                <label for="select-lang-zh" id="label-zh">正體中文</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--
+                <p id="dialog-block-title">Option Blocks</p>
+                <p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_adafruit" value="category_adafruit" />
+                                    <label for="chbox_category_adafruit">adafruit</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_grove" value="category_grove" />
+                                    <label for="chbox_category_grove">grove</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_robot" value="category_robot" />
+                                    <label for="chbox_category_robot">robot</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_ethernet" value="category_ethernet" />
+                                    <label for="chbox_category_ethernet">Ethernet</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_cloud_service" value="category_cloud_service" />
+                                    <label for="chbox_category_cloud_service">category_cloud_service</label>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_servo" value="category_servo" />
+                                    <label for="chbox_category_servo">servo</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_ultrasonic" value="category_ultrasonic" />
+                                    <label for="chbox_category_ultrasonic">ultrasonic</label>
+                                </td>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_lcd" value="category_lcd" />
+                                    <label for="chbox_category_lcd">lcd</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" class="filled-in" id="chbox_category_other_sensor" value="category_other_sensor" />
+                                    <label for="chbox_category_other_sensor">other sensor</label>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                -->
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="change_lang()">OK</a>
+        </div>
+    </div>
+
+    <!-- modal_varialble Structure -->
+    <div id="modal_variable" class="modal">
+        <div class="modal-content">
+            <div class="input-field">
+                <input id="dialog_var_name" type="text" class="validate" pattern="^[0-9A-Za-z]+$" required>
+                <label id="dialog_var_title" for="dialog_var_name">Rename Variable Name</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="set_variable()">OK</a>
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">CANCEL</a>
+        </div>
+    </div>
+
+    <!-- modal_import Structure -->
+    <div id="modal_import" class="modal">
+        <div class="modal-content">
+            <div class="input-field">
+                <textarea id="textarea_import" class="materialize-textarea"></textarea>
+                <label id="textarea_import_label" for="textarea_import">Import XML</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="dialog_import_ok" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="import_xml()">OK</a>
+            <a id="dialog_import_cancel" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">CANCEL</a>
+        </div>
+    </div>
+
+    <!-- modal_import Structure -->
+    <div id="modal_export" class="modal">
+        <div class="modal-content">
+            <div class="input-field">
+                <textarea id="textarea_export" class="materialize-textarea"></textarea>
+                <label id="textarea_export_label" for="textarea_export">Export XML</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="dialog_export_ok" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+        </div>
+    </div>
+
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a class="modal-trigger" href="#modal_import" id="button_import">Import</a>
+        </li>
+        <li class="divider">
+        <li><a class="modal-trigger" href="#!" id="button_export" onclick="export_xml()">Export</a>
+        </li>
+    </ul>
+
+    <table id="main">
+        <tr>
+            <td>
+                <table id="tab">
+                    <tr id="tabRow">
+                        <td id="tab_blocks" class="tabon " onclick="tabClick('blocks')">Blocks</td>
+                        <td class="tabmin"> </td>
+                        <td id="tab_arduino" class="taboff" onclick="tabClick('arduino')"></td>
+                        <td class="tabmin"> </td>
+                        <td class="tabmax">
+                            <a href="#" class="hide-link tooltipped" id="copy-button" data-tooltip="I am tooltip" data-clipboard-target="content_arduino" data-clipboard-text="Clip Me!"><i class="small material-icons">content_copy</i></a>
+                            <a href="#" class="hide-link tooltipped" id="discard" onclick="discard()" data-tooltip="I am tooltip"><i class="small material-icons">delete</i></a>
+                            <a href="#" class="hide-link tooltipped" data-tooltip="I am tooltip" id="save" onclick="save()"><i class="small material-icons">cloud_download</i></a>
+                            <a href="#" class="hide-link tooltipped" id="fakeload" data-tooltip="I am tooltip"><i class="small material-icons">cloud_upload</i></a>
+                            <a class="hide-link dropdown-button" href="#" data-activates="dropdown1"><i class="small material-icons">arrow_drop_down</i></a>
+                            <input type="file" id="load" style="display: none;">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="99%" id="content_area"></td>
+        </tr>
+    </table>
+    <div id="content_blocks" class="content"></div>
+    <textarea id="content_arduino" class="content" readonly wrap="off"></textarea>
+
+    <xml id="toolbox" style="display: none"><category id="category_initializes">
+    <block type="initializes_setup"></block>
+    <block type="initializes_loop"></block>
+</category>
+<category id="category_inout">
+    <category id="category_digital">
+        <block type="inout_highlow"></block>
+        <block type="inout_digitalpin"></block>
+        <block type="inout_buildin_led"></block>
+        <block type="inout_digital_write"></block>
+        <block type="inout_custom_digital_write">
+            <value name="PIN">
+                <block type="inout_digitalpin">
+                    <field name="PIN">1</field>
+                </block>
+            </value>
+            <value name="STAT">
+                <block type="inout_highlow">
+                    <field name="BOOL">HIGH</field>
+                </block>
+            </value>
+        </block>
+        <block type="inout_digital_read"></block>
+        <block type="inout_enable_pullup"></block>
+    </category>
+    <category id="category_analog">
+        <block type="inout_analog_write">
+            <value name="NUM">
+                <block type="math_number">
+                    <field name="NUM">255</field>
+                </block>
+            </value>
+        </block>
+        <block type="inout_analog_read"></block>
+    </category>
+    <category id="category_others">
+        <block type="pulsein"></block>
+        <block type="tone"></block>
+        <block type="custom_tone">
+            <value name="FREQ">
+                <block type="math_number">
+                    <field name="NUM">255</field>
+                </block>
+            </value>
+        </block>
+    </category>
+</category>
+<category id="category_serial">
+    <block type="serial_available"></block>
+    <block type="serial_print">
+        <value name="CONTENT">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="serial_println">
+        <value name="CONTENT">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="serial_read"></block>
+    <block type="serial_byte_number"></block>
+</category>
+<category id="category_ethernet">
+    <category id="category_ethernet_init">
+        <block type="ethernet_begin_dhcp">
+            <value name="MAC_ADDRESS">
+                <block type="ethernet_mac_address"></block>
+            </value>
+        </block>
+        <block type="ethernet_localip"></block>
+    </category>
+    <category id="category_ethernet_client">
+        <block type="ethernet_connect">
+            <value name="SERVER">
+                <block type="text">
+                    <field name="TEXT">www.google.com</field>
+                </block>
+            </value>
+        </block>
+        <block type="ethernet_stop"></block>
+        <block type="ethernet_connected"></block>
+        <block type="ethernet_available"></block>
+        <block type="ethernet_print">
+            <value name="TEXT">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+        </block>
+        <block type="ethernet_println">
+            <value name="TEXT">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+        </block>
+        <block type="ethernet_read"></block>
+        <block type="ethernet_get_request"></block>
+        <!--block type="ethernet_post_request"></block-->
+    </category>
+</category>
+<category id="category_interrupts">
+    <block type="interrupts_attach"></block>
+    <block type="interrupts_detach"></block>
+    <block type="interrupts"></block>
+    <block type="interrupts_no"></block>
+</category>
+<sep id="category_sep"></sep>
+<category id="category_cloud_service">
+    <category id="category_ifttt">
+        <block type="text">
+            <field name="TEXT">maker.ifttt.com</field>
+        </block>
+        <block type="ifttt_get_url">
+            <value name="EVENT">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+            <value name="KEY">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+        </block>
+    </category>
+    <category id="category_m2x">
+        <block type="m2x_begin">
+            <value name="ID">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+            <value name="STREAM_NAME">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+            <value name="KEY">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+        </block>
+        <block type="m2x_update_value">
+            <value name="VALUE">
+                <block type="math_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+        </block>
+        <block type="m2x_list_value"></block>
+        <block type="m2x_custom_list_value"></block>
+        <block type="m2x_delete_values"></block>
+        <block type="m2x_update_location">
+            <value name="LOCATION_NAME">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+        </block>
+    </category>
+    <category id="category_blynk">
+        <block type="blynk_ethernet_begin">
+            <value name="AUTH">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+            <value name="MAC_ADDRESS">
+                <block type="ethernet_mac_address"></block>
+            </value>
+        </block>
+        <block type="blynk_connect"></block>
+        <block type="blynk_write"></block>
+        <block type="blynk_param"></block>
+        <block type="blynk_merge_param"></block>
+        <block type="blynk_virtual_write">
+            <value name="VALUE">
+                <block type="math_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+        </block>
+        <block type="blynk_email">
+            <value name="ADDRESS">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+            <value name="TITLE">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+            <value name="BODY">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+        </block>
+        <block type="blynk_notify">
+            <value name="TEXT">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+        </block>
+        <block type="blynk_tweet">
+            <value name="TEXT">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+        </block>
+    </category>
+</category>
+<sep></sep>
+<category id="category_grove">
+    <category id="category_grove_input">
+        <block type="grove_button"></block>
+        <block type="grove_touch"></block>
+        <block type="grove_rotary_angle"></block>
+        <block type="grove_ir_receiver_init"></block>
+        <block type="grove_ir_receiver_check_data"></block>
+        <block type="grove_ir_receiver_receive"></block>
+        <block type="grove_ir_receiver_data"></block>
+        <!--block type="grove_tilt_switch"></block-->
+        <!--block type="grove_thumb_joystick"></block-->
+    </category>
+    <category id="category_grove_output">
+        <block type="grove_led"></block>
+        <block type="grove_relay"></block>
+        <block type="grove_buzzer"></block>
+        <block type="grove_ir_emitter_send">
+            <value name="DATA">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <!--block type="grove_rgb_led"></block-->
+        <!--block type="grove_motor_shield"></block-->
+    </category>
+    <category id="category_grove_sensor">
+        <!--block type="grove_line_finder"></block-->
+        <!--block type="grove_pir_motion_sensor"></block-->
+        <block type="grove_light_sensor"></block>
+        <block type="grove_temporature_sensor"></block>
+        <block type="grove_sound_sensor"></block>
+        <!--block type="grove_ultrasonic_ranger"></block-->
+    </category>
+    <category id="category_lcd_rgb">
+        <block type="grove_rgb_lcd_begin"></block>
+        <block type="grove_rgb_lcd_print">
+            <value name="PRINT">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+        </block>
+        <block type="grove_rgb_lcd_setcolor"></block>
+        <block type="grove_rgb_lcd_custom_setcursor">
+            <value name="COL">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="ROW">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="grove_rgb_lcd_clear"></block>
+        <!--block type="lcd_scrolldisplayright"></block-->
+        <!--block type="lcd_scrolldisplayleft"></block-->
+        <block type="grove_rgb_lcd_switch_scroll"></block>
+        <!--block type="lcd_lefttoright"></block-->
+        <!--block type="lcd_righttoleft"></block-->
+        <!--block type="grove_serial_lcd_power"></block-->
+        <!--block type="grove_serial_lcd_effect"></block-->
+    </category>
+</category>
+<category id="category_adafruit">
+    <category id="category_rgbled">
+        <block type="rgbled_begin"></block>
+        <!--block type="rgbled_setpixelcolor"></block-->
+        <block type="rgbled_setpixelcolor2">
+            <value name="TARGET">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="rgbled_custom_setpixelcolor">
+            <value name="TARGET">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="R">
+                <block type="math_number">
+                    <field name="NUM">255</field>
+                </block>
+            </value>
+            <value name="G">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="B">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="rgbled_show"></block>
+    </category>
+    <category id="category_neopixel">
+        <block type="neopixel_begin"></block>
+        <!--block type="neopixel_setpixelcolor"></block-->
+        <block type="neopixel_setpixelcolor">
+            <value name="TARGET">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="neopixel_custom_setpixelcolor">
+            <value name="TARGET">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="R">
+                <block type="math_number">
+                    <field name="NUM">255</field>
+                </block>
+            </value>
+            <value name="G">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="B">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="neopixel_show"></block>
+    </category>
+    <category id="category_i2c_matrix">
+        <block type="i2c_matrix_begin"></block>
+        <block type="i2c_matrix_clear"></block>
+        <block type="i2c_matrix_writedisplay"></block>
+        <block type="i2c_matrix_setcursor">
+            <value name="COL">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="ROW">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="i2c_matrix_settextsize"></block>
+        <block type="i2c_matrix_settextwrap"></block>
+        <block type="i2c_matrix_settextcolor"></block>
+        <block type="i2c_matrix_print">
+            <value name="CONTENT">
+                <block type="text">
+                    <field name="TEXT"></field>
+                </block>
+            </value>
+        </block>
+        <block type="i2c_matrix_setrotation"></block>
+        <block type="i2c_matrix_drawpixel">
+            <value name="X">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="Y">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="i2c_matrix_drawline">
+            <value name="X0">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="Y0">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="X1">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="Y1">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="i2c_matrix_drawcircle">
+            <value name="X">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="Y">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="D">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="i2c_matrix_drawrect">
+            <value name="X0">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="Y0">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="X1">
+                <block type="math_number">
+                    <field name="NUM">5</field>
+                </block>
+            </value>
+            <value name="Y1">
+                <block type="math_number">
+                    <field name="NUM">5</field>
+                </block>
+            </value>
+        </block>
+        <block type="i2c_matrix_fillrect">
+            <value name="X0">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="Y0">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="X1">
+                <block type="math_number">
+                    <field name="NUM">5</field>
+                </block>
+            </value>
+            <value name="Y1">
+                <block type="math_number">
+                    <field name="NUM">5</field>
+                </block>
+            </value>
+        </block>
+    </category>
+    <category id="category_i2c_sevenseg">
+        <block type="i2c_sevenseg_begin"></block>
+        <block type="i2c_sevenseg_writedisplay"></block>
+        <block type="i2c_sevenseg_print">
+            <value name="NUM">
+                <block type="math_number">
+                    <field name="NUM">7777</field>
+                </block>
+            </value>
+        </block>
+        <block type="i2c_sevenseg_writedigitnum">
+            <value name="POSITION">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="NUM">
+                <block type="math_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+            <value name="DOTS">
+                <block type="i2c_sevenseg_boolean">
+                    <field name="BOOL">TRUE</field>
+                </block>
+            </value>
+        </block>
+        <block type="i2c_sevenseg_drawcolon">
+            <value name="DOTS">
+                <block type="i2c_sevenseg_boolean">
+                    <field name="BOOL">TRUE</field>
+                </block>
+            </value>
+        </block>
+        <block type="i2c_sevenseg_boolean"></block>
+    </category>
+    <category id="category_mpr121">
+        <block type="mpr121_begin"></block>
+        <block type="mpr121_touched">
+            <value name="CH">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="mpr121_released">
+            <value name="CH">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="mpr121_value">
+            <value name="CH">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="mpr121_reset"></block>
+    </category>
+</category>
+<category id="category_sparkfun">
+    <category id="category_ir_remote">
+        <block type="ir_remote_get"></block>
+        <block type="ir_remote_button"></block>
+    </category>
+</category>
+<category id="category_robot">
+    <category id="category_shield_bot">
+        <block type="shield_bot_setmaxspeed"></block>
+        <block type="shield_bot_setmaxspeed_lr"></block>
+        <block type="shield_bot_move"></block>
+        <block type="shield_bot_drive">
+            <value name="LEFT">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="RIGHT">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="shield_bot_motor">
+            <value name="DIRECTION">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="shield_bot_readsensor"></block>
+    </category>
+    <category id="category_aerobot">
+        <block type="aerobot_move"></block>
+        <block type="aerobot_rotate"></block>
+        <block type="aerobot_lightsens"></block>
+        <block type="aerobot_distsens"></block>
+        <block type="aerobot_linesens"></block>
+        <block type="aerobot_setled"></block>
+    </category>
+</category>
+<category id="category_servo">
+    <block type="servo_write">
+        <value name="ANGLE">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+    </block>
+    <block type="servo_writeus">
+        <value name="ANGLE_US">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+    </block>
+    <block type="servo_read"></block>
+    <block type="servo_attached"></block>
+    <block type="servo_attach"></block>
+    <block type="servo_custom_attach"></block>
+    <block type="servo_detach"></block>
+</category>
+<category id="category_ultrasonic">
+    <block type="ultrasonic_setting"></block>
+    <block type="ultrasonic_maxrange"></block>
+    <block type="ultrasonic_distance"></block>
+</category>
+<category id="category_lcd">
+    <block type="lcd_init"></block>
+    <block type="lcd_begin"></block>
+    <block type="lcd_print">
+        <value name="PRINT">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <!--block type="lcd_setcursor"></block-->
+    <block type="lcd_custom_setcursor">
+        <value name="COL">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+        <value name="ROW">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+    </block>
+    <block type="lcd_clear"></block>
+    <!--block type="lcd_scrolldisplayright"></block-->
+    <!--block type="lcd_scrolldisplayleft"></block-->
+    <block type="lcd_switch_scroll"></block>
+    <!--block type="lcd_autoscroll"></block>
+<block type="lcd_noautoscroll"></block-->
+    <!--block type="lcd_lefttoright"></block-->
+    <!--block type="lcd_righttoleft"></block-->
+</category>
+<category id="category_other_sensor">
+    <block type="dht_read"></block>
+</category>
+<sep></sep>
+<category id="category_logic">
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="logic_operation"></block>
+    <block type="logic_negate"></block>
+    <block type="logic_boolean"></block>
+</category>
+<category id="category_loops">
+    <block type="controls_repeat"></block>
+    <block type="controls_for">
+        <value name="FROM">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+        <value name="TO">
+            <block type="math_number">
+                <field name="NUM">10</field>
+            </block>
+        </value>
+    </block>
+    <block type="controls_while">
+        <value name="BOOL">
+            <block type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+            </block>
+        </value>
+    </block>
+    <block type="controls_flow_statements"></block>
+    <block type="controls_return"></block>
+</category>
+<category id="category_time">
+    <block type="millis"></block>
+    <block type="micros"></block>
+    <block type="delay_custom">
+        <value name="DELAY_TIME">
+            <block type="math_number">
+                <field name="NUM">1000</field>
+            </block>
+        </value>
+    </block>
+    <block type="delayMicroseconds_custom">
+        <value name="DELAY_TIME">
+            <block type="math_number">
+                <field name="NUM">1000</field>
+            </block>
+        </value>
+    </block>
+</category>
+<category id="category_array">
+    <block type="array_create_with"></block>
+    <block type="array_getIndex">
+        <value name="AT">
+            <block type="math_number">
+                <field name="NUM">1</field>
+            </block>
+        </value>
+    </block>
+</category>
+<category id="category_math">
+    <block type="math_number"></block>
+    <block type="cast_number"></block>
+    <block type="math_arithmetic"></block>
+    <block type="math_single"></block>
+    <block type="math_constrain"></block>
+    <block type="math_pow"></block>
+    <block type="math_random_max_min"></block>
+    <block type="math_map_int"></block>
+    <block type="math_map_float"></block>
+</category>
+<category id="category_text">
+    <block type="text"></block>
+    <block type="text_commentout"></block>
+    <block type="text_length"></block>
+    <block type="text_charAt">
+        <value name="INDEX">
+            <block type="math_number">
+                <field name="NUM">1</field>
+            </block>
+        </value>
+    </block>
+</category>
+<sep></sep>
+<category id="category_variables" custom="VARIABLE"></category>
+<category id="category_functions" custom="PROCEDURE"></category>
+<sep></sep>
+<!--category id="category_involt">
+<block type="involt_directmode"></block>
+<block type="involt_chromereceive"></block>
+<block type="involt_sendvalue"></block>
+<block type="involt_receivevalue"></block>
+</category-->
+<sep></sep>
+<category id="category_linkit">
+  <category id="category_linkit_wifi">
+    <block type="linkit_wifi_wait_until_ready">
+        <value name="SSID">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="PASSWORD">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+  </category>
+  <category id="category_linkit_ble">
+    <block type="linkit_ble_wait_until_ready"></block>
+    <block type="linkit_ble_ready"></block>
+    <block type="linkit_ble_get_address"></block>
+    <block type="linkit_ble_central_scan"></block>
+    <block type="linkit_ble_central_scan_count"></block>
+    <block type="linkit_ble_central_get_peripheral_with_index">
+      <value name="INDEX">
+          <block type="math_number">
+              <field name="NUM">0</field>
+          </block>
+      </value>
+    </block>
+    <block type="linkit_ble_periphral">
+        <value name="NAME">
+            <block type="text">
+                <field name="TEXT">LinkIt 7697</field>
+            </block>
+        </value>
+        <value name="SERVICE">
+            <block type="text">
+                <field name="TEXT">951A6899-6F0F-456F-8AE0-5E0B4352D85B</field>
+            </block>
+        </value>
+        <value name="CHARACTERISTIC">
+            <block type="text">
+                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+            </block>
+        </value>
+    </block>
+    <block type="linkit_ble_periphral_is_written"></block>
+    <block type="linkit_ble_periphral_get_value"></block>
+    <block type="linkit_ble_ibeacon">
+        <value name="UUID">
+            <block type="text">
+                <field name="TEXT">74278BDA-B644-4520-8F0C-720EAF059935</field>
+            </block>
+        </value>
+        <value name="MAJOR">
+            <block type="math_number">
+                <field name="NUM">1</field>
+            </block>
+        </value>
+        <value name="MINOR">
+            <block type="math_number">
+                <field name="NUM">2</field>
+            </block>
+        </value>
+        <value name="RSSI">
+            <block type="math_number">
+                <field name="NUM">-40</field>
+            </block>
+        </value>
+    </block>
+  </category>
+  <category id="category_linkit_mcs">
+    <block type="mcs">
+        <value name="DEVICEID">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="DEVICEKEY">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="mcs_set_control_channel">
+        <value name="CONTROL_CHANNEL">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="mcs_channel_valid">
+        <value name="CHANNEL_VALID">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="mcs_process"></block>
+    <block type="mcs_channel_value">
+        <value name="CHANNEL_VALUE">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block> 
+    <block type="mcs_channel_updated">
+        <value name="CHANNEL_UPDATED">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+  </category>
+</category>
+</xml>
+
+    <div class="info">
+    </div>
+</body>
+
+</html>

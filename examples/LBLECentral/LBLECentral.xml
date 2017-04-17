@@ -1,0 +1,54 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_while" id="173" inline="false" x="-12" y="-12">
+    <value name="BOOL">
+      <block type="logic_compare" id="195" inline="true">
+        <field name="OP">LT</field>
+        <value name="A">
+          <block type="variables_get" id="164">
+            <field name="TYPE">Number</field>
+            <field name="VAR">count</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="linkit_ble_central_scan_count" id="125"></block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="serial_println" id="87" inline="false">
+        <value name="CONTENT">
+          <block type="linkit_ble_central_get_peripheral_with_index" id="88" inline="true">
+            <value name="INDEX">
+              <block type="variables_get" id="89">
+                <field name="TYPE">Number</field>
+                <field name="VAR">count</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="185" inline="true">
+            <field name="TYPE">Number</field>
+            <field name="VAR">count</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="186" inline="true">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <block type="variables_get" id="189">
+                    <field name="TYPE">Number</field>
+                    <field name="VAR">count</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="188">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
