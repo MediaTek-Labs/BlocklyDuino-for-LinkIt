@@ -1,128 +1,103 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="initializes_setup" id="1" x="163" y="88">
+  <block type="initializes_setup" id="1" x="-62" y="-537">
     <statement name="CONTENT">
-      <block type="mcs" id="2" inline="false">
-        <value name="DEVICEID">
+      <block type="linkit_wifi_wait_until_ready" id="2" inline="false">
+        <value name="SSID">
           <block type="text" id="3">
             <field name="TEXT"></field>
           </block>
         </value>
-        <value name="DEVICEKEY">
+        <value name="PASSWORD">
           <block type="text" id="4">
             <field name="TEXT"></field>
           </block>
         </value>
-        <value name="SSID">
-          <block type="text" id="5">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="PASSWORD">
-          <block type="text" id="6">
-            <field name="TEXT"></field>
-          </block>
-        </value>
         <next>
-          <block type="mcs_set_control_channel" id="7" inline="true">
-            <value name="CONTROL_CHANNEL">
-              <block type="text" id="8">
-                <field name="TEXT">led</field>
+          <block type="mcs" id="5" inline="false">
+            <value name="DEVICEID">
+              <block type="text" id="6">
+                <field name="TEXT"></field>
               </block>
             </value>
-            <next>
-              <block type="mcs_channel_wait_until_read_value" id="9" inline="true">
-                <value name="CHANNEL">
-                  <block type="text" id="10">
+            <value name="DEVICEKEY">
+              <block type="text" id="7">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <statement name="CONTENT">
+              <block type="mcs_set_control_channel" id="8" inline="true">
+                <field name="TYPE">(int)</field>
+                <value name="CONTROL_CHANNEL">
+                  <block type="text" id="9">
                     <field name="TEXT">led</field>
                   </block>
                 </value>
+                <next>
+                  <block type="mcs_set_display_channel" id="10" inline="true">
+                    <field name="TYPE">(int)</field>
+                    <value name="DISPLAY_CHANNEL">
+                      <block type="text" id="11">
+                        <field name="TEXT">remote</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
               </block>
-            </next>
+            </statement>
           </block>
         </next>
       </block>
     </statement>
     <next>
-      <block type="initializes_loop" id="11">
+      <block type="initializes_loop" id="12">
         <statement name="CONTENT">
-          <block type="controls_while" id="12" inline="false">
-            <value name="BOOL">
-              <block type="logic_negate" id="13" inline="false">
-                <value name="BOOL">
-                  <block type="mcs_connected" id="14"></block>
-                </value>
-              </block>
-            </value>
-            <statement name="DO">
-              <block type="mcs_reconnect" id="15">
-                <next>
-                  <block type="controls_if" id="16" inline="false">
-                    <value name="IF0">
-                      <block type="mcs_connected" id="17"></block>
-                    </value>
-                    <statement name="DO0">
-                      <block type="serial_println" id="18" inline="false">
-                        <value name="CONTENT">
-                          <block type="text" id="19">
-                            <field name="TEXT">MCS 已重新連線</field>
-                          </block>
-                        </value>
-                      </block>
-                    </statement>
-                  </block>
-                </next>
-              </block>
-            </statement>
+          <block type="mcs_process" id="13">
             <next>
-              <block type="mcs_process" id="20">
-                <next>
-                  <block type="controls_if" id="21" inline="false">
+              <block type="controls_if" id="14" inline="false">
+                <value name="IF0">
+                  <block type="mcs_channel_updated" id="15" inline="true">
+                    <value name="CHANNEL_UPDATED">
+                      <block type="text" id="16">
+                        <field name="TEXT">led</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="controls_if" id="17" inline="false">
+                    <mutation else="1"></mutation>
                     <value name="IF0">
-                      <block type="mcs_channel_updated" id="22" inline="true">
-                        <value name="CHANNEL_UPDATED">
-                          <block type="text" id="23">
-                            <field name="TEXT">led</field>
+                      <block type="logic_compare" id="18" inline="true">
+                        <field name="OP">NEQ</field>
+                        <value name="A">
+                          <block type="mcs_channel_value" id="19" inline="true">
+                            <field name="TYPE">(int)</field>
+                            <value name="CHANNEL_VALUE">
+                              <block type="text" id="20">
+                                <field name="TEXT">led</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="21">
+                            <field name="NUM">0</field>
                           </block>
                         </value>
                       </block>
                     </value>
                     <statement name="DO0">
-                      <block type="controls_if" id="24" inline="false">
-                        <mutation else="1"></mutation>
-                        <value name="IF0">
-                          <block type="logic_compare" id="25" inline="true">
-                            <field name="OP">NEQ</field>
-                            <value name="A">
-                              <block type="mcs_channel_value" id="26" inline="true">
-                                <field name="TYPE">(int)</field>
-                                <value name="CHANNEL_VALUE">
-                                  <block type="text" id="27">
-                                    <field name="TEXT">led</field>
-                                  </block>
-                                </value>
-                              </block>
-                            </value>
-                            <value name="B">
-                              <block type="math_number" id="28">
-                                <field name="NUM">0</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                        <statement name="DO0">
-                          <block type="inout_buildin_led" id="29">
-                            <field name="STAT">HIGH</field>
-                          </block>
-                        </statement>
-                        <statement name="ELSE">
-                          <block type="inout_buildin_led" id="30">
-                            <field name="STAT">LOW</field>
-                          </block>
-                        </statement>
+                      <block type="inout_buildin_led" id="22">
+                        <field name="STAT">HIGH</field>
+                      </block>
+                    </statement>
+                    <statement name="ELSE">
+                      <block type="inout_buildin_led" id="23">
+                        <field name="STAT">LOW</field>
                       </block>
                     </statement>
                   </block>
-                </next>
+                </statement>
               </block>
             </next>
           </block>

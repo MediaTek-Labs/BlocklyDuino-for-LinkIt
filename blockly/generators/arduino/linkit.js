@@ -28,6 +28,8 @@ goog.provide('Blockly.Arduino.linkit');
 
 goog.require('Blockly.Arduino');
 
+var controlch;
+
 Blockly.Arduino.linkit_ble_periphral_is_written = function() {
   var code = "__periphralCharacteristic.isWritten()";
   return [code, Blockly.Arduino.ORDER_ATOMIC];
@@ -237,15 +239,33 @@ Blockly.Arduino.mcs_channel_value = function() {
   var type = this.getFieldValue('TYPE');
   var channel_value = Blockly.Arduino.valueToCode(this, 'CHANNEL_VALUE', Blockly.Arduino.ORDER_ATOMIC) || ''
   channel_value = channel_value.replace(/\"/g, "");
+
+  controlch = channel_value;
+
   var code = channel_value+".value()";
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+Blockly.Arduino.mcs_channel2_value = function() {
+  var type = this.getFieldValue('TYPE');
+  var channel_value = Blockly.Arduino.valueToCode(this, 'CHANNEL2_VALUE', Blockly.Arduino.ORDER_ATOMIC) || ''
+  channel_value = channel_value.replace(/\"/g, "");
+
+  var channel2_value = Blockly.Arduino.valueToCode(this, 'SET_VALUE', Blockly.Arduino.ORDER_ATOMIC) || ''
+  channel2_value = channel2_value.replace(/\"/g, "");
+  
+  /*var n = Blockly.Arduino.valueToCode(Blockly.Arduino.mcs_channel_value, 'CHANNEL_VALUE', Blockly.Arduino.ORDER_ATOMIC) || ''
+  n = n.replace(/\"/g, "");*/
+  var code = channel_value+".set("+channel2_value+".value());\n";
+  return code;
+};
+
 Blockly.Arduino.mcs_process = function() {
+  Blockly.Arduino.setups_['add_serialport'] = 'Serial.begin(9600);';
+
   var code = "while (!mcs.connected()) {\n";
   code = code+"mcs.connect();\n";
-  code = code+"if (mcs.connected()) {\n";
-  code = code+"Serial.println("+"MCS 已重新連線"+");\n}\n}\n"; 
-  code = "mcs.process(1000);\n";
+  code = code+"if (mcs.connected()) { Serial.println("+'"MCS 已重新連線"'+"); }\n}\n"; 
+  code = code+"mcs.process(1000);\n";
   return code;
 };
 Blockly.Arduino.mcs_channel_wait_until_read_value = function() {
@@ -313,6 +333,10 @@ Blockly.Arduino.linkit_wifi = function() {
 
   var code = "WiFi.begin(_lwifi_ssid, _lwifi_pass)";
   return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+Blockly.Arduino.linkit_wifi_disconnect = function() {
+  var code = "WiFi.disconnect();";
+  return code;
 };
 
 Blockly.Arduino.linkit_wifi_ignore_result = function() {
