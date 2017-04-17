@@ -1098,9 +1098,10 @@ Blockly.Msg.TEXT_APPEND_VARIABLE = Blockly.Msg.VARIABLES_DEFAULT_NAME;
 Blockly.Msg.CONTROLS_IF_ELSE_TITLE_ELSE = Blockly.Msg.CONTROLS_IF_MSG_ELSE;
 
 // LinkIt
-Blockly.Msg.CATEGORY_LINKIT = "Network";
+Blockly.Msg.CATEGORY_LINKIT = "LinkIt 7697";
 // WiFi
 Blockly.Msg.CATEGORY_LINKIT_WIFI = "WiFi";
+Blockly.Msg.CATEGORY_LINKIT_WIFI_DISCONNECT = "Disconnect Wi-Fi";
 Blockly.Msg.CATEGORY_LINKIT_WIFI_ADVANCED = "WiFi (Advanced)";
 Blockly.Msg.LINKIT_SET_WIFI_HELPURL = "";
 Blockly.Msg.LINKIT_SET_WIFI_TITLE = "WiFi Setup";
@@ -1123,13 +1124,16 @@ Blockly.Msg.LINKIT_SET_MCS_TOOLTIP = "";
 Blockly.Msg.LINKIT_SET_MCS_WIFI = "Connect to MCS";
 Blockly.Msg.LINKIT_SET_MCS_DEVICEID = "DeviceID";
 Blockly.Msg.LINKIT_SET_MCS_DEVICEKEY = "DeviceKey";
-Blockly.Msg.LINKIT_SET_MCS_CHANNEL1 = "Add MCS Controller channel";
-Blockly.Msg.LINKIT_SET_MCS_CHANNEL2 = "MCSDisplay ch";
+Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TITLE = "Add MCS ";
+Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TAIL = "Controller channel";
+Blockly.Msg.LINKIT_SET_MCS_CHANNEL2_TAIL = "Display channel";
 Blockly.Msg.LINKIT_CHECK_MCS_CONNECTED_TITLE = "MCS Connected";
 Blockly.Msg.LINKIT_CHECK_MCS_RECONNECT_TITLE = "MCS Reconnect";
 Blockly.Msg.LINKIT_CHECK_MCS_LED_VALID_TITLE = "Controller Channel Valid";
-Blockly.Msg.LINKIT_CHECK_MCS_LED_VALUE_TITLE = "Controller";
-Blockly.Msg.LINKIT_CHECK_MCS_LED_VALUE_TAIL = "Get MCS Controller Channel Value";
+Blockly.Msg.LINKIT_CHECK_MCS_LED_VALUE_TITLE = "GET MCS ";
+Blockly.Msg.LINKIT_CHECK_MCS_LED_VALUE_TAIL = "Controller Channel Value";
+Blockly.Msg.LINKIT_CHECK_MCS_REMOTE_VALUE_TITLE = "SET MCS";
+Blockly.Msg.LINKIT_CHECK_MCS_REMOTE_VALUE_TAIL = "Display Channel Value";
 Blockly.Msg.LINKIT_MCS_WAIT_UNTIL_CONNECTED_TITLE = "Connecting to MCS..";
 Blockly.Msg.LINKIT_MCS_LED_WAIT_UNTIL_READ_VALUE_TITLE = "Waiting For Controller Channel...";
 Blockly.Msg.LINKIT_ADD_MCS_CHANNEL_TITLE = "Adding Channel";

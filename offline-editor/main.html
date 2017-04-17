@@ -1006,6 +1006,7 @@
             </block>
         </value>
     </block>
+    <block type="linkit_wifi_disconnect"></block>
   </category>
   <category id="category_linkit_ble">
     <block type="linkit_ble_wait_until_ready"></block>
@@ -1082,8 +1083,8 @@
             </block>
         </value>
     </block>
-    <block type="mcs_channel_valid">
-        <value name="CHANNEL_VALID">
+    <block type="mcs_set_display_channel">
+        <value name="DISPLAY_CHANNEL">
             <block type="text">
                 <field name="TEXT"></field>
             </block>
@@ -1092,6 +1093,18 @@
     <block type="mcs_process"></block>
     <block type="mcs_channel_value">
         <value name="CHANNEL_VALUE">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block> 
+    <block type="mcs_channel2_value">
+        <value name="CHANNEL2_VALUE">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="SET_VALUE">
             <block type="text">
                 <field name="TEXT"></field>
             </block>

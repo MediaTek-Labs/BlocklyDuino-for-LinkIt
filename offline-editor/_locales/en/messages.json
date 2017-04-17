@@ -1,8 +1,8 @@
 {
    "appDesc": {
-      "message": "The editor can be programmed to Arduino by combining blocks as Scratch."
+      "message": "BlocklyDuino Editor for Linkit 7697."
    },
    "appName": {
-      "message": "BlocklyDuino Editor for Linkit 7697"
+      "message": "Linkit 7697 BlocklyDuino Editor"
    }
 }

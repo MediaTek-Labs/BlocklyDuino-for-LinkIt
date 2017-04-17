@@ -206,10 +206,22 @@ Blockly.Blocks['mcs_set_control_channel'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_MCS_HELPURL);
     this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TITLE)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.VARIABLES_TYPE_NUMBER,"(int)"],
+        [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_INT,"(unsigned int)"],
+        [Blockly.Msg.VARIABLES_TYPE_BYTE,"(byte)"],
+        [Blockly.Msg.VARIABLES_TYPE_WORD,"(word)"],
+        [Blockly.Msg.VARIABLES_TYPE_LONG,"(long)"],
+        [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_LONG,"(unsigned long)"],
+        [Blockly.Msg.VARIABLES_TYPE_FLOAT,"(float)"],
+        [Blockly.Msg.VARIABLES_TYPE_DOUBLE,"(double)"],
+        [Blockly.Msg.VARIABLES_TYPE_CHAR,"(char)"]
+      ]), "TYPE")
+      .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TAIL);
     this.appendValueInput("CONTROL_CHANNEL")
-      .setCheck("String")
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL1);
+      .setCheck("String");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -220,10 +232,22 @@ Blockly.Blocks['mcs_set_display_channel'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_MCS_HELPURL);
     this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TITLE)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.VARIABLES_TYPE_NUMBER,"(int)"],
+        [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_INT,"(unsigned int)"],
+        [Blockly.Msg.VARIABLES_TYPE_BYTE,"(byte)"],
+        [Blockly.Msg.VARIABLES_TYPE_WORD,"(word)"],
+        [Blockly.Msg.VARIABLES_TYPE_LONG,"(long)"],
+        [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_LONG,"(unsigned long)"],
+        [Blockly.Msg.VARIABLES_TYPE_FLOAT,"(float)"],
+        [Blockly.Msg.VARIABLES_TYPE_DOUBLE,"(double)"],
+        [Blockly.Msg.VARIABLES_TYPE_CHAR,"(char)"]
+      ]), "TYPE")
+      .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL2_TAIL);
     this.appendValueInput("DISPLAY_CHANNEL")
-      .setCheck("String")
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL2);
+      .setCheck("String");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -314,6 +338,37 @@ Blockly.Blocks['mcs_channel_value'] = {
     this.setTooltip(Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP);
   }
 };
+Blockly.Blocks['mcs_channel2_value'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_MCS_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_CHECK_MCS_REMOTE_VALUE_TITLE)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.VARIABLES_TYPE_NUMBER,"(int)"],
+        [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_INT,"(unsigned int)"],
+        [Blockly.Msg.VARIABLES_TYPE_BYTE,"(byte)"],
+        [Blockly.Msg.VARIABLES_TYPE_WORD,"(word)"],
+        [Blockly.Msg.VARIABLES_TYPE_LONG,"(long)"],
+        [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_LONG,"(unsigned long)"],
+        [Blockly.Msg.VARIABLES_TYPE_FLOAT,"(float)"],
+        [Blockly.Msg.VARIABLES_TYPE_DOUBLE,"(double)"],
+        [Blockly.Msg.VARIABLES_TYPE_CHAR,"(char)"]
+      ]), "TYPE")
+      .appendField(Blockly.Msg.LINKIT_CHECK_MCS_REMOTE_VALUE_TAIL);
+    this.appendValueInput("CHANNEL2_VALUE")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL2_TAIL)
+      .setCheck("String");
+    this.appendValueInput("SET_VALUE")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TAIL)
+      .setCheck("String");
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP);
+  }
+};
 Blockly.Blocks['mcs_process'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_MCS_HELPURL);
@@ -360,8 +415,7 @@ Blockly.Blocks['linkit_wifi_wait_until_ready'] = {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_WIFI_HELPURL);
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
-      .appendField(Blockly.Msg.LINKIT_SET_WIFI_UNTIL_READY_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
+      .appendField(Blockly.Msg.LINKIT_SET_WIFI_UNTIL_READY_TITLE);
     this.appendValueInput("SSID")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
@@ -370,6 +424,17 @@ Blockly.Blocks['linkit_wifi_wait_until_ready'] = {
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINKIT_SET_WIFI_PASSWORD);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP);
+  }
+};
+Blockly.Blocks['linkit_wifi_disconnect'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_WIFI_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.CATEGORY_LINKIT_WIFI_DISCONNECT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP);
