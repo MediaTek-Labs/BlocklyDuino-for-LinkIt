@@ -8,7 +8,7 @@
    "default_locale": "en",
    "description": "__MSG_appDesc__",
    "externally_connectable": {
-      "matches": [ "*://x43x61x69.github.io/*", "*://*.vox.vg/*", "*://*.mediatek.com/*" ]
+      "matches": [ "*://MediaTek-Labs.github.io/*", "*://*.mediatek.com/*" ]
    },
    "file_handlers": {
       "text": {
@@ -24,7 +24,7 @@
    "offline_enabled": true,
    "permissions": [ {
       "fileSystem": [ "write", "retainEntries", "directory" ]
-   }, "storage", "https://raw.githubusercontent.com/x43x61x69/*", "alarms" ],
+   }, "storage", "https://raw.githubusercontent.com/MediaTek-Labs/*", "alarms" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "1.7.0"
+   "version": "2.0.0"
 }
