@@ -38,7 +38,7 @@ Blockly.Blocks['initializes_setup'] = {
       .appendField(Blockly.Msg.INITIALIZES_SETUP_APPENDTEXT);
     this.appendStatementInput("CONTENT");
     this.setInputsInline(true);
-    this.setPreviousStatement(true);
+    //this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.INITIALIZES_SETUP_TOOLTIP);
   }
@@ -52,7 +52,7 @@ Blockly.Blocks['initializes_loop'] = {
     this.appendStatementInput("CONTENT");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    //this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.INITIALIZES_SETUP_TOOLTIP);
   }
 };
