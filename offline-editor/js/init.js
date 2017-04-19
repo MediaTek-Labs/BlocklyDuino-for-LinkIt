@@ -246,13 +246,13 @@ window.onload = function () {
   chrome.storage.local.get(keys, function(item){
     if(!item.lang){
       var item = {
-        'lang': 'en'
+        'lang': 'zh'
       };
       // localStorageへ保存
       chrome.storage.local.set(item, function(){
         console.log('item saved.');
       });
-      setScript("en");
+      setScript("zh");
     }else{
       setScript(item.lang);
     }

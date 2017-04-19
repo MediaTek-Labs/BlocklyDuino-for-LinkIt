@@ -59,6 +59,7 @@ Blockly.Block = function() {
  * @return {!Blockly.Block} The created block
  */
 Blockly.Block.obtain = function(workspace, prototypeName) {
+  //console.log(prototypeName);
   if (Blockly.Realtime.isEnabled()) {
     return Blockly.Realtime.obtainBlock(workspace, prototypeName);
   } else {

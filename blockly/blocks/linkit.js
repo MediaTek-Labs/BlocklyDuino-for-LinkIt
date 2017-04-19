@@ -62,7 +62,7 @@ Blockly.Blocks['linkit_ble_periphral'] = {
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
     this.appendValueInput("NAME")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
@@ -126,7 +126,7 @@ Blockly.Blocks['linkit_ble_ibeacon'] = {
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_IBEACON_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
     this.appendValueInput("UUID")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
@@ -447,7 +447,7 @@ Blockly.Blocks['linkit_wifi_ready_advanced'] = {
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_WIFI_READY_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
     this.appendValueInput("SSID")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
@@ -478,7 +478,7 @@ Blockly.Blocks['linkit_wifi'] = {
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_WIFI_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
     this.appendValueInput("SSID")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
@@ -498,7 +498,7 @@ Blockly.Blocks['linkit_wifi_ignore_result'] = {
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_WIFI_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
     this.appendValueInput("SSID")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
