@@ -134,6 +134,7 @@ function init() {
   if (dest) {
     //load_by_url(dest);
   }
+  //discard();
 }
 
 function buildtoolBox() {
@@ -179,7 +180,7 @@ function loadxml(){
     var id = getParam()["id"];
     if(typeof id === "undefined") return;
     id = id.replace("#","");
-    url = 'https://raw.githubusercontent.com/makewitharduino/ArduinoSample/master/' + id +'/' + id + '.xml';
+    url = 'https://raw.githubusercontent.com/mediatek-labs/BlockyDuino-for-LinkIt/examples/master/' + id +'/' + id + '.xml';
     if(!sendChrome(url)){
       setXmlContent(url);
     }
@@ -212,7 +213,7 @@ function sendChrome(url){
     // 確認ボタン付きのダイアログボックスを表示する
     var result = confirm("Send XML for ChromeApp.");
     if(result){
-      var extId = "ohncgafccgdbigbbikgkfbkiebahihmb";
+      var extId = "XXXX";
       chrome.runtime.sendMessage(extId, {url : url});
       return true;
     }
