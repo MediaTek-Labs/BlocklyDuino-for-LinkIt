@@ -1,0 +1,22 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_loop" id="1046" x="63" y="113">
+    <statement name="CONTENT">
+      <block type="inout_analog_write" id="1143" inline="true">
+        <field name="PIN">11</field>
+        <value name="NUM">
+          <block type="math_map_int" id="1096" inline="false">
+            <field name="FROMLOW">0</field>
+            <field name="FROMHIGH">4095</field>
+            <field name="TOLOW">0</field>
+            <field name="TOHIGH">255</field>
+            <value name="VALUE">
+              <block type="inout_analog_read" id="1050">
+                <field name="PIN">A0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
