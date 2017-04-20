@@ -48,9 +48,9 @@ function newFile() {
   handleDocumentChange(null);
   var xmlDoc = Blockly.Xml.textToDom('<xml xmlns="http://www.w3.org/1999/xhtml"><block type="initializes_setup" id="0" x="10" y="10"><next><block type="initializes_loop" id="1"></block></next></block></xml>');
   var f = function(){
-    if(Blockly.mainWorkspace == null){
+    if (Blockly.mainWorkspace == null) {
   	  setTimeout(f, 200);
-  	} else { 
+  	} else {
   	  Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDoc);
   	}
   };
