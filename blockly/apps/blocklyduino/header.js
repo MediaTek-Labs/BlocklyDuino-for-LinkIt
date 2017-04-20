@@ -4,7 +4,7 @@ var filepath = { media: '../../media/', msg_en: "../../msg/js/en.js", msg_zh:"..
   var html = "";
   html += '<meta charset="utf-8">';
   html += '<link rel="stylesheet" type="text/css" href="css/style.css">';
-  html += '<title>BlocklyDuino</title>';
+  html += '<title>LinkIt 7697 BlockyDuino Editor</title>';
 
   html += '<script type="text/javascript" src="js/aws-sdk-2.2.4.min.js"></script>';
   html += '<script type="text/javascript" src="js/s3.js"></script>';
