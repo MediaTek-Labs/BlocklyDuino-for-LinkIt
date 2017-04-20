@@ -211,6 +211,7 @@ Blockly.Msg.DHT_READ_SENSOR = "Sensor";
 Blockly.Msg.DHT_READ_TOOLTIP = "The DHT sensors are made of two parts, a capacitive humidity sensor and a thermistor.";
 Blockly.Msg.DHT_READ_TYPE = "Content";
 Blockly.Msg.DHT_WARNING = "Need to install the (adafruit) DHT-sensor-library";
+Blockly.Msg.DIALOG0_TITLE = "Initialization failed(>3s), please reload.";
 Blockly.Msg.DIALOG1_NO = "No";
 Blockly.Msg.DIALOG1_TITLE = "Reset OK?";
 Blockly.Msg.DIALOG1_YES = "Yes";
