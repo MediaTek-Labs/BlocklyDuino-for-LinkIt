@@ -204,6 +204,7 @@ function setCharacter(){
   $("#button_open").attr("data-tooltip",Blockly.Msg.BUTTON_OPEN);
   $("#button_discard").text(Blockly.Msg.DROPDOWN_DISCARD);
   $("#button_save_as").text(Blockly.Msg.DROPDOWN_SAVE_AS);
+  $("#dialog0_title").text(Blockly.Msg.DIALOG0_TITLE);
   $("#dialog1_title").text(Blockly.Msg.DIALOG1_TITLE);
   $("#dialog1_yes").text(Blockly.Msg.DIALOG1_YES);
   $("#dialog1_no").text(Blockly.Msg.DIALOG1_NO);
