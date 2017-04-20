@@ -78,6 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  document.querySelector('#dialog0_ok').addEventListener("click", function(evt) {
+    newFile();
+  });
+  
   document.querySelector('#dialog1_yes').addEventListener("click", function(evt) {
     Blockly.mainWorkspace.clear();
     renderContent();

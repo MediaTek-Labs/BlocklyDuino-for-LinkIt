@@ -9,6 +9,10 @@
 - Programming Arduino with visually drag and drop code blocks.
 - Generate fully compatible Arduino source code for MediaTek's LinkIt boards.
 
+## Usage
+
+Please checkout the project [Wiki](https://github.com/MediaTek-Labs/BlockyDuino-for-LinkIt/wiki) for installation and usage.
+
 ## Credits
 
 [Fred Lin](https://github.com/gasolin), [Neil Fraser](https://github.com/NeilFraser), Q.Neutron, [Dale Low](https://github.com/gumbypp), [Hiroyuki Okada](https://github.com/okhiroyuki), [Colin Sheaff](https://github.com/selfsimilar) and others.

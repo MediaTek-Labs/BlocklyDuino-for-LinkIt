@@ -209,6 +209,7 @@ Blockly.Msg.DHT_READ_SENSOR = "感測器";
 Blockly.Msg.DHT_READ_TOOLTIP = "The DHT sensors are made of two parts, a capacitive humidity sensor and a thermistor.";  // untranslated
 Blockly.Msg.DHT_READ_TYPE = "內容";
 Blockly.Msg.DHT_WARNING = "Need to install the (adafruit) DHT-sensor-library";  // untranslated
+Blockly.Msg.DIALOG0_TITLE = "初始化失敗(>3秒)，請重新載入";
 Blockly.Msg.DIALOG1_NO = "否";
 Blockly.Msg.DIALOG1_TITLE = "重設？";
 Blockly.Msg.DIALOG1_YES = "是";
