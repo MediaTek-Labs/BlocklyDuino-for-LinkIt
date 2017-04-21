@@ -1,5 +1,4 @@
-# BlockyDuino for Linkit 7697 example
-- EXAMPLE: Light Sensor with blink
+# EXAMPLE: Light Sensor with blink
 **註：本文中所使用的 Block ，其功能將以正體中文為示例主語言**
 
 ## 給使用者/開發者的注意事項
@@ -55,7 +54,6 @@
 ## Demo (實際示例)
 ![](Demo.png)
 燒入上圖的 Block 所生成的程式，您將可以利用光敏電阻所量測到的電位，來作為偵測周遭光源的訊號，並看到 Linkit 7697 的內建LED燈訊號及外部所並接的 LED燈 的變化。
-<<<<<<< HEAD
 ### 測試用線路：
 ![](LightSensor_bb.png)
 #### 測試元件：
@@ -66,7 +64,7 @@
 =======
 ### 測試線路：
 ![](LightSensor_bb.png)
->>>>>>> master
+
 
 ## Workflow (工作流程)
 ### Software

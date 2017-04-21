@@ -1,5 +1,4 @@
-# BlockyDuino for Linkit 7697 example
-EXAMPLE 1: Servo Sweep
+# EXAMPLE : Servo Sweep
 **註：本文中所使用的 Block ，其功能將以正體中文為示例主語言**
 
 ## 給使用者/開發者的注意事項
@@ -57,12 +56,10 @@ EXAMPLE 1: Servo Sweep
 燒入上圖的 Block 所生成的程式，您將可以看到 Servo 會在一開機轉回原點，之後在每秒都會多轉 15 度直至轉滿 180 度，轉滿後再次回到原點，循環上述流程。
 ### 測試用線路：
 ![](Servosweep_bb.png)
-<<<<<<< HEAD
+
 #### 測試元件：
 1. Linkit 7697
 2. Servo Motor (Ex:SG90)
-=======
->>>>>>> master
 
 ## Workflow (工作流程)
 1. 一開始，「加入 Setup()」將會對 「Servo_Angle」 做初始化的動作
