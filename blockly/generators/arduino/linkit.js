@@ -77,11 +77,10 @@ Blockly.Arduino.linkit_ble_central_get_peripheral_with_index = function() {
 
   Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
   Blockly.Arduino.definitions_['define_linkit_ble_central_include'] = '#include <LBLECentral.h>';
-  Blockly.Arduino.definitions_['define_linkit_ble_central_scanner'] = 'LBLECentral __scanner;';
 
   Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
   Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
-  Blockly.Arduino.setups_['define_linkit_ble_setup_central_scan'] = '__scanner.scan();';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_central_scan'] = 'LBLECentral.scan();';
 
   var code = '__scanner.getName(' + index + ')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
@@ -91,13 +90,12 @@ Blockly.Arduino.linkit_ble_central_scan_count = function() {
 
   Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
   Blockly.Arduino.definitions_['define_linkit_ble_central_include'] = '#include <LBLECentral.h>';
-  Blockly.Arduino.definitions_['define_linkit_ble_central_scanner'] = 'LBLECentral __scanner;';
 
   Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
   Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
-  Blockly.Arduino.setups_['define_linkit_ble_setup_central_scan'] = '__scanner.scan();';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_central_scan'] = 'LBLECentral.scan();';
 
-  var code = '__scanner.getPeripheralCount()';
+  var code = 'LBLECentral.getPeripheralCount()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -105,11 +103,10 @@ Blockly.Arduino.linkit_ble_central_scan = function() {
 
   Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
   Blockly.Arduino.definitions_['define_linkit_ble_central_include'] = '#include <LBLECentral.h>';
-  Blockly.Arduino.definitions_['define_linkit_ble_central_scanner'] = 'LBLECentral __scanner;';
 
   Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
   Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
-  Blockly.Arduino.setups_['define_linkit_ble_setup_central_scan'] = '__scanner.scan();';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_central_scan'] = 'LBLECentral.scan();';
 
   var code = "\n";
   return code;
@@ -252,7 +249,7 @@ Blockly.Arduino.mcs_channel2_value = function() {
 
   var channel2_value = Blockly.Arduino.valueToCode(this, 'SET_VALUE', Blockly.Arduino.ORDER_ATOMIC) || ''
   channel2_value = channel2_value.replace(/\"/g, "");
-  
+
   /*var n = Blockly.Arduino.valueToCode(Blockly.Arduino.mcs_channel_value, 'CHANNEL_VALUE', Blockly.Arduino.ORDER_ATOMIC) || ''
   n = n.replace(/\"/g, "");*/
   var code = channel_value+".set("+channel2_value+".value());\n";
@@ -264,7 +261,7 @@ Blockly.Arduino.mcs_process = function() {
 
   var code = "while (!mcs.connected()) {\n";
   code = code+"mcs.connect();\n";
-  code = code+"if (mcs.connected()) { Serial.println("+'"MCS 已重新連線"'+"); }\n}\n"; 
+  code = code+"if (mcs.connected()) { Serial.println("+'"MCS 已重新連線"'+"); }\n}\n";
   code = code+"mcs.process(1000);\n";
   return code;
 };

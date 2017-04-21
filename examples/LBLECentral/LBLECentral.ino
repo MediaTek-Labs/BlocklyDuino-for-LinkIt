@@ -3,13 +3,12 @@
 
 int count;
 
-LBLECentral __scanner;
 void setup()
 {
   LBLE.begin();
   while (!LBLE.ready()) { delay(1000); }
 
-  __scanner.scan();
+  LBLECentral.scan();
   Serial.begin(9600);
 
 }
@@ -17,7 +16,7 @@ void setup()
 
 void loop()
 {
-  while (count < __scanner.getPeripheralCount()) {
+  while (count < LBLECentral.getPeripheralCount()) {
     Serial.println(__scanner.getName(count));
     count = count + 1;
   }
