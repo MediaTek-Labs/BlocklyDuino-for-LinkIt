@@ -952,6 +952,8 @@
           </block>
       </value>
     </block>
+
+    <!--
     <block type="linkit_ble_periphral">
         <value name="NAME">
             <block type="text">
@@ -969,6 +971,29 @@
             </block>
         </value>
     </block>
+    -->
+    
+    <block type="linkit_ble_periphral">
+        <value name="NAME">
+            <block type="text">
+                <field name="TEXT">LinkIt 7697</field>
+            </block>
+        </value>
+        <value name="SERVICE">
+            <block type="text">
+                <field name="TEXT">951A6899-6F0F-456F-8AE0-5E0B4352D85B</field>
+            </block>
+        </value>
+    </block>
+
+    <block type="linkit_ble_Characteristic">
+        <value name="CHARACTERISTIC">
+            <block type="text">
+                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+            </block>
+        </value>
+    </block>
+    <>
     <block type="linkit_ble_periphral_is_written"></block>
     <block type="linkit_ble_periphral_get_value"></block>
     <block type="linkit_ble_ibeacon">

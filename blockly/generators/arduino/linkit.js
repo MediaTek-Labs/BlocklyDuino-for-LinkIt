@@ -40,12 +40,57 @@ Blockly.Arduino.linkit_ble_periphral_get_value = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.linkit_ble_Characteristic = function () {
+  var characteristic = Blockly.Arduino.valueToCode(this, 'CHARACTERISTIC', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var characteristicType = this.getFieldValue('TYPE');
+  var code = "\n";
+  characteristic = characteristic.replace(/\"/g, "");
+  Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include'] = '#include <LBLEPeriphral.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include_characteristic'] = 'LBLECharacteristicInt __periphralCharacteristic("' + characteristic + '", ' + characteristicType + ');';
+
+
+  return code;
+}
+
 Blockly.Arduino.linkit_ble_periphral = function() {
 
   var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || ''
   var service = Blockly.Arduino.valueToCode(this, 'SERVICE', Blockly.Arduino.ORDER_ATOMIC) || ''
-  var characteristic = Blockly.Arduino.valueToCode(this, 'CHARACTERISTIC', Blockly.Arduino.ORDER_ATOMIC) || ''
-  var characteristicType = this.getFieldValue('TYPE');
+  
+  name = name.replace(/\"/g, "");
+  service = service.replace(/\"/g, "");
+  characteristic = characteristic.replace(/\"/g, "");
+
+  Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include'] = '#include <LBLEPeriphral.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include_service'] = 'LBLEService __periphralService("' + service + '");';
+
+  Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
+
+  Blockly.Arduino.setups_['define_linkit_ble_periphral_service_config'] = '__periphralService.addAttribute(__periphralCharacteristic);';
+  Blockly.Arduino.setups_['define_linkit_ble_periphral_config'] = 'LBLEPeripheral.addService(__periphralService);';
+  Blockly.Arduino.setups_['define_linkit_ble_periphral_setup'] = 'LBLEPeripheral.begin();';
+
+  Blockly.Arduino.setups_['define_linkit_ble_periphral_advertisement_setup'] = 'LBLEAdvertisementData __advertisement;';
+  Blockly.Arduino.setups_['define_linkit_ble_periphral_advertisement_name_setup'] = '__advertisement.configAsConnectableDevice("' + name + '");';
+  Blockly.Arduino.setups_['define_linkit_ble_periphral_advertisement_advertise'] = 'LBLEPeripheral.advertise(__advertisement);';
+
+  var branch = Blockly.Arduino.statementToCode(this, 'CONTENT');
+  branch = branch.replace(/(^\s+)|(\s+$)/g, "");
+  Blockly.Arduino.setups_['manual_add123'] = branch;
+
+  var code = "\n";
+  return code;
+};
+
+/*
+Blockly.Arduino.linkit_ble_periphral = function() {
+
+  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var service = Blockly.Arduino.valueToCode(this, 'SERVICE', Blockly.Arduino.ORDER_ATOMIC) || ''
+  
   name = name.replace(/\"/g, "");
   service = service.replace(/\"/g, "");
   characteristic = characteristic.replace(/\"/g, "");
@@ -69,6 +114,7 @@ Blockly.Arduino.linkit_ble_periphral = function() {
   var code = "\n";
   return code;
 };
+*/
 
 Blockly.Arduino.linkit_ble_central_get_peripheral_with_index = function() {
 
