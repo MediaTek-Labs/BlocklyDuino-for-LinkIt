@@ -31,12 +31,20 @@ goog.require('Blockly.Arduino');
 var controlch;
 
 Blockly.Arduino.linkit_ble_periphral_is_written = function() {
+  var characteristic = Blockly.Arduino.valueToCode(this, 'CHARACTERISTIC', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var characteristicType = this.getFieldValue('TYPE');
+  characteristic = characteristic.replace(/\"/g, "");
   var code = "__periphralCharacteristic.isWritten()";
+
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino.linkit_ble_periphral_get_value = function() {
+  var characteristic = Blockly.Arduino.valueToCode(this, 'CHARACTERISTIC', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var characteristicType = this.getFieldValue('TYPE');
+  characteristic = characteristic.replace(/\"/g, "");
   var code = "__periphralCharacteristic.getValue()";
+
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
