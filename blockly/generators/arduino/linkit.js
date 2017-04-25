@@ -53,10 +53,14 @@ Blockly.Arduino.linkit_ble_Characteristic = function () {
   var characteristicType = this.getFieldValue('TYPE');
   var code = "\n";
   characteristic = characteristic.replace(/\"/g, "");
+  var variableName = characteristic.replace(/-/g, '_');
+  variableName = variableName.toLowerCase();
+
   Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
   Blockly.Arduino.definitions_['define_linkit_ble_periphral_include'] = '#include <LBLEPeriphral.h>';
-  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include_characteristic'] = 'LBLECharacteristicInt __periphralCharacteristic("' + characteristic + '", ' + characteristicType + ');';
+  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include_characteristic' + variableName] = 'LBLECharacteristicInt __' + variableName + '("' + characteristic + '", ' + characteristicType + ');';
 
+  Blockly.Arduino.setups_['define_linkit_ble_periphral__service_config' + variableName] = '__periphralService.addAttribute(__' + variableName + ');';
 
   return code;
 }
@@ -76,17 +80,17 @@ Blockly.Arduino.linkit_ble_periphral = function() {
   Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
   Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
 
-  Blockly.Arduino.setups_['define_linkit_ble_periphral_service_config'] = '__periphralService.addAttribute(__periphralCharacteristic);';
+  var branch = Blockly.Arduino.statementToCode(this, 'BLE_CONTENT');
+  branch = branch.replace(/(^\s+)|(\s+$)/g, "");
+  Blockly.Arduino.setups_['define_linkit_ble_periphral_service_config'] = branch;
+
+  //Blockly.Arduino.setups_['define_linkit_ble_periphral_service_config'] = '__periphralService.addAttribute(__periphralCharacteristic);';
   Blockly.Arduino.setups_['define_linkit_ble_periphral_config'] = 'LBLEPeripheral.addService(__periphralService);';
   Blockly.Arduino.setups_['define_linkit_ble_periphral_setup'] = 'LBLEPeripheral.begin();';
 
   Blockly.Arduino.setups_['define_linkit_ble_periphral_advertisement_setup'] = 'LBLEAdvertisementData __advertisement;';
   Blockly.Arduino.setups_['define_linkit_ble_periphral_advertisement_name_setup'] = '__advertisement.configAsConnectableDevice("' + name + '");';
   Blockly.Arduino.setups_['define_linkit_ble_periphral_advertisement_advertise'] = 'LBLEPeripheral.advertise(__advertisement);';
-
-  var branch = Blockly.Arduino.statementToCode(this, 'BLE_CONTENT');
-  branch = branch.replace(/(^\s+)|(\s+$)/g, "");
-  Blockly.Arduino.setups_['manual_add456'] = branch;
 
   var code = "\n";
   return code;

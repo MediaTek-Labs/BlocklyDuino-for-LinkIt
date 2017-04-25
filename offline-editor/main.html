@@ -1041,7 +1041,7 @@
         </value>
     </block>
     -->
-    
+
     <block type="linkit_ble_periphral">
         <value name="NAME">
             <block type="text">
@@ -1063,8 +1063,20 @@
         </value>
     </block>
     <>
-    <block type="linkit_ble_periphral_is_written"></block>
-    <block type="linkit_ble_periphral_get_value"></block>
+    <block type="linkit_ble_periphral_is_written">
+        <value name="CHARACTERISTIC">
+            <block type="text">
+                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+            </block>
+        </value>
+    </block>
+    <block type="linkit_ble_periphral_get_value">
+        <value name="CHARACTERISTIC">
+            <block type="text">
+                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+            </block>
+        </value>
+    </block>
     <block type="linkit_ble_ibeacon">
         <value name="UUID">
             <block type="text">
@@ -1122,7 +1134,7 @@
                 <field name="TEXT"></field>
             </block>
         </value>
-    </block> 
+    </block>
     <block type="mcs_channel2_value">
         <value name="CHANNEL2_VALUE">
             <block type="text">
@@ -1134,7 +1146,7 @@
                 <field name="TEXT"></field>
             </block>
         </value>
-    </block> 
+    </block>
     <block type="mcs_channel_updated">
         <value name="CHANNEL_UPDATED">
             <block type="text">

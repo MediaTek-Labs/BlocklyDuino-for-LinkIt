@@ -132,8 +132,6 @@ Blockly.Blocks['linkit_ble_periphral'] = {
 
 */
 
-
-
 Blockly.Blocks['linkit_ble_central_get_peripheral_with_index'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_CENTRAL_HELPURL);
