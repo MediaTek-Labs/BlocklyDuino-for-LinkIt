@@ -103,7 +103,7 @@ input.blocklyhtmlinput {
 }
 
 #content_xml {
-  background-color: #073642;
+  background-color: #4caf50;
   color: #eee8d5;
   resize: none;
   outline: none;
@@ -118,7 +118,7 @@ input.blocklyhtmlinput {
   border: none;
   font-family: monospace;
   overflow: scroll;
-  background-color: #073642;
+  background-color: #4caf50;
   color: #eee8d5;
   font-size: 12px;
   line-height: 12px;
@@ -140,15 +140,15 @@ input.blocklyhtmlinput {
 }
 
 .dropdown-content{
-  min-width: 200px;  
-} 
+  min-width: 200px;
+}
 
 .info {
   font-family: monospace;
   white-space: nowrap;
   position: absolute;
   bottom: 0;
-  background: #002b36;
+  background: #69be28;
   padding: 2px;
   height: 20px;
   left: 0;
@@ -179,7 +179,7 @@ input.blocklyhtmlinput {
 }
 
 a.hide-link{
-  color:#263238;
+  color:#69be28;
 }
 
 nav .brand-logo{
@@ -209,4 +209,3 @@ nav .brand-logo{
     -o-transform: translateX(0%);
   }
 }
-
