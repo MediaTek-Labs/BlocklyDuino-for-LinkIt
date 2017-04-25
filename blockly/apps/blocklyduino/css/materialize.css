@@ -2036,11 +2036,11 @@
 }
 
 .grey {
-  background-color: #9e9e9e !important;
+  background-color: #757575 !important;
 }
 
 .grey-text {
-  color: #9e9e9e !important;
+  color: #757575 !important;
 }
 
 .grey.lighten-5 {
@@ -5477,7 +5477,7 @@ button:focus {
 
 label {
   font-size: 0.8rem;
-  color: #9e9e9e;
+  color: #757575;
 }
 
 /* Text Inputs + Textarea
@@ -5517,7 +5517,7 @@ input[type=search],
 textarea.materialize-textarea {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 1px solid #757575;
   border-radius: 0;
   outline: none;
   height: 3rem;
@@ -5785,7 +5785,7 @@ textarea.materialize-textarea + label:after {
 }
 
 .input-field label {
-  color: #9e9e9e;
+  color: #757575;
   position: absolute;
   top: 0.8rem;
   left: 0.75rem;
@@ -6345,7 +6345,7 @@ select {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 1px solid #757575;
   outline: none;
   height: 3rem;
   line-height: 3rem;
@@ -7336,7 +7336,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .slider .slides {
-  background-color: #9e9e9e;
+  background-color: #757575;
   margin: 0;
   height: 400px;
 }

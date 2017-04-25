@@ -26,5 +26,5 @@
       "fileSystem": [ "write", "retainEntries", "directory" ]
    }, "storage", "https://raw.githubusercontent.com/MediaTek-Labs/*", "alarms" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "2.0.0"
+   "version": "2.1.0"
 }
