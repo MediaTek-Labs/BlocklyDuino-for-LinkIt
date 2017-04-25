@@ -50,6 +50,7 @@
 
     <nav>
         <div class="nav-wrapper blue-grey darken-4">
+            <img src="./media/icon_128.png" style="height: 100%;margin-left: 20px;" title="Hi!">
             <a href="./" class="brand-logo">LinkIt 7697 BlockyDuino Editor</a>
             <ul class="right">
                 <!-- Modal3 Trigger -->
@@ -1021,6 +1022,8 @@
           </block>
       </value>
     </block>
+
+    <!--
     <block type="linkit_ble_periphral">
         <value name="NAME">
             <block type="text">
@@ -1038,8 +1041,43 @@
             </block>
         </value>
     </block>
-    <block type="linkit_ble_periphral_is_written"></block>
-    <block type="linkit_ble_periphral_get_value"></block>
+    -->
+
+    <block type="linkit_ble_periphral">
+        <value name="NAME">
+            <block type="text">
+                <field name="TEXT">LinkIt 7697</field>
+            </block>
+        </value>
+        <value name="SERVICE">
+            <block type="text">
+                <field name="TEXT">951A6899-6F0F-456F-8AE0-5E0B4352D85B</field>
+            </block>
+        </value>
+    </block>
+
+    <block type="linkit_ble_Characteristic">
+        <value name="CHARACTERISTIC">
+            <block type="text">
+                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+            </block>
+        </value>
+    </block>
+    <>
+    <block type="linkit_ble_periphral_is_written">
+        <value name="CHARACTERISTIC">
+            <block type="text">
+                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+            </block>
+        </value>
+    </block>
+    <block type="linkit_ble_periphral_get_value">
+        <value name="CHARACTERISTIC">
+            <block type="text">
+                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+            </block>
+        </value>
+    </block>
     <block type="linkit_ble_ibeacon">
         <value name="UUID">
             <block type="text">
@@ -1097,7 +1135,7 @@
                 <field name="TEXT"></field>
             </block>
         </value>
-    </block> 
+    </block>
     <block type="mcs_channel2_value">
         <value name="CHANNEL2_VALUE">
             <block type="text">
@@ -1109,7 +1147,7 @@
                 <field name="TEXT"></field>
             </block>
         </value>
-    </block> 
+    </block>
     <block type="mcs_channel_updated">
         <value name="CHANNEL_UPDATED">
             <block type="text">

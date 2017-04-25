@@ -38,7 +38,9 @@ Blockly.Blocks['linkit_ble_periphral_get_value'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
     this.setColour(Blockly.Blocks.linkit.HUE);
-    this.appendDummyInput()
+    this.appendValueInput("CHARACTERISTIC")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_GET_VALUE);
     this.setOutput(true, 'Char');
     this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TOOLTIP);
@@ -49,13 +51,56 @@ Blockly.Blocks['linkit_ble_periphral_is_written'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
     this.setColour(Blockly.Blocks.linkit.HUE);
-    this.appendDummyInput()
+    this.appendValueInput("CHARACTERISTIC")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN);
     this.setOutput(true, 'Boolean');
     this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TOOLTIP);
   }
 };
 
+Blockly.Blocks['linkit_ble_Characteristic'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendValueInput("CHARACTERISTIC")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_CHARACTERISTIC);
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_LBLE_ATTRIBUTE)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.LINKIT_SET_LBLE_READ, "LBLE_READ"], [Blockly.Msg.LINKIT_SET_LBLE_WRITE, "LBLE_WRITE"], [Blockly.Msg.LINKIT_SET_LBLE_READ_WRITE, "LBLE_READ | LBLE_WRITE"]]), 'TYPE');
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_CHARACTERISTIC_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['linkit_ble_periphral'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TITLE)
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
+    this.appendValueInput("NAME")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_NAME);
+    this.appendValueInput("SERVICE")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_SERVICE);
+    this.appendStatementInput("BLE_CONTENT");
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TOOLTIP);
+  }
+};
+
+/*
 Blockly.Blocks['linkit_ble_periphral'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
@@ -84,6 +129,8 @@ Blockly.Blocks['linkit_ble_periphral'] = {
     this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TOOLTIP);
   }
 };
+
+*/
 
 Blockly.Blocks['linkit_ble_central_get_peripheral_with_index'] = {
   init: function() {

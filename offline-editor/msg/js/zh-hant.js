@@ -1137,5 +1137,5 @@ Blockly.Msg.LINKIT_SET_LBLE_READ_WRITE = "讀寫";
 Blockly.Msg.LINKIT_SET_LBLE_READ = "讀";
 Blockly.Msg.LINKIT_SET_LBLE_WRITE = "寫";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TOOLTIP = "";
-Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_GET_VALUE = "藍牙低功耗裝置取得數值";
-Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN = "藍牙低功耗裝置已接收資料";
+Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_GET_VALUE = "取得藍牙屬性數值，由 UUID";
+Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN = "已接收藍牙屬性已接收資料，由 UUID";
