@@ -14,7 +14,7 @@ def readContent(path):
   f.close()
   return content
 
-base_path = "./"
+base_path = "./offline-editor/"
 
 insert = base_path + "category.xml"
 base = base_path + "base.html"
