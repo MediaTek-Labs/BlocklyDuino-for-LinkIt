@@ -34,7 +34,9 @@ Blockly.Arduino.linkit_ble_periphral_is_written = function() {
   var characteristic = Blockly.Arduino.valueToCode(this, 'CHARACTERISTIC', Blockly.Arduino.ORDER_ATOMIC) || ''
   var characteristicType = this.getFieldValue('TYPE');
   characteristic = characteristic.replace(/\"/g, "");
-  var code = "__periphralCharacteristic.isWritten()";
+  var variableName = characteristic.replace(/-/g, '_');
+  variableName = variableName.toLowerCase();
+  var code = '__' + variableName + '.isWritten()';
 
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -43,7 +45,9 @@ Blockly.Arduino.linkit_ble_periphral_get_value = function() {
   var characteristic = Blockly.Arduino.valueToCode(this, 'CHARACTERISTIC', Blockly.Arduino.ORDER_ATOMIC) || ''
   var characteristicType = this.getFieldValue('TYPE');
   characteristic = characteristic.replace(/\"/g, "");
-  var code = "__periphralCharacteristic.getValue()";
+  var variableName = characteristic.replace(/-/g, '_');
+  variableName = variableName.toLowerCase();
+  var code = '__' + variableName + '.getValue()';
 
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

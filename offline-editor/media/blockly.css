@@ -192,10 +192,10 @@
 }
 .blocklyContextMenuOptions>.blocklyMenuDiv:hover>rect,
 .blocklyDropdownMenuOptions>.blocklyMenuDiv:hover>rect {
-  fill: #57e;
+  fill: #4caf50;
 }
 .blocklyMenuSelected>rect {
-  fill: #57e;
+  fill: #4caf50;
 }
 .blocklyMenuText {
   cursor: default !important;

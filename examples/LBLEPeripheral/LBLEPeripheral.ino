@@ -23,8 +23,8 @@ void setup()
 void loop()
 {
   delay(1000);
-    if (__periphralCharacteristic.isWritten()) {
-      if (__periphralCharacteristic.getValue() == 0) {
+    if (__b77d53ac_d590_41e0_b75a_6da442f543f6.isWritten()) {
+      if (__b77d53ac_d590_41e0_b75a_6da442f543f6.getValue() == 0) {
         digitalWrite(LED_BUILTIN, LOW);
 
       } else {

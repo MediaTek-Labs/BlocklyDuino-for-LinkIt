@@ -25,54 +25,54 @@
       </block>
     </statement>
     <next>
-      <block type="initializes_loop" id="13">
+      <block type="initializes_loop" id="9">
         <statement name="CONTENT">
-          <block type="delay_custom" id="47" inline="false">
+          <block type="delay_custom" id="10" inline="false">
             <value name="DELAY_TIME">
-              <block type="math_number" id="48">
+              <block type="math_number" id="11">
                 <field name="NUM">1000</field>
               </block>
             </value>
             <next>
-              <block type="controls_if" id="40" inline="false">
+              <block type="controls_if" id="12" inline="false">
                 <value name="IF0">
-                  <block type="linkit_ble_periphral_is_written" id="70" inline="false">
+                  <block type="linkit_ble_periphral_is_written" id="13" inline="false">
                     <value name="CHARACTERISTIC">
-                      <block type="text" id="71">
+                      <block type="text" id="14">
                         <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
                       </block>
                     </value>
                   </block>
                 </value>
                 <statement name="DO0">
-                  <block type="controls_if" id="77" inline="false">
+                  <block type="controls_if" id="15" inline="false">
                     <mutation else="1"></mutation>
                     <value name="IF0">
-                      <block type="logic_compare" id="106" inline="true">
+                      <block type="logic_compare" id="16" inline="true">
                         <field name="OP">EQ</field>
                         <value name="A">
-                          <block type="linkit_ble_periphral_get_value" id="99" inline="false">
+                          <block type="linkit_ble_periphral_get_value" id="17" inline="false">
                             <value name="CHARACTERISTIC">
-                              <block type="text" id="100">
+                              <block type="text" id="18">
                                 <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
                               </block>
                             </value>
                           </block>
                         </value>
                         <value name="B">
-                          <block type="math_number" id="116">
+                          <block type="math_number" id="19">
                             <field name="NUM">0</field>
                           </block>
                         </value>
                       </block>
                     </value>
                     <statement name="DO0">
-                      <block type="inout_buildin_led" id="130">
+                      <block type="inout_buildin_led" id="20">
                         <field name="STAT">LOW</field>
                       </block>
                     </statement>
                     <statement name="ELSE">
-                      <block type="inout_buildin_led" id="131">
+                      <block type="inout_buildin_led" id="21">
                         <field name="STAT">HIGH</field>
                       </block>
                     </statement>

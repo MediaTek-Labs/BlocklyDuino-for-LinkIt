@@ -103,7 +103,7 @@ input.blocklyhtmlinput {
 }
 
 #content_xml {
-  background-color: #4caf50;
+  background-color: #324432;
   color: #eee8d5;
   resize: none;
   outline: none;
@@ -118,7 +118,7 @@ input.blocklyhtmlinput {
   border: none;
   font-family: monospace;
   overflow: scroll;
-  background-color: #4caf50;
+  background-color: #324432;
   color: #eee8d5;
   font-size: 12px;
   line-height: 12px;
@@ -148,7 +148,7 @@ input.blocklyhtmlinput {
   white-space: nowrap;
   position: absolute;
   bottom: 0;
-  background: #69be28;
+  background: #49801f;
   padding: 2px;
   height: 20px;
   left: 0;
@@ -179,11 +179,16 @@ input.blocklyhtmlinput {
 }
 
 a.hide-link{
-  color:#69be28;
+  color:#49801f;
 }
 
 nav .brand-logo{
   margin-left: 20px;
+}
+
+td.tabon,
+.blocklyToolboxDiv {
+  background-color: rgba(82, 183, 86, 0.5) !important;
 }
 
 @media screen and (max-width: 768px) {
