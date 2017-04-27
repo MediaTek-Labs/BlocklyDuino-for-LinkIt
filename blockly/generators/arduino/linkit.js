@@ -54,7 +54,8 @@ Blockly.Arduino.linkit_ble_periphral_get_value = function() {
 
 Blockly.Arduino.linkit_ble_Characteristic = function () {
   var characteristic = Blockly.Arduino.valueToCode(this, 'CHARACTERISTIC', Blockly.Arduino.ORDER_ATOMIC) || ''
-  var characteristicType = this.getFieldValue('TYPE');
+  var characteristicAttribute = this.getFieldValue('TYPE');
+  var characteristicType = this.getFieldValue('CHARACTERISTIC_TYPE');
   var code = "\n";
   characteristic = characteristic.replace(/\"/g, "");
   var variableName = characteristic.replace(/-/g, '_');
@@ -62,7 +63,7 @@ Blockly.Arduino.linkit_ble_Characteristic = function () {
 
   Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
   Blockly.Arduino.definitions_['define_linkit_ble_periphral_include'] = '#include <LBLEPeriphral.h>';
-  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include_characteristic' + variableName] = 'LBLECharacteristicInt __' + variableName + '("' + characteristic + '", ' + characteristicType + ');';
+  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include_characteristic' + variableName] = '' + characteristicType + ' __' + variableName + '("' + characteristic + '", ' + characteristicAttribute + ');';
 
   Blockly.Arduino.setups_['define_linkit_ble_periphral__service_config' + variableName] = '__periphralService.addAttribute(__' + variableName + ');';
 
