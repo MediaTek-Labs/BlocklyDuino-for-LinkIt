@@ -39,10 +39,10 @@ Blockly.Blocks['linkit_ble_periphral_get_value'] = {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendValueInput("CHARACTERISTIC")
-      .setCheck("Number")
+      .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_GET_VALUE);
-    this.setOutput(true, 'Char');
+    this.setOutput(true,["Number","String"]);
     this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TOOLTIP);
   }
 };
@@ -52,7 +52,7 @@ Blockly.Blocks['linkit_ble_periphral_is_written'] = {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendValueInput("CHARACTERISTIC")
-      .setCheck("Number")
+      .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN);
     this.setOutput(true, 'Boolean');
@@ -65,9 +65,13 @@ Blockly.Blocks['linkit_ble_Characteristic'] = {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendValueInput("CHARACTERISTIC")
-      .setCheck("Number")
+      .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_CHARACTERISTIC);
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_CHARACTERISTIC_TYPE)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.VARIABLES_TYPE_NUMBER, "LBLECharacteristicInt"], [Blockly.Msg.VARIABLES_TYPE_STRING, "LBLECharacteristicString"]]), 'CHARACTERISTIC_TYPE');
     this.appendDummyInput()
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINKIT_SET_LBLE_ATTRIBUTE)

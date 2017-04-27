@@ -14,6 +14,7 @@
         </value>
         <statement name="BLE_CONTENT">
           <block type="linkit_ble_Characteristic" id="7" inline="false">
+            <field name="CHARACTERISTIC_TYPE">LBLECharacteristicInt</field>
             <field name="TYPE">LBLE_WRITE</field>
             <value name="CHARACTERISTIC">
               <block type="text" id="8">
