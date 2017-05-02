@@ -27,5 +27,5 @@
       "fileSystem": [ "write", "retainEntries", "directory" ]
    }, "storage", "https://raw.githubusercontent.com/MediaTek-Labs/*", "alarms" ],
    "update_url": "https://raw.githubusercontent.com/MediaTek-Labs/BlocklyDuino-for-LinkIt/update",
-   "version": "2.2.0"
+   "version": "2.2.1"
 }

@@ -45,7 +45,7 @@ Blockly.Blocks['initializes_setup'] = {
 };
 Blockly.Blocks['initializes_loop'] = {
   init: function() {
-    this.setHelpUrl(Blockly.Msg.INITIALIZES_SETUP_HELPURL);
+    this.setHelpUrl(Blockly.Msg.INITIALIZES_LOOP_HELPURL);
     this.setColour(Blockly.Blocks.initializes.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.INITIALIZES_LOOP_APPENDTEXT);
@@ -53,6 +53,6 @@ Blockly.Blocks['initializes_loop'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     //this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.INITIALIZES_SETUP_TOOLTIP);
+    this.setTooltip(Blockly.Msg.INITIALIZES_LOOP_TOOLTIP);
   }
 };
