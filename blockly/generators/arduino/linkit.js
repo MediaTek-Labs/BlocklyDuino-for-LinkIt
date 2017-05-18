@@ -237,7 +237,7 @@ Blockly.Arduino.mcs = function() {
   deviceid = deviceid.replace(/\"/g, "");
   devicekey = devicekey.replace(/\"/g, "");
 
-  Blockly.Arduino.definitions_['define_linkit_wifi_include2'] = '#include "MCS.h"\n';
+  Blockly.Arduino.definitions_['define_mcs_include2'] = '#include "MCS.h"\n';
   Blockly.Arduino.definitions_['set_MCS_device'] = 'MCSDevice mcs("'+deviceid+'", "'+devicekey+'");\n';
   var branch = Blockly.Arduino.statementToCode(this, 'CONTENT');
   branch = branch.replace(/(^\s+)|(\s+$)/g, "");
@@ -316,7 +316,7 @@ Blockly.Arduino.mcs_channel2_value = function() {
 
   /*var n = Blockly.Arduino.valueToCode(Blockly.Arduino.mcs_channel_value, 'CHANNEL_VALUE', Blockly.Arduino.ORDER_ATOMIC) || ''
   n = n.replace(/\"/g, "");*/
-  var code = channel_value+".set("+channel2_value+".value());\n";
+  var code = channel_value+'.set("'+channel2_value+'");\n';
   return code;
 };
 
@@ -343,6 +343,152 @@ Blockly.Arduino.mcs_channel_updated = function() {
   var code = channel_updated+".updated()";
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+//----------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------- MCS Lite -----------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------
+//
+
+Blockly.Arduino.mcslite = function() {
+  var deviceid = Blockly.Arduino.valueToCode(this, 'DEVICEID', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var devicekey = Blockly.Arduino.valueToCode(this, 'DEVICEKEY', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var serv = Blockly.Arduino.valueToCode(this, 'SERV', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var port = Blockly.Arduino.valueToCode(this, 'PORT', Blockly.Arduino.ORDER_ATOMIC) || ''
+
+  deviceid = deviceid.replace(/\"/g, "");
+  devicekey = devicekey.replace(/\"/g, "");
+
+  Blockly.Arduino.definitions_['define_mcslite_include'] = '#include <LWiFi.h>\n#include <HttpClient.h>\n';
+  Blockly.Arduino.definitions_['set_MCSLite_deviceID'] = 'char deviceId[] = "'+deviceid+'";';
+  Blockly.Arduino.definitions_['set_MCSLite_deviceKey'] = 'char deviceKey[] = "'+devicekey+'";\n';
+  Blockly.Arduino.definitions_['set_MCSLite_serv'] = 'char server[] = "'+serv+'";';
+  Blockly.Arduino.definitions_['set_MCSLite_port'] = 'int ws_port = '+port.toString()+';\n';
+  Blockly.Arduino.definitions_['set_MCSLite_switch_on'] = 'String switch_on = "{\"datachannelId\":\"switch\",\"values\":{\"value\":1}}";\n';
+  Blockly.Arduino.definitions_['set_MCSLite_switch_off'] = 'String switch_off = "{\"datachannelId\":\"switch\",\"values\":{\"value\":0}}";\n';
+
+  Blockly.Arduino.definitions_['set_MCSLite_rest_settings'] = 'String content;\nWiFiClient ws_client;\nString request;\n';
+ 
+
+  var code = '\n';
+  /*code += 'request += "GET /deviceId/";\n'
+  code += 'request += String(deviceId);\n'
+  code += 'request += "/deviceKey/";\n'
+  code += 'request += String(deviceKey);\n'
+  code += 'request += "/viewer HTTP/1.1\\r\\n";\n'
+  code += 'request += "Upgrade: websocket\\r\\n";\n'
+  code += 'request += "Connection: Upgrade\\r\\n";\n'
+  code += 'request += "Sec-WebSocket-Version: 13\\r\\n";\n'
+  code += 'request += "Sec-WebSocket-Key: L159VM0TWUzyDxwJEIEzjw==\\r\\n";\n'
+  code += 'request += "Host: ";\n'
+  code += 'request += String(server);\n'
+  code += 'request += "\\r\\nOrigin: null\\r\\n\\r\\n";\n'*/
+  return code;
+};
+/*
+Blockly.Arduino.mcslite_set_control_channel = function() {
+  var control_channel_id = Blockly.Arduino.valueToCode(this, 'CONTROL_CHANNEL', Blockly.Arduino.ORDER_ATOMIC) || ''
+  control_channel_id = control_channel_id.replace(/\"/g, "");
+  Blockly.Arduino.definitions_['set_MCS_control'+control_channel_id] = 'MCSControllerOnOff '+control_channel_id+'("'+control_channel_id+'");';
+  Blockly.Arduino.setups_['mcs_add_channel'+control_channel_id] = 'mcs.addChannel('+control_channel_id+');\n';
+  var code = '';
+  return code;
+};
+
+Blockly.Arduino.mcslite_set_display_channel = function() {
+  var display_channel_id = Blockly.Arduino.valueToCode(this, 'DISPLAY_CHANNEL', Blockly.Arduino.ORDER_ATOMIC) || ''
+  display_channel_id = display_channel_id.replace(/\"/g, "");
+  Blockly.Arduino.definitions_['set_MCS_display'+display_channel_id] = 'MCSDisplayOnOff '+display_channel_id+'("'+display_channel_id+'");\n';
+  Blockly.Arduino.setups_['mcs_add_channel'+display_channel_id] = 'mcs.addChannel('+display_channel_id+');\n';
+  var code = '';
+  return code;
+};
+
+Blockly.Arduino.mcslite_add_channel = function() {
+  var add_channel = Blockly.Arduino.valueToCode(this, 'ADD_CHANNEL', Blockly.Arduino.ORDER_ATOMIC) || ''
+  add_channel = add_channel.replace(/\"/g, "");
+  Blockly.Arduino.setups_['mcs_add_channel'+add_channel] = 'mcs.addChannel('+add_channel+');\n';
+  var code = '';
+  return code;
+};
+
+Blockly.Arduino.mcslite_connected = function() {
+  var code = "mcs.connected()";
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+Blockly.Arduino.mcslite_reconnect = function() {
+  var code = "mcs.connect();\n";
+  return code;
+};
+
+Blockly.Arduino.mcslite_wait_until_connected = function() {
+  Blockly.Arduino.setups_['mcs_wait_until_connected'] = "while(!mcs.connected()) { mcs.connect(); }\n";
+  var code = '';
+  return code;
+};
+
+Blockly.Arduino.mcslite_channel_valid = function() {
+  var channel_valid = Blockly.Arduino.valueToCode(this, 'CHANNEL_VALID', Blockly.Arduino.ORDER_ATOMIC) || ''
+  channel_valid = channel_valid.replace(/\"/g, "");
+  var code = channel_valid+".valid()";
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+Blockly.Arduino.mcslite_channel_value = function() {
+  var type = this.getFieldValue('TYPE');
+  var channel_value = Blockly.Arduino.valueToCode(this, 'CHANNEL_VALUE', Blockly.Arduino.ORDER_ATOMIC) || ''
+  channel_value = channel_value.replace(/\"/g, "");
+
+  controlch = channel_value;
+
+  var code = channel_value+".value()";
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+Blockly.Arduino.mcslite_channel2_value = function() {
+  var type = this.getFieldValue('TYPE');
+  var channel_value = Blockly.Arduino.valueToCode(this, 'CHANNEL2_VALUE', Blockly.Arduino.ORDER_ATOMIC) || ''
+  channel_value = channel_value.replace(/\"/g, "");
+
+  var channel2_value = Blockly.Arduino.valueToCode(this, 'SET_VALUE', Blockly.Arduino.ORDER_ATOMIC) || ''
+  channel2_value = channel2_value.replace(/\"/g, "");
+*/
+  /*var n = Blockly.Arduino.valueToCode(Blockly.Arduino.mcs_channel_value, 'CHANNEL_VALUE', Blockly.Arduino.ORDER_ATOMIC) || ''
+  n = n.replace(/\"/g, "");*/
+  /*var code = channel_value+".set("+channel2_value+".value());\n";
+  return code;
+};
+
+Blockly.Arduino.mcslite_process = function() {
+  Blockly.Arduino.setups_['add_serialport'] = 'Serial.begin(9600);';
+
+  var code = "while (!mcs.connected()) {\n";
+  code = code+"mcs.connect();\n";
+  code = code+"if (mcs.connected()) { Serial.println("+'"MCS 已重新連線"'+"); }\n}\n";
+  code = code+"mcs.process(1000);\n";
+  return code;
+};
+Blockly.Arduino.mcslite_channel_wait_until_read_value = function() {
+  var channel = Blockly.Arduino.valueToCode(this, 'CHANNEL', Blockly.Arduino.ORDER_ATOMIC) || ''
+  channel = channel.replace(/\"/g, "");
+  Blockly.Arduino.setups_['mcs_channel_wait_until_read_value'+channel] = "while(!"+channel+".valid()) { "+channel+".value(); }\n";
+  var code = '';
+  return code;
+};
+
+Blockly.Arduino.mcslite_channel_updated = function() {
+  var channel_updated = Blockly.Arduino.valueToCode(this, 'CHANNEL_UPDATED', Blockly.Arduino.ORDER_ATOMIC) || ''
+  channel_updated = channel_updated.replace(/\"/g, "");
+  var code = channel_updated+".updated()";
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+*/
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------- End of MCSLite ---------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 Blockly.Arduino.linkit_wifi_wait_until_ready = function() {
 

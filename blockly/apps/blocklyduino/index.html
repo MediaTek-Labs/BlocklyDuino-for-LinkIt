@@ -939,6 +939,83 @@
     </block>
     <block type="linkit_wifi_disconnect"></block>
   </category>
+  <category id="category_linkit_mcs">
+    <block type="mcs">
+        <value name="DEVICEID">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="DEVICEKEY">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="mcslite">
+        <value name="DEVICEIDL">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="DEVICEKEYL">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="SERV">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="PORT">
+            <block type="math_number">
+                <field name="NUM"></field>
+            </block>
+        </value>
+    </block>
+    <block type="mcs_set_control_channel">
+        <value name="CONTROL_CHANNEL">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="mcs_set_display_channel">
+        <value name="DISPLAY_CHANNEL">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="mcs_process"></block>
+    <block type="mcs_channel_value">
+        <value name="CHANNEL_VALUE">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="mcs_channel2_value">
+        <value name="CHANNEL2_VALUE">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+        <value name="SET_VALUE">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+    <block type="mcs_channel_updated">
+        <value name="CHANNEL_UPDATED">
+            <block type="text">
+                <field name="TEXT"></field>
+            </block>
+        </value>
+    </block>
+  </category>
   <category id="category_linkit_ble">
     <block type="linkit_ble_wait_until_ready"></block>
     <block type="linkit_ble_ready"></block>
@@ -1027,61 +1104,6 @@
         <value name="RSSI">
             <block type="math_number">
                 <field name="NUM">-40</field>
-            </block>
-        </value>
-    </block>
-  </category>
-  <category id="category_linkit_mcs">
-    <block type="mcs">
-        <value name="DEVICEID">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-        <value name="DEVICEKEY">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-    </block>
-    <block type="mcs_set_control_channel">
-        <value name="CONTROL_CHANNEL">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-    </block>
-    <block type="mcs_set_display_channel">
-        <value name="DISPLAY_CHANNEL">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-    </block>
-    <block type="mcs_process"></block>
-    <block type="mcs_channel_value">
-        <value name="CHANNEL_VALUE">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-    </block>
-    <block type="mcs_channel2_value">
-        <value name="CHANNEL2_VALUE">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-        <value name="SET_VALUE">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-    </block>
-    <block type="mcs_channel_updated">
-        <value name="CHANNEL_UPDATED">
-            <block type="text">
-                <field name="TEXT"></field>
             </block>
         </value>
     </block>
