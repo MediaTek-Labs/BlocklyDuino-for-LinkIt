@@ -46,7 +46,7 @@ function newFile() {
   hasWriteAccess = false;
   Entryflg = 0;
   handleDocumentChange(null);
-  var xmlDoc = Blockly.Xml.textToDom('<xml xmlns="http://www.w3.org/1999/xhtml"><block type="initializes_setup" id="0" x="10" y="10"><next><block type="initializes_loop" id="1"></block></next></block></xml>');
+  var xmlDoc = Blockly.Xml.textToDom('<xml xmlns="http://www.w3.org/1999/xhtml"><block type="initializes_setup" id="0" x="300" y="10"><next><block type="initializes_loop" id="1"></block></next></block></xml>');
   var checkInit = function(){
     if(Blockly.mainWorkspace == null){
   	  setTimeout(checkInit, 200);

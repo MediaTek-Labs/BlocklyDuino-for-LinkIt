@@ -261,8 +261,7 @@
 <category id="category_inout">
     <category id="category_digital">
         <block type="inout_highlow"></block>
-        <block type="inout_digitalpin"></block>
-        <block type="inout_buildin_led"></block>
+        <!--<block type="inout_digitalpin"></block>-->
         <block type="inout_digital_write"></block>
         <block type="inout_custom_digital_write">
             <value name="PIN">
@@ -276,8 +275,10 @@
                 </block>
             </value>
         </block>
-        <block type="inout_digital_read"></block>
+        <!--<block type="inout_digital_read"></block>-->
+        <block type="inout_custom_digital_read"></block>
         <block type="inout_enable_pullup"></block>
+        <block type="inout_buildin_led"></block>
     </category>
     <category id="category_analog">
         <block type="inout_analog_write">
