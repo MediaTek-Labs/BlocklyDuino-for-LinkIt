@@ -202,7 +202,7 @@ function setCharacter(){
   $("#button_new").attr("data-tooltip",Blockly.Msg.BUTTON_NEW);
   $("#button_save").attr("data-tooltip",Blockly.Msg.BUTTON_SAVE);
   $("#button_open").attr("data-tooltip",Blockly.Msg.BUTTON_OPEN);
-  $("#button_discard").text(Blockly.Msg.DROPDOWN_DISCARD);
+  //$("#button_discard").text(Blockly.Msg.DROPDOWN_DISCARD);
   $("#button_save_as").text(Blockly.Msg.DROPDOWN_SAVE_AS);
   $("#dialog0_title").text(Blockly.Msg.DIALOG0_TITLE);
   $("#dialog1_title").text(Blockly.Msg.DIALOG1_TITLE);
