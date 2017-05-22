@@ -252,7 +252,7 @@ Blockly.Arduino.mcs = function() {
 Blockly.Arduino.mcs_set_control_channel = function() {
   var control_channel_id = Blockly.Arduino.valueToCode(this, 'CONTROL_CHANNEL', Blockly.Arduino.ORDER_ATOMIC) || ''
   control_channel_id = control_channel_id.replace(/\"/g, "");
-  Blockly.Arduino.definitions_['set_MCS_control'+control_channel_id] = 'MCSControllerOnOff '+control_channel_id+'("'+control_channel_id+'");';
+  Blockly.Arduino.definitions_['set_MCS_control'+control_channel_id] = 'MCSControllerInteger '+control_channel_id+'("'+control_channel_id+'");';
   Blockly.Arduino.setups_['mcs_add_channel'+control_channel_id] = 'mcs.addChannel('+control_channel_id+');\n';
   var code = '';
   return code;
