@@ -42,7 +42,7 @@
         <!--<block type="inout_custom_analog_read"></block>-->
     </category>
     <category id="category_others">
-        <block type="pulsein"></block>
+        <!--<block type="pulsein"></block>-->
         <block type="tone"></block>
         <block type="custom_tone">
             <value name="FREQ">
