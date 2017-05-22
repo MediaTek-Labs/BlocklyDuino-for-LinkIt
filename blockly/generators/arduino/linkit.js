@@ -83,7 +83,7 @@ Blockly.Arduino.linkit_ble_periphral = function() {
   Blockly.Arduino.definitions_['define_linkit_ble_periphral_include_service'] = 'LBLEService __periphralService("' + service + '");';
 
   Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
-  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(100); }\n';
 
   var branch = Blockly.Arduino.statementToCode(this, 'BLE_CONTENT');
   branch = branch.replace(/(^\s+)|(\s+$)/g, "");
@@ -119,7 +119,7 @@ Blockly.Arduino.linkit_ble_periphral = function() {
   Blockly.Arduino.definitions_['define_linkit_ble_periphral_include_characteristic'] = 'LBLECharacteristicInt __periphralCharacteristic("' + characteristic + '", ' + characteristicType + ');';
 
   Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
-  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(100); }\n';
 
   Blockly.Arduino.setups_['define_linkit_ble_periphral_service_config'] = '__periphralService.addAttribute(__periphralCharacteristic);';
   Blockly.Arduino.setups_['define_linkit_ble_periphral_config'] = 'LBLEPeripheral.addService(__periphralService);';
@@ -143,7 +143,7 @@ Blockly.Arduino.linkit_ble_central_get_peripheral_with_index = function() {
   Blockly.Arduino.definitions_['define_linkit_ble_central_include'] = '#include <LBLECentral.h>';
 
   Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
-  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(100); }\n';
   Blockly.Arduino.setups_['define_linkit_ble_setup_central_scan'] = 'LBLECentral.scan();';
 
   var code = '__scanner.getName(' + index + ')';
@@ -156,7 +156,7 @@ Blockly.Arduino.linkit_ble_central_scan_count = function() {
   Blockly.Arduino.definitions_['define_linkit_ble_central_include'] = '#include <LBLECentral.h>';
 
   Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
-  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(100); }\n';
   Blockly.Arduino.setups_['define_linkit_ble_setup_central_scan'] = 'LBLECentral.scan();';
 
   var code = 'LBLECentral.getPeripheralCount()';
@@ -169,7 +169,7 @@ Blockly.Arduino.linkit_ble_central_scan = function() {
   Blockly.Arduino.definitions_['define_linkit_ble_central_include'] = '#include <LBLECentral.h>';
 
   Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
-  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(100); }\n';
   Blockly.Arduino.setups_['define_linkit_ble_setup_central_scan'] = 'LBLECentral.scan();';
 
   var code = "\n";
@@ -205,7 +205,7 @@ Blockly.Arduino.linkit_ble_wait_until_ready = function() {
   Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
 
   Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
-  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(1000); }\n';
+  Blockly.Arduino.setups_['define_linkit_ble_setup_wait_loop'] = 'while (!LBLE.ready()) { delay(100); }\n';
 
   var code = "\n";
   return code;
@@ -368,7 +368,7 @@ Blockly.Arduino.mcslite = function() {
   Blockly.Arduino.definitions_['set_MCSLite_switch_off'] = 'String switch_off = "{\"datachannelId\":\"switch\",\"values\":{\"value\":0}}";\n';
 
   Blockly.Arduino.definitions_['set_MCSLite_rest_settings'] = 'String content;\nWiFiClient ws_client;\nString request;\n';
- 
+
 
   var code = '\n';
   /*code += 'request += "GET /deviceId/";\n'
