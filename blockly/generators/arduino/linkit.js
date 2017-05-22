@@ -242,10 +242,9 @@ Blockly.Arduino.mcs = function() {
   var branch = Blockly.Arduino.statementToCode(this, 'CONTENT');
   branch = branch.replace(/(^\s+)|(\s+$)/g, "");
 
-  Blockly.Arduino.setups_['manual_add123'] = branch;
+  var code = branch;
 
-  Blockly.Arduino.setups_['mcs_wait_until_connected'] = "while(!mcs.connected()) { mcs.connect(); }\n";
-  var code = '\n';
+  code += "while(!mcs.connected()) { mcs.connect(); }\n";
   return code;
 };
 
@@ -316,7 +315,7 @@ Blockly.Arduino.mcs_channel2_value = function() {
 
   /*var n = Blockly.Arduino.valueToCode(Blockly.Arduino.mcs_channel_value, 'CHANNEL_VALUE', Blockly.Arduino.ORDER_ATOMIC) || ''
   n = n.replace(/\"/g, "");*/
-  var code = channel_value+'.set("'+channel2_value+'");\n';
+  var code = channel_value+'.set('+channel2_value+');\n';
   return code;
 };
 
@@ -501,9 +500,8 @@ Blockly.Arduino.linkit_wifi_wait_until_ready = function() {
   Blockly.Arduino.definitions_['define_linkit_wifi_ssid'] = 'char _lwifi_ssid[] = "' + ssid + '";';
   Blockly.Arduino.definitions_['define_linkit_wifi_pass'] = 'char _lwifi_pass[] = "' + password + '";';
 
-  Blockly.Arduino.setups_['define_linkit_wifi_setup'] = 'while (WiFi.begin(_lwifi_ssid, _lwifi_pass) != WL_CONNECTED) { delay(1000); }\n';
+  var code = 'while (WiFi.begin(_lwifi_ssid, _lwifi_pass) != WL_CONNECTED) { delay(1000); }\n';
 
-  var code = "\n";
   return code;
 };
 
