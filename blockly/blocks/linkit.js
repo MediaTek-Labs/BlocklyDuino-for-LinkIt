@@ -377,7 +377,7 @@ Blockly.Blocks['mcs_channel_value'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_CHECK_MCS_LED_VALUE_TAIL);
     this.setInputsInline(true);
-    this.setOutput(true, profile.common.number_type);
+    this.setOutput(true);
     this.setTooltip(Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP);
   }
 };

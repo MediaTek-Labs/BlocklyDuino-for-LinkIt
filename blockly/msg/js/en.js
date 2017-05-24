@@ -1204,5 +1204,5 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_GET_VALUE = "Characteristic ";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_GET_VALUE_TAIL = " getValue()";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN = "Characteristic ";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN_TAIL = " isWritten()";
-Blockly.Msg.VARIABLES_TYPE_ONOFF = "Switch";
-Blockly.Msg.VARIABLES_TYPE_CATEGORY = "Category";
+Blockly.Msg.VARIABLES_TYPE_ONOFF = "Switch (boolean)";
+Blockly.Msg.VARIABLES_TYPE_CATEGORY = "Category (String)";
