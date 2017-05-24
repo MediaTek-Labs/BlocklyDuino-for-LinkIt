@@ -253,6 +253,7 @@ Blockly.Blocks['mcs'] = {
     this.setTooltip(Blockly.Msg.LINKIT_SET_MCS_TOOLTIP);
   }
 };
+
 Blockly.Blocks['mcs_set_control_channel'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_MCS_HELPURL);
@@ -260,15 +261,11 @@ Blockly.Blocks['mcs_set_control_channel'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TITLE)
       .appendField(new Blockly.FieldDropdown([
-        [Blockly.Msg.VARIABLES_TYPE_NUMBER,"(int)"],
-        [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_INT,"(unsigned int)"],
-        [Blockly.Msg.VARIABLES_TYPE_BYTE,"(byte)"],
-        [Blockly.Msg.VARIABLES_TYPE_WORD,"(word)"],
-        [Blockly.Msg.VARIABLES_TYPE_LONG,"(long)"],
-        [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_LONG,"(unsigned long)"],
-        [Blockly.Msg.VARIABLES_TYPE_FLOAT,"(float)"],
-        [Blockly.Msg.VARIABLES_TYPE_DOUBLE,"(double)"],
-        [Blockly.Msg.VARIABLES_TYPE_CHAR,"(char)"]
+        [Blockly.Msg.VARIABLES_TYPE_ONOFF,"boolean"],
+        [Blockly.Msg.VARIABLES_TYPE_CATEGORY,"category"],
+        [Blockly.Msg.VARIABLES_TYPE_NUMBER,"int"],
+        [Blockly.Msg.VARIABLES_TYPE_FLOAT,"float"],
+        [Blockly.Msg.VARIABLES_TYPE_STRING,"String"]
       ]), "TYPE")
       .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TAIL);
     this.appendValueInput("CONTROL_CHANNEL")
@@ -286,15 +283,11 @@ Blockly.Blocks['mcs_set_display_channel'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TITLE)
       .appendField(new Blockly.FieldDropdown([
-        [Blockly.Msg.VARIABLES_TYPE_NUMBER,"(int)"],
-        [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_INT,"(unsigned int)"],
-        [Blockly.Msg.VARIABLES_TYPE_BYTE,"(byte)"],
-        [Blockly.Msg.VARIABLES_TYPE_WORD,"(word)"],
-        [Blockly.Msg.VARIABLES_TYPE_LONG,"(long)"],
-        [Blockly.Msg.VARIABLES_TYPE_UNSIGNED_LONG,"(unsigned long)"],
-        [Blockly.Msg.VARIABLES_TYPE_FLOAT,"(float)"],
-        [Blockly.Msg.VARIABLES_TYPE_DOUBLE,"(double)"],
-        [Blockly.Msg.VARIABLES_TYPE_CHAR,"(char)"]
+        [Blockly.Msg.VARIABLES_TYPE_ONOFF,"boolean"],
+        [Blockly.Msg.VARIABLES_TYPE_CATEGORY,"category"],
+        [Blockly.Msg.VARIABLES_TYPE_NUMBER,"int"],
+        [Blockly.Msg.VARIABLES_TYPE_FLOAT,"float"],
+        [Blockly.Msg.VARIABLES_TYPE_STRING,"String"]
       ]), "TYPE")
       .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL2_TAIL);
     this.appendValueInput("DISPLAY_CHANNEL")
@@ -388,9 +381,7 @@ Blockly.Blocks['mcs_channel2_value'] = {
       .setCheck("String");
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_CHECK_MCS_REMOTE_VALUE_TAIL);
-    this.appendValueInput("SET_VALUE")
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .setCheck("String");
+    this.appendValueInput("SET_VALUE");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);

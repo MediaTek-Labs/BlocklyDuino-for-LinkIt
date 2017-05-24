@@ -1199,3 +1199,7 @@ Blockly.Msg.LINKIT_SET_LBLE_WRITE = "Write";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TOOLTIP = "";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_GET_VALUE = "Characteristic getValue()";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN = "Characteristic isWritten()";
+
+
+Blockly.Msg.VARIABLES_TYPE_ONOFF = "Switch";
+Blockly.Msg.VARIABLES_TYPE_CATEGORY = "Category";
