@@ -227,13 +227,25 @@
         </value>
     </block>
     <block type="inout_analog_read"></block>
-    <block type="inout_custom_analog_write"></block>
-        <value name="NUM">
+    <block type="inout_custom_analog_write">
+        <value name="PIN_ANALOGWRITE">
             <block type="math_number">
-                <field name="NUM">255</field>
+                <field name="NUM">0</field>
             </block>
         </value>
-    <block type="inout_custom_analog_read"></block>
+        <value name="NUM">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+    </block>
+    <block type="inout_custom_analog_read">
+        <value name="PIN_ANALOGREAD">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+    </block>
 </category>
 <category id="category_others">
     <!--<block type="pulsein"></block>-->

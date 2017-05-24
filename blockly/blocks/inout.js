@@ -182,6 +182,7 @@ Blockly.Blocks['inout_custom_analog_read'] = {
     this.appendValueInput("PIN_ANALOGREAD")
       .setCheck("Number")
       .appendField(Blockly.Msg.INOUT_ANALOG_READ_APPENDTEXT);
+    this.setInputsInline(true);
     this.setOutput(true, 'Number');
     this.setTooltip(Blockly.Msg.INOUT_ANALOG_READ_TOOLTIP);
   }
