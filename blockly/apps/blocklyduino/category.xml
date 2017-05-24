@@ -19,19 +19,19 @@
                 </block>
             </value>
         </block>
-        <!--<block type="inout_digital_read"></block>-->
+        <block type="inout_digital_read"></block>
         <block type="inout_custom_digital_read"></block>
         <block type="inout_enable_pullup"></block>
         <block type="inout_buildin_led"></block>
     </category>
     <category id="category_analog">
-        <!--<block type="inout_analog_write">
+        <block type="inout_analog_write">
             <value name="NUM">
                 <block type="math_number">
                     <field name="NUM">255</field>
                 </block>
             </value>
-        </block>-->
+        </block>
         <block type="inout_analog_read"></block>
         <block type="inout_custom_analog_write"></block>
             <value name="NUM">
@@ -39,7 +39,7 @@
                     <field name="NUM">255</field>
                 </block>
             </value>
-        <!--<block type="inout_custom_analog_read"></block>-->
+        <block type="inout_custom_analog_read"></block>
     </category>
     <category id="category_others">
         <!--<block type="pulsein"></block>-->

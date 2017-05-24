@@ -438,6 +438,7 @@ Blockly.Msg.INOUT_ANALOG_WRITE_TOOLTIP = "Write analog value between 0 and 255 t
 Blockly.Msg.INOUT_DIGITALPIN_TEXT = "數位寫入 Pin";
 Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT_PIN = "數位讀取 Pin";
 Blockly.Msg.INOUT_DIGITAL_READ_APPENDTEXT_PULLUP = "pullup";  // untranslated
+Blockly.Msg.INOUT_DIGITAL_READ_PULLUP_APPENDTEXT_PIN = "數位讀取 (預設上拉) Pin";
 Blockly.Msg.INOUT_DIGITAL_READ_HELPURL = "http://arduino.cc/en/Reference/DigitalRead";  // untranslated
 Blockly.Msg.INOUT_DIGITAL_READ_TOOLTIP = "";  // untranslated
 Blockly.Msg.INOUT_ENABLE_INTERNAL_PULLUP_PIN = "設置內部上拉電阻於 Pin";
