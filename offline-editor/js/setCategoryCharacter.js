@@ -70,5 +70,6 @@ function setCategoryCharacter() {
   $('#category_linkit_wifi_advanced').attr('name',Blockly.Msg.CATEGORY_LINKIT_WIFI_ADVANCED);
   $('#category_linkit_mcs').attr('name',Blockly.Msg.CATEGORY_LINKIT_MCS);
   $('#category_linkit_ble').attr('name',Blockly.Msg.CATEGORY_LINKIT_BLE);
+  $('#category_linkit_ble_ibeacon').attr('name',Blockly.Msg.CATEGORY_LINKIT_BLE_BEACON);
   $('label[for="chbox_category_linkit"]').text(Blockly.Msg.CATEGORY_LINKIT);
 }
