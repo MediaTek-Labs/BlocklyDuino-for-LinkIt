@@ -222,15 +222,15 @@ Blockly.Blocks['custom_tone'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.INOUT_TONE_HELPURL);
     this.setColour(Blockly.Blocks.inout.HUE);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_PIN)
-      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
+    this.appendValueInput("PIN")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_PIN);
     this.appendValueInput("FREQ")
       .setCheck("Number")
       .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_FREQ);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_DURATION)
-      .appendField(new Blockly.FieldTextInput("300"),"DURATION");
+    this.appendValueInput("DURATION")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.INOUT_TONE_APPENDTEXT_DURATION);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);

@@ -64,9 +64,19 @@
     <!--<block type="pulsein"></block>-->
     <block type="tone"></block>
     <block type="custom_tone">
+        <value name="PIN">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
         <value name="FREQ">
             <block type="math_number">
                 <field name="NUM">255</field>
+            </block>
+        </value>
+        <value name="DURATION">
+            <block type="math_number">
+                <field name="NUM">300</field>
             </block>
         </value>
     </block>
