@@ -1001,192 +1001,191 @@
 <block type="involt_receivevalue"></block>
 </category-->
 <sep></sep>
-<category id="category_linkit">
-  <category id="category_linkit_wifi">
-    <block type="linkit_wifi_wait_until_ready">
-        <value name="SSID">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-        <value name="PASSWORD">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-    </block>
-    <block type="linkit_wifi_disconnect"></block>
-  </category>
-  <category id="category_linkit_mcs">
-    <block type="mcs">
-        <value name="DEVICEID">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-        <value name="DEVICEKEY">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-    </block>
-    <block type="mcslite">
-        <value name="DEVICEIDL">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-        <value name="DEVICEKEYL">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-        <value name="SERV">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-        <value name="PORT">
-            <block type="math_number">
-                <field name="NUM"></field>
-            </block>
-        </value>
-    </block>
-    <block type="mcs_set_control_channel">
-        <value name="CONTROL_CHANNEL">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-    </block>
-    <block type="mcs_set_display_channel">
-        <value name="DISPLAY_CHANNEL">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-    </block>
-    <block type="mcs_process"></block>
-    <block type="mcs_channel_value">
-        <value name="CHANNEL_VALUE">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-    </block>
-    <block type="mcs_channel2_value">
-        <value name="CHANNEL2_VALUE">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-        <value name="SET_VALUE">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-    </block>
-    <block type="mcs_channel_updated">
-        <value name="CHANNEL_UPDATED">
-            <block type="text">
-                <field name="TEXT"></field>
-            </block>
-        </value>
-    </block>
-  </category>
-  <category id="category_linkit_ble">
-    <block type="linkit_ble_wait_until_ready"></block>
-    <block type="linkit_ble_ready"></block>
-    <block type="linkit_ble_get_address"></block>
-    <block type="linkit_ble_central_scan"></block>
-    <block type="linkit_ble_central_scan_count"></block>
-    <block type="linkit_ble_central_get_peripheral_with_index">
-      <value name="INDEX">
-          <block type="math_number">
-              <field name="NUM">0</field>
-          </block>
-      </value>
-    </block>
-
-    <!--
-    <block type="linkit_ble_periphral">
-        <value name="NAME">
-            <block type="text">
-                <field name="TEXT">LinkIt 7697</field>
-            </block>
-        </value>
-        <value name="SERVICE">
-            <block type="text">
-                <field name="TEXT">951A6899-6F0F-456F-8AE0-5E0B4352D85B</field>
-            </block>
-        </value>
-        <value name="CHARACTERISTIC">
-            <block type="text">
-                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
-            </block>
-        </value>
-    </block>
-    -->
-
-    <block type="linkit_ble_periphral">
-        <value name="NAME">
-            <block type="text">
-                <field name="TEXT">LinkIt 7697</field>
-            </block>
-        </value>
-        <value name="SERVICE">
-            <block type="text">
-                <field name="TEXT">951A6899-6F0F-456F-8AE0-5E0B4352D85B</field>
-            </block>
-        </value>
-    </block>
-
-    <block type="linkit_ble_Characteristic">
-        <value name="CHARACTERISTIC">
-            <block type="text">
-                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
-            </block>
-        </value>
-    </block>
-    <>
-    <block type="linkit_ble_periphral_is_written">
-        <value name="CHARACTERISTIC">
-            <block type="text">
-                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
-            </block>
-        </value>
-    </block>
-    <block type="linkit_ble_periphral_get_value">
-        <value name="CHARACTERISTIC">
-            <block type="text">
-                <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
-            </block>
-        </value>
-    </block>
-    <block type="linkit_ble_ibeacon">
-        <value name="UUID">
-            <block type="text">
-                <field name="TEXT">74278BDA-B644-4520-8F0C-720EAF059935</field>
-            </block>
-        </value>
-        <value name="MAJOR">
-            <block type="math_number">
-                <field name="NUM">1</field>
-            </block>
-        </value>
-        <value name="MINOR">
-            <block type="math_number">
-                <field name="NUM">2</field>
-            </block>
-        </value>
-        <value name="RSSI">
-            <block type="math_number">
-                <field name="NUM">-40</field>
-            </block>
-        </value>
-    </block>
-  </category>
+<category id="category_linkit_wifi">
+<block type="linkit_wifi_wait_until_ready">
+    <value name="SSID">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+    <value name="PASSWORD">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+</block>
+<block type="linkit_wifi_disconnect"></block>
 </category>
+<category id="category_linkit_mcs">
+<block type="mcs">
+    <value name="DEVICEID">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+    <value name="DEVICEKEY">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+</block>
+<block type="mcslite">
+    <value name="DEVICEIDL">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+    <value name="DEVICEKEYL">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+    <value name="SERV">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+    <value name="PORT">
+        <block type="math_number">
+            <field name="NUM"></field>
+        </block>
+    </value>
+</block>
+<block type="mcs_set_control_channel">
+    <value name="CONTROL_CHANNEL">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+</block>
+<block type="mcs_set_display_channel">
+    <value name="DISPLAY_CHANNEL">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+</block>
+<block type="mcs_process"></block>
+<block type="mcs_channel_value">
+    <value name="CHANNEL_VALUE">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+</block>
+<block type="mcs_channel2_value">
+    <value name="CHANNEL2_VALUE">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+    <value name="SET_VALUE">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+</block>
+<block type="mcs_channel_updated">
+    <value name="CHANNEL_UPDATED">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+</block>
+</category>
+<category id="category_linkit_ble">
+<block type="linkit_ble_wait_until_ready"></block>
+<block type="linkit_ble_ready"></block>
+<block type="linkit_ble_get_address"></block>
+<block type="linkit_ble_central_scan"></block>
+<block type="linkit_ble_central_scan_count"></block>
+<block type="linkit_ble_central_get_peripheral_with_index">
+  <value name="INDEX">
+      <block type="math_number">
+          <field name="NUM">0</field>
+      </block>
+  </value>
+</block>
+
+<!--
+<block type="linkit_ble_periphral">
+    <value name="NAME">
+        <block type="text">
+            <field name="TEXT">LinkIt 7697</field>
+        </block>
+    </value>
+    <value name="SERVICE">
+        <block type="text">
+            <field name="TEXT">951A6899-6F0F-456F-8AE0-5E0B4352D85B</field>
+        </block>
+    </value>
+    <value name="CHARACTERISTIC">
+        <block type="text">
+            <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+        </block>
+    </value>
+</block>
+-->
+
+<block type="linkit_ble_periphral">
+    <value name="NAME">
+        <block type="text">
+            <field name="TEXT">LinkIt 7697</field>
+        </block>
+    </value>
+    <value name="SERVICE">
+        <block type="text">
+            <field name="TEXT">951A6899-6F0F-456F-8AE0-5E0B4352D85B</field>
+        </block>
+    </value>
+</block>
+
+<block type="linkit_ble_Characteristic">
+    <value name="CHARACTERISTIC">
+        <block type="text">
+            <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+        </block>
+    </value>
+</block>
+<>
+<block type="linkit_ble_periphral_is_written">
+    <value name="CHARACTERISTIC">
+        <block type="text">
+            <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+        </block>
+    </value>
+</block>
+<block type="linkit_ble_periphral_get_value">
+    <value name="CHARACTERISTIC">
+        <block type="text">
+            <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+        </block>
+    </value>
+</block>
+<block type="linkit_ble_ibeacon">
+    <value name="UUID">
+        <block type="text">
+            <field name="TEXT">74278BDA-B644-4520-8F0C-720EAF059935</field>
+        </block>
+    </value>
+    <value name="MAJOR">
+        <block type="math_number">
+            <field name="NUM">1</field>
+        </block>
+    </value>
+    <value name="MINOR">
+        <block type="math_number">
+            <field name="NUM">2</field>
+        </block>
+    </value>
+    <value name="RSSI">
+        <block type="math_number">
+            <field name="NUM">-40</field>
+        </block>
+    </value>
+</block>
+</category>
+
 </xml>
     <div class="info">
         <label id="info_filename">Filename:</label><span id="info_title"></span>
