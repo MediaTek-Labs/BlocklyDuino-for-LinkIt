@@ -1171,6 +1171,7 @@ Blockly.Msg.CATEGORY_LINKIT_MCSLITE = "MCS";
 Blockly.Msg.LINKIT_MCSLITE_LED_UPDATED = "Controller Channel Updated";
 // BLE
 Blockly.Msg.CATEGORY_LINKIT_BLE = "BLE";
+Blockly.Msg.CATEGORY_LINKIT_BLE_BEACON = "BLE Beacon";
 Blockly.Msg.LINKIT_SET_BLE_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth";
 Blockly.Msg.LINKIT_SET_BLE_TOOLTIP = "";
 Blockly.Msg.LINKIT_SET_BLE_GET_ADDRESS_TITLE = "Get BLE Device Address";

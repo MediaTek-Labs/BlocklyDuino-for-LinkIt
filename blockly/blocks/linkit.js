@@ -186,6 +186,7 @@ Blockly.Blocks['linkit_ble_ibeacon'] = {
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_IBEACON_TITLE)
+      .setAlign(Blockly.ALIGN_RIGHT);
       //.appendField(new Blockly.FieldImage(Blockly.Blocks.linkit.image, 64, 43));
     this.appendValueInput("UUID")
       .setCheck("String")
