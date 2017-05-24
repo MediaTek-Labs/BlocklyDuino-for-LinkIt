@@ -284,7 +284,13 @@
         </value>
     </block>
     <block type="inout_enable_pullup"></block>
-    <block type="inout_custom_digital_read_pullup"></block>
+    <block type="inout_custom_digital_read_pullup">
+        <value name="PIN_READ">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+    </block>
     <block type="inout_buildin_led"></block>
 </category>
 <category id="category_analog">
