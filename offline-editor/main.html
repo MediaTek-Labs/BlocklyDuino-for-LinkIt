@@ -265,8 +265,8 @@
     <block type="inout_digital_write"></block>
     <block type="inout_custom_digital_write">
         <value name="PIN">
-            <block type="inout_digitalpin">
-                <field name="PIN">1</field>
+            <block type="math_number">
+                <field name="NUM">1</field>
             </block>
         </value>
         <value name="STAT">
@@ -276,7 +276,13 @@
         </value>
     </block>
     <block type="inout_digital_read"></block>
-    <block type="inout_custom_digital_read"></block>
+    <block type="inout_custom_digital_read">
+        <value name="PIN_READ">
+            <block type="math_number">
+                <field name="NUM">1</field>
+            </block>
+        </value>
+    </block>
     <block type="inout_enable_pullup"></block>
     <block type="inout_custom_digital_read_pullup"></block>
     <block type="inout_buildin_led"></block>
@@ -1042,12 +1048,12 @@
     </value>
     <value name="SERV">
         <block type="text">
-            <field name="TEXT"></field>
+            <field name="TEXT">192.168.1.241</field>
         </block>
     </value>
     <value name="PORT">
         <block type="math_number">
-            <field name="NUM"></field>
+            <field name="NUM">8000</field>
         </block>
     </value>
 </block>
@@ -1075,11 +1081,6 @@
 </block>
 <block type="mcs_channel2_value">
     <value name="CHANNEL2_VALUE">
-        <block type="text">
-            <field name="TEXT"></field>
-        </block>
-    </value>
-    <value name="SET_VALUE">
         <block type="text">
             <field name="TEXT"></field>
         </block>
@@ -1147,7 +1148,7 @@
         </block>
     </value>
 </block>
-<>
+
 <block type="linkit_ble_periphral_is_written">
     <value name="CHARACTERISTIC">
         <block type="text">

@@ -1151,6 +1151,7 @@ Blockly.Msg.LINKIT_SET_MCSLITE_WIFI = "Connect to MCSLite";
 Blockly.Msg.LINKIT_SET_MCSLITE_DEVICEID = "DeviceID";
 Blockly.Msg.LINKIT_SET_MCSLITE_DEVICEKEY = "DeviceKey";
 Blockly.Msg.LINKIT_SET_MCSLITE_SERV = "IP address";
+Blockly.Msg.LINKIT_SET_MCSLITE_SERV = "Port";
 Blockly.Msg.LINKIT_SET_MCSLITE_CHANNEL1_TITLE = "Add MCS ";
 Blockly.Msg.LINKIT_SET_MCSLITE_CHANNEL1_TAIL = "Controller channel";
 Blockly.Msg.LINKIT_SET_MCSLITE_CHANNEL2_TAIL = "Display channel";

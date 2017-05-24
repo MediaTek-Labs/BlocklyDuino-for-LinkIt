@@ -457,7 +457,7 @@ Blockly.Blocks['mcslite'] = {
     this.appendValueInput("PORT")
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.LINKIT_SET_MCSLITE_SERV);
+      .appendField(Blockly.Msg.LINKIT_SET_MCSLITE_PORT);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.LINKIT_SET_MCSLITE_TOOLTIP);

@@ -1151,6 +1151,7 @@ Blockly.Msg.LINKIT_SET_MCSLITE_WIFI = "Connect to MCSLite";
 Blockly.Msg.LINKIT_SET_MCSLITE_DEVICEID = "DeviceID";
 Blockly.Msg.LINKIT_SET_MCSLITE_DEVICEKEY = "DeviceKey";
 Blockly.Msg.LINKIT_SET_MCSLITE_SERV = "IP address";
+Blockly.Msg.LINKIT_SET_MCSLITE_SERV = "Port";
 Blockly.Msg.LINKIT_SET_MCSLITE_CHANNEL1_TITLE = "Add MCS ";
 Blockly.Msg.LINKIT_SET_MCSLITE_CHANNEL1_TAIL = "Controller channel";
 Blockly.Msg.LINKIT_SET_MCSLITE_CHANNEL2_TAIL = "Display channel";
@@ -1200,7 +1201,5 @@ Blockly.Msg.LINKIT_SET_LBLE_WRITE = "Write";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TOOLTIP = "";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_GET_VALUE = "Characteristic getValue()";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN = "Characteristic isWritten()";
-
-
 Blockly.Msg.VARIABLES_TYPE_ONOFF = "Switch";
 Blockly.Msg.VARIABLES_TYPE_CATEGORY = "Category";
