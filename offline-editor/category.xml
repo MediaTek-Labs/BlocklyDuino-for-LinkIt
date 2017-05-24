@@ -2,57 +2,58 @@
     <block type="initializes_setup"></block>
     <block type="initializes_loop"></block>
 </category>
-<category id="category_inout">
-    <category id="category_digital">
-        <block type="inout_highlow"></block>
-        <!--<block type="inout_digitalpin"></block>-->
-        <block type="inout_digital_write"></block>
-        <block type="inout_custom_digital_write">
-            <value name="PIN">
-                <block type="inout_digitalpin">
-                    <field name="PIN">1</field>
-                </block>
-            </value>
-            <value name="STAT">
-                <block type="inout_highlow">
-                    <field name="BOOL">HIGH</field>
-                </block>
-            </value>
-        </block>
-        <block type="inout_digital_read"></block>
-        <block type="inout_custom_digital_read"></block>
-        <block type="inout_enable_pullup"></block>
-        <block type="inout_buildin_led"></block>
-    </category>
-    <category id="category_analog">
-        <block type="inout_analog_write">
-            <value name="NUM">
-                <block type="math_number">
-                    <field name="NUM">255</field>
-                </block>
-            </value>
-        </block>
-        <block type="inout_analog_read"></block>
-        <block type="inout_custom_analog_write"></block>
-            <value name="NUM">
-                <block type="math_number">
-                    <field name="NUM">255</field>
-                </block>
-            </value>
-        <block type="inout_custom_analog_read"></block>
-    </category>
-    <category id="category_others">
-        <!--<block type="pulsein"></block>-->
-        <block type="tone"></block>
-        <block type="custom_tone">
-            <value name="FREQ">
-                <block type="math_number">
-                    <field name="NUM">255</field>
-                </block>
-            </value>
-        </block>
-    </category>
+
+<category id="category_digital">
+    <block type="inout_highlow"></block>
+    <!--<block type="inout_digitalpin"></block>-->
+    <block type="inout_digital_write"></block>
+    <block type="inout_custom_digital_write">
+        <value name="PIN">
+            <block type="inout_digitalpin">
+                <field name="PIN">1</field>
+            </block>
+        </value>
+        <value name="STAT">
+            <block type="inout_highlow">
+                <field name="BOOL">HIGH</field>
+            </block>
+        </value>
+    </block>
+    <block type="inout_digital_read"></block>
+    <block type="inout_custom_digital_read"></block>
+    <block type="inout_enable_pullup"></block>
+    <block type="inout_custom_digital_read_pullup"></block>
+    <block type="inout_buildin_led"></block>
 </category>
+<category id="category_analog">
+    <block type="inout_analog_write">
+        <value name="NUM">
+            <block type="math_number">
+                <field name="NUM">255</field>
+            </block>
+        </value>
+    </block>
+    <block type="inout_analog_read"></block>
+    <block type="inout_custom_analog_write"></block>
+        <value name="NUM">
+            <block type="math_number">
+                <field name="NUM">255</field>
+            </block>
+        </value>
+    <block type="inout_custom_analog_read"></block>
+</category>
+<category id="category_others">
+    <!--<block type="pulsein"></block>-->
+    <block type="tone"></block>
+    <block type="custom_tone">
+        <value name="FREQ">
+            <block type="math_number">
+                <field name="NUM">255</field>
+            </block>
+        </value>
+    </block>
+</category>
+
 <category id="category_serial">
     <block type="serial_available"></block>
     <block type="serial_print">

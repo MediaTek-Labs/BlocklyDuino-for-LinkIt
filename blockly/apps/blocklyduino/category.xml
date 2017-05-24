@@ -22,6 +22,7 @@
     <block type="inout_digital_read"></block>
     <block type="inout_custom_digital_read"></block>
     <block type="inout_enable_pullup"></block>
+    <block type="inout_custom_digital_read_pullup"></block>
     <block type="inout_buildin_led"></block>
 </category>
 <category id="category_analog">
