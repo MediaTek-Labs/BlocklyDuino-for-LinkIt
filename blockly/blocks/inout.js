@@ -103,6 +103,19 @@ Blockly.Blocks['inout_custom_digital_read'] = {
   }
 };
 
+Blockly.Blocks['inout_custom_digital_read_pullup'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.INOUT_ENABLE_INTERNAL_PULLUP_HELPURL);
+    this.setColour(Blockly.Blocks.inout.HUE);
+    this.appendValueInput("PIN_READ")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.INOUT_DIGITAL_READ_PULLUP_APPENDTEXT_PIN);
+    this.setInputsInline(true);
+    this.setOutput(true, 'Boolean');
+    this.setTooltip(Blockly.Msg.INOUT_DIGITAL_READ_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['inout_enable_pullup'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.INOUT_ENABLE_INTERNAL_PULLUP_HELPURL);

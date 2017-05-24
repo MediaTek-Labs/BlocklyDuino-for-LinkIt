@@ -68,12 +68,23 @@ Blockly.Arduino.inout_digital_read = function() {
 Blockly.Arduino.inout_custom_digital_read = function() {
   var pin_read = Blockly.Arduino.valueToCode(this, 'PIN_READ', Blockly.Arduino.ORDER_ATOMIC);
   if(profile.default.digital.indexOf(pin_read) > 0){
-    Blockly.Arduino.setups_['setup_output_' + pin] = 'pinMode(' + pin + ', OUTPUT);';
+    Blockly.Arduino.setups_['setup_output_' + pin] = 'pinMode(' + pin + ', INPUT);';
   }
 
   var code = 'digitalRead(' + pin_read + ')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+Blockly.Arduino.inout_custom_digital_read_pullup = function() {
+  var pin_read = Blockly.Arduino.valueToCode(this, 'PIN_READ', Blockly.Arduino.ORDER_ATOMIC);
+  if(profile.default.digital.indexOf(pin_read) > 0){
+    Blockly.Arduino.setups_['setup_output_' + pin] = 'pinMode(' + pin + ', INPUT_PULLUP);';
+  }
+
+  var code = 'digitalRead(' + pin_read + ')';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 
 Blockly.Arduino.inout_enable_pullup = function() {
   var dropdown_pin = this.getFieldValue('PIN');
