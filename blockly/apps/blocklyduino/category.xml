@@ -867,6 +867,7 @@
 </block>
 </category>
 <category id="category_linkit_ble">
+<!--
 <block type="linkit_ble_wait_until_ready"></block>
 <block type="linkit_ble_ready"></block>
 <block type="linkit_ble_get_address"></block>
@@ -879,6 +880,7 @@
       </block>
   </value>
 </block>
+-->
 
 <!--
 <block type="linkit_ble_periphral">
@@ -960,4 +962,3 @@
     </value>
 </block>
 </category>
-
