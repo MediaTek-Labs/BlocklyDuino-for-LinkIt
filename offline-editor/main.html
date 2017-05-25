@@ -156,7 +156,8 @@
         </div>
         <div class="modal-footer">
             <a href="#!" id="setting-cancel" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
-            <a href="#!" id="setting" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+            <a href="#!" id="setting" class=" modal-action modal-close waves-effect waves-green btn-flat" style="color: #cc0000;">OK</a>
+            <a href="#!" target="_blank" id="version" class="waves-effect waves-green btn-flat" style="float: left !important; text-transform: none !important;">Version</a>
         </div>
     </div>
 
@@ -1187,6 +1188,13 @@
     </value>
 </block>
 <block type="linkit_ble_periphral_get_value">
+    <value name="CHARACTERISTIC">
+        <block type="text">
+            <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+        </block>
+    </value>
+</block>
+<block type="linkit_ble_periphral_write">
     <value name="CHARACTERISTIC">
         <block type="text">
             <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>

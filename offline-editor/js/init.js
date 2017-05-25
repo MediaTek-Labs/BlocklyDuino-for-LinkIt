@@ -187,6 +187,13 @@ function setScript(param) {
 function setCharacter(){
   setCategoryCharacter();
 
+  var manifestData = chrome.runtime.getManifest();
+  $("#version").on('click', function(){
+      require('nw.gui').Shell.openExternal(manifestData.update_url);
+      return false;
+  });
+  $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version);
+
   $("#tab_blocks").text(Blockly.Msg.BLOCKS);
   $("#tab_arduino").text(Blockly.Msg.ARDUINO);
 
@@ -198,6 +205,9 @@ function setCharacter(){
 
   $("#auto-save-title").text(Blockly.Msg.AUTO_SAVE_TITLE);
   $("#range-title").html(Blockly.Msg.RANGE_TITLE + '<input type="range" id="save-time" min="1" max="10" />');
+
+  $("#setting-cancel").text(Blockly.Msg.SETTINGS_CANCEL);
+  $("#setting").text(Blockly.Msg.SETTINGS_OK);
 
   $("#button_new").attr("data-tooltip",Blockly.Msg.BUTTON_NEW);
   $("#button_save").attr("data-tooltip",Blockly.Msg.BUTTON_SAVE);
