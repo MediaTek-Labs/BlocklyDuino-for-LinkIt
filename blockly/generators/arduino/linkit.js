@@ -91,10 +91,12 @@ Blockly.Arduino.linkit_ble_eddy = function () {
   url = url.replace(/\"/g, "");
   var code = "LBLEAdvertisementData beaconData;\n\n";
   if(protocol == "http"){
-    code += 'beaconData.configAsEddystoneURL(EDDY_HTTP, "'+url+'");\n\n';
+    if(url.length <= 17)  code += 'beaconData.configAsEddystoneURL(EDDY_HTTP, "'+url+'");\n\n';
+    else  code += 'beaconData.configAsEddystoneURL(EDDY_HTTP, "'+url.substring(0,17)+'");\n\n';
   }
   else{
-    code += 'beaconData.configAsEddystoneURL(EDDY_HTTPS, "'+url+'");\n\n';
+    if(url.length <= 17)  code += 'beaconData.configAsEddystoneURL(EDDY_HTTPS, "'+url+'");\n\n';
+    else  code += 'beaconData.configAsEddystoneURL(EDDY_HTTPS, "'+url.substring(0,17)+'");\n\n';
   }
   code += 'LBLEPeripheral.advertiseAsBeacon(beaconData);';
 
