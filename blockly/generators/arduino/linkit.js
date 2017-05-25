@@ -54,7 +54,7 @@ Blockly.Arduino.linkit_ble_periphral_write = function() {
   else{
     var code = '__' + variableName + '.setValue("'+val+'");';
   }
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
+  return code;
 };
 
 Blockly.Arduino.linkit_ble_periphral_get_value = function() {
