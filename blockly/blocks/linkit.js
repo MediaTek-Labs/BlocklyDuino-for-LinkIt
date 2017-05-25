@@ -50,6 +50,28 @@ Blockly.Blocks['linkit_ble_periphral_get_value'] = {
   }
 };
 
+Blockly.Blocks['linkit_ble_periphral_write'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_WRITE)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.VARIABLES_TYPE_NUMBER,"int"],
+        [Blockly.Msg.VARIABLES_TYPE_STRING,"String"]
+      ]), "TYPE");
+    this.appendValueInput("CHARACTERISTIC")
+      .setCheck("String")
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN);
+    this.appendValueInput("VALUE")
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_GET_VALUE_TAIL);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['linkit_ble_periphral_is_written'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);

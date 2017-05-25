@@ -937,6 +937,13 @@
         </block>
     </value>
 </block>
+<block type="linkit_ble_periphral_write">
+    <value name="CHARACTERISTIC">
+        <block type="text">
+            <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+        </block>
+    </value>
+</block>
 </category>
 <category id="category_linkit_ble_ibeacon">
 <block type="linkit_ble_ibeacon">
