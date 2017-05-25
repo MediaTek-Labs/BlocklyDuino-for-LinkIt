@@ -113,6 +113,28 @@ Blockly.Blocks['linkit_ble_Characteristic'] = {
   }
 };
 
+Blockly.Blocks['linkit_ble_eddy'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY);
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP,"http"],
+        [Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS,"https"]
+      ]), "TYPE");
+    this.appendValueInput("URL")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_CHARACTERISTIC_TOOLTIP);
+  }
+};
 Blockly.Blocks['linkit_ble_periphral'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);

@@ -85,6 +85,22 @@ Blockly.Arduino.linkit_ble_Characteristic = function () {
 
   return code;
 }
+Blockly.Arduino.linkit_ble_eddy = function () {
+  var url = Blockly.Arduino.valueToCode(this, 'URL', Blockly.Arduino.ORDER_ATOMIC) || ''
+  var protocol = this.getFieldValue('TYPE');
+  url = url.replace(/\"/g, "");
+  var code = "LBLEAdvertisementData beaconData;\n\n";
+  if(protocol == "http"){
+    code += 'beaconData.configAsEddystoneURL(EDDY_HTTP, "'+url+'");\n\n';
+  }
+  else{
+    code += 'beaconData.configAsEddystoneURL(EDDY_HTTPS, "'+url+'");\n\n';
+  }
+  code += 'LBLEPeripheral.advertiseAsBeacon(beaconData);';
+
+  return code;
+}
+
 
 Blockly.Arduino.linkit_ble_periphral = function() {
 
