@@ -468,9 +468,10 @@ Blockly.Blocks['mcslite'] = {
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINKIT_SET_MCSLITE_PORT);
+    this.appendStatementInput("CONTENT");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.LINKIT_SET_MCSLITE_TOOLTIP);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_MCS_TOOLTIP);
   }
 };
 /*Blockly.Blocks['mcslite_set_control_channel'] = {
