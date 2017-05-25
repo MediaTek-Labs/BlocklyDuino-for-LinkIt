@@ -110,16 +110,17 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("dialog2_cansel");
   });
 
-  document.querySelector('#button_discard').addEventListener("click", function(evt) {
-    var count = Blockly.mainWorkspace.getAllBlocks().length;
-    if (count > 0) {
-      $('#modal4').openModal();
-    }
-  });
+  // document.querySelector('#button_discard').addEventListener("click", function(evt) {
+  //   var count = Blockly.mainWorkspace.getAllBlocks().length;
+  //   if (count > 0) {
+  //     $('#modal4').openModal();
+  //   }
+  // });
 
   document.querySelector('#dialog4_yes').addEventListener("click", function(evt) {
-    Blockly.mainWorkspace.clear();
-    renderContent();
+     chrome.runtime.reload(); //Reset for defaul.
+    //Blockly.mainWorkspace.clear();
+    //renderContent();
   });
 
   document.querySelector('#dialog_var_ok').addEventListener("click", function(evt) {

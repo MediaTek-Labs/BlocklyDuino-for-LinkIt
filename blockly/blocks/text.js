@@ -331,8 +331,8 @@ Blockly.Blocks['text_charAt'] = {
     this.setHelpUrl(Blockly.Msg.TEXT_CHARAT_HELPURL);
     this.setColour(Blockly.Blocks.texts.HUE);
     this.appendValueInput('VALUE')
-        .setCheck('String')
-        .appendField(Blockly.Msg.TEXT_CHARAT_INTEXT);
+      .setCheck('String')
+      .appendField(Blockly.Msg.TEXT_CHARAT_INTEXT);
     this.appendValueInput('INDEX')
       .setCheck('Number')
       .appendField(Blockly.Msg.TEXT_CHARAT_FROM_START1);

@@ -1,42 +1,42 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="initializes_setup" id="1" x="-62" y="-537">
+  <block type="initializes_setup" id="52" x="-12" y="-37">
     <statement name="CONTENT">
-      <block type="linkit_wifi_wait_until_ready" id="2" inline="false">
+      <block type="linkit_wifi_wait_until_ready" id="53" inline="false">
         <value name="SSID">
-          <block type="text" id="3">
+          <block type="text" id="54">
             <field name="TEXT"></field>
           </block>
         </value>
         <value name="PASSWORD">
-          <block type="text" id="4">
+          <block type="text" id="55">
             <field name="TEXT"></field>
           </block>
         </value>
         <next>
-          <block type="mcs" id="5" inline="false">
+          <block type="mcs" id="56" inline="false">
             <value name="DEVICEID">
-              <block type="text" id="6">
+              <block type="text" id="57">
                 <field name="TEXT"></field>
               </block>
             </value>
             <value name="DEVICEKEY">
-              <block type="text" id="7">
+              <block type="text" id="58">
                 <field name="TEXT"></field>
               </block>
             </value>
             <statement name="CONTENT">
-              <block type="mcs_set_control_channel" id="8" inline="true">
+              <block type="mcs_set_control_channel" id="59" inline="true">
                 <field name="TYPE">(int)</field>
                 <value name="CONTROL_CHANNEL">
-                  <block type="text" id="9">
+                  <block type="text" id="60">
                     <field name="TEXT">led</field>
                   </block>
                 </value>
                 <next>
-                  <block type="mcs_set_display_channel" id="10" inline="true">
+                  <block type="mcs_set_display_channel" id="61" inline="true">
                     <field name="TYPE">(int)</field>
                     <value name="DISPLAY_CHANNEL">
-                      <block type="text" id="11">
+                      <block type="text" id="62">
                         <field name="TEXT">remote</field>
                       </block>
                     </value>
@@ -49,51 +49,78 @@
       </block>
     </statement>
     <next>
-      <block type="initializes_loop" id="12">
+      <block type="initializes_loop" id="63">
         <statement name="CONTENT">
-          <block type="mcs_process" id="13">
+          <block type="mcs_process" id="64">
             <next>
-              <block type="controls_if" id="14" inline="false">
+              <block type="controls_if" id="65" inline="false">
                 <value name="IF0">
-                  <block type="mcs_channel_updated" id="15" inline="true">
+                  <block type="mcs_channel_updated" id="66" inline="true">
                     <value name="CHANNEL_UPDATED">
-                      <block type="text" id="16">
+                      <block type="text" id="67">
                         <field name="TEXT">led</field>
                       </block>
                     </value>
                   </block>
                 </value>
                 <statement name="DO0">
-                  <block type="controls_if" id="17" inline="false">
+                  <block type="controls_if" id="68" inline="false">
                     <mutation else="1"></mutation>
                     <value name="IF0">
-                      <block type="logic_compare" id="18" inline="true">
+                      <block type="logic_compare" id="69" inline="true">
                         <field name="OP">NEQ</field>
                         <value name="A">
-                          <block type="mcs_channel_value" id="19" inline="true">
-                            <field name="TYPE">(int)</field>
+                          <block type="mcs_channel_value" id="70" inline="true">
                             <value name="CHANNEL_VALUE">
-                              <block type="text" id="20">
+                              <block type="text" id="71">
                                 <field name="TEXT">led</field>
                               </block>
                             </value>
                           </block>
                         </value>
                         <value name="B">
-                          <block type="math_number" id="21">
+                          <block type="math_number" id="72">
                             <field name="NUM">0</field>
                           </block>
                         </value>
                       </block>
                     </value>
                     <statement name="DO0">
-                      <block type="inout_buildin_led" id="22">
+                      <block type="inout_buildin_led" id="73">
                         <field name="STAT">HIGH</field>
+                        <next>
+                          <block type="mcs_channel2_value" id="95" inline="true">
+                            <value name="CHANNEL2_VALUE">
+                              <block type="text" id="96">
+                                <field name="TEXT">remote</field>
+                              </block>
+                            </value>
+                            <value name="SET_VALUE">
+                              <block type="text" id="97">
+                                <field name="TEXT">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
                       </block>
                     </statement>
                     <statement name="ELSE">
-                      <block type="inout_buildin_led" id="23">
+                      <block type="inout_buildin_led" id="74">
                         <field name="STAT">LOW</field>
+                        <next>
+                          <block type="mcs_channel2_value" id="98" inline="true">
+                            <value name="CHANNEL2_VALUE">
+                              <block type="text" id="99">
+                                <field name="TEXT">remote</field>
+                              </block>
+                            </value>
+                            <value name="SET_VALUE">
+                              <block type="text" id="100">
+                                <field name="TEXT">0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
                       </block>
                     </statement>
                   </block>

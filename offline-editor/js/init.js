@@ -129,7 +129,7 @@ function buildBlocks(xmlValue) {
 
 function init() {
   var loadIds;
-  var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_inout,category_time,category_serial,category_interrupts,category_sep,category_linkit,category_sep";
+  var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_digital,category_analog,category_serial,category_others,category_time,category_interrupts,category_sep,category_linkit_wifi,category_linkit_mcs,category_linkit_ble,category_linkit_ble_ibeacon,category_sep";
 
   chrome.storage.local.get('toolboxids', function (value) {
     var option = value.toolboxids;
@@ -202,7 +202,7 @@ function setCharacter(){
   $("#button_new").attr("data-tooltip",Blockly.Msg.BUTTON_NEW);
   $("#button_save").attr("data-tooltip",Blockly.Msg.BUTTON_SAVE);
   $("#button_open").attr("data-tooltip",Blockly.Msg.BUTTON_OPEN);
-  $("#button_discard").text(Blockly.Msg.DROPDOWN_DISCARD);
+  //$("#button_discard").text(Blockly.Msg.DROPDOWN_DISCARD);
   $("#button_save_as").text(Blockly.Msg.DROPDOWN_SAVE_AS);
   $("#dialog0_title").text(Blockly.Msg.DIALOG0_TITLE);
   $("#dialog1_title").text(Blockly.Msg.DIALOG1_TITLE);

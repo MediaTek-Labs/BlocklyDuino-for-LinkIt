@@ -91,7 +91,7 @@ function discard() {
   var count = Blockly.mainWorkspace.getAllBlocks().length;
   if (count < 2 || window.confirm(Blockly.Msg.DELETE_ALL1 + count + Blockly.Msg.DELETE_ALL2)) {
     Blockly.mainWorkspace.clear();
-    var xmlDoc = Blockly.Xml.textToDom('<xml xmlns="http://www.w3.org/1999/xhtml"><block type="initializes_setup" id="0" x="10" y="10"><next><block type="initializes_loop" id="1"></block></next></block></xml>');
+    var xmlDoc = Blockly.Xml.textToDom('<xml xmlns="http://www.w3.org/1999/xhtml"><block type="initializes_setup" id="0" x="80" y="40"><next><block type="initializes_loop" id="1"></block></next></block></xml>');
     Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDoc);
     renderContent();
   }

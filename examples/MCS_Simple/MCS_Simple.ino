@@ -21,7 +21,7 @@ void setup()
 
 
   Serial.begin(9600);
-  pinMode(13, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 
@@ -34,10 +34,12 @@ void loop()
     mcs.process(1000);
     if (led.updated()) {
       if (led.value() != 0) {
-        digitalWrite(13, HIGH);
+        digitalWrite(LED_BUILTIN, HIGH);
+        remote.set("1");
 
       } else {
-        digitalWrite(13, LOW);
+        digitalWrite(LED_BUILTIN, LOW);
+        remote.set("0");
 
       }
 
