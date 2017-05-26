@@ -37,7 +37,7 @@ Blockly.Blocks['servo_attach'] = {
     this.setHelpUrl(Blockly.Msg.SERVO_ATTACH_HELPURL);
     this.setColour(Blockly.Blocks.servo.HUE);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
       .appendField(Blockly.Msg.SERVO_ATTACH_TEXT1)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
       .appendField(Blockly.Msg.SERVO_ATTACH_TEXT2);
@@ -53,18 +53,18 @@ Blockly.Blocks['servo_custom_attach'] = {
     this.setHelpUrl(Blockly.Msg.SERVO_ATTACH_HELPURL);
     this.setColour(Blockly.Blocks.servo.HUE);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
       .appendField(Blockly.Msg.SERVO_ATTACH_TEXT1)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
       .appendField(Blockly.Msg.SERVO_ATTACH_TEXT2);
     this.appendDummyInput()
-      .appendField(Blockly.Msg.SERVO_ATTACH_MAX_TEXT1)
-      .appendField(new Blockly.FieldTextInput("2400"), "MAX")
-      .appendField(Blockly.Msg.SERVO_ATTACH_MAX_TEXT2);
-    this.appendDummyInput()
       .appendField(Blockly.Msg.SERVO_ATTACH_MIN_TEXT1)
       .appendField(new Blockly.FieldTextInput("544"), "MIN")
       .appendField(Blockly.Msg.SERVO_ATTACH_MIN_TEXT2);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.SERVO_ATTACH_MAX_TEXT1)
+      .appendField(new Blockly.FieldTextInput("2400"), "MAX")
+      .appendField(Blockly.Msg.SERVO_ATTACH_MAX_TEXT2);
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
@@ -77,7 +77,7 @@ Blockly.Blocks['servo_write'] = {
     this.setHelpUrl(Blockly.Msg.SERVO_WRITE_HELPURL);
     this.setColour(Blockly.Blocks.servo.HUE);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
       .appendField(Blockly.Msg.SERVO_WRITE_TEXT1)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
       .appendField(Blockly.Msg.SERVO_WRITE_TEXT2);
@@ -98,7 +98,7 @@ Blockly.Blocks['servo_writeus'] = {
     this.setHelpUrl(Blockly.Msg.SERVO_WRITE_US_HELPURL);
     this.setColour(Blockly.Blocks.servo.HUE);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
       .appendField(Blockly.Msg.SERVO_WRITE_TEXT1)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
       .appendField(Blockly.Msg.SERVO_WRITE_TEXT2);
@@ -119,7 +119,7 @@ Blockly.Blocks['servo_read'] = {
     this.setHelpUrl(Blockly.Msg.SERVO_READ_HELPURL);
     this.setColour(Blockly.Blocks.servo.HUE);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
       .appendField(Blockly.Msg.SERVO_READ_TEXT1)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
       .appendField(Blockly.Msg.SERVO_READ_TEXT2);
@@ -134,7 +134,7 @@ Blockly.Blocks['servo_attached'] = {
     this.setHelpUrl(Blockly.Msg.SERVO_ATTACHED_HELPURL);
     this.setColour(Blockly.Blocks.servo.HUE);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
       .appendField(Blockly.Msg.SERVO_ATTACHED_TEXT1)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
       .appendField(Blockly.Msg.SERVO_ATTACHED_TEXT2);
@@ -149,7 +149,7 @@ Blockly.Blocks['servo_detach'] = {
     this.setHelpUrl(Blockly.Msg.SERVO_DETACH_HELPURL);
     this.setColour(Blockly.Blocks.servo.HUE);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
+      //.appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
       .appendField(Blockly.Msg.SERVO_DETACH_TEXT1)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
       .appendField(Blockly.Msg.SERVO_DETACH_TEXT2);
