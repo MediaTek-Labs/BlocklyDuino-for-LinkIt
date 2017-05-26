@@ -139,7 +139,7 @@ function init() {
 
 function buildtoolBox() {
   var loadIds;
-  var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_digital,category_analog,category_serial,category_others,category_time,category_serial,category_interrupts,category_sep,category_linkit_wifi,category_linkit_mcs,category_linkit_ble,category_linkit_ble_ibeacon,category_sep,category_grove";
+  var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_digital,category_analog,category_serial,category_others,category_time,category_serial,category_interrupts,category_sep,category_linkit_wifi,category_linkit_mcs,category_linkit_ble,category_linkit_ble_ibeacon,category_sep,category_servo";
 
   var option = window.localStorage.toolboxids;
 
