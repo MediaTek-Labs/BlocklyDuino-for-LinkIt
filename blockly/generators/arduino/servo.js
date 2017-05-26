@@ -30,8 +30,8 @@ goog.require('Blockly.Arduino');
 Blockly.Arduino.servo_attach = function() {
   var pin = this.getFieldValue('PIN');
   Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>';
-  Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo myservo' + pin + ';';
-  var code = 'myservo' + pin + '.attach(' + pin + ');\n';
+  Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo __myservo' + pin + ';';
+  var code = '__myservo' + pin + '.attach(' + pin + ');\n';
   return code;
 };
 
@@ -40,8 +40,8 @@ Blockly.Arduino.servo_custom_attach = function() {
   var max = this.getFieldValue('MAX');
   var min = this.getFieldValue('MIN');
   Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>';
-  Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo myservo' + pin + ';';
-  var code = 'myservo' + pin + '.attach(' + pin + ',' + min + ',' + max + ');\n';
+  Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo __myservo' + pin + ';';
+  var code = '__myservo' + pin + '.attach(' + pin + ',' + min + ',' + max + ');\n';
   return code;
 };
 
@@ -49,42 +49,42 @@ Blockly.Arduino.servo_write = function() {
   var pin = this.getFieldValue('PIN');
   var angle = Blockly.Arduino.valueToCode(this, 'ANGLE', Blockly.Arduino.ORDER_ATOMIC) || '90'
   Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>';
-  Blockly.Arduino.definitions_['define_class_servo_' + pin] = 'Servo myservo' + pin + ';';
-  Blockly.Arduino.setups_['servo_' + pin] = 'myservo' + pin + '.attach(' + pin + ');';
-  var code = 'myservo' + pin + '.write(' + angle + ');\n';
+  Blockly.Arduino.definitions_['define_class_servo_' + pin] = 'Servo __myservo' + pin + ';';
+  Blockly.Arduino.setups_['servo_' + pin] = '__myservo' + pin + '.attach(' + pin + ');';
+  var code = '__myservo' + pin + '.write(' + angle + ');\n';
   return code;
 };
 
 Blockly.Arduino.servo_writeus = function() {
   var pin = this.getFieldValue('PIN');
-  var angle = Blockly.Arduino.valueToCode(this, 'ANGLE', Blockly.Arduino.ORDER_ATOMIC) || '1500'
+  var angle = Blockly.Arduino.valueToCode(this, 'ANGLE_US', Blockly.Arduino.ORDER_ATOMIC) || '1500'
   Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>';
-  Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo myservo' + pin + ';';
-  Blockly.Arduino.setups_['servo_' + pin] = 'myservo' + pin + '.attach('+ pin + ');';
-  var code = 'myservo' + pin + '.writeMicroseconds(' + angle + ');\n';
+  Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo __myservo' + pin + ';';
+  Blockly.Arduino.setups_['servo_' + pin] = '__myservo' + pin + '.attach('+ pin + ');';
+  var code = '__myservo' + pin + '.writeMicroseconds(' + angle + ');\n';
   return code;
 };
 
 Blockly.Arduino.servo_read = function() {
   var pin = this.getFieldValue('PIN');
   Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>';
-  Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo myservo' + pin + ';';
-  var code = 'myservo' + pin + '.read()';
+  Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo __myservo' + pin + ';';
+  var code = '__myservo' + pin + '.read()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino.servo_attached = function() {
   var pin = this.getFieldValue('PIN');
   Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>';
-  Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo myservo' + pin + ';';
-  var code = 'myservo' + pin + '.attached()';
+  Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo __myservo' + pin + ';';
+  var code = '__myservo' + pin + '.attached()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino.servo_detach = function() {
   var pin = this.getFieldValue('PIN');
   Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>';
-  Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo myservo' + pin + ';';
-  var code = 'myservo' + pin + '.detach();\n';
+  Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo __myservo' + pin + ';';
+  var code = '__myservo' + pin + '.detach();\n';
   return code;
 };
