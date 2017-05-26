@@ -867,6 +867,7 @@
 </block>
 </category>
 <category id="category_linkit_ble">
+<!--
 <block type="linkit_ble_wait_until_ready"></block>
 <block type="linkit_ble_ready"></block>
 <block type="linkit_ble_get_address"></block>
@@ -879,6 +880,7 @@
       </block>
   </value>
 </block>
+-->
 
 <!--
 <block type="linkit_ble_periphral">
@@ -935,6 +937,20 @@
         </block>
     </value>
 </block>
+<block type="linkit_ble_periphral_write">
+    <value name="CHARACTERISTIC">
+        <block type="text">
+            <field name="TEXT">B77D53AC-D590-41E0-B75A-6DA442F543F6</field>
+        </block>
+    </value>
+</block>
+<block type="linkit_ble_eddy">
+    <value name="URL">
+        <block type="text">
+            <field name="TEXT"></field>
+        </block>
+    </value>
+</block>
 </category>
 <category id="category_linkit_ble_ibeacon">
 <block type="linkit_ble_ibeacon">
@@ -960,4 +976,3 @@
     </value>
 </block>
 </category>
-

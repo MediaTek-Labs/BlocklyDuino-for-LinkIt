@@ -275,6 +275,13 @@ function setScript() {
 function setCharacter(){
   setCategoryCharacter();
 
+  var manifestData = chrome.runtime.getManifest();
+  $("#version").on('click', function(){
+      require('nw.gui').Shell.openExternal(manifestData.update_url);
+      return false;
+  });
+  $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version);
+
   $("#tab_blocks").text(Blockly.Msg.BLOCKS);
   $("#tab_arduino").text(Blockly.Msg.ARDUINO);
 
@@ -283,6 +290,9 @@ function setCharacter(){
   $("#change-lang").attr("data-tooltip",Blockly.Msg.CHANGE_LANG);
   $("#dialog-lang-title").text(Blockly.Msg.DIALOG_LANG_TITLE);
   $("#dialog-block-title").text(Blockly.Msg.DIALOG_BLOCK_TITLE);
+
+  $("#setting-cancel").text(Blockly.Msg.SETTINGS_CANCEL);
+  $("#setting").text(Blockly.Msg.SETTINGS_OK);
 
   $("#button_import").text(Blockly.Msg.BUTTON_IMPORT);
   $("#button_export").text(Blockly.Msg.BUTTON_EXPORT);

@@ -50,6 +50,28 @@ Blockly.Blocks['linkit_ble_periphral_get_value'] = {
   }
 };
 
+Blockly.Blocks['linkit_ble_periphral_write'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_WRITE)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.VARIABLES_TYPE_NUMBER,"int"],
+        [Blockly.Msg.VARIABLES_TYPE_STRING,"String"]
+      ]), "TYPE");
+    this.appendValueInput("CHARACTERISTIC")
+      .setCheck("String")
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN);
+    this.appendValueInput("VALUE")
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_GET_VALUE_TAIL);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['linkit_ble_periphral_is_written'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
@@ -91,6 +113,28 @@ Blockly.Blocks['linkit_ble_Characteristic'] = {
   }
 };
 
+Blockly.Blocks['linkit_ble_eddy'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY);
+    this.appendDummyInput()
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP,"http"],
+        [Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS,"https"]
+      ]), "TYPE");
+    this.appendValueInput("URL")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_CHARACTERISTIC_TOOLTIP);
+  }
+};
 Blockly.Blocks['linkit_ble_periphral'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
@@ -468,9 +512,10 @@ Blockly.Blocks['mcslite'] = {
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINKIT_SET_MCSLITE_PORT);
+    this.appendStatementInput("CONTENT");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.LINKIT_SET_MCSLITE_TOOLTIP);
+    this.setTooltip(Blockly.Msg.LINKIT_SET_MCS_TOOLTIP);
   }
 };
 /*Blockly.Blocks['mcslite_set_control_channel'] = {

@@ -14,10 +14,4 @@ void loop()
       digitalWrite(LED_BUILTIN, LOW);
 
     }
-  if (false) {
-
-  } else {
-
-  }
-
 }
