@@ -32,12 +32,16 @@ Blockly.Blocks.servo.HUE = 215;
 
 Blockly.Blocks.servo.image = filepath.media+'/servo.jpg';
 
+/*
+  insert image:
+    .appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
+*/
+
 Blockly.Blocks['servo_attach'] = {
   init: function () {
     this.setHelpUrl(Blockly.Msg.SERVO_ATTACH_HELPURL);
     this.setColour(Blockly.Blocks.servo.HUE);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.servo.image, 64, 64))
       .appendField(Blockly.Msg.SERVO_ATTACH_TEXT1)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN")
       .appendField(Blockly.Msg.SERVO_ATTACH_TEXT2);
