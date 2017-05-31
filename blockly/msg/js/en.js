@@ -1211,6 +1211,6 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN_TAIL = " isWritten()";
 Blockly.Msg.VARIABLES_TYPE_ONOFF = "Switch (boolean)";
 Blockly.Msg.VARIABLES_TYPE_CATEGORY = "Category (String)";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY = "EddyStoneURL";
-Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL = "URL (length in 17)";
+Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL = "URL (length limited to 17)";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP = "http://";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
