@@ -770,7 +770,7 @@
 </category>
 <sep></sep>
 <category id="category_variables" custom="VARIABLE"></category>
-<category id="category_functions" custom="PROCEDURE"></category>
+<!--<category id="category_functions" custom="PROCEDURE"></category>-->
 <sep></sep>
 <!--category id="category_involt">
 <block type="involt_directmode"></block>
