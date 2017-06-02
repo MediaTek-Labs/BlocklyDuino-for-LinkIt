@@ -820,18 +820,18 @@
             </block>
         </value>
     </block>
+    <block type="servo_read"></block>
+    <!-- <block type="servo_attached"></block> -->
+    <!-- <block type="servo_attach"></block> -->
+    <block type="servo_custom_attach"></block>
+    <!-- <block type="servo_detach"></block> -->
     <block type="servo_writeus">
         <value name="ANGLE_US">
             <block type="math_number">
-                <field name="NUM">0</field>
+                <field name="NUM">1500</field>
             </block>
         </value>
     </block>
-    <block type="servo_read"></block>
-    <block type="servo_attached"></block>
-    <block type="servo_attach"></block>
-    <block type="servo_custom_attach"></block>
-    <block type="servo_detach"></block>
 </category>
 <category id="category_ultrasonic">
     <block type="ultrasonic_setting"></block>
@@ -903,7 +903,7 @@
         </value>
     </block>
     <block type="controls_flow_statements"></block>
-    <block type="controls_return"></block>
+    <!-- <block type="controls_return"></block> -->
 </category>
 <category id="category_time">
     <block type="millis"></block>
@@ -958,7 +958,7 @@
 </category>
 <sep></sep>
 <category id="category_variables" custom="VARIABLE"></category>
-<category id="category_functions" custom="PROCEDURE"></category>
+<!--<category id="category_functions" custom="PROCEDURE"></category>-->
 <sep></sep>
 <!--category id="category_involt">
 <block type="involt_directmode"></block>
@@ -1132,13 +1132,6 @@
         </block>
     </value>
 </block>
-<block type="linkit_ble_eddy">
-    <value name="URL">
-        <block type="text">
-            <field name="TEXT"></field>
-        </block>
-    </value>
-</block>
 </category>
 <category id="category_linkit_ble_ibeacon">
 <block type="linkit_ble_ibeacon">
@@ -1160,6 +1153,13 @@
     <value name="RSSI">
         <block type="math_number">
             <field name="NUM">-40</field>
+        </block>
+    </value>
+</block>
+<block type="linkit_ble_eddy">
+    <value name="URL">
+        <block type="text">
+            <field name="TEXT"></field>
         </block>
     </value>
 </block>

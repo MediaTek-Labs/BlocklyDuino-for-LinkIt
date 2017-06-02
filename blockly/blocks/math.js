@@ -441,14 +441,14 @@ Blockly.Blocks['math_random_max_min'] = {
     this.setColour(Blockly.Blocks.math.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.MATH_RANDOM_MAX_MIN_APPENDTEXT_RANDOM);
-    this.appendValueInput("MAX")
-      .setCheck("Number")
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.MATH_RANDOM_MAX_MIN_APPENDTEXT_MAX);
     this.appendValueInput("MIN")
       .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.MATH_RANDOM_MAX_MIN_APPENDTEXT_MIN);
+    this.appendValueInput("MAX")
+      .setCheck("Number")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.MATH_RANDOM_MAX_MIN_APPENDTEXT_MAX);
     this.setInputsInline(true);
     this.setOutput(true, "Number");
     this.setTooltip(Blockly.Msg.MATH_RANDOM_MAX_MIN_TOOLTIP);
