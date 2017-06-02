@@ -190,7 +190,7 @@ function setCharacter(){
   try {
     var manifestData = chrome.runtime.getManifest();
     $("#version").on('click', function(){
-        require('nw.gui').Shell.openExternal(manifestData.update_url);
+        nw.Shell.openExternal(manifestData.update_url);
         return false;
     });
     $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version);
