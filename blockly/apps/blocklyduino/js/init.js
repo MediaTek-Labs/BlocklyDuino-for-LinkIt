@@ -275,12 +275,20 @@ function setScript() {
 function setCharacter(){
   setCategoryCharacter();
 
-  var manifestData = chrome.runtime.getManifest();
-  $("#version").on('click', function(){
-      require('nw.gui').Shell.openExternal(manifestData.update_url);
-      return false;
-  });
-  $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version);
+  try {
+    var manifestData = chrome.runtime.getManifest();
+    $("#version").on('click', function(){
+        require('nw.gui').Shell.openExternal(manifestData.update_url);
+        return false;
+    });
+    $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version);
+  }
+  catch(err) {
+    $("#version").remove();
+  }
+  finally {
+
+  }
 
   $("#tab_blocks").text(Blockly.Msg.BLOCKS);
   $("#tab_arduino").text(Blockly.Msg.ARDUINO);
