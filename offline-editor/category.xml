@@ -632,6 +632,11 @@
             </block>
         </value>
     </block>
+    <block type="servo_read"></block>
+    <!-- <block type="servo_attached"></block> -->
+    <!-- <block type="servo_attach"></block> -->
+    <block type="servo_custom_attach"></block>
+    <!-- <block type="servo_detach"></block> -->
     <block type="servo_writeus">
         <value name="ANGLE_US">
             <block type="math_number">
@@ -639,11 +644,6 @@
             </block>
         </value>
     </block>
-    <block type="servo_read"></block>
-    <!-- <block type="servo_attached"></block> -->
-    <!-- <block type="servo_attach"></block> -->
-    <block type="servo_custom_attach"></block>
-    <!-- <block type="servo_detach"></block> -->
 </category>
 <category id="category_ultrasonic">
     <block type="ultrasonic_setting"></block>
@@ -944,13 +944,6 @@
         </block>
     </value>
 </block>
-<block type="linkit_ble_eddy">
-    <value name="URL">
-        <block type="text">
-            <field name="TEXT"></field>
-        </block>
-    </value>
-</block>
 </category>
 <category id="category_linkit_ble_ibeacon">
 <block type="linkit_ble_ibeacon">
@@ -972,6 +965,13 @@
     <value name="RSSI">
         <block type="math_number">
             <field name="NUM">-40</field>
+        </block>
+    </value>
+</block>
+<block type="linkit_ble_eddy">
+    <value name="URL">
+        <block type="text">
+            <field name="TEXT"></field>
         </block>
     </value>
 </block>
