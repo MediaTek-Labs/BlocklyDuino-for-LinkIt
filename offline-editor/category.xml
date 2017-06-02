@@ -715,7 +715,7 @@
         </value>
     </block>
     <block type="controls_flow_statements"></block>
-    <block type="controls_return"></block>
+    <!-- <block type="controls_return"></block> -->
 </category>
 <category id="category_time">
     <block type="millis"></block>
