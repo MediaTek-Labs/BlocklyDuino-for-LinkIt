@@ -1214,3 +1214,5 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY = "EddyStoneURL";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL = "URL (length <17 chars)";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP = "http://";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
+
+Blockly.Msg.CATEGORY_EXTERNAL = "External";

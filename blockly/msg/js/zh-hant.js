@@ -1193,3 +1193,5 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY = "EddyStoneURL";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL = "URL(17字以內)";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP = "http://";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
+
+Blockly.Msg.CATEGORY_EXTERNAL = "外部元件";
