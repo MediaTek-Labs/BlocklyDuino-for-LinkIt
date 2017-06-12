@@ -466,6 +466,72 @@
 </block>
 </category>
 <category id="category_external">
+    <category id="category_grove">
+        <category id="category_grove_input">
+            <block type="grove_button"></block>
+            <block type="grove_touch"></block>
+            <block type="grove_rotary_angle"></block>
+            <block type="grove_ir_receiver_init"></block>
+            <block type="grove_ir_receiver_check_data"></block>
+            <block type="grove_ir_receiver_receive"></block>
+            <block type="grove_ir_receiver_data"></block>
+            <!--block type="grove_tilt_switch"></block-->
+            <!--block type="grove_thumb_joystick"></block-->
+        </category>
+        <category id="category_grove_output">
+            <block type="grove_led"></block>
+            <block type="grove_relay"></block>
+            <block type="grove_buzzer"></block>
+            <block type="grove_ir_emitter_send">
+                <value name="DATA">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+            </block>
+            <!--block type="grove_rgb_led"></block-->
+            <!--block type="grove_motor_shield"></block-->
+        </category>
+        <category id="category_grove_sensor">
+            <!--block type="grove_line_finder"></block-->
+            <!--block type="grove_pir_motion_sensor"></block-->
+            <block type="grove_light_sensor"></block>
+            <block type="grove_temporature_sensor"></block>
+            <block type="grove_sound_sensor"></block>
+            <!--block type="grove_ultrasonic_ranger"></block-->
+        </category>
+        <category id="category_lcd_rgb">
+            <block type="grove_rgb_lcd_begin"></block>
+            <block type="grove_rgb_lcd_print">
+                <value name="PRINT">
+                    <block type="text">
+                        <field name="TEXT"></field>
+                    </block>
+                </value>
+            </block>
+            <block type="grove_rgb_lcd_setcolor"></block>
+            <block type="grove_rgb_lcd_custom_setcursor">
+                <value name="COL">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+                <value name="ROW">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+            </block>
+            <block type="grove_rgb_lcd_clear"></block>
+            <!--block type="lcd_scrolldisplayright"></block-->
+            <!--block type="lcd_scrolldisplayleft"></block-->
+            <block type="grove_rgb_lcd_switch_scroll"></block>
+            <!--block type="lcd_lefttoright"></block-->
+            <!--block type="lcd_righttoleft"></block-->
+            <!--block type="grove_serial_lcd_power"></block-->
+            <!--block type="grove_serial_lcd_effect"></block-->
+        </category>
+    </category>
     <category id="category_cloud_service">
         <category id="category_ifttt">
             <block type="text">
@@ -573,72 +639,6 @@
                     </block>
                 </value>
             </block>
-        </category>
-    </category>
-    <category id="category_grove">
-        <category id="category_grove_input">
-            <block type="grove_button"></block>
-            <block type="grove_touch"></block>
-            <block type="grove_rotary_angle"></block>
-            <block type="grove_ir_receiver_init"></block>
-            <block type="grove_ir_receiver_check_data"></block>
-            <block type="grove_ir_receiver_receive"></block>
-            <block type="grove_ir_receiver_data"></block>
-            <!--block type="grove_tilt_switch"></block-->
-            <!--block type="grove_thumb_joystick"></block-->
-        </category>
-        <category id="category_grove_output">
-            <block type="grove_led"></block>
-            <block type="grove_relay"></block>
-            <block type="grove_buzzer"></block>
-            <block type="grove_ir_emitter_send">
-                <value name="DATA">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-            </block>
-            <!--block type="grove_rgb_led"></block-->
-            <!--block type="grove_motor_shield"></block-->
-        </category>
-        <category id="category_grove_sensor">
-            <!--block type="grove_line_finder"></block-->
-            <!--block type="grove_pir_motion_sensor"></block-->
-            <block type="grove_light_sensor"></block>
-            <block type="grove_temporature_sensor"></block>
-            <block type="grove_sound_sensor"></block>
-            <!--block type="grove_ultrasonic_ranger"></block-->
-        </category>
-        <category id="category_lcd_rgb">
-            <block type="grove_rgb_lcd_begin"></block>
-            <block type="grove_rgb_lcd_print">
-                <value name="PRINT">
-                    <block type="text">
-                        <field name="TEXT"></field>
-                    </block>
-                </value>
-            </block>
-            <block type="grove_rgb_lcd_setcolor"></block>
-            <block type="grove_rgb_lcd_custom_setcursor">
-                <value name="COL">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-                <value name="ROW">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-            </block>
-            <block type="grove_rgb_lcd_clear"></block>
-            <!--block type="lcd_scrolldisplayright"></block-->
-            <!--block type="lcd_scrolldisplayleft"></block-->
-            <block type="grove_rgb_lcd_switch_scroll"></block>
-            <!--block type="lcd_lefttoright"></block-->
-            <!--block type="lcd_righttoleft"></block-->
-            <!--block type="grove_serial_lcd_power"></block-->
-            <!--block type="grove_serial_lcd_effect"></block-->
         </category>
     </category>
     <category id="category_adafruit">
