@@ -98,7 +98,7 @@ Blockly.Blocks['linkit_ble_Characteristic'] = {
     this.appendValueInput("CHARACTERISTIC")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_SERVICE);
+      .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_SEC);
     this.appendDummyInput()
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_CHARACTERISTIC_TYPE)

@@ -1174,7 +1174,8 @@ Blockly.Msg.LINKIT_SET_BLE_CENTRAL_GET_PERIPHERAL_WITH_INDEX = "第 %1 個BLE裝
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL = "https://docs.labs.mediatek.com/resource/linkit7697-arduino/en/using-bluetooth#UsingBluetooth-UsingLinkIt7697asaSimpleBLEPeripheral";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TITLE = "建立藍牙週邊裝置";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_NAME = "顯示名稱";
-Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_SERVICE = "UUID";
+Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_SERVICE = "服務 UUID";
+Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_SEC = "UUID";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_CHARACTERISTIC = "新增藍芽屬性";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_CHARACTERISTIC_TYPE = "類型";
 Blockly.Msg.LINKIT_SET_LBLE_ATTRIBUTE = "讀寫屬性";
@@ -1193,3 +1194,5 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY = "EddyStoneURL";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL = "URL(17字以內)";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP = "http://";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
+
+Blockly.Msg.CATEGORY_EXTERNAL = "外部元件";

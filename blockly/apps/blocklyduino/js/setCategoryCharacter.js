@@ -23,7 +23,7 @@ function setCategoryCharacter() {
   $('#category_ultrasonic').attr('name',Blockly.Msg.CATEGORY_ULTRA_SONIC);
   $('#category_lcd').attr('name',Blockly.Msg.CATEGORY_LCD);
   $('#category_lcd_rgb').attr('name',Blockly.Msg.CATEGORY_GROVE_LCD_RGB);
-  $('#CATEGORY_INVOLTy_grove_input').attr('name',Blockly.Msg.CATEGORY_GROVE_INPUT);
+  $('#category_grove_input').attr('name',Blockly.Msg.CATEGORY_GROVE_INPUT);
   $('#category_grove_output').attr('name',Blockly.Msg.CATEGORY_GROVE_OUTPUT);
   $('#category_grove_sensor').attr('name',Blockly.Msg.CATEGORY_GROVE_SENSOR);
   $('#category_adafruit').attr('name',Blockly.Msg.CATEGORY_ADAFRUIT);
@@ -65,11 +65,15 @@ function setCategoryCharacter() {
   $('label[for="chbox_category_i2c_sevenseg"]').text(Blockly.Msg.CATEGORY_I2C_SEVENSEG);
   $('label[for="chbox_category_other_sensor"]').text(Blockly.Msg.CATEGORY_OTHER_SENSOR);
 
+  // LinkIt
+  $('label[for="chbox_category_linkit"]').text(Blockly.Msg.CATEGORY_LINKIT);
   $('#category_linkit').attr('name',Blockly.Msg.CATEGORY_LINKIT);
   $('#category_linkit_wifi').attr('name',Blockly.Msg.CATEGORY_LINKIT_WIFI);
   $('#category_linkit_wifi_advanced').attr('name',Blockly.Msg.CATEGORY_LINKIT_WIFI_ADVANCED);
   $('#category_linkit_mcs').attr('name',Blockly.Msg.CATEGORY_LINKIT_MCS);
   $('#category_linkit_ble').attr('name',Blockly.Msg.CATEGORY_LINKIT_BLE);
   $('#category_linkit_ble_ibeacon').attr('name',Blockly.Msg.CATEGORY_LINKIT_BLE_BEACON);
-  $('label[for="chbox_category_linkit"]').text(Blockly.Msg.CATEGORY_LINKIT);
+
+  // External
+  $('#category_external').attr('name',Blockly.Msg.CATEGORY_EXTERNAL);
 }

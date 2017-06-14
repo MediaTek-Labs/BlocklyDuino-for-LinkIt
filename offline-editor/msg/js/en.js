@@ -1196,6 +1196,7 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL = "https://docs.labs.mediatek.com/r
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TITLE = "Create BLE Peripheral";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_NAME = "Display Name";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_SERVICE = "Service UUID";
+Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_SEC = "UUID";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_CHARACTERISTIC = "Add Characteristic";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_CHARACTERISTIC_TYPE = "Type";
 Blockly.Msg.LINKIT_SET_LBLE_ATTRIBUTE = "Attribute";
@@ -1214,3 +1215,5 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY = "EddyStoneURL";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL = "URL (length <17 chars)";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP = "http://";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
+
+Blockly.Msg.CATEGORY_EXTERNAL = "External";
