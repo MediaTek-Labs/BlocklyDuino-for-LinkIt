@@ -29,9 +29,14 @@ goog.require('Blockly.Arduino');
 
 Blockly.Arduino.servo_attach = function() {
   var pin = this.getFieldValue('PIN');
+  var code = '';
   Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>';
   Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo __myservo' + pin + ';';
-  var code = '__myservo' + pin + '.attach(' + pin + ');\n';
+  if (Blockly.Arduino.setups_['servo_' + pin] === undefined) {
+      Blockly.Arduino.setups_['servo_' + pin] = '__myservo' + pin + '.attach(' + pin + ');';
+  } else {
+      code = '__myservo' + pin + '.attach(' + pin + ');\n';
+  }
   return code;
 };
 
@@ -39,9 +44,14 @@ Blockly.Arduino.servo_custom_attach = function() {
   var pin = this.getFieldValue('PIN');
   var max = this.getFieldValue('MAX');
   var min = this.getFieldValue('MIN');
+  var code = '';
   Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>';
   Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo __myservo' + pin + ';';
-  var code = '__myservo' + pin + '.attach(' + pin + ',' + min + ',' + max + ');\n';
+  if (Blockly.Arduino.setups_['servo_' + pin] === undefined) {
+      Blockly.Arduino.setups_['servo_' + pin] = '__myservo' + pin + '.attach(' + pin + ',' + min + ',' + max + ');';
+  } else {
+      code = '__myservo' + pin + '.attach(' + pin + ',' + min + ',' + max + ');\n';
+  }
   return code;
 };
 
@@ -50,7 +60,9 @@ Blockly.Arduino.servo_write = function() {
   var angle = Blockly.Arduino.valueToCode(this, 'ANGLE', Blockly.Arduino.ORDER_ATOMIC) || '90'
   Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>';
   Blockly.Arduino.definitions_['define_class_servo_' + pin] = 'Servo __myservo' + pin + ';';
-  Blockly.Arduino.setups_['servo_' + pin] = '__myservo' + pin + '.attach(' + pin + ');';
+  if (!Blockly.Arduino.setups_['servo_' + pin]) {
+      Blockly.Arduino.setups_['servo_' + pin] = '__myservo' + pin + '.attach(' + pin + ');';
+  }
   var code = '__myservo' + pin + '.write(' + angle + ');\n';
   return code;
 };
@@ -60,7 +72,9 @@ Blockly.Arduino.servo_writeus = function() {
   var angle = Blockly.Arduino.valueToCode(this, 'ANGLE_US', Blockly.Arduino.ORDER_ATOMIC) || '1500'
   Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>';
   Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo __myservo' + pin + ';';
-  Blockly.Arduino.setups_['servo_' + pin] = '__myservo' + pin + '.attach('+ pin + ');';
+  if (Blockly.Arduino.setups_['servo_' + pin] === undefined) {
+      Blockly.Arduino.setups_['servo_' + pin] = '__myservo' + pin + '.attach('+ pin + ');';
+  }
   var code = '__myservo' + pin + '.writeMicroseconds(' + angle + ');\n';
   return code;
 };
@@ -77,6 +91,9 @@ Blockly.Arduino.servo_attached = function() {
   var pin = this.getFieldValue('PIN');
   Blockly.Arduino.definitions_['define_servo'] = '#include <Servo.h>';
   Blockly.Arduino.definitions_['define_class_servo_'+ pin] = 'Servo __myservo' + pin + ';';
+  if (Blockly.Arduino.setups_['servo_' + pin] === undefined) {
+      Blockly.Arduino.setups_['servo_' + pin] = '__myservo' + pin + '.attach('+ pin + ');';
+  }
   var code = '__myservo' + pin + '.attached()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

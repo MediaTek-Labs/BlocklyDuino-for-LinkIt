@@ -31,13 +31,17 @@ Blockly.Arduino.initializes_setup = function() {
   var branch = Blockly.Arduino.statementToCode(this, 'CONTENT');
   branch = branch.replace(/(^\s+)|(\s+$)/g, "");
   Blockly.Arduino.setups_['manual_add'] = branch;
-
   var code = "";
   return code;
 };
+
 Blockly.Arduino.initializes_loop = function() {
   var branch = Blockly.Arduino.statementToCode(this, 'CONTENT');
   branch = branch.replace(/(^\s+)|(\s+$)/g, "");
   var code = branch;
   return code;
+};
+
+Blockly.Arduino.initializes_temp = function() {
+  return '';
 };

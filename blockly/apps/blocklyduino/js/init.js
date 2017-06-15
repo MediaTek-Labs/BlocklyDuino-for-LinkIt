@@ -139,7 +139,8 @@ function init() {
 
 function buildtoolBox() {
   var loadIds;
-  var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_digital,category_analog,category_serial,category_others,category_time,category_serial,category_interrupts,category_sep,category_linkit_wifi,category_linkit_mcs,category_linkit_ble,category_linkit_ble_ibeacon,category_sep,category_servo";
+  var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_digital,category_analog,category_serial,category_others,category_time,category_serial,category_interrupts,category_servo,category_sep,category_linkit_wifi,category_linkit_mcs,category_linkit_ble,category_linkit_ble_ibeacon";
+  // var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_digital,category_analog,category_serial,category_others,category_time,category_serial,category_interrupts,category_servo,category_sep,category_linkit_wifi,category_linkit_mcs,category_linkit_ble,category_linkit_ble_ibeacon,category_sep,category_external";
 
   var option = window.localStorage.toolboxids;
 
@@ -275,12 +276,16 @@ function setScript() {
 function setCharacter(){
   setCategoryCharacter();
 
-  var manifestData = chrome.runtime.getManifest();
-  $("#version").on('click', function(){
-      require('nw.gui').Shell.openExternal(manifestData.update_url);
-      return false;
-  });
-  $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version);
+  try {
+    var manifestData = chrome.runtime.getManifest();
+    $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version);
+  }
+  catch(err) {
+    $("#version").remove();
+  }
+  finally {
+
+  }
 
   $("#tab_blocks").text(Blockly.Msg.BLOCKS);
   $("#tab_arduino").text(Blockly.Msg.ARDUINO);
