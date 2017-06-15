@@ -31,7 +31,6 @@ Blockly.Arduino.initializes_setup = function() {
   var branch = Blockly.Arduino.statementToCode(this, 'CONTENT');
   branch = branch.replace(/(^\s+)|(\s+$)/g, "");
   Blockly.Arduino.setups_['manual_add'] = branch;
-
   var code = "";
   return code;
 };
