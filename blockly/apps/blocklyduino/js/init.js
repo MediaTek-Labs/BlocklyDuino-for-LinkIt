@@ -145,6 +145,7 @@ function buildtoolBox() {
     var manifestData = chrome.runtime.getManifest();
     if (manifestData.version_name.indexOf('b', manifestData.version_name.length - 1) !== -1) {
         base += ",category_sep,category_external";
+        Materialize.toast(Blockly.Msg.ERROR_BETA_WARNING, 10000);
     }
   }
   catch(err) {
@@ -290,7 +291,11 @@ function setCharacter(){
 
   try {
     var manifestData = chrome.runtime.getManifest();
-    $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version);
+    if (manifestData.version_name.indexOf('b', manifestData.version_name.length - 1) !== -1) {
+        $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version + Blockly.Msg.SETTINGS_VERSION_PRE_RELEASE);
+    } else {
+        $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version);
+    }
   }
   catch(err) {
     $("#version").remove();

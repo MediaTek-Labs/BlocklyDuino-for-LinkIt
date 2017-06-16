@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2017-06-16 10:35:35.123467",
+		"lastupdated": "2017-06-16 11:07:47.486480",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
+	"ERROR_BETA_WARNING": "YOUR ARE USING A PRE-RELEASE VERSION! PLEASE USE A STABLE RELEASE INSTEAD!",
 	"IR_REMOTE_BUTTON_HELPURL": "http://z3t0.github.io/Arduino-IRremote/",
 	"IR_REMOTE_BUTTON_BUTTON": " button",
 	"IR_REMOTE_BUTTON_POWER": "Power",
