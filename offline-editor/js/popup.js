@@ -91,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#dialog2_ok').addEventListener("click", function() {
     var input = document.getElementById('dialog2_filename');
     var filename = input.value;
-    console.log(filename);
     if (false === input.checkValidity()) {
       input.value = "";
       setFile(null, false);
