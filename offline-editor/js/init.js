@@ -127,10 +127,95 @@ function buildBlocks(xmlValue) {
   }
 }
 
+function versionCompare(v1, v2, options) {
+    var lexicographical = options && options.lexicographical,
+        zeroExtend = options && options.zeroExtend,
+        v1parts = v1.split('.'),
+        v2parts = v2.split('.');
+
+    function isValidPart(x) {
+        return (lexicographical ? /^\d+[A-Za-z]*$/ : /^\d+$/).test(x);
+    }
+
+    if (!v1parts.every(isValidPart) || !v2parts.every(isValidPart)) {
+        return NaN;
+    }
+
+    if (zeroExtend) {
+        while (v1parts.length < v2parts.length) v1parts.push("0");
+        while (v2parts.length < v1parts.length) v2parts.push("0");
+    }
+
+    if (!lexicographical) {
+        v1parts = v1parts.map(Number);
+        v2parts = v2parts.map(Number);
+    }
+
+    for (var i = 0; i < v1parts.length; ++i) {
+        if (v2parts.length == i) {
+            return 1;
+        }
+
+        if (v1parts[i] == v2parts[i]) {
+            continue;
+        }
+        else if (v1parts[i] > v2parts[i]) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    }
+
+    if (v1parts.length != v2parts.length) {
+        return -1;
+    }
+
+    return 0;
+}
+
 function init() {
   var loadIds;
-  var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_digital,category_analog,category_serial,category_others,category_time,category_interrupts,category_servo,category_sep,category_linkit_wifi,category_linkit_mcs,category_linkit_ble,category_linkit_ble_ibeacon";
-  // var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_digital,category_analog,category_serial,category_others,category_time,category_interrupts,category_servo,category_sep,category_linkit_wifi,category_linkit_mcs,category_linkit_ble,category_linkit_ble_ibeacon,category_sep,category_external";
+  var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_digital,category_analog,category_serial,category_others,category_time,category_serial,category_interrupts,category_servo,category_sep,category_linkit_wifi,category_linkit_mcs,category_linkit_ble,category_linkit_ble_ibeacon";
+
+  try {
+    var manifestData = chrome.runtime.getManifest();
+    var updateURL = manifestData.update_url;
+    var isPreRelease = false;
+    if (manifestData.version_name.indexOf('b', manifestData.version_name.length - 1) !== -1) {
+        isPreRelease = true;
+        updateURL = updateURL.replace('/master/', '/dev/');
+        base += ",category_sep,category_external";
+        Materialize.toast(Blockly.Msg.ERROR_BETA_WARNING, 10000);
+    }
+
+    if (manifestData.version.length > 0) {
+      var client = new XMLHttpRequest();
+      client.open('GET', updateURL);
+      client.onreadystatechange = function() {
+        if (client.readyState == 4 && client.status == 200) {
+          if (client.responseText) {
+             var resp = JSON.parse(client.responseText);
+             if (versionCompare(resp.version, manifestData.version) > 0) {
+               var message = Blockly.Msg.MESSAGE_UPDATE + resp.version;
+               if (isPreRelease) {
+                 message += Blockly.Msg.SETTINGS_VERSION_PRE_RELEASE;
+               }
+               message += Blockly.Msg.MESSAGE_UPDATE_APPEND;
+               Materialize.toast(message, 10000);
+             }
+          }
+        }
+      }
+      client.send();
+    }
+  }
+  catch(err) {
+
+  }
+  finally {
+
+  }
 
   chrome.storage.local.get('toolboxids', function (value) {
     var option = value.toolboxids;
@@ -194,7 +279,11 @@ function setCharacter(){
         nw.Shell.openExternal(manifestData.update_url);
         return false;
     });
-    $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version);
+    if (manifestData.version_name.indexOf('b', manifestData.version_name.length - 1) !== -1) {
+        $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version + Blockly.Msg.SETTINGS_VERSION_PRE_RELEASE);
+    } else {
+        $("#version").text(Blockly.Msg.SETTINGS_VERSION + manifestData.version);
+    }
   }
   catch(err) {
     $("#version").remove();

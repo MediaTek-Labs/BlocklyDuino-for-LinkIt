@@ -18,7 +18,7 @@
    "icons": {
       "128": "media/icon_128.png"
    },
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu6WQ1cPzGHh0SR7BZUTFnI4Ttj7H9CMb9IJHsFj5BpaDziUV4b8/544AhC0zbOVV0OOkw87qHKymvmkIqaIx1U1AaQIGCIQCf3IYFO2cVTF8p/V6RsMNrXwf9+/+5OLwK81B5yVyZCYdjMw0XuRVznGni8qBPfu3J3dhUyFsWx4LAGDOrqCqs0fLMvjqjmTNfNhz1yFd/T6371EbCDNK8/bdrBoWs8/0GR4Cl4ocAH8h708tpo/ZQY9foOGND/wTLNaTKWKFtIllZW6jpzyE95jo0JFqgOzRiWhWmY/sDezyNhuMLz6KWs9R2II3Qcy1lbeEu0BrLli3xLy/G5R+twIDAQAB",
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqoARg4aCOiiWT9X0UkCyhhpTZAftnePtQA+7P4vjPfikRR7Z1CVMLto2RoMH+sStdOgO5bsAl3LoLmqJfJq0GJmLzvqTkmPSS0NG1vhAiYRemy1zVxRmPQW3tXms6cjS9TTLtO28o1TiBVXLLQKGWP1qlWozvC408oEu0zlVZnbggsUK4YHEA5gGUA1zhdvxh0p123oYpazfNDv2wpmmDuwml1cCIKBKwlOOc6eOt7YpmRdyc8K2CBRd/NyvILgwDMegGf3NTiVJRMHJGHiR+iDIedFVEKH7xSMRpgTCnRH3AksJqy70SHFKM4wxtmwdXLZVft9o+u7senbEyR1oBQIDAQAB",
    "manifest_version": 2,
    "minimum_chrome_version": "33",
    "name": "Linkit 7697 BlocklyDuino Editor",
@@ -26,6 +26,7 @@
    "permissions": [ {
       "fileSystem": [ "write", "retainEntries", "directory" ]
    }, "storage", "https://raw.githubusercontent.com/MediaTek-Labs/*", "alarms" ],
-   "update_url": "https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt/releases",
-   "version": "2.7.0"
+   "update_url": "https://raw.githubusercontent.com/MediaTek-Labs/BlocklyDuino-for-LinkIt/master/offline-editor/manifest.json",
+   "version": "2.7.5",
+   "version_name": "2.7.5"
 }
