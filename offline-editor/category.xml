@@ -497,7 +497,7 @@
             <!--block type="grove_line_finder"></block-->
             <!--block type="grove_pir_motion_sensor"></block-->
             <block type="grove_light_sensor"></block>
-            <block type="grove_temporature_sensor"></block>
+            <!--block type="grove_temporature_sensor"></block-->
             <block type="grove_sound_sensor"></block>
             <block type="grove_ultrasonic_ranger"></block>
             <block type="grove_temporature_humidity_sensor"></block>

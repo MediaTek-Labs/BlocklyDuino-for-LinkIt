@@ -103,7 +103,7 @@ Blockly.Blocks['grove_led'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_LED_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.led_image, 64, 64))
-      .appendField(Blockly.Msg.GROVE_PIN)
+      .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_digital), "PIN")
       .appendField(Blockly.Msg.GROVE_LED_STAT)
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.INOUT_HIGH, "HIGH"], [Blockly.Msg.INOUT_LOW, "LOW"]]), "STAT");
@@ -120,7 +120,7 @@ Blockly.Blocks['grove_button'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_BUTTON_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.button_image, 64, 64))
-      .appendField(Blockly.Msg.GROVE_PIN)
+      .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_digital), "PIN");
     this.setOutput(true, 'Boolean');
     this.setTooltip(Blockly.Msg.GROVE_BUTTON_TOOLTIP);
@@ -134,7 +134,7 @@ Blockly.Blocks['grove_touch'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_TOUCH_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.touch_image, 64, 64))
-      .appendField(Blockly.Msg.GROVE_PIN)
+      .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_digital), "PIN");
     this.setOutput(true, 'Boolean');
     this.setTooltip(Blockly.Msg.GROVE_TOUCH_TOOLTIP);
@@ -147,8 +147,8 @@ Blockly.Blocks['grove_light_sensor'] = {
     this.setColour(Blockly.Blocks.grove.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_LIGHT_SENSOR_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.light_sensor_image, 64, 64))
-      .appendField(Blockly.Msg.GROVE_PIN)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.light_sensor_image, 64, 48))
+      .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_analog), "PIN");
     this.setOutput(true, 'Number');
     this.setTooltip(Blockly.Msg.GROVE_LIGHT_SENSOR_TOOLTIP);
@@ -162,7 +162,7 @@ Blockly.Blocks['grove_rotary_angle'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_ROTARY_ANGLE_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.rotary_angle_image, 64, 64))
-      .appendField(Blockly.Msg.GROVE_PIN)
+      .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_analog), "PIN");
     this.setOutput(true, 'Number');
     this.setTooltip(Blockly.Msg.GROVE_ROTARY_ANGLE_TOOLTIP);
@@ -176,7 +176,7 @@ Blockly.Blocks['grove_tilt_switch'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_TILT_SWITCH_TITLE)
       .appendField(new Blockly.FieldImage("http://www.seeedstudio.com/wiki/images/thumb/9/95/Tilt1.jpg/400px-Tilt1.jpg", 64, 64))
-      .appendField(Blockly.Msg.GROVE_PIN)
+      .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_digital), "PIN");
     this.setOutput(true, 'Boolean');
     this.setTooltip(Blockly.Msg.GROVE_TILT_SWITCH_TOOLTIP);
@@ -190,7 +190,7 @@ Blockly.Blocks['grove_buzzer'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_BUZZER_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.buzzer_image, 64, 64))
-      .appendField(Blockly.Msg.GROVE_PIN)
+      .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_digital), "PIN")
       .appendField(Blockly.Msg.GROVE_STAT)
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.INOUT_HIGH, "HIGH"], [Blockly.Msg.INOUT_LOW, "LOW"]]), "STAT");
@@ -206,8 +206,8 @@ Blockly.Blocks['grove_relay'] = {
     this.setColour(Blockly.Blocks.grove.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_RELAY_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.relay_image, 64, 64))
-      .appendField(Blockly.Msg.GROVE_PIN)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.relay_image, 64, 41))
+      .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_digital), "PIN")
       .appendField(Blockly.Msg.GROVE_STAT)
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.INOUT_HIGH, "HIGH"], [Blockly.Msg.INOUT_LOW, "LOW"]]), "STAT");
@@ -224,7 +224,7 @@ Blockly.Blocks['grove_temporature_sensor'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_TEMP_SENSOR_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.temperature_sensor_image, 64, 64))
-      .appendField(Blockly.Msg.GROVE_PIN)
+      .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_analog), "PIN")
     this.setOutput(true, 'Number');
     this.setTooltip(Blockly.Msg.GROVE_TEMP_SENSOR_TOOLTIP);
@@ -305,7 +305,7 @@ Blockly.Blocks['grove_sound_sensor'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_SOUND_SENSOR_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.sound_sensor_image, 64, 64))
-      .appendField(Blockly.Msg.GROVE_PIN)
+      .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_analog), "PIN")
     this.setOutput(true, 'Number');
     this.setTooltip(Blockly.Msg.GROVE_SOUND_SENSOR_TOOLTIP);
