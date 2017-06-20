@@ -1,15 +1,15 @@
-# Welcome to LinkIt 7697 BlocklyDuino Editor
+# Welcome to BlocklyDuino Editor
 
 ![Preview](preview.png)
 
 **BlocklyDuino** is a web-based visual programming editor for [Arduino](http://www.arduino.cc/) based on [Blockly](https://developers.google.com/blockly/), the web-based, graphical programming editor developed by *[Google](https://github.com/google)*, provide static type language blocks and code generators for Arduino programming.
 
-**LinkIt 7697 BlocklyDuino Editor** is based on the original BlocklyDuino Editor of *[Fred Lin](https://github.com/gasolin)* and others, developed specificly for MediaTek's LinkIt boards.
+**BlocklyDuino Editor** is based on the original work of *[Fred Lin](https://github.com/gasolin)* and others, adding supports for MediaTek's LinkIt boards.
 
 ## Features
 
 - Programming Arduino with visually drag and drop code blocks.
-- Generate fully compatible Arduino source code for MediaTek's LinkIt boards.
+- Generate Arduino compatible source code for MediaTek's LinkIt boards.
 
 ## Usage
 

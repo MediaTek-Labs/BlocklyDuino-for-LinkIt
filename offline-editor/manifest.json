@@ -6,7 +6,7 @@
    },
    "author": "MediaTek Labs",
    "default_locale": "en",
-   "description": "BlocklyDuino Editor for Linkit 7697.",
+   "description": "BlocklyDuino Editor for Arduino.",
    "externally_connectable": {
       "matches": [ "*://MediaTek-Labs.github.io/*", "*://*.mediatek.com/*" ]
    },
@@ -21,7 +21,7 @@
    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqoARg4aCOiiWT9X0UkCyhhpTZAftnePtQA+7P4vjPfikRR7Z1CVMLto2RoMH+sStdOgO5bsAl3LoLmqJfJq0GJmLzvqTkmPSS0NG1vhAiYRemy1zVxRmPQW3tXms6cjS9TTLtO28o1TiBVXLLQKGWP1qlWozvC408oEu0zlVZnbggsUK4YHEA5gGUA1zhdvxh0p123oYpazfNDv2wpmmDuwml1cCIKBKwlOOc6eOt7YpmRdyc8K2CBRd/NyvILgwDMegGf3NTiVJRMHJGHiR+iDIedFVEKH7xSMRpgTCnRH3AksJqy70SHFKM4wxtmwdXLZVft9o+u7senbEyR1oBQIDAQAB",
    "manifest_version": 2,
    "minimum_chrome_version": "33",
-   "name": "Linkit 7697 BlocklyDuino Editor",
+   "name": "BlocklyDuino Editor",
    "offline_enabled": true,
    "permissions": [ {
       "fileSystem": [ "write", "retainEntries", "directory" ]
