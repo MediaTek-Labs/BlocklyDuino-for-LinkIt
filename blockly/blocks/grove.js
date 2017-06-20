@@ -25,6 +25,7 @@
 /**
  * @fileoverview Helper functions for generating seeeduino grove blocks.
  * @author gasolin@gmail.com (Fred Lin)
+ * @author hi@vox.vg (Zhi-Wei Cai)
  */
 
 goog.provide('Blockly.Blocks.grove');
@@ -45,6 +46,7 @@ Blockly.Blocks.grove.buzzer_image = filepath.media+'/grove_buzzer.jpg';
 Blockly.Blocks.grove.sound_sensor_image = filepath.media+'/grove_sound_sensor.jpg';
 Blockly.Blocks.grove.ir_receiver_image = filepath.media+'/grove_ir_receiver.jpg';
 Blockly.Blocks.grove.ir_emitter_image = filepath.media+'/grove_ir_emitter.jpg';
+Blockly.Blocks.grove.ultrasonic_ranger_image = filepath.media+'/grove_ultrasonic_ranger.jpg';
 
 Blockly.Blocks.grove.rgb_lcd_checkBlocks = function(obj) {
   var legal = null;
@@ -339,17 +341,17 @@ Blockly.Blocks['grove_line_finder'] = {
 
 Blockly.Blocks['grove_ultrasonic_ranger'] = {
   init: function() {
-    this.setHelpUrl('http://www.seeedstudio.com/wiki/Grove_-_Ultrasonic_Ranger');
+    this.setHelpUrl(Blockly.Msg.GROVE_ULTRASONIC_RANGER_HELPURL);
     this.setColour(Blockly.Blocks.grove.HUE);
     this.appendDummyInput()
-      .appendField("Ultrasonic Ranger")
-      .appendField(new Blockly.FieldImage("http://www.seeedstudio.com/wiki/images/thumb/b/b0/Twig_-_Ultrasonic_Ranger2.jpg/200px-Twig_-_Ultrasonic_Ranger2.jpg", 64, 64))
-      .appendField("PIN#")
+      .appendField(Blockly.Msg.GROVE_ULTRASONIC_RANGER_TITLE)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.ultrasonic_ranger_image, 64, 46))
+      .appendField(Blockly.Msg.GROVE_ULTRASONIC_RANGER_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_digital), "PIN")
-      .appendField("unit")
-      .appendField(new Blockly.FieldDropdown([["cm", "cm"],  ["inch", "inch"]]), "UNIT");
-    this.setOutput(true, 'Boolean');
-    this.setTooltip('Non-contact distance measurement module');
+      .appendField(Blockly.Msg.GROVE_ULTRASONIC_RANGER_UNIT)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.GROVE_ULTRASONIC_RANGER_UNIT_CM, "cm"],  [Blockly.Msg.GROVE_ULTRASONIC_RANGER_UNIT_INCH, "inch"]]), "UNIT");
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.GROVE_ULTRASONIC_RANGER_TOOLTIP);
   }
 };
 
