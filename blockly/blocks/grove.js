@@ -1145,3 +1145,26 @@ Blockly.Blocks['grove_oled_display_set_cursor'] = {
     this.setTooltip(Blockly.Msg.GROVE_OLED_DISPLAY_TOOLTIP);
   }
 };
+
+Blockly.Blocks['grove_oled_display_put'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.GROVE_OLED_DISPLAY_HELPURL);
+    this.setColour(Blockly.Blocks.grove.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_TITLE)
+        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.oled_display_image, 64, 48))
+        .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_PUT)
+        .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_WRITE)
+        .appendField(new Blockly.FieldDropdown([
+            [Blockly.Msg.VARIABLES_TYPE_NUMBER, "Number"],
+            [Blockly.Msg.VARIABLES_TYPE_FLOAT,  "Float"],
+            [Blockly.Msg.VARIABLES_TYPE_STRING, "String"]
+        ]), "TYPE");
+    this.appendValueInput('VALUE')
+        .setCheck(["Number", "String"]);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.GROVE_OLED_DISPLAY_TOOLTIP);
+  }
+};
