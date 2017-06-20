@@ -34,19 +34,20 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks.grove.HUE = 190;
 
-Blockly.Blocks.grove.led_image = filepath.media+'/grove_led.jpg';
-Blockly.Blocks.grove.button_image = filepath.media+'/grove_button.jpg';
-Blockly.Blocks.grove.touch_image = filepath.media+'/grove_touch.jpg';
-Blockly.Blocks.grove.rotary_angle_image = filepath.media+'/grove_rotary_angle.jpg';
-Blockly.Blocks.grove.relay_image = filepath.media+'/grove_relay.jpg';
-Blockly.Blocks.grove.temperature_sensor_image = filepath.media+'/grove_temperature_sensor.jpg';
-Blockly.Blocks.grove.light_sensor_image = filepath.media+'/grove_light_sensor.jpg';
-Blockly.Blocks.grove.rgb_lcd_image = filepath.media+'/grove_rgb_lcd.jpg';
-Blockly.Blocks.grove.buzzer_image = filepath.media+'/grove_buzzer.jpg';
-Blockly.Blocks.grove.sound_sensor_image = filepath.media+'/grove_sound_sensor.jpg';
-Blockly.Blocks.grove.ir_receiver_image = filepath.media+'/grove_ir_receiver.jpg';
-Blockly.Blocks.grove.ir_emitter_image = filepath.media+'/grove_ir_emitter.jpg';
-Blockly.Blocks.grove.ultrasonic_ranger_image = filepath.media+'/grove_ultrasonic_ranger.jpg';
+Blockly.Blocks.grove.led_image = filepath.media + '/grove_led.jpg';
+Blockly.Blocks.grove.button_image = filepath.media + '/grove_button.jpg';
+Blockly.Blocks.grove.touch_image = filepath.media + '/grove_touch.jpg';
+Blockly.Blocks.grove.rotary_angle_image = filepath.media + '/grove_rotary_angle.jpg';
+Blockly.Blocks.grove.relay_image = filepath.media + '/grove_relay.jpg';
+Blockly.Blocks.grove.temperature_sensor_image = filepath.media + '/grove_temperature_sensor.jpg';
+Blockly.Blocks.grove.light_sensor_image = filepath.media + '/grove_light_sensor.jpg';
+Blockly.Blocks.grove.rgb_lcd_image = filepath.media + '/grove_rgb_lcd.jpg';
+Blockly.Blocks.grove.buzzer_image = filepath.media + '/grove_buzzer.jpg';
+Blockly.Blocks.grove.sound_sensor_image = filepath.media + '/grove_sound_sensor.jpg';
+Blockly.Blocks.grove.ir_receiver_image = filepath.media + '/grove_ir_receiver.jpg';
+Blockly.Blocks.grove.ir_emitter_image = filepath.media + '/grove_ir_emitter.jpg';
+Blockly.Blocks.grove.ultrasonic_ranger_image = filepath.media + '/grove_ultrasonic_ranger.jpg';
+Blockly.Blocks.grove.temporature_humidity_sensor_image = filepath.media + '/grove_temporature_humidity_sensor.jpg';
 
 Blockly.Blocks.grove.rgb_lcd_checkBlocks = function(obj) {
   var legal = null;
@@ -346,7 +347,7 @@ Blockly.Blocks['grove_ultrasonic_ranger'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_ULTRASONIC_RANGER_TITLE)
       .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.ultrasonic_ranger_image, 64, 46))
-      .appendField(Blockly.Msg.GROVE_ULTRASONIC_RANGER_PORT)
+      .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_digital), "PIN")
       .appendField(Blockly.Msg.GROVE_ULTRASONIC_RANGER_UNIT)
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.GROVE_ULTRASONIC_RANGER_UNIT_CM, "cm"],  [Blockly.Msg.GROVE_ULTRASONIC_RANGER_UNIT_INCH, "inch"]]), "UNIT");
@@ -1069,5 +1070,21 @@ Blockly.Blocks['grove_ir_emitter_send'] = {
       return;
     }
     this.setWarningText(Blockly.Msg.GROVE_IR_EMITTER_WARNING);
+  }
+};
+
+Blockly.Blocks['grove_temporature_humidity_sensor'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.GROVE_TEMP_SENSOR_HELPURL);
+    this.setColour(Blockly.Blocks.grove.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_TITLE)
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.temporature_humidity_sensor_image, 64, 36))
+      .appendField(Blockly.Msg.GROVE_PORT)
+      .appendField(new Blockly.FieldDropdown(profile.default.grove_analog), "PIN")
+      .appendField(Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_HUMI, "h"], [Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_TEMP_C, "c"], [Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_TEMP_F, "f"]]), "UNIT");
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_TOOLTIP);
   }
 };
