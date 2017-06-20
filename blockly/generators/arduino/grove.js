@@ -670,17 +670,45 @@ Blockly.Arduino.grove_temporature_humidity_sensor = function() {
   var dropdown_unit = this.getFieldValue('UNIT');
 
   Blockly.Arduino.definitions_['include_temporature_humidity'] = '#include "DHT.h"\n';
-  Blockly.Arduino.definitions_['define_temporature_humidity'] = 'DHT __dht(' + dropdown_pin + ', DHT22);\n';
+  Blockly.Arduino.definitions_['define_temporature_humidity' + dropdown_pin] = 'DHT __dht' + dropdown_pin + '(' + dropdown_pin + ', DHT22);\n';
 
-  Blockly.Arduino.setups_['setup_temporature_humidity'] = '__dht.begin();\n';
+  Blockly.Arduino.setups_['setup_temporature_humidity' + dropdown_pin] = '__dht' + dropdown_pin + '.begin();\n';
 
   var code;
   if (dropdown_unit === "h") {
-    code = '__dht.readHumidity()';
+    code = '__dht' + dropdown_pin + '.readHumidity()';
   } else if (dropdown_unit === "c") {
-    code = '__dht.readTemperature()';
+    code = '__dht' + dropdown_pin + '.readTemperature()';
   } else {
-    code = '__dht.convertCtoF(__dht.readTemperature())';
+    code = '__dht' + dropdown_pin + '.convertCtoF(__dht.readTemperature())';
   }
   return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.grove_led_bar = function() {
+
+  var dropdown_pin = this.getFieldValue('PIN');
+  var level = Blockly.Arduino.valueToCode(this, 'LEVEL', Blockly.Arduino.ORDER_ATOMIC) || 0;
+  var prefix = '';
+  var pinValue;
+  if (dropdown_pin.startsWith('A')) {
+      prefix = 'A';
+      pinValue = parseInt(dropdown_pin.substring(1));
+  } else {
+      pinValue = parseInt(dropdown_pin);
+  }
+  pinValue++;
+  if (isNaN(level)) {
+      level = 0;
+  } else {
+      level = Math.min(10, Math.max(0, level));
+  }
+
+  Blockly.Arduino.definitions_['include_grove_led_bar'] = '#include <Grove_LED_Bar.h>\n';
+  Blockly.Arduino.definitions_['define_grove_led_bar' + dropdown_pin] = 'Grove_LED_Bar __bar' + dropdown_pin + '(' + dropdown_pin + ', ' +  prefix + pinValue.toString() + ', 0);\n';
+
+  Blockly.Arduino.setups_['setup_grove_led_bar' + dropdown_pin] = '__bar' + dropdown_pin + '.begin();\n';
+
+  var code = '__bar' + dropdown_pin + '.setLevel(' + level.toString() + ');\n';
+  return code;
 };
