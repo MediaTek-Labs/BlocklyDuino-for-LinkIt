@@ -748,3 +748,36 @@ Blockly.Arduino.grove_oled_display_set_cursor = function() {
   var code = 'SeeedOled.setTextXY(' + x.toString() + ', ' + y.toString() + ');\n';
   return code;
 };
+
+Blockly.Arduino.grove_oled_display_put = function() {
+
+  var type = this.getFieldValue('TYPE');
+  var value;
+  if (type === "Number" ||
+      type === "Float") {
+      value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || 0;
+      if (isNaN(value)) {
+          value = 0;
+      }
+      if (type === "Number") {
+          value = parseInt(value);
+          value = Math.round(value);
+      } else {
+          value = parseFloat(value);
+      }
+      value = value.toString();
+  } else {
+      value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || '';
+  }
+
+  Blockly.Arduino.definitions_['include_wire_lib'] = '#include <Wire.h>\n';
+  Blockly.Arduino.definitions_['include_seeedoled_lib'] = '#include <SeeedOLED.h>\n';
+
+  Blockly.Arduino.setups_['setup_wire_lib'] = 'Wire.begin();\n';
+  Blockly.Arduino.setups_['setup_seeedoled_lib_init'] = 'SeeedOled.init();\n';
+  Blockly.Arduino.setups_['setup_seeedoled_lib_deactivatescroll'] = 'SeeedOled.deactivateScroll();\n';
+  Blockly.Arduino.setups_['setup_seeedoled_lib_setmode'] = 'SeeedOled.setPageMode();\n';
+
+  var code = 'SeeedOled.put' + type + '(' + value + ');\n';
+  return code;
+};
