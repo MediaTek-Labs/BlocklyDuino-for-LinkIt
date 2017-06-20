@@ -712,3 +712,39 @@ Blockly.Arduino.grove_led_bar = function() {
   var code = '__bar' + dropdown_pin + '.setLevel(' + level.toString() + ');\n';
   return code;
 };
+
+Blockly.Arduino.grove_oled_display_clear = function() {
+  Blockly.Arduino.definitions_['include_wire_lib'] = '#include <Wire.h>\n';
+  Blockly.Arduino.definitions_['include_seeedoled_lib'] = '#include <SeeedOLED.h>\n';
+
+  Blockly.Arduino.setups_['setup_wire_lib'] = 'Wire.begin();\n';
+  Blockly.Arduino.setups_['setup_seeedoled_lib_init'] = 'SeeedOled.init();\n';
+  Blockly.Arduino.setups_['setup_seeedoled_lib_deactivatescroll'] = 'SeeedOled.deactivateScroll();\n';
+  Blockly.Arduino.setups_['setup_seeedoled_lib_setmode'] = 'SeeedOled.setPageMode();\n';
+
+  var code = 'SeeedOled.clearDisplay();\n';
+  return code;
+};
+
+Blockly.Arduino.grove_oled_display_set_cursor = function() {
+  var x = Blockly.Arduino.valueToCode(this, 'X_POS', Blockly.Arduino.ORDER_ATOMIC) || 0;
+  var y = Blockly.Arduino.valueToCode(this, 'Y_POS', Blockly.Arduino.ORDER_ATOMIC) || 0;
+
+  if (isNaN(x)) {
+      x = 0;
+  }
+  if (isNaN(y)) {
+      y = 0;
+  }
+
+  Blockly.Arduino.definitions_['include_wire_lib'] = '#include <Wire.h>\n';
+  Blockly.Arduino.definitions_['include_seeedoled_lib'] = '#include <SeeedOLED.h>\n';
+
+  Blockly.Arduino.setups_['setup_wire_lib'] = 'Wire.begin();\n';
+  Blockly.Arduino.setups_['setup_seeedoled_lib_init'] = 'SeeedOled.init();\n';
+  Blockly.Arduino.setups_['setup_seeedoled_lib_deactivatescroll'] = 'SeeedOled.deactivateScroll();\n';
+  Blockly.Arduino.setups_['setup_seeedoled_lib_setmode'] = 'SeeedOled.setPageMode();\n';
+
+  var code = 'SeeedOled.setTextXY(' + x.toString() + ', ' + y.toString() + ');\n';
+  return code;
+};

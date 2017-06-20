@@ -49,6 +49,7 @@ Blockly.Blocks.grove.ir_emitter_image = filepath.media + '/grove_ir_emitter.jpg'
 Blockly.Blocks.grove.ultrasonic_ranger_image = filepath.media + '/grove_ultrasonic_ranger.jpg';
 Blockly.Blocks.grove.temporature_humidity_sensor_image = filepath.media + '/grove_temporature_humidity_sensor.jpg';
 Blockly.Blocks.grove.led_bar_image = filepath.media + '/grove_led_bar.jpg';
+Blockly.Blocks.grove.oled_display_image = filepath.media + '/grove_oled_display.jpg';
 
 Blockly.Blocks.grove.rgb_lcd_checkBlocks = function(obj) {
   var legal = null;
@@ -1106,5 +1107,41 @@ Blockly.Blocks['grove_led_bar'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_LED_BAR_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['grove_oled_display_clear'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.GROVE_OLED_DISPLAY_HELPURL);
+    this.setColour(Blockly.Blocks.grove.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_TITLE)
+        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.oled_display_image, 64, 48))
+        .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_CLEAR);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.GROVE_OLED_DISPLAY_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['grove_oled_display_set_cursor'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.GROVE_OLED_DISPLAY_HELPURL);
+    this.setColour(Blockly.Blocks.grove.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_TITLE)
+        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.oled_display_image, 64, 48))
+    this.appendValueInput('X_POS')
+        .setCheck('Number')
+        .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_SET_CURSOR);
+    this.appendValueInput('Y_POS')
+        .setCheck('Number')
+        .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_SET_CURSOR_SEP);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_SET_CURSOR_APPEND);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.GROVE_OLED_DISPLAY_TOOLTIP);
   }
 };
