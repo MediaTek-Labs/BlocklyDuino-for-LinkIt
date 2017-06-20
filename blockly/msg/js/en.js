@@ -95,6 +95,7 @@ Blockly.Msg.CATEGORY_GROVE_INPUT = "Input";
 Blockly.Msg.CATEGORY_GROVE_LCD_RGB = "LCD RGB";
 Blockly.Msg.CATEGORY_GROVE_MOTOR = "Grove Motor";
 Blockly.Msg.CATEGORY_GROVE_OUTPUT = "Output";
+Blockly.Msg.CATEGORY_GROVE_ACTUATOR = "Actuators";
 Blockly.Msg.CATEGORY_GROVE_SENSOR = "Sensors";
 Blockly.Msg.CATEGORY_I2C_MATRIX = "LED Matrix";
 Blockly.Msg.CATEGORY_I2C_SEVENSEG = "7 Segment";
@@ -1238,3 +1239,4 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP = "http://";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
 
 Blockly.Msg.CATEGORY_EXTERNAL = "External";
+Blockly.Msg.CATEGORY_BETA = "Untested";

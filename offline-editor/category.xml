@@ -468,6 +468,18 @@
 </category>
 <category id="category_external">
     <category id="category_grove">
+        <category id="category_grove_actuator">
+            <block type="grove_relay"></block>
+        </category>
+        <category id="category_grove_sensor">
+            <block type="grove_light_sensor"></block>
+            <block type="grove_ultrasonic_ranger"></block>
+            <block type="grove_temporature_humidity_sensor"></block>
+        </category>
+    </category>
+</category>
+<category id="category_beta">
+    <category id="category_grove">
         <category id="category_grove_input">
             <block type="grove_button"></block>
             <block type="grove_touch"></block>
@@ -481,7 +493,6 @@
         </category>
         <category id="category_grove_output">
             <block type="grove_led"></block>
-            <block type="grove_relay"></block>
             <block type="grove_buzzer"></block>
             <block type="grove_ir_emitter_send">
                 <value name="DATA">
@@ -496,11 +507,8 @@
         <category id="category_grove_sensor">
             <!--block type="grove_line_finder"></block-->
             <!--block type="grove_pir_motion_sensor"></block-->
-            <block type="grove_light_sensor"></block>
             <!--block type="grove_temporature_sensor"></block-->
             <block type="grove_sound_sensor"></block>
-            <block type="grove_ultrasonic_ranger"></block>
-            <block type="grove_temporature_humidity_sensor"></block>
         </category>
         <category id="category_lcd_rgb">
             <block type="grove_rgb_lcd_begin"></block>
