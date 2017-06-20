@@ -34,21 +34,21 @@ goog.require('Blockly.Arduino');
 Blockly.Arduino.grove_led = function() {
   var dropdown_pin = this.getFieldValue('PIN');
   var dropdown_stat = this.getFieldValue('STAT');
-  Blockly.Arduino.setups_['setup_green_led_'+dropdown_pin] = 'pinMode(' + dropdown_pin + ', OUTPUT);';
-  var code = 'digitalWrite(' + dropdown_pin + ','+dropdown_stat+');\n'
+  Blockly.Arduino.setups_['setup_green_led_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', OUTPUT);';
+  var code = 'digitalWrite(' + dropdown_pin + ',' + dropdown_stat + ');\n'
   return code;
 };
 
 Blockly.Arduino.grove_button = function() {
   var dropdown_pin = this.getFieldValue('PIN');
-  Blockly.Arduino.setups_['setup_button_'+dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
+  Blockly.Arduino.setups_['setup_button_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
   var code = 'digitalRead(' + dropdown_pin + ')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino.grove_touch = function() {
   var dropdown_pin = this.getFieldValue('PIN');
-  Blockly.Arduino.setups_['setup_touch_'+dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
+  Blockly.Arduino.setups_['setup_touch_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
   var code = 'digitalRead(' + dropdown_pin + ')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -68,7 +68,7 @@ Blockly.Arduino.grove_rotary_angle = function() {
 
 Blockly.Arduino.grove_tilt_switch = function() {
   var dropdown_pin = this.getFieldValue('PIN');
-  Blockly.Arduino.setups_['setup_tilt_switch_'+dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
+  Blockly.Arduino.setups_['setup_tilt_switch_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
   var code = 'digitalRead(' + dropdown_pin + ')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -128,16 +128,16 @@ void loop() {
 Blockly.Arduino.grove_buzzer = function() {
   var dropdown_pin = this.getFieldValue('PIN');
   var dropdown_stat = this.getFieldValue('STAT');
-  Blockly.Arduino.setups_['setup_piezo_buzzer_'+dropdown_pin] = 'pinMode(' + dropdown_pin + ', OUTPUT);';
-  var code = 'digitalWrite(' + dropdown_pin + ','+dropdown_stat+');\n'
+  Blockly.Arduino.setups_['setup_piezo_buzzer_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', OUTPUT);';
+  var code = 'digitalWrite(' + dropdown_pin + ',' + dropdown_stat + ');\n'
   return code;
 };
 
 Blockly.Arduino.grove_relay = function() {
   var dropdown_pin = this.getFieldValue('PIN');
   var dropdown_stat = this.getFieldValue('STAT');
-  Blockly.Arduino.setups_['setup_relay_'+dropdown_pin] = 'pinMode(' + dropdown_pin + ', OUTPUT);';
-  var code = 'digitalWrite(' + dropdown_pin + ','+dropdown_stat+');\n'
+  Blockly.Arduino.setups_['setup_relay_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', OUTPUT);';
+  var code = 'digitalWrite(' + dropdown_pin + ',' + dropdown_stat + ');\n'
   return code;
 };
 
@@ -209,9 +209,9 @@ Blockly.Arduino.grove_serial_lcd_print = function() {
   //generate PIN#+1 port
   var NextPIN = _get_next_pin(dropdown_pin);
 
-  Blockly.Arduino.definitions_['var_lcd_'+dropdown_pin] = 'SerialLCD slcd_' + dropdown_pin + '(' + dropdown_pin + ','+NextPIN+');\n';
+  Blockly.Arduino.definitions_['var_lcd_' + dropdown_pin] = 'SerialLCD slcd_' + dropdown_pin + '(' + dropdown_pin + ','+NextPIN+');\n';
 
-  Blockly.Arduino.setups_['setup_lcd_'+dropdown_pin] = 'slcd_' + dropdown_pin + '.begin();\n';
+  Blockly.Arduino.setups_['setup_lcd_' + dropdown_pin] = 'slcd_' + dropdown_pin + '.begin();\n';
   var code = 'slcd_' + dropdown_pin + '.backlight();\n';
   code    += 'slcd_' + dropdown_pin + '.setCursor(0,0);\n';
   code    += 'slcd_' + dropdown_pin + '.print('+text+');\n';//text.replace(new RegExp('\'',"gm"),'')
@@ -230,8 +230,8 @@ Blockly.Arduino.grove_serial_lcd_power = function() {
   //generate PIN#+1 port
   var NextPIN = _get_next_pin(dropdown_pin);
 
-  Blockly.Arduino.definitions_['var_lcd'+dropdown_pin] = 'SerialLCD slcd_' + dropdown_pin + '(' + dropdown_pin + ','+NextPIN+');\n';
-  var code = 'slcd_'+dropdown_pin;
+  Blockly.Arduino.definitions_['var_lcd' + dropdown_pin] = 'SerialLCD slcd_' + dropdown_pin + '(' + dropdown_pin + ','+NextPIN+');\n';
+  var code = 'slcd_' + dropdown_pin;
   if(dropdown_stat==="ON"){
     code += '.Power();\n';
   } else {
@@ -249,8 +249,8 @@ Blockly.Arduino.grove_serial_lcd_effect = function() {
   //generate PIN#+1 port
   var NextPIN = _get_next_pin(dropdown_pin);
 
-  Blockly.Arduino.definitions_['var_lcd'+dropdown_pin] = 'SerialLCD slcd_' + dropdown_pin + '(' + dropdown_pin + ','+NextPIN+');\n';
-  var code = 'slcd_'+dropdown_pin;
+  Blockly.Arduino.definitions_['var_lcd' + dropdown_pin] = 'SerialLCD slcd_' + dropdown_pin + '(' + dropdown_pin + ','+NextPIN+');\n';
+  var code = 'slcd_' + dropdown_pin;
   if(dropdown_stat==="LEFT"){
     code += '.scrollDisplayLeft();\n';
   } else if(dropdown_stat==="RIGHT"){
@@ -269,14 +269,14 @@ Blockly.Arduino.grove_sound_sensor = function() {
 
 Blockly.Arduino.grove_pir_motion_sensor = function() {
   var dropdown_pin = this.getFieldValue('PIN');
-  Blockly.Arduino.setups_['setup_input_'+dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
+  Blockly.Arduino.setups_['setup_input_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
   var code = 'digitalRead(' + dropdown_pin + ')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino.grove_line_finder = function() {
   var dropdown_pin = this.getFieldValue('PIN');
-  Blockly.Arduino.setups_['setup_input_'+dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
+  Blockly.Arduino.setups_['setup_input_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', INPUT);';
   var code = 'digitalRead(' + dropdown_pin + ')';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
@@ -383,19 +383,19 @@ Blockly.Arduino.grove_rgb_led = function() {
   var dropdown_pin = this.getFieldValue('PIN');
   var NextPIN = _get_next_pin(dropdown_pin);
 
-  Blockly.Arduino.setups_['setup_input_'+dropdown_pin] = 'pinMode(' + dropdown_pin + ', OUTPUT);';
+  Blockly.Arduino.setups_['setup_input_' + dropdown_pin] = 'pinMode(' + dropdown_pin + ', OUTPUT);';
   Blockly.Arduino.setups_['setup_input_'+NextPIN] = 'pinMode('+NextPIN+', OUTPUT);';
   Blockly.Arduino.definitions_['define_uint8'] = "#define uint8 unsigned char";
   Blockly.Arduino.definitions_['define_uint16'] = "#define uint16 unsigned int";
   Blockly.Arduino.definitions_['define_uint32'] = "#define uint32 unsigned long int";
-  Blockly.Arduino.definitions_['define_clkproduce_'+dropdown_pin] = "void ClkProduce_"+dropdown_pin+"(void)\n"+
+  Blockly.Arduino.definitions_['define_clkproduce_' + dropdown_pin] = "void ClkProduce_"+dropdown_pin+"(void)\n"+
     "{\n"+
     "  digitalWrite("+dropdown_pin+", LOW);\n"+
     "  delayMicroseconds(20);\n"+
     "  digitalWrite("+dropdown_pin+", HIGH);\n"+
     "  delayMicroseconds(20);\n"+
     "}\n";
-  Blockly.Arduino.definitions_['define_send32zero_'+dropdown_pin] = "void Send32Zero_"+dropdown_pin+"(void)\n"+
+  Blockly.Arduino.definitions_['define_send32zero_' + dropdown_pin] = "void Send32Zero_"+dropdown_pin+"(void)\n"+
     "{\n"+
     "  uint8 i;\n"+
     "  for (i=0; i<32; i++)\n"+
@@ -418,7 +418,7 @@ Blockly.Arduino.grove_rgb_led = function() {
     "  }\n"+
     "  return tmp;\n"+
     "}\n";
-  Blockly.Arduino.definitions_['define_datasend_'+dropdown_pin] = "// gray data\n"+
+  Blockly.Arduino.definitions_['define_datasend_' + dropdown_pin] = "// gray data\n"+
     "void DatSend_"+dropdown_pin+"(uint32 dx)\n"+
     "{\n"+
     "  uint8 i;\n"+
@@ -436,7 +436,7 @@ Blockly.Arduino.grove_rgb_led = function() {
     "  ClkProduce_"+dropdown_pin+"();\n"+
     "  }\n"+
     "}\n";
-  Blockly.Arduino.definitions_['define_datadealwithsend_'+dropdown_pin] = "// data processing\n"+
+  Blockly.Arduino.definitions_['define_datadealwithsend_' + dropdown_pin] = "// data processing\n"+
     "void DataDealWithAndSend_"+dropdown_pin+"(uint8 r, uint8 g, uint8 b)\n"+
     "{\n"+
     "  uint32 dx = 0;\n"+
@@ -477,14 +477,14 @@ Blockly.Arduino.grove_bluetooth_slave = function() {
     alert("pincode length should be 4");
   } */
   Blockly.Arduino.definitions_['define_softwareserial'] = '#include <SoftwareSerial.h>\n';
-  Blockly.Arduino.definitions_['var_bluetooth_'+dropdown_pin] = 'SoftwareSerial blueToothSerial_' + dropdown_pin + '(' + dropdown_pin + ','+NextPIN+');\n';
+  Blockly.Arduino.definitions_['var_bluetooth_' + dropdown_pin] = 'SoftwareSerial blueToothSerial_' + dropdown_pin + '(' + dropdown_pin + ','+NextPIN+');\n';
 
-  Blockly.Arduino.setups_['setup_bluetooth_'+dropdown_pin] = 'Serial.begin(9600);\n';
-  Blockly.Arduino.setups_['setup_bluetooth_'+dropdown_pin] += '  pinMode(' + dropdown_pin + ', INPUT);\n';
-  Blockly.Arduino.setups_['setup_bluetooth_'+dropdown_pin] += '  pinMode('+NextPIN+', OUTPUT);\n';
-  Blockly.Arduino.setups_['setup_bluetooth_'+dropdown_pin] += '  setupBlueToothConnection_' + dropdown_pin + '();\n';
+  Blockly.Arduino.setups_['setup_bluetooth_' + dropdown_pin] = 'Serial.begin(9600);\n';
+  Blockly.Arduino.setups_['setup_bluetooth_' + dropdown_pin] += '  pinMode(' + dropdown_pin + ', INPUT);\n';
+  Blockly.Arduino.setups_['setup_bluetooth_' + dropdown_pin] += '  pinMode('+NextPIN+', OUTPUT);\n';
+  Blockly.Arduino.setups_['setup_bluetooth_' + dropdown_pin] += '  setupBlueToothConnection_' + dropdown_pin + '();\n';
 
-  Blockly.Arduino.definitions_['define_setupBlueToothConnection_'+dropdown_pin] = 'void setupBlueToothConnection_' + dropdown_pin + '()\n'+
+  Blockly.Arduino.definitions_['define_setupBlueToothConnection_' + dropdown_pin] = 'void setupBlueToothConnection_' + dropdown_pin + '()\n'+
     '{\n'+
     '  blueToothSerial_' + dropdown_pin + '.begin(38400); //Set BluetoothBee BaudRate to default baud rate 38400\n'+
     '  blueToothSerial_' + dropdown_pin + '.print("\\r\\n+STWMOD=0\\r\\n"); //set the bluetooth work in slave mode\n'+
@@ -664,3 +664,24 @@ Blockly.Arduino.grove_ir_emitter_send = function(){
   code += 'IR.Send(dtaSend,38);\n';
   return code;
 }
+
+Blockly.Arduino.grove_temporature_humidity_sensor = function() {
+
+  var dropdown_pin = this.getFieldValue('PIN');
+  var dropdown_unit = this.getFieldValue('UNIT');
+
+  Blockly.Arduino.definitions_['include_temporature_humidity'] = '#include "DHT.h"\n';
+  Blockly.Arduino.definitions_['define_temporature_humidity'] = 'DHT __dht(' + dropdown_pin + ', DHT22);\n';
+
+  Blockly.Arduino.setups_['setup_temporature_humidity'] = '__dht.begin();\n';
+
+  var code;
+  if (dropdown_unit === "h") {
+    code = '__dht.readHumidity()';
+  } else if (dropdown_unit === "c") {
+    code = '__dht.readTemperature()';
+  } else {
+    code = '__dht.convertCtoF(__dht.readTemperature())';
+  }
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
