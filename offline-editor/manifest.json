@@ -27,6 +27,6 @@
       "fileSystem": [ "write", "retainEntries", "directory" ]
    }, "storage", "https://raw.githubusercontent.com/MediaTek-Labs/*", "alarms" ],
    "update_url": "https://raw.githubusercontent.com/MediaTek-Labs/BlocklyDuino-for-LinkIt/master/offline-editor/manifest.json",
-   "version": "2.7.5",
-   "version_name": "2.7.5"
+   "version": "2.8.0",
+   "version_name": "2.8.0"
 }

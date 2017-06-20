@@ -1,24 +1,4 @@
 /**
- * @license
- * Visual Blocks Editor
- *
- * Copyright 2012 Fred Lin.
- * https://github.com/gasolin/BlocklyDuino
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/**
  * @fileoverview Helper functions for generating Arduino blocks.
  * @author hi@vox.vg (Zhi-Wei Cai)
  */
@@ -335,17 +315,17 @@ Blockly.Blocks['mcs_set_display_channel'] = {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_MCS_HELPURL);
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
-      .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TITLE)
-      .appendField(new Blockly.FieldDropdown([
-        [Blockly.Msg.VARIABLES_TYPE_ONOFF,"boolean"],
-        [Blockly.Msg.VARIABLES_TYPE_CATEGORY,"category"],
-        [Blockly.Msg.VARIABLES_TYPE_NUMBER,"int"],
-        [Blockly.Msg.VARIABLES_TYPE_FLOAT,"float"],
-        [Blockly.Msg.VARIABLES_TYPE_STRING,"String"]
-      ]), "TYPE")
-      .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL2_TAIL);
+        .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TITLE)
+        .appendField(new Blockly.FieldDropdown([
+            [Blockly.Msg.VARIABLES_TYPE_ONOFF,"boolean"],
+            [Blockly.Msg.VARIABLES_TYPE_CATEGORY,"category"],
+            [Blockly.Msg.VARIABLES_TYPE_NUMBER,"int"],
+            [Blockly.Msg.VARIABLES_TYPE_FLOAT,"float"],
+            [Blockly.Msg.VARIABLES_TYPE_STRING,"String"]
+         ]), "TYPE")
+        .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL2_TAIL);
     this.appendValueInput("DISPLAY_CHANNEL")
-      .setCheck("String");
+        .setCheck("String");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
