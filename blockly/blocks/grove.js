@@ -48,6 +48,7 @@ Blockly.Blocks.grove.ir_receiver_image = filepath.media + '/grove_ir_receiver.jp
 Blockly.Blocks.grove.ir_emitter_image = filepath.media + '/grove_ir_emitter.jpg';
 Blockly.Blocks.grove.ultrasonic_ranger_image = filepath.media + '/grove_ultrasonic_ranger.jpg';
 Blockly.Blocks.grove.temporature_humidity_sensor_image = filepath.media + '/grove_temporature_humidity_sensor.jpg';
+Blockly.Blocks.grove.led_bar_image = filepath.media + '/grove_led_bar.jpg';
 
 Blockly.Blocks.grove.rgb_lcd_checkBlocks = function(obj) {
   var legal = null;
@@ -1078,13 +1079,32 @@ Blockly.Blocks['grove_temporature_humidity_sensor'] = {
     this.setHelpUrl(Blockly.Msg.GROVE_TEMP_SENSOR_HELPURL);
     this.setColour(Blockly.Blocks.grove.HUE);
     this.appendDummyInput()
-      .appendField(Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.temporature_humidity_sensor_image, 64, 36))
-      .appendField(Blockly.Msg.GROVE_PORT)
-      .appendField(new Blockly.FieldDropdown(profile.default.grove_analog), "PIN")
-      .appendField(Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_HUMI, "h"], [Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_TEMP_C, "c"], [Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_TEMP_F, "f"]]), "UNIT");
+        .appendField(Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_TITLE)
+        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.temporature_humidity_sensor_image, 64, 36))
+        .appendField(Blockly.Msg.GROVE_PORT)
+        .appendField(new Blockly.FieldDropdown(profile.default.grove_analog), "PIN")
+        .appendField(Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE)
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_HUMI, "h"], [Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_TEMP_C, "c"], [Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_TEMP_F, "f"]]), "UNIT");
     this.setOutput(true, 'Number');
     this.setTooltip(Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['grove_led_bar'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.GROVE_LED_BAR_HELPURL);
+    this.setColour(Blockly.Blocks.grove.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.GROVE_LED_BAR_TITLE)
+        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.led_bar_image, 64, 48))
+        .appendField(Blockly.Msg.GROVE_PORT)
+        .appendField(new Blockly.FieldDropdown(profile.default.grove_digital), 'PIN')
+        .appendField(Blockly.Msg.GROVE_LED_BAR_LEVEL);
+    this.appendValueInput('LEVEL')
+        .setCheck('Number');
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.GROVE_LED_BAR_TOOLTIP);
   }
 };

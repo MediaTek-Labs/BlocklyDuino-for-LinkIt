@@ -315,17 +315,17 @@ Blockly.Blocks['mcs_set_display_channel'] = {
     this.setHelpUrl(Blockly.Msg.LINKIT_SET_MCS_HELPURL);
     this.setColour(Blockly.Blocks.linkit.HUE);
     this.appendDummyInput()
-      .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TITLE)
-      .appendField(new Blockly.FieldDropdown([
-        [Blockly.Msg.VARIABLES_TYPE_ONOFF,"boolean"],
-        [Blockly.Msg.VARIABLES_TYPE_CATEGORY,"category"],
-        [Blockly.Msg.VARIABLES_TYPE_NUMBER,"int"],
-        [Blockly.Msg.VARIABLES_TYPE_FLOAT,"float"],
-        [Blockly.Msg.VARIABLES_TYPE_STRING,"String"]
-      ]), "TYPE")
-      .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL2_TAIL);
+        .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL1_TITLE)
+        .appendField(new Blockly.FieldDropdown([
+            [Blockly.Msg.VARIABLES_TYPE_ONOFF,"boolean"],
+            [Blockly.Msg.VARIABLES_TYPE_CATEGORY,"category"],
+            [Blockly.Msg.VARIABLES_TYPE_NUMBER,"int"],
+            [Blockly.Msg.VARIABLES_TYPE_FLOAT,"float"],
+            [Blockly.Msg.VARIABLES_TYPE_STRING,"String"]
+         ]), "TYPE")
+        .appendField(Blockly.Msg.LINKIT_SET_MCS_CHANNEL2_TAIL);
     this.appendValueInput("DISPLAY_CHANNEL")
-      .setCheck("String");
+        .setCheck("String");
     this.setInputsInline(true);
     this.setPreviousStatement(true);
     this.setNextStatement(true);

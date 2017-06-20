@@ -26,6 +26,7 @@ function setCategoryCharacter() {
   $('#category_grove_input').attr('name',Blockly.Msg.CATEGORY_GROVE_INPUT);
   $('#category_grove_output').attr('name',Blockly.Msg.CATEGORY_GROVE_OUTPUT);
   $('#category_grove_actuator').attr('name',Blockly.Msg.CATEGORY_GROVE_ACTUATOR);
+  $('#category_grove_display').attr('name',Blockly.Msg.CATEGORY_GROVE_DISPLAY);
   $('#category_grove_sensor').attr('name',Blockly.Msg.CATEGORY_GROVE_SENSOR);
   $('#category_adafruit').attr('name',Blockly.Msg.CATEGORY_ADAFRUIT);
   $('#category_sparkfun').attr('name',Blockly.Msg.CATEGORY_SPARKFUN);

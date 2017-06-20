@@ -725,13 +725,22 @@
 </category>
 <category id="category_external">
     <category id="category_grove">
-        <category id="category_grove_actuator">
-            <block type="grove_relay"></block>
-        </category>
         <category id="category_grove_sensor">
             <block type="grove_light_sensor"></block>
             <block type="grove_ultrasonic_ranger"></block>
             <block type="grove_temporature_humidity_sensor"></block>
+        </category>
+        <category id="category_grove_actuator">
+            <block type="grove_relay"></block>
+        </category>
+        <category id="category_grove_display">
+            <block type="grove_led_bar">
+                <value name="LEVEL">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+            </block>
         </category>
     </category>
 </category>
