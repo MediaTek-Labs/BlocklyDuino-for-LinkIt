@@ -672,6 +672,26 @@
                     </block>
                 </value>
             </block>
+            <block type="grove_oled_display_clear"></block>
+            <block type="grove_oled_display_set_cursor">
+                <value name="X_POS">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+                <value name="Y_POS">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+            </block>
+            <!--block type="grove_oled_display_draw">
+                <value name="DISPLAY_TEXT">
+                    <block type="text">
+                        <field name="TEXT"></field>
+                    </block>
+                </value>
+            </block-->
         </category>
     </category>
 </category>
