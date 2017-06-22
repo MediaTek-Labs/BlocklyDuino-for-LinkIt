@@ -1081,9 +1081,9 @@ Blockly.Blocks['grove_temporature_humidity_sensor'] = {
     this.setColour(Blockly.Blocks.grove.HUE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_TITLE)
-        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.temporature_humidity_sensor_image, 64, 36))
+        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.temporature_humidity_sensor_image, 64, 56))
         .appendField(Blockly.Msg.GROVE_PORT)
-        .appendField(new Blockly.FieldDropdown(profile.default.grove_analog), "PIN")
+        .appendField(new Blockly.FieldDropdown(profile.default.grove_digital), "PIN")
         .appendField(Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE)
         .appendField(new Blockly.FieldDropdown([[Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_HUMI, "h"], [Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_TEMP_C, "c"], [Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_TEMP_F, "f"]]), "UNIT");
     this.setOutput(true, 'Number');
