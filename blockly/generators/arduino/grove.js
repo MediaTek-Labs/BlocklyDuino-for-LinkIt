@@ -730,12 +730,12 @@ Blockly.Arduino.grove_oled_display_set_cursor = function() {
   var x = Blockly.Arduino.valueToCode(this, 'X_POS', Blockly.Arduino.ORDER_ATOMIC) || 0;
   var y = Blockly.Arduino.valueToCode(this, 'Y_POS', Blockly.Arduino.ORDER_ATOMIC) || 0;
 
-  if (isNaN(x)) {
-      x = 0;
-  }
-  if (isNaN(y)) {
-      y = 0;
-  }
+  // if (isNaN(x)) {
+  //     x = 0;
+  // }
+  // if (isNaN(y)) {
+  //     y = 0;
+  // }
 
   Blockly.Arduino.definitions_['include_wire_lib'] = '#include <Wire.h>\n';
   Blockly.Arduino.definitions_['include_seeedoled_lib'] = '#include <SeeedOLED.h>\n';
@@ -745,7 +745,7 @@ Blockly.Arduino.grove_oled_display_set_cursor = function() {
   Blockly.Arduino.setups_['setup_seeedoled_lib_deactivatescroll'] = 'SeeedOled.deactivateScroll();\n';
   Blockly.Arduino.setups_['setup_seeedoled_lib_setmode'] = 'SeeedOled.setPageMode();\n';
 
-  var code = 'SeeedOled.setTextXY(' + x.toString() + ', ' + y.toString() + ');\n';
+  var code = 'SeeedOled.setTextXY(' + x + ', ' + y + ');\n';
   return code;
 };
 
@@ -756,16 +756,16 @@ Blockly.Arduino.grove_oled_display_put = function() {
   if (type === "Number" ||
       type === "Float") {
       value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || 0;
-      if (isNaN(value)) {
-          value = 0;
-      }
-      if (type === "Number") {
-          value = parseInt(value);
-          value = Math.round(value);
-      } else {
-          value = parseFloat(value);
-      }
-      value = value.toString();
+    //   if (isNaN(value)) {
+    //       value = 0;
+    //   }
+    //   if (type === "Number") {
+    //       value = parseInt(value);
+    //       value = Math.round(value);
+    //   } else {
+    //       value = parseFloat(value);
+    //   }
+    //   value = value.toString();
   } else {
       value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || '';
   }
