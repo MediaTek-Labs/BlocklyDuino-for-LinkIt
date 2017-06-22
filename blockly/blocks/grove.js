@@ -149,7 +149,7 @@ Blockly.Blocks['grove_light_sensor'] = {
     this.setColour(Blockly.Blocks.grove.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_LIGHT_SENSOR_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.light_sensor_image, 64, 48))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.light_sensor_image, 64, 64))
       .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_analog), "PIN");
     this.setOutput(true, 'Number');
