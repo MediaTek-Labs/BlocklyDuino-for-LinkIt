@@ -688,16 +688,9 @@ Blockly.Arduino.grove_temporature_humidity_sensor = function() {
 Blockly.Arduino.grove_led_bar = function() {
 
   var dropdown_pin = this.getFieldValue('PIN');
+  var NextPIN = _get_next_pin(dropdown_pin);
   var level = Blockly.Arduino.valueToCode(this, 'LEVEL', Blockly.Arduino.ORDER_ATOMIC) || 0;
   var prefix = '';
-  var pinValue;
-  if (dropdown_pin.startsWith('A')) {
-      prefix = 'A';
-      pinValue = parseInt(dropdown_pin.substring(1));
-  } else {
-      pinValue = parseInt(dropdown_pin);
-  }
-  pinValue++;
   // if (isNaN(level)) {
   //     level = 0;
   // } else {
@@ -705,7 +698,7 @@ Blockly.Arduino.grove_led_bar = function() {
   // }
 
   Blockly.Arduino.definitions_['include_grove_led_bar'] = '#include <Grove_LED_Bar.h>\n';
-  Blockly.Arduino.definitions_['define_grove_led_bar' + dropdown_pin] = 'Grove_LED_Bar __bar' + dropdown_pin + '(' + dropdown_pin + ', ' +  prefix + pinValue.toString() + ', 0);\n';
+  Blockly.Arduino.definitions_['define_grove_led_bar' + dropdown_pin] = 'Grove_LED_Bar __bar' + dropdown_pin + '(' + dropdown_pin + ', ' +  NextPIN + ', 0);\n';
 
   Blockly.Arduino.setups_['setup_grove_led_bar' + dropdown_pin] = '__bar' + dropdown_pin + '.begin();\n';
 
