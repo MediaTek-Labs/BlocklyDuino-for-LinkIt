@@ -34,6 +34,7 @@ Blockly.Arduino.linkit_ble_periphral_write = function() {
   else{
     var code = '__' + variableName + '.setValue("'+val+'");';
   }
+  code+="\n";
   return code;
 };
 
@@ -78,7 +79,7 @@ Blockly.Arduino.linkit_ble_eddy = function () {
     if(url.length <= 17)  code += 'beaconData.configAsEddystoneURL(EDDY_HTTPS, "'+url+'");\n\n';
     else  code += 'beaconData.configAsEddystoneURL(EDDY_HTTPS, "'+url.substring(0,17)+'");\n\n';
   }
-  code += 'LBLEPeripheral.advertiseAsBeacon(beaconData);';
+  code += 'LBLEPeripheral.advertiseAsBeacon(beaconData);\n';
 
   return code;
 }
