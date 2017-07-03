@@ -720,8 +720,8 @@ Blockly.Arduino.grove_oled_display_clear = function() {
 };
 
 Blockly.Arduino.grove_oled_display_set_cursor = function() {
-  var x = Blockly.Arduino.valueToCode(this, 'X_POS', Blockly.Arduino.ORDER_ATOMIC) || 0;
-  var y = Blockly.Arduino.valueToCode(this, 'Y_POS', Blockly.Arduino.ORDER_ATOMIC) || 0;
+  var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || 0;
+  var col = Blockly.Arduino.valueToCode(this, 'COL', Blockly.Arduino.ORDER_ATOMIC) || 0;
 
   // if (isNaN(x)) {
   //     x = 0;
@@ -738,7 +738,7 @@ Blockly.Arduino.grove_oled_display_set_cursor = function() {
   Blockly.Arduino.setups_['setup_seeedoled_lib_deactivatescroll'] = 'SeeedOled.deactivateScroll();\n';
   Blockly.Arduino.setups_['setup_seeedoled_lib_setmode'] = 'SeeedOled.setPageMode();\n';
 
-  var code = 'SeeedOled.setTextXY(' + x + ', ' + y + ');\n';
+  var code = 'SeeedOled.setTextXY(' + row + ', ' + col + ');\n';
   return code;
 };
 

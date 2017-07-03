@@ -1131,10 +1131,10 @@ Blockly.Blocks['grove_oled_display_set_cursor'] = {
     this.appendDummyInput()
         .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_TITLE)
         .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.oled_display_image, 64, 48))
-    this.appendValueInput('X_POS')
+    this.appendValueInput('ROW')
         .setCheck('Number')
         .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_SET_CURSOR);
-    this.appendValueInput('Y_POS')
+    this.appendValueInput('COL')
         .setCheck('Number')
         .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_SET_CURSOR_SEP);
     this.appendDummyInput()
