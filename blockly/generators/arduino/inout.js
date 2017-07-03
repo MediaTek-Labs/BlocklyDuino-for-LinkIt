@@ -100,7 +100,7 @@ Blockly.Arduino.inout_custom_analog_write = function() {
   var pin = Blockly.Arduino.valueToCode(this, 'PIN_ANALOGWRITE', Blockly.Arduino.ORDER_ATOMIC)
   var value_num = Blockly.Arduino.valueToCode(this, 'NUM', Blockly.Arduino.ORDER_ATOMIC) || '255'
   Blockly.Arduino.setups_['setup_output_' + pin] = 'pinMode(' + pin + ', OUTPUT);';
-  
+
   var code = 'analogWrite(' + pin + ', ' + value_num + ');\n';
   return code;
 };
@@ -141,17 +141,17 @@ Blockly.Arduino.pulsein = function() {
 };
 
 Blockly.Arduino.custom_tone = function() {
-  var value_pin = this.getFieldValue('PIN');
-  var value_freq = Blockly.Arduino.valueToCode(this, 'FREQ', Blockly.Arduino.ORDER_ATOMIC) || '255'
-  var value_duration = this.getFieldValue('DURATION');
-  var code = 'tone(' + value_pin + ',' + value_freq +',' + value_duration + ');\n';
+  var value_pin = Blockly.Arduino.valueToCode(this, 'PIN', Blockly.Arduino.ORDER_ATOMIC) || 0
+  var value_freq = Blockly.Arduino.valueToCode(this, 'FREQ', Blockly.Arduino.ORDER_ATOMIC) || 0
+  var value_duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 0
+  var code = 'tone(' + value_pin + ', ' + value_freq +', ' + value_duration + ');\n';
   return code;
 };
 
 Blockly.Arduino.tone = function() {
   var value_pin = this.getFieldValue('PIN');
   var value_freq = this.getFieldValue('FREQ');
-  var code = 'tone(' + value_pin + ',' + value_freq +',300);\n';
+  var code = 'tone(' + value_pin + ', ' + value_freq + ');\n';
   return code;
 };
 
