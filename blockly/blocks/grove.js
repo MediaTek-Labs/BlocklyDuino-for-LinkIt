@@ -149,7 +149,7 @@ Blockly.Blocks['grove_light_sensor'] = {
     this.setColour(Blockly.Blocks.grove.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.GROVE_LIGHT_SENSOR_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.light_sensor_image, 64, 48))
+      .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.light_sensor_image, 64, 64))
       .appendField(Blockly.Msg.GROVE_PORT)
       .appendField(new Blockly.FieldDropdown(profile.default.grove_analog), "PIN");
     this.setOutput(true, 'Number');
@@ -1081,9 +1081,9 @@ Blockly.Blocks['grove_temporature_humidity_sensor'] = {
     this.setColour(Blockly.Blocks.grove.HUE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_TITLE)
-        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.temporature_humidity_sensor_image, 64, 36))
+        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.temporature_humidity_sensor_image, 64, 56))
         .appendField(Blockly.Msg.GROVE_PORT)
-        .appendField(new Blockly.FieldDropdown(profile.default.grove_analog), "PIN")
+        .appendField(new Blockly.FieldDropdown(profile.default.grove_digital), "PIN")
         .appendField(Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE)
         .appendField(new Blockly.FieldDropdown([[Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_HUMI, "h"], [Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_TEMP_C, "c"], [Blockly.Msg.GROVE_TEMP_HUMI_SENSOR_VALUE_TEMP_F, "f"]]), "UNIT");
     this.setOutput(true, 'Number');
@@ -1131,10 +1131,10 @@ Blockly.Blocks['grove_oled_display_set_cursor'] = {
     this.appendDummyInput()
         .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_TITLE)
         .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.oled_display_image, 64, 48))
-    this.appendValueInput('X_POS')
+    this.appendValueInput('ROW')
         .setCheck('Number')
         .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_SET_CURSOR);
-    this.appendValueInput('Y_POS')
+    this.appendValueInput('COL')
         .setCheck('Number')
         .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_SET_CURSOR_SEP);
     this.appendDummyInput()

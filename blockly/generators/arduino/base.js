@@ -101,6 +101,8 @@ Blockly.Arduino.pulsein = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+
+/*
 Blockly.Arduino.tone = function() {
   var value_pin = this.getFieldValue('pin');
   var value_freq = Blockly.Arduino.valueToCode(this, 'freq', Blockly.Arduino.ORDER_ATOMIC) || '262';  //262 = C
@@ -109,8 +111,6 @@ Blockly.Arduino.tone = function() {
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
-
-/*
 //servo
 #include <Servo.h>
 

@@ -688,28 +688,21 @@ Blockly.Arduino.grove_temporature_humidity_sensor = function() {
 Blockly.Arduino.grove_led_bar = function() {
 
   var dropdown_pin = this.getFieldValue('PIN');
+  var NextPIN = _get_next_pin(dropdown_pin);
   var level = Blockly.Arduino.valueToCode(this, 'LEVEL', Blockly.Arduino.ORDER_ATOMIC) || 0;
   var prefix = '';
-  var pinValue;
-  if (dropdown_pin.startsWith('A')) {
-      prefix = 'A';
-      pinValue = parseInt(dropdown_pin.substring(1));
-  } else {
-      pinValue = parseInt(dropdown_pin);
-  }
-  pinValue++;
-  if (isNaN(level)) {
-      level = 0;
-  } else {
-      level = Math.min(10, Math.max(0, level));
-  }
+  // if (isNaN(level)) {
+  //     level = 0;
+  // } else {
+  //     level = Math.min(10, Math.max(0, level));
+  // }
 
   Blockly.Arduino.definitions_['include_grove_led_bar'] = '#include <Grove_LED_Bar.h>\n';
-  Blockly.Arduino.definitions_['define_grove_led_bar' + dropdown_pin] = 'Grove_LED_Bar __bar' + dropdown_pin + '(' + dropdown_pin + ', ' +  prefix + pinValue.toString() + ', 0);\n';
+  Blockly.Arduino.definitions_['define_grove_led_bar' + dropdown_pin] = 'Grove_LED_Bar __bar' + dropdown_pin + '(' + dropdown_pin + ', ' +  NextPIN + ', 0);\n';
 
   Blockly.Arduino.setups_['setup_grove_led_bar' + dropdown_pin] = '__bar' + dropdown_pin + '.begin();\n';
 
-  var code = '__bar' + dropdown_pin + '.setLevel(' + level.toString() + ');\n';
+  var code = '__bar' + dropdown_pin + '.setLevel(' + level + ');\n';
   return code;
 };
 
@@ -727,15 +720,15 @@ Blockly.Arduino.grove_oled_display_clear = function() {
 };
 
 Blockly.Arduino.grove_oled_display_set_cursor = function() {
-  var x = Blockly.Arduino.valueToCode(this, 'X_POS', Blockly.Arduino.ORDER_ATOMIC) || 0;
-  var y = Blockly.Arduino.valueToCode(this, 'Y_POS', Blockly.Arduino.ORDER_ATOMIC) || 0;
+  var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || 0;
+  var col = Blockly.Arduino.valueToCode(this, 'COL', Blockly.Arduino.ORDER_ATOMIC) || 0;
 
-  if (isNaN(x)) {
-      x = 0;
-  }
-  if (isNaN(y)) {
-      y = 0;
-  }
+  // if (isNaN(x)) {
+  //     x = 0;
+  // }
+  // if (isNaN(y)) {
+  //     y = 0;
+  // }
 
   Blockly.Arduino.definitions_['include_wire_lib'] = '#include <Wire.h>\n';
   Blockly.Arduino.definitions_['include_seeedoled_lib'] = '#include <SeeedOLED.h>\n';
@@ -745,7 +738,7 @@ Blockly.Arduino.grove_oled_display_set_cursor = function() {
   Blockly.Arduino.setups_['setup_seeedoled_lib_deactivatescroll'] = 'SeeedOled.deactivateScroll();\n';
   Blockly.Arduino.setups_['setup_seeedoled_lib_setmode'] = 'SeeedOled.setPageMode();\n';
 
-  var code = 'SeeedOled.setTextXY(' + x.toString() + ', ' + y.toString() + ');\n';
+  var code = 'SeeedOled.setTextXY(' + row + ', ' + col + ');\n';
   return code;
 };
 
@@ -756,16 +749,16 @@ Blockly.Arduino.grove_oled_display_put = function() {
   if (type === "Number" ||
       type === "Float") {
       value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || 0;
-      if (isNaN(value)) {
-          value = 0;
-      }
-      if (type === "Number") {
-          value = parseInt(value);
-          value = Math.round(value);
-      } else {
-          value = parseFloat(value);
-      }
-      value = value.toString();
+    //   if (isNaN(value)) {
+    //       value = 0;
+    //   }
+    //   if (type === "Number") {
+    //       value = parseInt(value);
+    //       value = Math.round(value);
+    //   } else {
+    //       value = parseFloat(value);
+    //   }
+    //   value = value.toString();
   } else {
       value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || '';
   }
