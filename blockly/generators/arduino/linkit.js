@@ -372,10 +372,10 @@ Blockly.Arduino.mcs_channel2_value = function() {
 Blockly.Arduino.mcs_process = function() {
   Blockly.Arduino.setups_['add_serialport'] = 'Serial.begin(9600);';
 
-  var code = "while (!mcs.connected()) {\n";
-  code = code+"mcs.connect();\n";
-  code = code+"if (mcs.connected()) { Serial.println("+'"MCS 已重新連線"'+"); }\n}\n";
-  code = code+"mcs.process(100);\n";
+  var code = 'while (!mcs.connected()) {\n';
+  code = code+'  mcs.connect();\n';
+  code = code+'  if (mcs.connected()) { Serial.println("MCS Reconnected."); }\n';
+  code = code+'}\n';
   return code;
 };
 Blockly.Arduino.mcs_channel_wait_until_read_value = function() {
