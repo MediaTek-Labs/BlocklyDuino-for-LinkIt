@@ -1,5 +1,10 @@
 #!/bin/sh
 
+command -v cat >/dev/null 2>&1 || { echo >&2 "[ERROR] I require cat but it's not installed. Aborting..."; exit 1; }
+command -v awk >/dev/null 2>&1 || { echo >&2 "[ERROR] I require awk but it's not installed. Aborting..."; exit 1; }
+command -v python >/dev/null 2>&1 || { echo >&2 "[ERROR] I require python but it's not installed. Aborting..."; exit 1; }
+command -v jq >/dev/null 2>&1 || { echo >&2 "[ERROR] I require jq but it's not installed. Aborting..."; exit 1; }
+
 IS_RELEASE=0
 PAUSE_UPDATE=0
 
@@ -34,19 +39,19 @@ if [ "$IS_RELEASE" -gt 0 ]; then
   SUBVERSION=`echo $VERSION | awk -F "." '{print $2}'`
   NEW_SUBVERSION=$(($SUBVERSION + 1))
   NEW_VERSION=`echo $VERSION | awk -F "." '{print $1 "."'$NEW_SUBVERSION'"." 0 }'`
-  jq '."'$VERSION_KEY'" = "'$NEW_VERSION'"' "$MANIFEST" > manifest.$$.json && mv manifest.$$.json "$MANIFEST"
+  jq '."'$VERSION_KEY'" = "'$NEW_VERSION'"' "$MANIFEST" > .manifest.$$.json && mv .manifest.$$.json "$MANIFEST"
   VERSION=$(cat "$MANIFEST" | jq ".$VERSION_KEY" | tr -d '"')
 else
   NEW_VERSION_NAME+="b"
 fi
-jq '."'$VERSION_NAME_KEY'" = "'$NEW_VERSION_NAME'"' "$MANIFEST" > manifest.$$.json && mv manifest.$$.json "$MANIFEST"
+jq '."'$VERSION_NAME_KEY'" = "'$NEW_VERSION_NAME'"' "$MANIFEST" > .manifest.$$.json && mv .manifest.$$.json "$MANIFEST"
 VERSION_NAME=$(cat "$MANIFEST" | jq ".$VERSION_NAME_KEY" | tr -d '"')
 
 if [ "$PAUSE_UPDATE" -eq 0 ]; then
   SUBVERSION=`echo $VERSION | awk -F "." '{print $3}'`
   NEW_SUBVERSION=$(($SUBVERSION + 1))
   NEW_VERSION=`echo $VERSION | awk -F "." '{print $1 "." $2 ".'$NEW_SUBVERSION'" }'`
-  jq '."'$VERSION_KEY'" = "'$NEW_VERSION'"' "$MANIFEST" > manifest.$$.json && mv manifest.$$.json "$MANIFEST"
+  jq '."'$VERSION_KEY'" = "'$NEW_VERSION'"' "$MANIFEST" > .manifest.$$.json && mv .manifest.$$.json "$MANIFEST"
   VERSION=$(cat "$MANIFEST" | jq ".$VERSION_KEY" | tr -d '"')
 else
   echo " > Incremental Version Update Disabled!"
@@ -60,7 +65,7 @@ if [[ $VERSION_NAME == *b ]]; then
 else
     echo " > Stable Release!"
 fi
-jq '."'$VERSION_NAME_KEY'" = "'$NEW_VERSION_NAME'"' "$MANIFEST" > manifest.$$.json && mv manifest.$$.json "$MANIFEST"
+jq '."'$VERSION_NAME_KEY'" = "'$NEW_VERSION_NAME'"' "$MANIFEST" > .manifest.$$.json && mv .manifest.$$.json "$MANIFEST"
 VERSION_NAME=$(cat "$MANIFEST" | jq ".$VERSION_NAME_KEY" | tr -d '"')
 
 
