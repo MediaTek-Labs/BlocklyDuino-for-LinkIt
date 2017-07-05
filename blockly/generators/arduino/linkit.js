@@ -34,6 +34,7 @@ Blockly.Arduino.linkit_ble_periphral_write = function() {
   else{
     var code = '__' + variableName + '.setValue("'+val+'");';
   }
+  code+="\n";
   return code;
 };
 
@@ -78,7 +79,7 @@ Blockly.Arduino.linkit_ble_eddy = function () {
     if(url.length <= 17)  code += 'beaconData.configAsEddystoneURL(EDDY_HTTPS, "'+url+'");\n\n';
     else  code += 'beaconData.configAsEddystoneURL(EDDY_HTTPS, "'+url.substring(0,17)+'");\n\n';
   }
-  code += 'LBLEPeripheral.advertiseAsBeacon(beaconData);';
+  code += 'LBLEPeripheral.advertiseAsBeacon(beaconData);\n';
 
   return code;
 }
@@ -371,10 +372,10 @@ Blockly.Arduino.mcs_channel2_value = function() {
 Blockly.Arduino.mcs_process = function() {
   Blockly.Arduino.setups_['add_serialport'] = 'Serial.begin(9600);';
 
-  var code = "while (!mcs.connected()) {\n";
-  code = code+"mcs.connect();\n";
-  code = code+"if (mcs.connected()) { Serial.println("+'"MCS 已重新連線"'+"); }\n}\n";
-  code = code+"mcs.process(100);\n";
+  var code = 'while (!mcs.connected()) {\n';
+  code = code+'  mcs.connect();\n';
+  code = code+'  if (mcs.connected()) { Serial.println("MCS Reconnected."); }\n';
+  code = code+'}\n';
   return code;
 };
 Blockly.Arduino.mcs_channel_wait_until_read_value = function() {
