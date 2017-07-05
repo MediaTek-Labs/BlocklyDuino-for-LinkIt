@@ -523,18 +523,3 @@ Blockly.Blocks['math_pow'] = {
     this.setTooltip(Blockly.Msg.MATH_POW_TOOLTIP);
   }
 };
-
-Blockly.Blocks['math_degree_to_radian'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.MATH_DEGREE_TO_RADIAN_HELPURL);
-    this.setColour(Blockly.Blocks.math.HUE);
-    this.appendValueInput("DEGREE")
-      .setCheck("Number")
-      .appendField(Blockly.Msg.MATH_DEGREE_TO_RADIAN_TITLE);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.MATH_DEGREE_TO_RADIAN_APPEND);
-    this.setInputsInline(true);
-    this.setOutput(true, "Number");
-    this.setTooltip(Blockly.Msg.MATH_DEGREE_TO_RADIAN_TOOLTIP);
-  }
-};
