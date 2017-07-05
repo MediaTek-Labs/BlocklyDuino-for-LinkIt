@@ -151,3 +151,19 @@ Blockly.Arduino['math_single'] = function(block) {
   }
   return [code, Blockly.Arduino.ORDER_NONE];
 };
+
+Blockly.Arduino['math_degree_to_radian'] = function(block) {
+  Blockly.Arduino.definitions_['const_pi'] = 'const float __MPI = ' + Math.PI + ';';
+
+  var code_radiansFromDegree = '\n' +
+'float __radiansFromDegree(float degrees) {\n'+
+'  return degrees / 360 * 2 * __MPI;\n' +
+'}\n';
+  Blockly.Arduino.definitions_['radiansFromDegree'] = code_radiansFromDegree;
+
+  var argument0 = Blockly.Arduino.valueToCode(block, 'DEGREE',
+                                              Blockly.Arduino.ORDER_NONE) || 0;
+  console.log(Math.PI);
+  var code = '__radiansFromDegree(' + argument0 + ')';
+  return [code, Blockly.Arduino.ORDER_NONE];
+};
