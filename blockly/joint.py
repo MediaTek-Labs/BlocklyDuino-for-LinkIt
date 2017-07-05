@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
-import lxml.html
+try:
+  import lxml.html
+except ImportError, e:
+  pass # module doesn't exist, deal with it.
+  print '[ERROR] lxml.html is missing, abort...'
 
 def unescape(s):
   s = s.replace("&lt;", "<")
