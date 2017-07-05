@@ -40,8 +40,11 @@ if sys.version_info[0] != 2:
   raise Exception("Blockly build only compatible with Python 2.x.\n"
                   "You are using: " + sys.version)
 
-import errno, glob, httplib, json, os, re, subprocess, threading, urllib
-
+try:
+  import errno, glob, httplib, json, os, re, subprocess, threading, urllib, lxml.html
+except ImportError, e:
+  pass # module doesn't exist, deal with it.
+  print '[ERROR] modules were missing, abort...'
 
 def import_path(fullpath):
   """Import a file with full path specification.
