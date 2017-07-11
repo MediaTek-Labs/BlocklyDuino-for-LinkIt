@@ -83,8 +83,8 @@ var profile = {
     description: "Arduino standard-compatible board",
     digital: [["0","0"],["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"], ["17", "17"]],
     grove_digital: [["D2", "2"], ["D3", "3"], ["D4", "4"], ["D5", "5"], ["D6", "6"], ["D7", "7"], ["D8", "8"], ["D10", "10"], ["D11", "11"], ["D12", "12"], ["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"]],
-    analog: [["14", "14"], ["15", "15"], ["16", "16"], ["17", "17"]],
-    //analog: [["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"]],
+    //analog: [["14", "14"], ["15", "15"], ["16", "16"], ["17", "17"]],
+    analog: [["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"], ["A6", "A6"], ["A7", "A7"]],
     grove_analog: [["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"]],
     pwm: [["0","0"],["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"], ["17", "17"]],
     serial: 9600,
@@ -99,9 +99,10 @@ var profile = {
     ir_remote_button:[['Power', 'POWER'],['A', 'A'],['B', 'B'],['C', 'C'],['Up', 'UP'],['Down', 'DOWN'],['Left', 'LEFT'],['Right', 'RIGHT'],['Select', 'SELECT']]
   },
   arduino_mega: {
-    description: "Arduino Mega-compatible board"
+    description: "Arduino Mega-compatible board",
     //53 digital
     //15 analog
+    analog: [["A0", "A0"], ["A1", "A1"], ["A2", "A2"], ["A3", "A3"], ["A4", "A4"], ["A5", "A5"], ["A6", "A6"], ["A7", "A7"], ["A8", "A8"], ["A9", "A9"], ["A10", "A10"], ["A11", "A11"], ["A12", "A12"], ["A13", "A13"], ["A14", "A14"], ["A15", "A15"]]
   }
 };
 //set default profile to arduino standard-compatible board
@@ -174,9 +175,11 @@ Blockly.Arduino.finish = function(code) {
   for (var name in Blockly.Arduino.setups_) {
     setups.push(Blockly.Arduino.setups_[name]);
   }
-
+  var date = new Date();
   var allDefs = imports.join('\n') + '\n\n' + definitions.join('\n') + '\n\nvoid setup() \n{\n  '+setups.join('\n  ') + '\n}'+ '\n\n';
-  return allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n\n') + code;
+  allDefs = allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n\n') + code;
+  allDefs = '/*\n * This file was generated using BlocklyDuino.\n * Date: ' + date + '\n * https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt\n */\n\n' + allDefs;
+  return allDefs; //allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n\n') + code;
 };
 
 /**

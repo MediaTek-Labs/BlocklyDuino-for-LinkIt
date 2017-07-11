@@ -351,13 +351,13 @@ function import_xml(){
 
 window.onload = function () {
   var keys = [ 'lang' ];
-  // localStorageから読込
+  // load from localStorage
   chrome.storage.local.get(keys, function(item){
     if(!item.lang){
       var item = {
         'lang': 'zh'
       };
-      // localStorageへ保存
+      // save to localStorage
       chrome.storage.local.set(item, function(){
         console.log('item saved.');
       });
