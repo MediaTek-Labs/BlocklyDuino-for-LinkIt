@@ -178,7 +178,7 @@ Blockly.Arduino.finish = function(code) {
   var date = new Date();
   var allDefs = imports.join('\n') + '\n\n' + definitions.join('\n') + '\n\nvoid setup() \n{\n  '+setups.join('\n  ') + '\n}'+ '\n\n';
   allDefs = allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n\n') + code;
-  allDefs = '/*\n * This file was generated using BlocklyDuino.\n * Date: ' + date + '\n * https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt\n */\n\n' + allDefs;
+  allDefs = '/*\n * This file was generated using BlocklyDuino.\n * https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt\n *\n * Date: ' + date + '\n */\n\n' + allDefs;
   return allDefs; //allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n\n') + code;
 };
 
