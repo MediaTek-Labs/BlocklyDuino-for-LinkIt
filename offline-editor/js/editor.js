@@ -183,19 +183,19 @@ function set_variable(){
   var newVar = input.value;
   if (newVar) {
     newVar = newVar.replace(/[\s\xa0]+/g, ' ').replace(/^ | $/g, '');
+    console.log(newVar);
     if (newVar == Blockly.Msg.RENAME_VARIABLE ||
         newVar == Blockly.Msg.NEW_VARIABLE) {
       // Ok, not ALL names are legal...
-    }
-    else{
+    } else {
       Blockly.Variables.renameVariable(Blockly.Msg.Valiable_text, newVar, Blockly.FieldVariable_workspace);
     }
   }
 }
 
 function saveFiles(filename) {
+  filename = filename.replace(/[^a-zA-Z0-9]+/ig, '_');
   var blob;
-  console.log("savefiles");
   setFile(fileEntry,true);
   Entryflg = 2;
   chrome.fileSystem.getWritableEntry(fileEntry, function (entry) {
