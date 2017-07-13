@@ -182,8 +182,8 @@ function set_variable(){
   var input = document.getElementById('dialog_var_name');
   var newVar = input.value;
   if (newVar) {
-    //newVar = newVar.replace(/[\s\xa0]+/g, ' ').replace(/^ | $/g, '');
-    newVar = newVar.replace(/[^a-zA-Z0-9]+/g, '_');
+    newVar = newVar.replace(/[\s\xa0]+/g, ' ').replace(/^ | $/g, '');
+    console.log(newVar);
     if (newVar == Blockly.Msg.RENAME_VARIABLE ||
         newVar == Blockly.Msg.NEW_VARIABLE) {
       // Ok, not ALL names are legal...
@@ -194,6 +194,7 @@ function set_variable(){
 }
 
 function saveFiles(filename) {
+  filename = filename.replace(/[^a-zA-Z0-9]+/ig, '_');
   var blob;
   setFile(fileEntry,true);
   Entryflg = 2;
