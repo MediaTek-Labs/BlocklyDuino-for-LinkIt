@@ -182,12 +182,12 @@ function set_variable(){
   var input = document.getElementById('dialog_var_name');
   var newVar = input.value;
   if (newVar) {
-    newVar = newVar.replace(/[\s\xa0]+/g, ' ').replace(/^ | $/g, '');
+    //newVar = newVar.replace(/[\s\xa0]+/g, ' ').replace(/^ | $/g, '');
+    newVar = newVar.replace(/[^a-zA-Z0-9]+/g, '_');
     if (newVar == Blockly.Msg.RENAME_VARIABLE ||
         newVar == Blockly.Msg.NEW_VARIABLE) {
       // Ok, not ALL names are legal...
-    }
-    else{
+    } else {
       Blockly.Variables.renameVariable(Blockly.Msg.Valiable_text, newVar, Blockly.FieldVariable_workspace);
     }
   }
@@ -195,7 +195,6 @@ function set_variable(){
 
 function saveFiles(filename) {
   var blob;
-  console.log("savefiles");
   setFile(fileEntry,true);
   Entryflg = 2;
   chrome.fileSystem.getWritableEntry(fileEntry, function (entry) {
