@@ -376,6 +376,7 @@ Blockly.Arduino.mcs_process = function() {
   code = code+'  mcs.connect();\n';
   code = code+'  if (mcs.connected()) { Serial.println("MCS Reconnected."); }\n';
   code = code+'}\n';
+  code = code+'mcs.process(100);\n';
   return code;
 };
 Blockly.Arduino.mcs_channel_wait_until_read_value = function() {
