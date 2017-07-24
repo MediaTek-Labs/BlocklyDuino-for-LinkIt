@@ -70,6 +70,10 @@ Blockly.Arduino.linkit_ble_eddy = function () {
   var url = Blockly.Arduino.valueToCode(this, 'URL', Blockly.Arduino.ORDER_ATOMIC) || ''
   var protocol = this.getFieldValue('TYPE');
   url = url.replace(/\"/g, "");
+
+  Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
+  Blockly.Arduino.definitions_['define_linkit_ble_periphral_include'] = '#include <LBLEPeriphral.h>';
+  
   var code = "LBLEAdvertisementData beaconData;\n\n";
   if(protocol == "http"){
     if(url.length <= 17)  code += 'beaconData.configAsEddystoneURL(EDDY_HTTP, "'+url+'");\n\n';
