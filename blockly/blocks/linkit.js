@@ -100,12 +100,12 @@ Blockly.Blocks['linkit_ble_eddy'] = {
     this.appendDummyInput()
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY);
-    this.appendDummyInput()
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(new Blockly.FieldDropdown([
-        [Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP,"http"],
-        [Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS,"https"]
-      ]), "TYPE");
+    // this.appendDummyInput()
+    //   .setAlign(Blockly.ALIGN_RIGHT)
+    //   .appendField(new Blockly.FieldDropdown([
+    //     [Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP,"http"],
+    //     [Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS,"https"]
+    //   ]), "TYPE");
     this.appendValueInput("URL")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
