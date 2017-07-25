@@ -1230,7 +1230,8 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN_TAIL = "屬性已更新";
 Blockly.Msg.VARIABLES_TYPE_ONOFF = "開關 (布林值)";
 Blockly.Msg.VARIABLES_TYPE_CATEGORY = "類別 (字串)";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY = "EddyStoneURL";
-Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL = "URL(17字以內)";
+Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL = "URL（含協定，非協定部分小於 18 個字元)";
+Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY_URL_INVALID = "不正確的 Eddy Stone URL，正確格式應為： http://domain.com 或 https://domain.com。";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP = "http://";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
 
