@@ -680,7 +680,7 @@ Blockly.Arduino.grove_temporature_humidity_sensor = function() {
   } else if (dropdown_unit === "c") {
     code = '__dht' + dropdown_pin + '.readTemperature()';
   } else {
-    code = '__dht' + dropdown_pin + '.convertCtoF(__dht.readTemperature())';
+    code = '__dht' + dropdown_pin + '.convertCtoF(__dht' + dropdown_pin + '.readTemperature())';
   }
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

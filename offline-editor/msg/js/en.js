@@ -1251,7 +1251,8 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_IS_WRITTEN_TAIL = " isWritten";
 Blockly.Msg.VARIABLES_TYPE_ONOFF = "Switch (boolean)";
 Blockly.Msg.VARIABLES_TYPE_CATEGORY = "Category (String)";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY = "EddyStoneURL";
-Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL = "URL (length <17 chars)";
+Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL = "URL（includes protocol, non-protocol part must < 18 chars)";
+Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY_URL_INVALID = "Invalid Eddy Stone URL. Correct form should be either http://domain.com or https://domain.com.";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP = "http://";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
 
