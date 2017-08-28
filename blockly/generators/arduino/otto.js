@@ -144,3 +144,45 @@ Blockly.Arduino.otto_freestyle = function(){
   var code = '__otto.' + dropdown_style + '(' + distance + ', ' + duration + ', ' + height + ');\n'
   return code;
 };
+
+Blockly.Arduino.otto_moonwalk = function(){
+
+  var dropdown_direction = this.getFieldValue('DIRECTION');
+  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 4;
+  var duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 1000;
+  var height = Blockly.Arduino.valueToCode(this, 'HEIGHT', Blockly.Arduino.ORDER_ATOMIC) || 20;
+
+  Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
+  Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
+
+  var code = '__otto.moonwalker(' + distance + ', ' + duration + ', ' + height + ', ' + dropdown_direction + ');\n'
+  return code;
+};
+
+Blockly.Arduino.otto_crusaito = function(){
+
+  var dropdown_direction = this.getFieldValue('DIRECTION');
+  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 4;
+  var duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 1000;
+  var height = Blockly.Arduino.valueToCode(this, 'HEIGHT', Blockly.Arduino.ORDER_ATOMIC) || 20;
+
+  Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
+  Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
+
+  var code = '__otto.crusaito(' + distance + ', ' + duration + ', ' + height + ', ' + dropdown_direction + ');\n'
+  return code;
+};
+
+Blockly.Arduino.otto_flapping = function(){
+
+  var dropdown_direction = this.getFieldValue('DIRECTION');
+  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 4;
+  var duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 1000;
+  var height = Blockly.Arduino.valueToCode(this, 'HEIGHT', Blockly.Arduino.ORDER_ATOMIC) || 20;
+
+  Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
+  Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
+
+  var code = '__otto.flapping(' + distance + ', ' + duration + ', ' + height + ', ' + dropdown_direction + ');\n'
+  return code;
+};

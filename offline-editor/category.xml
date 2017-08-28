@@ -594,6 +594,57 @@
                     </block>
                 </value>
             </block>
+            <block type="otto_moonwalk">
+                <value name="DISTANCE">
+                    <block type="math_number">
+                        <field name="NUM">4</field>
+                    </block>
+                </value>
+                <value name="DURATION">
+                    <block type="math_number">
+                        <field name="NUM">1000</field>
+                    </block>
+                </value>
+                <value name="HEIGHT">
+                    <block type="math_number">
+                        <field name="NUM">20</field>
+                    </block>
+                </value>
+            </block>
+            <block type="otto_crusaito">
+                <value name="DISTANCE">
+                    <block type="math_number">
+                        <field name="NUM">4</field>
+                    </block>
+                </value>
+                <value name="DURATION">
+                    <block type="math_number">
+                        <field name="NUM">1000</field>
+                    </block>
+                </value>
+                <value name="HEIGHT">
+                    <block type="math_number">
+                        <field name="NUM">20</field>
+                    </block>
+                </value>
+            </block>
+            <block type="otto_flapping">
+                <value name="DISTANCE">
+                    <block type="math_number">
+                        <field name="NUM">4</field>
+                    </block>
+                </value>
+                <value name="DURATION">
+                    <block type="math_number">
+                        <field name="NUM">1000</field>
+                    </block>
+                </value>
+                <value name="HEIGHT">
+                    <block type="math_number">
+                        <field name="NUM">20</field>
+                    </block>
+                </value>
+            </block>
         </category>
     </category>
 </category>
