@@ -126,6 +126,7 @@ Blockly.Arduino.linkit_ble_periphral = function() {
 
   //Blockly.Arduino.setups_['define_linkit_ble_periphral_service_config'] = '__periphralService.addAttribute(__periphralCharacteristic);';
   Blockly.Arduino.setups_['define_linkit_ble_periphral_config'] = 'LBLEPeripheral.addService(__periphralService);';
+  Blockly.Arduino.setups_['define_linkit_ble_periphral_advertisement_name_set'] = 'LBLEPeripheral.setName("' + name + '");';
   Blockly.Arduino.setups_['define_linkit_ble_periphral_setup'] = 'LBLEPeripheral.begin();';
 
   Blockly.Arduino.setups_['define_linkit_ble_periphral_advertisement_setup'] = 'LBLEAdvertisementData __advertisement;';
