@@ -38,10 +38,10 @@ Blockly.Arduino.otto_init = function() {
 
   Blockly.Arduino.definitions_['define_define_otto_ascii'] = '/*\n           --------------- \n          |     O   O     |\n          |---------------|\n  YR ==>  |               | <== YL \n           --------------- \n              ||     ||\n              ||     ||\n  RR ==>   -----     -----  <== RL \n          |-----     -----|\n*/\n';
 
-  Blockly.Arduino.definitions_['define_define_otto_init_yl'] = '#define OTTO_PIN_YL ' + dropdown_yl + '\n';
-  Blockly.Arduino.definitions_['define_define_otto_init_yr'] = '#define OTTO_PIN_YR ' + dropdown_yr + '\n';
-  Blockly.Arduino.definitions_['define_define_otto_init_rl'] = '#define OTTO_PIN_RL ' + dropdown_rl + '\n';
-  Blockly.Arduino.definitions_['define_define_otto_init_rr'] = '#define OTTO_PIN_RR ' + dropdown_rr + '\n';
+  Blockly.Arduino.definitions_['define_define_otto_init_yl'] = '#define OTTO_PIN_YL ' + dropdown_yl;
+  Blockly.Arduino.definitions_['define_define_otto_init_yr'] = '#define OTTO_PIN_YR ' + dropdown_yr;
+  Blockly.Arduino.definitions_['define_define_otto_init_rl'] = '#define OTTO_PIN_RL ' + dropdown_rl;
+  Blockly.Arduino.definitions_['define_define_otto_init_rr'] = '#define OTTO_PIN_RR ' + dropdown_rr;
 
   Blockly.Arduino.setups_['setup_otto_init'] = '__otto.initLegs(OTTO_PIN_YL, OTTO_PIN_YR, OTTO_PIN_RL, OTTO_PIN_RR, false);';
 
@@ -59,10 +59,10 @@ Blockly.Arduino.otto_calibrate = function(){
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  Blockly.Arduino.definitions_['define_define_otto_trim_yl'] = '#define OTTO_TRIM_YL ' + yl + '\n';
-  Blockly.Arduino.definitions_['define_define_otto_trim_yr'] = '#define OTTO_TRIM_YR ' + yr + '\n';
-  Blockly.Arduino.definitions_['define_define_otto_trim_rl'] = '#define OTTO_TRIM_RL ' + rl + '\n';
-  Blockly.Arduino.definitions_['define_define_otto_trim_rr'] = '#define OTTO_TRIM_RR ' + rr + '\n';
+  Blockly.Arduino.definitions_['define_define_otto_trim_yl'] = '#define OTTO_TRIM_YL ' + yl;
+  Blockly.Arduino.definitions_['define_define_otto_trim_yr'] = '#define OTTO_TRIM_YR ' + yr;
+  Blockly.Arduino.definitions_['define_define_otto_trim_rl'] = '#define OTTO_TRIM_RL ' + rl;
+  Blockly.Arduino.definitions_['define_define_otto_trim_rr'] = '#define OTTO_TRIM_RR ' + rr;
 
   Blockly.Arduino.setups_['setup_otto_trim'] = '__otto.setTrims(OTTO_TRIM_YL, OTTO_TRIM_YR, OTTO_TRIM_RL, OTTO_TRIM_RR);';
 
@@ -82,7 +82,7 @@ Blockly.Arduino.otto_home = function(){
 Blockly.Arduino.otto_walk = function(){
 
   var dropdown_direction = this.getFieldValue('DIRECTION');
-  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 0;
+  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 4;
   var duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 1000;
 
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
@@ -95,7 +95,7 @@ Blockly.Arduino.otto_walk = function(){
 Blockly.Arduino.otto_turn = function(){
 
   var dropdown_direction = this.getFieldValue('DIRECTION');
-  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 0;
+  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 4;
   var duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 1000;
 
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
@@ -108,8 +108,8 @@ Blockly.Arduino.otto_turn = function(){
 Blockly.Arduino.otto_bend = function(){
 
   var dropdown_direction = this.getFieldValue('DIRECTION');
-  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 0;
-  var duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 1000;
+  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 1;
+  var duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 1400;
 
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
@@ -121,12 +121,26 @@ Blockly.Arduino.otto_bend = function(){
 Blockly.Arduino.otto_shake_leg = function(){
 
   var dropdown_direction = this.getFieldValue('DIRECTION');
-  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 0;
-  var duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 1000;
+  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 1;
+  var duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 2000;
 
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
   var code = '__otto.shakeLeg(' + distance + ', ' + duration + ', ' + dropdown_direction + ');\n'
+  return code;
+};
+
+Blockly.Arduino.otto_freestyle = function(){
+
+  var dropdown_style = this.getFieldValue('STYLE');
+  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 1;
+  var duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 1000;
+  var height = Blockly.Arduino.valueToCode(this, 'HEIGHT', Blockly.Arduino.ORDER_ATOMIC) || 20;
+
+  Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
+  Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
+
+  var code = '__otto.' + dropdown_style + '(' + distance + ', ' + duration + ', ' + height + ');\n'
   return code;
 };

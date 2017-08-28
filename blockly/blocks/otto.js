@@ -114,7 +114,7 @@ Blockly.Blocks['otto_turn'] = {
     this.setColour(Blockly.Blocks.otto.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.OTTO_TURN_TITLE)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.OTTO_DIRECTION_LEFT, "LEFT"],  [Blockly.Msg.OTTO_DIRECTION_RIGHT, "RIGHT"]]), "DIRECTION");
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.OTTO_DIRECTION_LEFT, "LEFT"], [Blockly.Msg.OTTO_DIRECTION_RIGHT, "RIGHT"]]), "DIRECTION");
     this.appendValueInput('DISTANCE')
       .setCheck('Number');
     this.appendDummyInput()
@@ -136,7 +136,7 @@ Blockly.Blocks['otto_bend'] = {
     this.setColour(Blockly.Blocks.otto.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.OTTO_BEND_TITLE)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.OTTO_DIRECTION_LEFT, "LEFT"],  [Blockly.Msg.OTTO_DIRECTION_RIGHT, "RIGHT"]]), "DIRECTION");
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.OTTO_DIRECTION_LEFT, "LEFT"], [Blockly.Msg.OTTO_DIRECTION_RIGHT, "RIGHT"]]), "DIRECTION");
     this.appendValueInput('DISTANCE')
       .setCheck('Number');
     this.appendDummyInput()
@@ -158,7 +158,7 @@ Blockly.Blocks['otto_shake_leg'] = {
     this.setColour(Blockly.Blocks.otto.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.OTTO_SHAKE_LEG_TITLE)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.OTTO_DIRECTION_LEFT, "LEFT"],  [Blockly.Msg.OTTO_DIRECTION_RIGHT, "RIGHT"]]), "DIRECTION");
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.OTTO_DIRECTION_LEFT, "LEFT"], [Blockly.Msg.OTTO_DIRECTION_RIGHT, "RIGHT"]]), "DIRECTION");
     this.appendValueInput('DISTANCE')
       .setCheck('Number');
     this.appendDummyInput()
@@ -171,5 +171,36 @@ Blockly.Blocks['otto_shake_leg'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.OTTO_SHAKE_LEG_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['otto_freestyle'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_FREESTYLE_TITLE)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.OTTO_STYLE_UP_DOWN, "updown"],
+        [Blockly.Msg.OTTO_STYLE_ASC_TURN, "ascendingTurn"],
+        [Blockly.Msg.OTTO_STYLE_SWING, "swing"],
+        [Blockly.Msg.OTTO_STYLE_TIP_TOE_SWING, "tiptoeSwing"],
+        [Blockly.Msg.OTTO_STYLE_JITTER, "jitter"]]), "STYLE");
+    this.appendValueInput('DISTANCE')
+      .setCheck('Number');
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_DISTANCE_UNIT);
+    this.appendValueInput('DURATION')
+      .setCheck('Number');
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_DURATION_UNIT);
+    this.appendValueInput('HEIGHT')
+      .setCheck('Number');
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_HEIGHT_UNIT);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.OTTO_FREESTYLE_TOOLTIP);
   }
 };
