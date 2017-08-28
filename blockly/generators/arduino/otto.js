@@ -104,3 +104,29 @@ Blockly.Arduino.otto_turn = function(){
   var code = '__otto.turn(' + distance + ', ' + duration + ', ' + dropdown_direction + ');\n'
   return code;
 };
+
+Blockly.Arduino.otto_bend = function(){
+
+  var dropdown_direction = this.getFieldValue('DIRECTION');
+  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 0;
+  var duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 1000;
+
+  Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
+  Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
+
+  var code = '__otto.bend(' + distance + ', ' + duration + ', ' + dropdown_direction + ');\n'
+  return code;
+};
+
+Blockly.Arduino.otto_shake_leg = function(){
+
+  var dropdown_direction = this.getFieldValue('DIRECTION');
+  var distance = Blockly.Arduino.valueToCode(this, 'DISTANCE', Blockly.Arduino.ORDER_ATOMIC) || 0;
+  var duration = Blockly.Arduino.valueToCode(this, 'DURATION', Blockly.Arduino.ORDER_ATOMIC) || 1000;
+
+  Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
+  Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
+
+  var code = '__otto.shakeLeg(' + distance + ', ' + duration + ', ' + dropdown_direction + ');\n'
+  return code;
+};

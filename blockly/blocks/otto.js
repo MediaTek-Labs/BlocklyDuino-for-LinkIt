@@ -129,3 +129,47 @@ Blockly.Blocks['otto_turn'] = {
     this.setTooltip(Blockly.Msg.OTTO_TURN_TOOLTIP);
   }
 };
+
+Blockly.Blocks['otto_bend'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_BEND_TITLE)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.OTTO_DIRECTION_LEFT, "LEFT"],  [Blockly.Msg.OTTO_DIRECTION_RIGHT, "RIGHT"]]), "DIRECTION");
+    this.appendValueInput('DISTANCE')
+      .setCheck('Number');
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_DISTANCE_UNIT);
+    this.appendValueInput('DURATION')
+      .setCheck('Number');
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_DURATION_UNIT);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.OTTO_BEND_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['otto_shake_leg'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_SHAKE_LEG_TITLE)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.OTTO_DIRECTION_LEFT, "LEFT"],  [Blockly.Msg.OTTO_DIRECTION_RIGHT, "RIGHT"]]), "DIRECTION");
+    this.appendValueInput('DISTANCE')
+      .setCheck('Number');
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_DISTANCE_UNIT);
+    this.appendValueInput('DURATION')
+      .setCheck('Number');
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_DURATION_UNIT);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.OTTO_SHAKE_LEG_TOOLTIP);
+  }
+};
