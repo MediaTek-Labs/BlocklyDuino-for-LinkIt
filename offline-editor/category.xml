@@ -503,6 +503,33 @@
             </block>
         </category>
     </category>
+    <category id="category_robot">
+        <category id="category_otto">
+            <block type="otto_init"></block>
+            <block type="otto_calibrate">
+                <value name="YL">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+                <value name="YR">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+                <value name="RL">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+                <value name="RR">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+            </block>
+        </category>
+    </category>
 </category>
 <category id="category_beta">
     <category id="category_grove">

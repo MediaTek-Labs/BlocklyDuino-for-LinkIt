@@ -76,6 +76,9 @@ function setCategoryCharacter() {
   $('#category_linkit_ble').attr('name',Blockly.Msg.CATEGORY_LINKIT_BLE);
   $('#category_linkit_ble_ibeacon').attr('name',Blockly.Msg.CATEGORY_LINKIT_BLE_BEACON);
 
+  // Otto
+  $('#category_otto').attr('name',Blockly.Msg.CATEGORY_OTTO);
+
   // External
   $('#category_external').attr('name',Blockly.Msg.CATEGORY_EXTERNAL);
   $('#category_beta').attr('name',Blockly.Msg.CATEGORY_BETA);
