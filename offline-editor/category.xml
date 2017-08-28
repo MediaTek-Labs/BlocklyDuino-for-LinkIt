@@ -528,6 +528,31 @@
                     </block>
                 </value>
             </block>
+            <block type="otto_home"></block>
+            <block type="otto_walk">
+                <value name="DISTANCE">
+                    <block type="math_number">
+                        <field name="NUM">4</field>
+                    </block>
+                </value>
+                <value name="DURATION">
+                    <block type="math_number">
+                        <field name="NUM">1000</field>
+                    </block>
+                </value>
+            </block>
+            <block type="otto_turn">
+                <value name="DISTANCE">
+                    <block type="math_number">
+                        <field name="NUM">4</field>
+                    </block>
+                </value>
+                <value name="DURATION">
+                    <block type="math_number">
+                        <field name="NUM">1000</field>
+                    </block>
+                </value>
+            </block>
         </category>
     </category>
 </category>

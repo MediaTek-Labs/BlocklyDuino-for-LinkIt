@@ -73,3 +73,59 @@ Blockly.Blocks['otto_calibrate'] = {
     this.setTooltip(Blockly.Msg.OTTO_CALIBRATE_TOOLTIP);
   }
 };
+
+Blockly.Blocks['otto_home'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_HOME_TITLE);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.OTTO_CALIBRATE_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['otto_walk'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_WALK_TITLE)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.OTTO_DIRECTION_FORWARD, "FORWARD"],  [Blockly.Msg.OTTO_DIRECTION_BACKWARD, "BACKWARD"]]), "DIRECTION");
+    this.appendValueInput('DISTANCE')
+      .setCheck('Number');
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_DISTANCE_UNIT);
+    this.appendValueInput('DURATION')
+      .setCheck('Number');
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_DURATION_UNIT);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.OTTO_WALK_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['otto_turn'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_TURN_TITLE)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.OTTO_DIRECTION_LEFT, "LEFT"],  [Blockly.Msg.OTTO_DIRECTION_RIGHT, "RIGHT"]]), "DIRECTION");
+    this.appendValueInput('DISTANCE')
+      .setCheck('Number');
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_DISTANCE_UNIT);
+    this.appendValueInput('DURATION')
+      .setCheck('Number');
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_DURATION_UNIT);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.OTTO_TURN_TOOLTIP);
+  }
+};
