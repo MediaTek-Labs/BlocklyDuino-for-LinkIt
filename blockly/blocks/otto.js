@@ -288,3 +288,45 @@ Blockly.Blocks['otto_moonwalk'] = {
     this.setTooltip(Blockly.Msg.OTTO_MOONWALK_TOOLTIP);
   }
 };
+
+Blockly.Blocks['otto_height'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_HEIGHT_TITLE)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.OTTO_HEIGHT_SMALL, "SMALL"],
+        [Blockly.Msg.OTTO_DIRECTION_MEDIUM, "MEDIUM"],
+        [Blockly.Msg.OTTO_DIRECTION_BIG, "BIG"]]), "HEIGHT");
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.OTTO_HEIGHT_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['otto_ultrasonic_init'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_ULTRASONIC_INIT_TITLE)
+      .appendField(Blockly.Msg.OTTO_TRIGGER_PIN)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "TRIGGER_PIN")
+      .appendField(Blockly.Msg.OTTO_ECHO_PIN)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "ECHO_PIN");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.OTTO_ULTRASONIC_INIT_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['otto_ultrasonic_distance'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_ULTRASONIC_DISTANCE_TITLE);
+    this.setOutput(true, 'Number');
+    this.setTooltip(Blockly.Msg.OTTO_ULTRASONIC_DISTANCE_TOOLTIP);
+  }
+};
