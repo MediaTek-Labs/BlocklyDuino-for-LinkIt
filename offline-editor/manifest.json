@@ -43,6 +43,6 @@
     "alarms"
   ],
   "update_url": "https://raw.githubusercontent.com/MediaTek-Labs/BlocklyDuino-for-LinkIt/master/offline-editor/manifest.json",
-  "version": "2.14.46",
-  "version_name": "2.14.46b"
+  "version": "2.14.49",
+  "version_name": "2.14.49b"
 }

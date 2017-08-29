@@ -330,3 +330,49 @@ Blockly.Blocks['otto_ultrasonic_distance'] = {
     this.setTooltip(Blockly.Msg.OTTO_ULTRASONIC_DISTANCE_TOOLTIP);
   }
 };
+
+Blockly.Blocks['otto_buzzer_init'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_BUZZER_INIT_TITLE)
+      .appendField(Blockly.Msg.OTTO_BUZZER_PIN)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.OTTO_BUZZER_INIT_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['otto_buzzer_sing'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_BUZZER_SING_TITLE)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.OTTO_BUZZER_SING_CONNECTION, "S_connection"],
+        [Blockly.Msg.OTTO_BUZZER_SING_DISCONNECTION, "S_disconnection"],
+        [Blockly.Msg.OTTO_BUZZER_SING_BUTTON_PUSHED, "S_buttonPushed"],
+        [Blockly.Msg.OTTO_BUZZER_SING_MODEL_1, "S_mode1"],
+        [Blockly.Msg.OTTO_BUZZER_SING_MODEL_2, "S_mode2"],
+        [Blockly.Msg.OTTO_BUZZER_SING_MODEL_3, "S_mode3"],
+        [Blockly.Msg.OTTO_BUZZER_SING_SUPRISE, "S_surprise"],
+        [Blockly.Msg.OTTO_BUZZER_SING_OH_OH_1, "S_OhOoh"],
+        [Blockly.Msg.OTTO_BUZZER_SING_OH_OH_2, "S_OhOoh2"],
+        [Blockly.Msg.OTTO_BUZZER_SING_CUDDLY, "S_cuddly"],
+        [Blockly.Msg.OTTO_BUZZER_SING_SLEEPING, "S_sleeping"],
+        [Blockly.Msg.OTTO_BUZZER_SING_HAPPY, "S_happy"],
+        [Blockly.Msg.OTTO_BUZZER_SING_SUPER_HAPPY, "S_superHappy"],
+        [Blockly.Msg.OTTO_BUZZER_SING_HAPPY_SHORT, "S_happy_short"],
+        [Blockly.Msg.OTTO_BUZZER_SING_SAD, "S_sad"],
+        [Blockly.Msg.OTTO_BUZZER_SING_CONFUSED, "S_confused"],
+        [Blockly.Msg.OTTO_BUZZER_SING_FART_1, "S_fart1"],
+        [Blockly.Msg.OTTO_BUZZER_SING_FART_2, "S_fart2"],
+        [Blockly.Msg.OTTO_BUZZER_SING_FART_3, "S_fart3"]]), "SING");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.OTTO_BUZZER_INIT_TOOLTIP);
+  }
+};
