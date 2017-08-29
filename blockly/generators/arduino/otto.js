@@ -218,3 +218,29 @@ Blockly.Arduino.otto_ultrasonic_distance = function() {
   var code = '__otto.getDistance()'
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+Blockly.Arduino.otto_buzzer_init = function() {
+
+  var dropdown_pin = this.getFieldValue('PIN');
+
+  Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
+  Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
+
+  Blockly.Arduino.definitions_['define_define_otto_buzzer_init'] = '#define OTTO_PIN_BUZZER ' + dropdown_pin;
+
+  Blockly.Arduino.setups_['setup_otto_buzzer_init'] = '__otto.initBuzzer(OTTO_PIN_BUZZER);';
+
+  var code = ''
+  return code;
+};
+
+Blockly.Arduino.otto_buzzer_sing = function() {
+
+  var dropdown_sing = this.getFieldValue('SING');
+
+  Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
+  Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
+
+  var code = '__otto.sing(' + dropdown_sing + ');\n';
+  return code;
+};
