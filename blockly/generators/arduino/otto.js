@@ -186,3 +186,35 @@ Blockly.Arduino.otto_flapping = function(){
   var code = '__otto.flapping(' + distance + ', ' + duration + ', ' + height + ', ' + dropdown_direction + ');\n'
   return code;
 };
+
+Blockly.Arduino.otto_height = function() {
+
+  var code = this.getFieldValue('HEIGHT');
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.otto_ultrasonic_init = function() {
+
+  var dropdown_trigger = this.getFieldValue('TRIGGER_PIN');
+  var dropdown_echo = this.getFieldValue('ECHO_PIN');
+
+  Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
+  Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
+
+  Blockly.Arduino.definitions_['define_define_otto_ultrasonic_init_trigger'] = '#define OTTO_PIN_TRIGGER ' + dropdown_trigger;
+  Blockly.Arduino.definitions_['define_define_otto_ultrasonic_init_echo'] = '#define OTTO_PIN_ECHO ' + dropdown_echo;
+
+  Blockly.Arduino.setups_['setup_otto_ultrasonic_init'] = '__otto.initUltrasonic(OTTO_PIN_TRIGGER, OTTO_PIN_ECHO);';
+
+  var code = ''
+  return code;
+};
+
+Blockly.Arduino.otto_ultrasonic_distance = function() {
+
+  Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
+  Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
+
+  var code = '__otto.getDistance()'
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};

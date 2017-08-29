@@ -32,6 +32,19 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks.serial.HUE = 200;
 
+Blockly.Blocks['serial_init'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.SERIAL_INIT_HELPURL);
+    this.setColour(Blockly.Blocks.serial.HUE);
+    this.appendValueInput("SPEED")
+      .setCheck("Number")
+      .appendField(Blockly.Msg.SERIAL_INIT);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.SERIAL_INIT_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['serial_print'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.SERIAL_PRINT_HELPURL);

@@ -90,6 +90,13 @@
 </category>
 
 <category id="category_serial">
+    <block type="serial_init">
+        <value name="SPEED">
+            <block type="math_number">
+                <field name="NUM">9600</field>
+            </block>
+        </value>
+    </block>
     <block type="serial_available"></block>
     <block type="serial_print">
         <value name="CONTENT">
@@ -589,9 +596,7 @@
                     </block>
                 </value>
                 <value name="HEIGHT">
-                    <block type="math_number">
-                        <field name="NUM">20</field>
-                    </block>
+                    <block type="otto_height"></block>
                 </value>
             </block>
             <block type="otto_moonwalk">
@@ -606,9 +611,7 @@
                     </block>
                 </value>
                 <value name="HEIGHT">
-                    <block type="math_number">
-                        <field name="NUM">20</field>
-                    </block>
+                    <block type="otto_height"></block>
                 </value>
             </block>
             <block type="otto_crusaito">
@@ -623,9 +626,7 @@
                     </block>
                 </value>
                 <value name="HEIGHT">
-                    <block type="math_number">
-                        <field name="NUM">20</field>
-                    </block>
+                    <block type="otto_height"></block>
                 </value>
             </block>
             <block type="otto_flapping">
@@ -640,11 +641,12 @@
                     </block>
                 </value>
                 <value name="HEIGHT">
-                    <block type="math_number">
-                        <field name="NUM">20</field>
-                    </block>
+                    <block type="otto_height"></block>
                 </value>
             </block>
+            <block type="otto_height"></block>
+            <block type="otto_ultrasonic_init"></block>
+            <block type="otto_ultrasonic_distance"></block>
         </category>
     </category>
 </category>
