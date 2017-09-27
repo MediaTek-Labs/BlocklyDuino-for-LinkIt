@@ -376,3 +376,48 @@ Blockly.Blocks['otto_buzzer_sing'] = {
     this.setTooltip(Blockly.Msg.OTTO_BUZZER_INIT_TOOLTIP);
   }
 };
+
+Blockly.Blocks['otto_mouth'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_MOUTH_TITLE)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.OTTO_MOUTH_ZERO, "zero"],
+        [Blockly.Msg.OTTO_MOUTH_ONE, "one"],
+        [Blockly.Msg.OTTO_MOUTH_TWO, "two"],
+        [Blockly.Msg.OTTO_MOUTH_THREE, "three"],
+        [Blockly.Msg.OTTO_MOUTH_FOUR, "four"],
+        [Blockly.Msg.OTTO_MOUTH_FIVE, "five"],
+        [Blockly.Msg.OTTO_MOUTH_SIX, "six"],
+        [Blockly.Msg.OTTO_MOUTH_SEVEN, "seven"],
+        [Blockly.Msg.OTTO_MOUTH_EIGHT, "eight"],
+        [Blockly.Msg.OTTO_MOUTH_NINE, "nine"],
+        [Blockly.Msg.OTTO_MOUTH_SMILE, "smile"],
+        [Blockly.Msg.OTTO_MOUTH_HAPPY_OPEN, "happyOpen"],
+        [Blockly.Msg.OTTO_MOUTH_HAPPY_CLOSED, "happyClosed"],
+        [Blockly.Msg.OTTO_MOUTH_HEART, "heart"],
+        [Blockly.Msg.OTTO_MOUTH_BIG_SUPRISE, "bigSurprise"],
+        [Blockly.Msg.OTTO_MOUTH_SMALL_SUPRISE, "smallSurprise"],
+        [Blockly.Msg.OTTO_MOUTH_TONGUE_OUT, "tongueOut"],
+        [Blockly.Msg.OTTO_MOUTH_VAMP_1, "vamp1"],
+        [Blockly.Msg.OTTO_MOUTH_VAMP_2, "vamp2"],
+        [Blockly.Msg.OTTO_MOUTH_LINE_MOUTH, "lineMouth"],
+        [Blockly.Msg.OTTO_MOUTH_CONFUSED, "confused"],
+        [Blockly.Msg.OTTO_MOUTH_,DIAGONAL "diagonal"],
+        [Blockly.Msg.OTTO_MOUTH_SAD, "sad"],
+        [Blockly.Msg.OTTO_MOUTH_SAD_OPEN, "sadOpen"],
+        [Blockly.Msg.OTTO_MOUTH_SAD_CLOSED, "sadClosed"],
+        [Blockly.Msg.OTTO_MOUTH_OK_MOUTH, "okMouth"],
+        [Blockly.Msg.OTTO_MOUTH_X_MOUTH, "xMouth"],
+        [Blockly.Msg.OTTO_MOUTH_INTERROGATION, "interrogation"],
+        [Blockly.Msg.OTTO_MOUTH_THUNDER, "thunder"],
+        [Blockly.Msg.OTTO_MOUTH_CULITO, "culito"],
+        [Blockly.Msg.OTTO_MOUTH_ANGRY, "angry"]
+      ]), "MOUTH");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.OTTO_MOUTH_INIT_TOOLTIP);
+  }
+};
