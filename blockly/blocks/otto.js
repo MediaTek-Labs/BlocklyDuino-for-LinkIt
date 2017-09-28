@@ -405,7 +405,7 @@ Blockly.Blocks['otto_mouth'] = {
         [Blockly.Msg.OTTO_MOUTH_VAMP_2, "vamp2"],
         [Blockly.Msg.OTTO_MOUTH_LINE_MOUTH, "lineMouth"],
         [Blockly.Msg.OTTO_MOUTH_CONFUSED, "confused"],
-        [Blockly.Msg.OTTO_MOUTH_,DIAGONAL "diagonal"],
+        [Blockly.Msg.OTTO_MOUTH_DIAGONAL, "diagonal"],
         [Blockly.Msg.OTTO_MOUTH_SAD, "sad"],
         [Blockly.Msg.OTTO_MOUTH_SAD_OPEN, "sadOpen"],
         [Blockly.Msg.OTTO_MOUTH_SAD_CLOSED, "sadClosed"],
@@ -419,5 +419,30 @@ Blockly.Blocks['otto_mouth'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.OTTO_MOUTH_INIT_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['otto_led_matrix_init'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.OTTO_HELPURL);
+    this.setColour(Blockly.Blocks.otto.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.OTTO_LED_MATRIX_INIT_TITLE)
+      .appendField(Blockly.Msg.OTTO_LED_MATRIX_DIN)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "DIN")
+      .appendField(Blockly.Msg.OTTO_LED_MATRIX_CS)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "CS")
+      .appendField(Blockly.Msg.OTTO_LED_MATRIX_CLK)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "CLK")
+      .appendField(Blockly.Msg.OTTO_LED_MATRIX_DIR)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.OTTO_MATRIX_DIR_0, "MATRIX_DIR_0"],
+        [Blockly.Msg.OTTO_MATRIX_DIR_90, "MATRIX_DIR_90"],
+        [Blockly.Msg.OTTO_MATRIX_DIR_180, "MATRIX_DIR_180"],
+        [Blockly.Msg.OTTO_MATRIX_DIR_270, "MATRIX_DIR_270"]
+      ]), "DIR");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip(Blockly.Msg.OTTO_LED_MATRIX_INIT_TOOLTIP);
   }
 };
