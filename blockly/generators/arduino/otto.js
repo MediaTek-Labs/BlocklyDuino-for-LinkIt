@@ -36,16 +36,16 @@ Blockly.Arduino.otto_init = function() {
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  Blockly.Arduino.definitions_['define_define_otto_ascii'] = '/*\n           --------------- \n          |     O   O     |\n          |---------------|\n  YR ==>  |               | <== YL \n           --------------- \n              ||     ||\n              ||     ||\n  RR ==>   -----     -----  <== RL \n          |-----     -----|\n*/\n';
+  Blockly.Arduino.definitions_['define_define_otto_ascii'] = '/*\n                  --------------- \n                 |     O   O     |\n                 |---------------|\n  RIGHT LEG ==>  |               | <== LEFT LEG \n                  --------------- \n                     ||     ||\n                     ||     ||\n RIGHT FOOT ==>   -----     -----  <== LEFT FOOT \n                 |-----     -----|\n*/\n';
 
-  Blockly.Arduino.definitions_['define_define_otto_init_yl'] = '#define OTTO_PIN_YL ' + dropdown_yl;
-  Blockly.Arduino.definitions_['define_define_otto_init_yr'] = '#define OTTO_PIN_YR ' + dropdown_yr;
-  Blockly.Arduino.definitions_['define_define_otto_init_rl'] = '#define OTTO_PIN_RL ' + dropdown_rl;
-  Blockly.Arduino.definitions_['define_define_otto_init_rr'] = '#define OTTO_PIN_RR ' + dropdown_rr;
+  Blockly.Arduino.definitions_['define_define_otto_init_yl'] = '#define OTTO_PIN_LEFT_LEG ' + dropdown_yl;
+  Blockly.Arduino.definitions_['define_define_otto_init_yr'] = '#define OTTO_PIN_RIGHT_LEG ' + dropdown_yr;
+  Blockly.Arduino.definitions_['define_define_otto_init_rl'] = '#define OTTO_PIN_LEFT_FOOT ' + dropdown_rl;
+  Blockly.Arduino.definitions_['define_define_otto_init_rr'] = '#define OTTO_PIN_RIGHT_FOOT ' + dropdown_rr;
 
-  Blockly.Arduino.setups_['setup_otto_init'] = '__otto.initLegs(OTTO_PIN_YL, OTTO_PIN_YR, OTTO_PIN_RL, OTTO_PIN_RR, false);';
+  Blockly.Arduino.setups_['setup_otto_init'] = '__otto.initLegs(OTTO_PIN_LEFT_LEG, OTTO_PIN_RIGHT_LEG, OTTO_PIN_LEFT_FOOT, OTTO_PIN_RIGHT_FOOT, false);';
 
-  var code = ''
+  var code = '';
   return code;
 };
 
@@ -59,14 +59,18 @@ Blockly.Arduino.otto_calibrate = function(){
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  Blockly.Arduino.definitions_['define_define_otto_trim_yl'] = '#define OTTO_TRIM_YL ' + yl;
-  Blockly.Arduino.definitions_['define_define_otto_trim_yr'] = '#define OTTO_TRIM_YR ' + yr;
-  Blockly.Arduino.definitions_['define_define_otto_trim_rl'] = '#define OTTO_TRIM_RL ' + rl;
-  Blockly.Arduino.definitions_['define_define_otto_trim_rr'] = '#define OTTO_TRIM_RR ' + rr;
+  Blockly.Arduino.definitions_['define_define_otto_trim_yl'] = '#define OTTO_TRIM_LEFT_LEG ' + yl;
+  Blockly.Arduino.definitions_['define_define_otto_trim_yr'] = '#define OTTO_TRIM_RIGHT_LEG ' + yr;
+  Blockly.Arduino.definitions_['define_define_otto_trim_rl'] = '#define OTTO_TRIM_LEFT_FOOT ' + rl;
+  Blockly.Arduino.definitions_['define_define_otto_trim_rr'] = '#define OTTO_TRIM_RIGHT_FOOT ' + rr;
 
-  Blockly.Arduino.setups_['setup_otto_trim'] = '__otto.setTrims(OTTO_TRIM_YL, OTTO_TRIM_YR, OTTO_TRIM_RL, OTTO_TRIM_RR);';
+  if ('setup_otto_init' in Blockly.Arduino.setups_) {
+    Blockly.Arduino.setups_['setup_otto_init'] = '__otto.initLegs(OTTO_PIN_LEFT_LEG, OTTO_PIN_RIGHT_LEG, OTTO_PIN_LEFT_FOOT, OTTO_PIN_RIGHT_FOOT, true);';
+  }
 
-  var code = ''
+  Blockly.Arduino.setups_['setup_otto_trim'] = '__otto.setTrims(OTTO_TRIM_LEFT_LEG, OTTO_TRIM_RIGHT_LEG, OTTO_TRIM_LEFT_FOOT, OTTO_TRIM_RIGHT_FOOT);';
+
+  var code = '';
   return code;
 };
 
@@ -75,7 +79,7 @@ Blockly.Arduino.otto_home = function(){
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  var code = '__otto.home();\n'
+  var code = '__otto.home();\n';
   return code;
 };
 
@@ -88,7 +92,7 @@ Blockly.Arduino.otto_walk = function(){
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  var code = '__otto.walk(' + distance + ', ' + duration + ', ' + dropdown_direction + ');\n'
+  var code = '__otto.walk(' + distance + ', ' + duration + ', ' + dropdown_direction + ');\n';
   return code;
 };
 
@@ -101,7 +105,7 @@ Blockly.Arduino.otto_turn = function(){
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  var code = '__otto.turn(' + distance + ', ' + duration + ', ' + dropdown_direction + ');\n'
+  var code = '__otto.turn(' + distance + ', ' + duration + ', ' + dropdown_direction + ');\n';
   return code;
 };
 
@@ -114,7 +118,7 @@ Blockly.Arduino.otto_bend = function(){
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  var code = '__otto.bend(' + distance + ', ' + duration + ', ' + dropdown_direction + ');\n'
+  var code = '__otto.bend(' + distance + ', ' + duration + ', ' + dropdown_direction + ');\n';
   return code;
 };
 
@@ -127,7 +131,7 @@ Blockly.Arduino.otto_shake_leg = function(){
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  var code = '__otto.shakeLeg(' + distance + ', ' + duration + ', ' + dropdown_direction + ');\n'
+  var code = '__otto.shakeLeg(' + distance + ', ' + duration + ', ' + dropdown_direction + ');\n';
   return code;
 };
 
@@ -141,7 +145,7 @@ Blockly.Arduino.otto_freestyle = function(){
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  var code = '__otto.' + dropdown_style + '(' + distance + ', ' + duration + ', ' + height + ');\n'
+  var code = '__otto.' + dropdown_style + '(' + distance + ', ' + duration + ', ' + height + ');\n';
   return code;
 };
 
@@ -155,7 +159,7 @@ Blockly.Arduino.otto_moonwalk = function(){
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  var code = '__otto.moonwalker(' + distance + ', ' + duration + ', ' + height + ', ' + dropdown_direction + ');\n'
+  var code = '__otto.moonwalker(' + distance + ', ' + duration + ', ' + height + ', ' + dropdown_direction + ');\n';
   return code;
 };
 
@@ -169,7 +173,7 @@ Blockly.Arduino.otto_crusaito = function(){
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  var code = '__otto.crusaito(' + distance + ', ' + duration + ', ' + height + ', ' + dropdown_direction + ');\n'
+  var code = '__otto.crusaito(' + distance + ', ' + duration + ', ' + height + ', ' + dropdown_direction + ');\n';
   return code;
 };
 
@@ -183,7 +187,7 @@ Blockly.Arduino.otto_flapping = function(){
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  var code = '__otto.flapping(' + distance + ', ' + duration + ', ' + height + ', ' + dropdown_direction + ');\n'
+  var code = '__otto.flapping(' + distance + ', ' + duration + ', ' + height + ', ' + dropdown_direction + ');\n';
   return code;
 };
 
@@ -201,12 +205,12 @@ Blockly.Arduino.otto_ultrasonic_init = function() {
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  Blockly.Arduino.definitions_['define_define_otto_ultrasonic_init_trigger'] = '#define OTTO_PIN_TRIGGER ' + dropdown_trigger;
-  Blockly.Arduino.definitions_['define_define_otto_ultrasonic_init_echo'] = '#define OTTO_PIN_ECHO ' + dropdown_echo;
+  Blockly.Arduino.definitions_['define_define_otto_ultrasonic_init_trigger'] = '#define OTTO_PIN_ULTRASONIC_TRIGGER ' + dropdown_trigger;
+  Blockly.Arduino.definitions_['define_define_otto_ultrasonic_init_echo'] = '#define OTTO_PIN_ULTRASONIC_ECHO ' + dropdown_echo;
 
-  Blockly.Arduino.setups_['setup_otto_ultrasonic_init'] = '__otto.initUltrasonic(OTTO_PIN_TRIGGER, OTTO_PIN_ECHO);';
+  Blockly.Arduino.setups_['setup_otto_ultrasonic_init'] = '__otto.initUltrasonic(OTTO_PIN_ULTRASONIC_TRIGGER, OTTO_PIN_ULTRASONIC_ECHO);';
 
-  var code = ''
+  var code = '';
   return code;
 };
 
@@ -215,7 +219,7 @@ Blockly.Arduino.otto_ultrasonic_distance = function() {
   Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
-  var code = '__otto.getDistance()'
+  var code = '__otto.getDistance()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -230,7 +234,7 @@ Blockly.Arduino.otto_buzzer_init = function() {
 
   Blockly.Arduino.setups_['setup_otto_buzzer_init'] = '__otto.initBuzzer(OTTO_PIN_BUZZER);';
 
-  var code = ''
+  var code = '';
   return code;
 };
 
@@ -242,5 +246,36 @@ Blockly.Arduino.otto_buzzer_sing = function() {
   Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
 
   var code = '__otto.sing(' + dropdown_sing + ');\n';
+  return code;
+};
+
+Blockly.Arduino.otto_mouth = function() {
+
+  var dropdown_mouth = this.getFieldValue('MOUTH');
+
+  Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
+  Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
+
+  var code = '__otto.putMouth(' + dropdown_mouth + ');\n';
+  return code;
+};
+
+Blockly.Arduino.otto_led_matrix_init = function() {
+
+  var dropdown_din = this.getFieldValue('DIN');
+  var dropdown_cs = this.getFieldValue('CS');
+  var dropdown_clk = this.getFieldValue('CLK');
+  var dropdown_dir = this.getFieldValue('DIR');
+
+  Blockly.Arduino.definitions_['define_include_otto'] = '#include <Otto.h>\n';
+  Blockly.Arduino.definitions_['define_define_otto_item'] = 'Otto __otto;\n';
+
+  Blockly.Arduino.definitions_['define_define_otto_led_matrix_init_din'] = '#define OTTO_PIN_LED_DIN ' + dropdown_din;
+  Blockly.Arduino.definitions_['define_define_otto_led_matrix_init_din'] = '#define OTTO_PIN_LED_CS_PIN ' + dropdown_cs;
+  Blockly.Arduino.definitions_['define_define_otto_led_matrix_init_din'] = '#define OTTO_PIN_LED_CLK_PIN ' + dropdown_clk;
+
+  Blockly.Arduino.setups_['setup_otto_led_matrix_init'] = '__otto.initLEDMatrix(OTTO_PIN_LED_DIN, OTTO_PIN_LED_CS_PIN, ' + dropdown_dir + ');';
+
+  var code = '';
   return code;
 };

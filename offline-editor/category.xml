@@ -649,6 +649,8 @@
             <block type="otto_ultrasonic_distance"></block>
             <block type="otto_buzzer_init"></block>
             <block type="otto_buzzer_sing"></block>
+            <block type="otto_mouth"></block>
+            <block type="otto_led_matrix_init"></block>
         </category>
     </category>
 </category>
