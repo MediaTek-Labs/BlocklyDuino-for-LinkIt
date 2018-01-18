@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
     newFile();
   });
 
-  document.querySelector('#dialog2_ok').addEventListener("click", function() {
+  $('#dialog2_ok').click(function() {
     var input = document.getElementById('dialog2_filename');
     var filename = input.value.trim();
     if (false === input.checkValidity()) {
@@ -102,6 +102,12 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       setFile(null, false);
       Materialize.toast(Blockly.Msg.ERROR_FILENAME, 4000) // 4000 is the duration of the toast
+    }
+  });
+
+  $('#dialog2_filename').keydown(function(event){
+    if ((event.keyCode || event.which) == 13) {
+      $('#dialog2_ok').click();
     }
   });
 
