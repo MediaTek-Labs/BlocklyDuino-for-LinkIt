@@ -58,8 +58,7 @@ table {
 }
 
 table#main{
-  /* 84px = 64px (top bar) + 20px (bottom bar) */
-  height: calc(100vh - 84px);
+  height: calc(100vh - 84px); /* 64px (top bar) + 20px (bottom bar) */
   width: 100%;
   padding-top: 50px;
   padding-bottom: 20px;
