@@ -82,7 +82,7 @@ cp ./blockly/apps/blocklyduino/js/setCategoryCharacter.js ./offline-editor/js/se
 cp ./blockly/*_compressed.js ./offline-editor/js/
 cp ./blockly/msg/js/* ./offline-editor/msg/js/
 cp ./blockly/media/* ./offline-editor/media/
-cp ./blockly/apps/blocklyduino/css/* ./offline-editor/css/
+# cp ./blockly/apps/blocklyduino/css/* ./offline-editor/css/
 python joint.py
 
 echo ""
