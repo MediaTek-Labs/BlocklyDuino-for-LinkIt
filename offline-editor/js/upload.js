@@ -98,8 +98,6 @@ function startUploading(inoPath) {
     console.log(data);
     if (data == 0) {
       outputUploaderMsg("Upload Completed!", "msg-success");
-    } else {
-      outputUploaderMsg("Upload Failed", "msg-error");
     }
   });
 }
