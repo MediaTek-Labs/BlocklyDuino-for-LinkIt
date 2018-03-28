@@ -1359,3 +1359,9 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
 
 Blockly.Msg.CATEGORY_EXTERNAL = "外部元件";
 Blockly.Msg.CATEGORY_BETA = "未測試元件";
+
+Blockly.Msg.BUTTON_UPLOAD = "燒錄";
+Blockly.Msg.BUTTON_BOARD_SETTINGS = "開發板設定";
+Blockly.Msg.TEXT_UPLOADER_STATUS = "燒錄狀態";
+Blockly.Msg.TEXT_BOARD = "開發板";
+Blockly.Msg.TEXT_COM_PORT = "連接埠";
