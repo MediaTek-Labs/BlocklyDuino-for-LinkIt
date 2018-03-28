@@ -330,6 +330,13 @@ function setCharacter(){
   $('#dialog_import_ok').text(Blockly.Msg.DIALOG_IMPORT_OK);
   $('#dialog_import_cancel').text(Blockly.Msg.DIALOG_IMPORT_CANCEL);
   $('#dialog_export_ok').text(Blockly.Msg.DIALOG_EXPORT_OK);
+
+  $("#button_upload").attr("data-tooltip",Blockly.Msg.BUTTON_UPLOAD);
+  $("#button_board_settings").attr("data-tooltip",Blockly.Msg.BUTTON_BOARD_SETTINGS);
+  $("#modal_text_board_settings").text(Blockly.Msg.BUTTON_BOARD_SETTINGS);
+  $("#text_uploader_status").text(Blockly.Msg.TEXT_UPLOADER_STATUS);
+  $("#label_text_board").text(Blockly.Msg.TEXT_BOARD);
+  $("#label_text_com_port").text(Blockly.Msg.TEXT_COM_PORT);
 }
 
 function export_xml(){

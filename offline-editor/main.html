@@ -1,4 +1,29 @@
-<html lang="en"><head><meta charset="utf-8"><!--Import materialize.css--><link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"><link href="css/material-icons.css" rel="stylesheet" type="text/css"><link href="css/style.css" rel="stylesheet"><!--Import jQuery before materialize.js--><script type="text/javascript" src="js/jquery-2.1.3.min.js"></script><script type="text/javascript" src="js/materialize.min.js"></script><script src="js/header.js"></script><script src="js/blockly_compressed.js"></script><script src="js/blocks_compressed.js"></script><script src="js/arduino_compressed.js"></script><script src="msg/js/en.js"></script><script src="js/setCategoryCharacter.js"></script><script src="js/init.js"></script><script src="js/editor.js"></script><script src="js/popup.js"></script><script src="js/my_materialize.js"></script></head><body>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
+    <link href="css/material-icons.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/blockly_compressed.js"></script>
+    <script src="js/blocks_compressed.js"></script>
+    <script src="js/arduino_compressed.js"></script>
+    <script src="msg/js/en.js"></script>
+    <script src="js/setCategoryCharacter.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/my_materialize.js"></script>
+</head>
+
+<body>
     <!-- Modal1 Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
@@ -14,7 +39,8 @@
     <div id="modal2" class="modal">
         <div class="modal-content">
             <div class="input-field">
-                <input id="dialog2_filename" type="text" class="validate" pattern="^[0-9a-zA-Z \-_]+$" required><label id="dialog2_title" for="dialog2_filename">Filename</label>
+                <input id="dialog2_filename" type="text" class="validate" pattern="^[0-9a-zA-Z \-_]+$" required>
+                <label id="dialog2_title" for="dialog2_filename">Filename</label>
             </div>
         </div>
         <div class="modal-footer">
@@ -23,35 +49,52 @@
         </div>
     </div>
 
-    <nav><div class="nav-wrapper blue-grey darken-4">
+    <nav>
+        <div class="nav-wrapper blue-grey darken-4">
             <a href="./" class="brand-logo"><img src="./media/icon_128.png" style="height: 80%;margin-right: 20px;vertical-align: middle;" title="Hi!">BlocklyDuino Editor</a>
-            <ul class="right"><!-- Modal3 Trigger --><li><a class="waves-effect waves-light tooltipped" id="open-setting" data-tooltip="I am tooltip"><i class="material-icons">settings</i></a>
+            <ul class="right">
+                <!-- Modal3 Trigger -->
+                <li><a class="waves-effect waves-light tooltipped" id="open-setting" data-tooltip="I am tooltip"><i class="material-icons">settings</i></a>
                 </li>
-            </ul></div>
-    </nav><!-- Modal3 Structure --><div id="modal3" class="modal">
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Modal3 Structure -->
+    <div id="modal3" class="modal">
         <div class="modal-content">
             <form action="#">
                 <p id="dialog-lang-title">Language Setting</p>
-                <table><tbody><tr><td>
-                                <input class="with-gap" name="group1" type="radio" id="select-lang-en" value="en"><label for="select-lang-en" id="label-en">English</label>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input class="with-gap" name="group1" type="radio" id="select-lang-en" value="en">
+                                <label for="select-lang-en" id="label-en">English</label>
                             </td>
                             <td>
-                                <input class="with-gap" name="group1" type="radio" id="select-lang-zh" value="zh"><label for="select-lang-zh" id="label-zh">繁體中文</label>
+                                <input class="with-gap" name="group1" type="radio" id="select-lang-zh" value="zh">
+                                <label for="select-lang-zh" id="label-zh">繁體中文</label>
                             </td>
-                        </tr></tbody></table><div class="row">
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row">
                     <div class="col s4">
                         <!-- Switch -->
                         <div class="switch">
                             <p id="auto-save-title">Auto Save</p>
                             <label>
                                 Off
-                                <input id="checkbox-auto-save" type="checkbox"><span class="lever"></span> On
+                                <input id="checkbox-auto-save" type="checkbox">
+                                <span class="lever"></span> On
                             </label>
                         </div>
                     </div>
                     <div class="col s8">
                         <p class="range-field" id="range-title">interval (min)
-                            <input type="range" id="save-time" min="1" max="10"></p>
+                            <input type="range" id="save-time" min="1" max="10">
+                        </p>
                     </div>
                 </div>
                 <!--
@@ -134,7 +177,8 @@
     <div id="modal_import" class="modal">
         <div class="modal-content">
             <div class="input-field">
-                <textarea id="textarea_import" class="materialize-textarea"></textarea><label id="textarea_import_label" for="textarea_import">Import XML</label>
+                <textarea id="textarea_import" class="materialize-textarea"></textarea>
+                <label id="textarea_import_label" for="textarea_import">Import XML</label>
             </div>
         </div>
         <div class="modal-footer">
@@ -147,7 +191,8 @@
     <div id="modal_export" class="modal">
         <div class="modal-content">
             <div class="input-field">
-                <textarea id="textarea_export" class="materialize-textarea"></textarea><label id="textarea_export_label" for="textarea_export">Export XML</label>
+                <textarea id="textarea_export" class="materialize-textarea"></textarea>
+                <label id="textarea_export_label" for="textarea_export">Export XML</label>
             </div>
         </div>
         <div class="modal-footer">
@@ -156,7 +201,8 @@
     </div>
 
     <!-- Dropdown Structure -->
-    <ul id="dropdown1" class="dropdown-content"><li><a href="#!" id="button_import">Import</a>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!" id="button_import">Import</a>
         </li>
         <li class="divider">
         <li><a href="#!" id="button_export">Export</a>
@@ -167,10 +213,14 @@
         <li class="divider">
         <li><a href="#!" id="button_save_as">Save as..</a>
         </li>
-    </ul><!-- modal_varialble Structure --><div id="modal_variable" class="modal">
+    </ul>
+
+    <!-- modal_varialble Structure -->
+    <div id="modal_variable" class="modal">
         <div class="modal-content">
             <div class="input-field">
-                <input id="dialog_var_name" type="text" class="validate" pattern="^[0-9A-Za-z]+$" required><label id="dialog_var_title" for="dialog_var_name">Rename Variable Name</label>
+                <input id="dialog_var_name" type="text" class="validate" pattern="^[0-9A-Za-z]+$" required>
+                <label id="dialog_var_title" for="dialog_var_name">Rename Variable Name</label>
             </div>
         </div>
         <div class="modal-footer">
@@ -179,22 +229,81 @@
         </div>
     </div>
 
-    <table id="main"><tr><td>
-                <table id="tab"><tr id="tabRow"><td id="tab_blocks" class="tabon">Blocks</td>
+    <!-- Board Settings Modal -->
+    <div id="modal_board_settings" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 id="modal_text_board_settings">Board Settings</h4>
+            <div class="row">
+                <label id="label_text_board">Board</label>
+                <select id="board-selector">
+                    <option value="LinkIt:linkit_rtos:linkit_7697">LinkIt 7697</option>
+                    <option value="LinkIt:avr:smart7688">LinkIt Smart 7688 Duo</option>
+                </select>
+            </div>
+            <div class="row">
+                <label id="label_text_com_port">COM Port</label>
+                <select id="port-selector"></select>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a id="dialog_export_ok_2" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+        </div>
+    </div>
+
+    <table id="main">
+        <tr>
+            <td>
+                <table id="tab">
+                    <tr id="tabRow">
+                        <td id="tab_blocks" class="tabon">Blocks</td>
                         <td class="tabmin"> </td>
                         <td id="tab_arduino" class="taboff">Arduino</td>
                         <td class="tabmin"> </td>
                         <td class="tabmax">
+                            <div id="uploading-spinner" class="preloader-wrapper tiny">
+                                <div class="spinner-layer spinner-green-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" id="button_upload" class="hide-link tooltipped" data-tooltip="Upload"><i class="small material-icons">play_circle_filled</i></a>
+                            <a href="#modal_board_settings" id="button_board_settings" class="hide-link modal-trigger tooltipped" data-tooltip="Board Settings"><i class="small material-icons">arrow_drop_down</i></a>
                             <a href="#" class="hide-link tooltipped" id="button_new" data-tooltip="I am tooltip"><i class="small material-icons">create</i></a>
                             <a href="#" class="hide-link tooltipped" id="button_open" data-tooltip="I am tooltip"><i class="small material-icons">folder_open</i></a>
                             <a href="#" class="hide-link tooltipped" data-tooltip="I am tooltip" id="button_save"><i class="small material-icons">save</i></a>
                             <!-- Dropdown Trigger -->
                             <a class="hide-link dropdown-button" href="#" data-activates="dropdown1"><i class="small material-icons">arrow_drop_down</i></a>
                         </td>
-                    </tr></table></td>
-        </tr><tr><td id="content_area"></td>
-        </tr></table><div id="content_blocks" class="content"></div>
-    <textarea id="content_arduino" class="content" readonly wrap="off"></textarea><xml id="toolbox" style="display: none"><category id="category_initializes">
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td id="content_area"></td>
+        </tr>
+    </table>
+    <div id="content_blocks" class="content">
+        <ul id="terminal-wrapper" class="collapsible" data-collapsible="accordion">
+            <li>
+                <div id="terminal-header" class="collapsible-header">
+                    <i class="material-icons">featured_play_list</i>
+                    <span id="text_uploader_status">Uploader Status</span>
+                </div>
+                <div id="terminal-body" class="collapsible-body">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <textarea id="content_arduino" class="content" readonly wrap="off"></textarea>
+
+    <xml id="toolbox" style="display: none"><category id="category_initializes">
     <block type="initializes_setup"></block>
     <block type="initializes_loop"></block>
     <block type="initializes_temp"></block>
@@ -1359,7 +1468,10 @@
         <block type="dht_read"></block>
     </category>
 </category>
-</xml><div class="info">
+</xml>
+    <div class="info">
         <label id="info_filename">Filename:</label><span id="info_title"></span>
     </div>
-</body></html>
+</body>
+
+</html>
