@@ -72,6 +72,7 @@ VERSION_NAME=$(cat "$MANIFEST" | jq ".$VERSION_NAME_KEY" | tr -d '"')
 echo " > Building BlocklyDuino v$VERSION_NAME..."
 
 cd blockly
+cp msg/js/en_edit.js msg/js/en.js
 cp msg/js/en.js msg/messages.js
 python build.py
 python joint.py
