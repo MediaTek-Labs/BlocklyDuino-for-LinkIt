@@ -240,9 +240,6 @@ class Gen_compressed(threading.Thread):
     self.do_compile(params, target_filename, filenames, remove)
 
   def do_compile(self, params, target_filename, filenames, remove):
-
-    return
-
     # Send the request to Google.
     headers = {'Content-type': 'application/x-www-form-urlencoded'}
     conn = httplib.HTTPConnection('closure-compiler.appspot.com')
@@ -255,7 +252,7 @@ class Gen_compressed(threading.Thread):
       # Parse the JSON response.
       json_data = json.loads(json_str)
     except ValueError, e:
-      print('WARNING: Empty JSON Object! (%s)' % target_filename)
+      print('ERROR: Empty JSON Object! (%s)' % target_filename)
       return
 
     def file_lookup(name):
@@ -441,4 +438,4 @@ https://developers.google.com/blockly/hacking/closure""")
   Gen_compressed(search_paths).start()
 
   # This is run locally in a separate thread.
-  Gen_langfiles().start()
+  # Gen_langfiles().start()

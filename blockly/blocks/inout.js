@@ -90,6 +90,17 @@ Blockly.Blocks['inout_digital_read'] = {
   }
 };
 
+Blockly.Blocks['inout_digital_buildin_read'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.INOUT_LED_BUINTIN_READ_HELPURL);
+    this.setColour(Blockly.Blocks.inout.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.INOUT_LED_BUINTIN_READ);
+    this.setOutput(true, 'Boolean');
+    this.setTooltip(Blockly.Msg.INOUT_LED_BUINTIN_READ_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['inout_custom_digital_read'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.INOUT_DIGITAL_READ_HELPURL);

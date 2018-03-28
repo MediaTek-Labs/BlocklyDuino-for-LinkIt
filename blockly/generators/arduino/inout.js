@@ -63,6 +63,18 @@ Blockly.Arduino.inout_digital_read = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.inout_digital_buildin_read = function() {
+  if (Blockly.Arduino.setups_['setup_output_led_builtin']) {
+    // If there's already a setup for this pin, we probably enabled the pullup.
+    // Skip overwriting it.
+  } else {
+    Blockly.Arduino.setups_['setup_output_led_builtin'] = 'pinMode(LED_BUILTIN, OUTPUT);';
+  }
+
+  var code = 'digitalRead(LED_BUILTIN)';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino.inout_custom_digital_read = function() {
   var pin_read = Blockly.Arduino.valueToCode(this, 'PIN_READ', Blockly.Arduino.ORDER_ATOMIC);
   Blockly.Arduino.setups_['setup_output_' + pin_read] = 'pinMode(' + pin_read + ', INPUT);';
