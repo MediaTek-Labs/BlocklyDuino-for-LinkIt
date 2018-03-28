@@ -248,12 +248,8 @@ class Gen_compressed(threading.Thread):
     json_str = response.read()
     conn.close()
 
-    try:
-      # Parse the JSON response.
-      json_data = json.loads(json_str)
-    except ValueError, e:
-      print('ERROR: Empty JSON Object! (%s)' % target_filename)
-      return
+    # Parse the JSON response.
+    json_data = json.loads(json_str)
 
     def file_lookup(name):
       if not name.startswith('Input_'):
@@ -438,4 +434,4 @@ https://developers.google.com/blockly/hacking/closure""")
   Gen_compressed(search_paths).start()
 
   # This is run locally in a separate thread.
-  # Gen_langfiles().start()
+  Gen_langfiles().start()
