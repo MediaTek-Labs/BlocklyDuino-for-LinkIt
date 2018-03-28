@@ -1380,9 +1380,3 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
 
 Blockly.Msg.CATEGORY_EXTERNAL = "External";
 Blockly.Msg.CATEGORY_BETA = "Untested";
-
-Blockly.Msg.BUTTON_UPLOAD = "Upload";
-Blockly.Msg.BUTTON_BOARD_SETTINGS = "Board Settings";
-Blockly.Msg.TEXT_UPLOADER_STATUS = "Uploader Status";
-Blockly.Msg.TEXT_BOARD = "Board";
-Blockly.Msg.TEXT_COM_PORT = "COM Port";

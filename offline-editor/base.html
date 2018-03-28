@@ -19,7 +19,6 @@
     <script src="js/setCategoryCharacter.js"></script>
     <script src="js/init.js"></script>
     <script src="js/editor.js"></script>
-    <script src="js/upload.js"></script>
     <script src="js/popup.js"></script>
     <script src="js/my_materialize.js"></script>
 </head>
@@ -230,27 +229,6 @@
         </div>
     </div>
 
-    <!-- Board Settings Modal -->
-    <div id="modal_board_settings" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <h4 id="modal_text_board_settings">Board Settings</h4>
-            <div class="row">
-                <label id="label_text_board">Board</label>
-                <select id="board-selector">
-                    <option value="LinkIt:linkit_rtos:linkit_7697">LinkIt 7697</option>
-                    <option value="LinkIt:avr:smart7688">LinkIt Smart 7688 Duo</option>
-                </select>
-            </div>
-            <div class="row">
-                <label id="label_text_com_port">COM Port</label>
-                <select id="port-selector"></select>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <a id="dialog_export_ok_2" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
-        </div>
-    </div>
-
     <table id="main">
         <tr>
             <td>
@@ -261,21 +239,6 @@
                         <td id="tab_arduino" class="taboff">Arduino</td>
                         <td class="tabmin">&nbsp;</td>
                         <td class="tabmax">
-                            <div id="uploading-spinner" class="preloader-wrapper tiny">
-                                <div class="spinner-layer spinner-green-only">
-                                    <div class="circle-clipper left">
-                                        <div class="circle"></div>
-                                    </div>
-                                    <div class="gap-patch">
-                                        <div class="circle"></div>
-                                    </div>
-                                    <div class="circle-clipper right">
-                                        <div class="circle"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#" id="button_upload" class="hide-link tooltipped" data-tooltip="Upload"><i class="small material-icons">play_circle_filled</i></a>
-                            <a href="#modal_board_settings" id="button_board_settings" class="hide-link modal-trigger tooltipped" data-tooltip="Board Settings"><i class="small material-icons">arrow_drop_down</i></a>
                             <a href="#" class="hide-link tooltipped" id="button_new" data-tooltip="I am tooltip"><i class="small material-icons">create</i></a>
                             <a href="#" class="hide-link tooltipped" id="button_open" data-tooltip="I am tooltip"><i class="small material-icons">folder_open</i></a>
                             <a href="#" class="hide-link tooltipped" data-tooltip="I am tooltip" id="button_save"><i class="small material-icons">save</i></a>
@@ -290,18 +253,7 @@
             <td id="content_area"></td>
         </tr>
     </table>
-    <div id="content_blocks" class="content">
-        <ul id="terminal-wrapper" class="collapsible" data-collapsible="accordion">
-            <li>
-                <div id="terminal-header" class="collapsible-header">
-                    <i class="material-icons">featured_play_list</i>
-                    <span id="text_uploader_status">Uploader Status</span>
-                </div>
-                <div id="terminal-body" class="collapsible-body">
-                </div>
-            </li>
-        </ul>
-    </div>
+    <div id="content_blocks" class="content"></div>
     <textarea id="content_arduino" class="content" readonly wrap="off"></textarea>
 
     <xml id="toolbox" style="display: none"></xml>
