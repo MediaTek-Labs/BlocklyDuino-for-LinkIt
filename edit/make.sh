@@ -15,8 +15,8 @@ echo " > Merging..."
 cp ./languages/* ../src/blockly/msg/js/
 cp ./menu/category.xml ../src/blockly/apps/blocklyduino/category.xml
 cp ./menu/setCategoryCharacter.js ../src/blockly/apps/blocklyduino/js/setCategoryCharacter.js
-rm ./blocks/* ../src/blockly/blocks/* 2>/dev/null
-rm ./generators/* ../src/blockly/generators/arduino/* 2>/dev/null
+cp ./blocks/* ../src/blockly/blocks/
+cp ./generators/* ../src/blockly/generators/arduino/
 cp ./media/* ../src/blockly/media/
 
 cd ../src

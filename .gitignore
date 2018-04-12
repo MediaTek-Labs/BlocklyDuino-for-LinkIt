@@ -14,3 +14,4 @@ src/offline-editor/js/setCategoryCharacter.js
 src/offline-editor/media/
 src/offline-editor/js/*_compressed.js
 src/offline-editor/msg/js/
+src/blockly/msg/json/en.json
