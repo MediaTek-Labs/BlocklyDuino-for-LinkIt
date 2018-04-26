@@ -70,27 +70,45 @@ VERSION_NAME=$(cat "$MANIFEST" | jq ".$VERSION_NAME_KEY" | tr -d '"')
 
 
 echo " > Building BlocklyDuino v$VERSION_NAME..."
-
+echo ""
+echo " ---------- "
+echo ""
 cd blockly
 cp msg/js/en.js msg/messages.js
 python build.py
 python joint.py
 cp msg/messages.js msg/js/en.js
 cd ..
-
-rm ./offline-editor/category.xml 2>/dev/null
-rm ./offline-editor/js/setCategoryCharacter.js 2>/dev/null
-rm ./offline-editor/media/* 2>/dev/null
-rm ./offline-editor/js/*_compressed.js 2>/dev/null
-rm ./offline-editor/msg/js/* 2>/dev/null
-
-cp ./blockly/apps/blocklyduino/category.xml ./offline-editor/category.xml
-cp ./blockly/apps/blocklyduino/js/setCategoryCharacter.js ./offline-editor/js/setCategoryCharacter.js
-cp ./blockly/*_compressed.js ./offline-editor/js/
-cp ./blockly/msg/js/* ./offline-editor/msg/js/
-cp ./blockly/media/* ./offline-editor/media/
-cp ./blockly/apps/blocklyduino/css/* ./offline-editor/css/
-python joint.py
-
 echo ""
-echo " > Done building BlocklyDuino v$VERSION_NAME! ($(/bin/date))"
+echo " ---------- "
+echo ""
+printf " > Finalizing..."
+rm offline-editor/category.xml 2>/dev/null
+printf "."
+rm offline-editor/js/setCategoryCharacter.js 2>/dev/null
+printf "."
+rm offline-editor/media/* 2>/dev/null
+printf "."
+rm offline-editor/js/*_compressed.js 2>/dev/null
+printf "."
+rm offline-editor/msg/js/* 2>/dev/null
+printf "."
+
+cp blockly/apps/blocklyduino/category.xml ./offline-editor/category.xml
+printf "."
+cp blockly/apps/blocklyduino/js/setCategoryCharacter.js ./offline-editor/js/setCategoryCharacter.js
+printf "."
+mkdir -p offline-editor/js/
+cp blockly/*_compressed.js offline-editor/js/
+printf "."
+mkdir -p offline-editor/msg/js/
+cp blockly/msg/js/* offline-editor/msg/js/
+printf "."
+mkdir -p offline-editor/media/
+cp blockly/media/* offline-editor/media/
+printf "."
+mkdir -p offline-editor/css/
+cp blockly/apps/blocklyduino/css/* offline-editor/css/
+printf "."
+python joint.py
+printf "...done! ($(/bin/date))"
