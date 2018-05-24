@@ -24,8 +24,10 @@ var process;
 
 var tmpInoDir = 'sketches/tmp/';
 var tmpInoFilename ='tmp.ino';
+var tmpBuildDir = 'build/tmp/';
 
 function handleUploadButton() {
+  fs.ensureDirSync(tmpBuildDir);
   writeInoFile(tmpInoDir, tmpInoFilename);
   startUploading(tmpInoDir + tmpInoFilename);
 }
@@ -59,6 +61,7 @@ function generateCommand(inoPath, board, port, isVerbose=true) {
   command += " --upload " + inoPath;
   if (board) { command += " --board " + board; }
   if (port) { command += " --port " + port; }
+  command += " --pref build.path=" + tmpBuildDir;
   if (isVerbose) { command += " --verbose-build"; }
   return command;
 }
