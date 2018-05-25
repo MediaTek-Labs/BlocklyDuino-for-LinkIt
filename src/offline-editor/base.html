@@ -54,9 +54,21 @@
         <div class="nav-wrapper blue-grey darken-4">
             <a href="./" class="brand-logo"><img src="./media/icon_128.png" style="height: 80%;margin-right: 20px;vertical-align: middle;" title="Hi!">BlocklyDuino Editor</small></a>
             <ul class="right">
+                <li>
+                    <a class="dropdown-button waves-effect waves-light btn-small"
+                        href='#'
+                        id="port-btn"
+                        data-activates="dropdownPort">
+                        <i class="material-icons left" style="margin:0">usb</i>
+                        <span id="port-selected-text">COM?&nbsp</span>
+                        <i class="small material-icons right" style="margin:0">arrow_drop_down</i>
+                    </a>
+                </li>
                 <!-- Modal3 Trigger -->
                 <li><a class="waves-effect waves-light tooltipped" id="open-setting" data-tooltip="I am tooltip"><i class="material-icons">settings</i></a>
+                    
                 </li>
+                <li>test</li>
             </ul>
         </div>
     </nav>
@@ -216,6 +228,12 @@
         </li>
     </ul>
 
+    <ul id="dropdownPort" class="dropdown-content">
+        <li><a href="#!" id="button_import2">Import</a>
+        </li>
+        <li class="divider"></li>
+    </ul>
+
     <!-- modal_varialble Structure -->
     <div id="modal_variable" class="modal">
         <div class="modal-content">
@@ -241,10 +259,10 @@
                     <option value="LinkIt:avr:smart7688">LinkIt Smart 7688 Duo</option>
                 </select>
             </div>
-            <div class="row">
+            <!--div class="row">
                 <label id="label_text_com_port">COM Port</label>
                 <select id="port-selector"></select>
-            </div>
+            </div-->
         </div>
         <div class="modal-footer">
             <a id="dialog_export_ok_2" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
@@ -275,7 +293,6 @@
                                 </div>
                             </div>
                             <a href="#" id="button_upload" class="hide-link tooltipped" data-tooltip="Upload"><i class="small material-icons">play_circle_filled</i></a>
-                            <a href="#modal_board_settings" id="button_board_settings" class="hide-link modal-trigger tooltipped" data-tooltip="Board Settings"><i class="small material-icons">arrow_drop_down</i></a>
                             <a href="#" class="hide-link tooltipped" id="button_new" data-tooltip="I am tooltip"><i class="small material-icons">create</i></a>
                             <a href="#" class="hide-link tooltipped" id="button_open" data-tooltip="I am tooltip"><i class="small material-icons">folder_open</i></a>
                             <a href="#" class="hide-link tooltipped" data-tooltip="I am tooltip" id="button_save"><i class="small material-icons">save</i></a>

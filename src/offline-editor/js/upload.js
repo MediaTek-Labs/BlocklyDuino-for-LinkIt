@@ -63,6 +63,8 @@ function generateCommand(inoPath, board, port, isVerbose=true) {
   if (port) { command += " --port " + port; }
   command += " --pref build.path=" + tmpBuildDir;
   if (isVerbose) { command += " --verbose-build"; }
+
+  console.log("build command=" + command);
   return command;
 }
 
@@ -76,7 +78,7 @@ function startUploading(inoPath) {
   clearUploaderMsg()
 
   let board = document.getElementById("board-selector").value;
-  let port = document.getElementById("port-selector").value;
+  let port = selectedPort;
   let command = generateCommand(inoPath, board, port, true);
 
   outputUploaderMsg(command);
@@ -148,14 +150,32 @@ function updateAvailPorts() {
   updatePortSelector(availPorts, selectedPort);
 }
 
+function selectUploadPort(port) {
+  selectedPort = port;
+  
+  portLabel = document.querySelector('#port-selected-text')
+  portLabel.textContent = selectedPort + ' ';
+  
+  console.log("change upload port to " + selectedPort);
+}
+
 function updatePortSelector(availPorts, selectedPort) {
-  let $port_selector = $('#port-selector');
-  $port_selector.empty();
-  availPorts.forEach(port => {
-    let html_str = '<option value="' + port + '">' + port + '</option>'
-    $port_selector.append($(html_str))
-  });
-  $port_selector.material_select();
+  
+  let $dropdownPort = $('#dropdownPort');
+  $dropdownPort.empty();
+
+  if(availPorts.length) {
+    availPorts.forEach(port => {
+      // upload dropdown button's list
+      let item_str = '<li><a href="#!" onclick="selectUploadPort(\'' + port + '\')">' + port + '</a>'
+      item_str += '<li class="divider">'
+      $dropdownPort.append($(item_str))
+    });
+  } else {
+    // upload dropdown button's list
+    let item_str = '<li><a href="#!"> No Board </a>'
+    $dropdownPort.append($(item_str))
+  }
 }
 
 detectPort();

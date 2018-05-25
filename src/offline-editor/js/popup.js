@@ -151,5 +151,15 @@ document.addEventListener('DOMContentLoaded', function() {
     setFile(null, false);
     handleSaveButton();
   });
+
+  $('.dropdown-button').dropdown({
+      coverTrigger: false,
+      constrainWidth: true,
+      hover: false,
+      belowOrigin: true,
+      gutter: 0,
+    }
+  );
+
   newFile();
 });
