@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#button_upload').addEventListener("click", handleUploadButton);
+  document.querySelector('#button_launch_ide').addEventListener("click", openArduinoIDE);
 });
 
 var nwGui = require('nw.gui')
@@ -33,13 +34,13 @@ function handleUploadButton() {
 }
 
 function openArduinoIDE() {
-  let command = '"arduino-1.8.5\\arduino.exe"';
-  exec(command, function(error, stdout, stderr){
-    console.log(command + " result: ");
-    console.log(error);
-    console.log(stdout);
-    console.log(stderr);
-  });
+  writeInoFile(tmpInoDir, tmpInoFilename);
+  let command = '"arduino-1.8.5\\arduino.exe"'
+  let parameter =  tmpInoDir + tmpInoFilename;
+  
+  process = exec(command + ' ' + parameter, {encoding: 'buffer'});
+  console.log(process);
+
 }
 
 function outputUploaderMsg(message, className=null) {
@@ -173,7 +174,7 @@ function updatePortSelector(availPorts, selectedPort) {
     });
   } else {
     // upload dropdown button's list
-    let item_str = '<li><a href="#!"> No Board </a>'
+    let item_str = '<li><a href="#!">' + Blockly.Msg.DROPDOWN_SCANNING + '</a>';
     $dropdownPort.append($(item_str))
   }
 }
