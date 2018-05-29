@@ -205,15 +205,6 @@ Blockly.Msg.DELETE_ALL2 = " blockls?";
 Blockly.Msg.DELETE_BLOCK = "Delete Block";
 Blockly.Msg.DELETE_X_BLOCKS = "Delete %1 Blocks";
 Blockly.Msg.DEVICE_ID = "DeviceID";
-Blockly.Msg.DHT_HELPURL = "https://github.com/adafruit/DHT-sensor-library";
-Blockly.Msg.DHT_READ_C = "Temperature C";
-Blockly.Msg.DHT_READ_F = "Temperature F";
-Blockly.Msg.DHT_READ_H = "Humidity %";
-Blockly.Msg.DHT_READ_PIN = "Pin";
-Blockly.Msg.DHT_READ_SENSOR = "Sensor";
-Blockly.Msg.DHT_READ_TOOLTIP = "The DHT sensors are made of two parts, a capacitive humidity sensor and a thermistor.";
-Blockly.Msg.DHT_READ_TYPE = "Content";
-Blockly.Msg.DHT_WARNING = "Need to install the (adafruit) DHT-sensor-library";
 Blockly.Msg.SETTINGS_OK = "Save and Restart";
 Blockly.Msg.SETTINGS_CANCEL = "Cancel";
 Blockly.Msg.SETTINGS_VERSION = "Version: ";
@@ -1383,6 +1374,8 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
 
 Blockly.Msg.CATEGORY_EXTERNAL = "External";
 Blockly.Msg.CATEGORY_BETA = "Untested";
+Blockly.Msg.CATEGORY_SENSOR = "Sensor";
+Blockly.Msg.CATEGORY_DISPLAY = "Display";
 
 Blockly.Msg.BUTTON_UPLOAD = "Upload";
 Blockly.Msg.BUTTON_LAUNCH_IDE = "Launch Arduino IDE";
@@ -1391,3 +1384,56 @@ Blockly.Msg.TEXT_UPLOADER_STATUS = "Uploader Status";
 Blockly.Msg.TEXT_BOARD = "Board";
 Blockly.Msg.TEXT_COM_PORT = "COM Port";
 Blockly.Msg.DROPDOWN_SCANNING = "Scanning for COM port...";
+
+Blockly.Msg.TEMPERATURE_CELCIUS = "Temperature C";
+Blockly.Msg.TEMPERATURE_FERENHEIT = "Temperature F";
+Blockly.Msg.HUMIDITY_PERCENT = "Humidity %";
+Blockly.Msg.SIGNAL_PIN = "Pin";
+Blockly.Msg.MESUREMENT_TYPE = "Content";
+
+Blockly.Msg.ADXL345_HELPURL = "https://github.com/adafruit/Adafruit_ADXL345";
+Blockly.Msg.ADXL345_READ_X = "X-Axis";
+Blockly.Msg.ADXL345_READ_Y = "Y-Axis";
+Blockly.Msg.ADXL345_READ_Z = "Z-Axis";
+Blockly.Msg.ADXL345_TITLE = "Accelerometer";
+Blockly.Msg.ADXL345_TOOLTIP = "ADXL345 is a 3-Axis Accelerometer with I2C interface";
+Blockly.Msg.ADXL345_UNIT = " m/s\u00B2";
+
+Blockly.Msg.DHT_HELPURL = "https://github.com/adafruit/DHT-sensor-library";
+Blockly.Msg.DHT_TITLE = "Sensor";
+Blockly.Msg.DHT_TOOLTIP = "The DHT sensors are made of two parts, a capacitive humidity sensor and a thermistor.";
+Blockly.Msg.DHT_WARNING = "Need to install the (adafruit) DHT-sensor-library";
+
+Blockly.Msg.HTU21D_HELPURL = "https://github.com/sparkfun/SparkFun_HTU21D_Breakout_Arduino_Library/blob/master/src/SparkFunHTU21D.h";
+Blockly.Msg.HTU21D_TITLE = "Humidity/Temperature";
+Blockly.Msg.HTU21D_TOOLTIP = "Humidity/Temperature (HTU21D I2C)";
+Blockly.Msg.HTU21D_WARNING = "Need to install SparkFun HTU21D library";
+
+Blockly.Msg.INFRA_RED_HELPURL = "#";
+Blockly.Msg.INFRA_RED_SEND_TEXT_PARAM = "Send string"
+Blockly.Msg.INFRA_RED_RECEIVE_TEXT_PARAM = "Receive string"
+Blockly.Msg.INFRA_RED_RECEIVE_DEFAULT_VALUE = "Error value"
+Blockly.Msg.INFRA_RED_SEND_TITLE = "Infrared Transmitter";
+Blockly.Msg.INFRA_RED_RECEIVE_TITLE = "Infrared Receiver";
+
+Blockly.Msg.OLED_DISPLAY_HELPURL = "http://wiki.seeed.cc/Grove-OLED_Display_0.96inch/";
+Blockly.Msg.OLED_DISPLAY_TITLE = "OLED Display";
+Blockly.Msg.OLED_DISPLAY_CLEAR = "clearDisplay()";
+Blockly.Msg.OLED_DISPLAY_SET_CURSOR = "setTextXY(";
+Blockly.Msg.OLED_DISPLAY_SET_CURSOR_SEP = ",";
+Blockly.Msg.OLED_DISPLAY_SET_CURSOR_APPEND = ")";
+Blockly.Msg.OLED_DISPLAY_PUT = "Put";
+Blockly.Msg.OLED_DISPLAY_TOOLTIP = "An OLED monochrome 128×64dot matrix display module with Grove 4pin I2C Interface.";
+
+Blockly.Msg.LCD_I2C_HELPURL = "http://wiki.seeed.cc/Grove-LCD_I2C_0.96inch/";
+Blockly.Msg.LCD_I2C_TITLE = "LCD Backlight";
+Blockly.Msg.LCD_I2C_CLEAR = "Clear screen";
+Blockly.Msg.LCD_I2C_SET_CURSOR = "Set cursor to　column";
+Blockly.Msg.LCD_I2C_SET_CURSOR_SEP = " row";
+Blockly.Msg.LCD_I2C_SET_CURSOR_APPEND = "";
+Blockly.Msg.LCD_I2C_PUT = "Show";
+Blockly.Msg.LCD_I2C_TOOLTIP = "An OLED monochrome 128×64dot matrix display module with Grove 4pin I2C Interface.";
+Blockly.Msg.LCD_I2C_I2C_ADDRESS = "I2C address";
+Blockly.Msg.LCD_I2C_LIGHT = "backlight";
+Blockly.Msg.LCD_I2C_ON = "ON";
+Blockly.Msg.LCD_I2C_OFF = "OFF";

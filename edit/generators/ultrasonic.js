@@ -26,57 +26,23 @@ goog.provide('Blockly.Arduino.ultrasonic');
 
 goog.require('Blockly.Arduino');
 
-Blockly.Arduino.ultrasonic_setting = function() {
+Blockly.Arduino.ultrasonic = function() {
   var trig_pin = this.getFieldValue('TRIG');
   var echo_pin = this.getFieldValue('ECHO');
-  var reset_pin = this.getFieldValue('RESET');
+  var unit = this.getFieldValue('MEASUREMENT');
+  var inst_symbol = 'ultrasonic_' + trig_pin + '_' + echo_pin;
 
-  Blockly.Arduino.definitions_['define_sonic_timeout'] = 'int Sonic_Time_out = 3000;\n';
+  Blockly.Arduino.definitions_['define_ultrasonic_include'] = 
+    '#include <Ultrasonic.h>\n';
 
-  Blockly.Arduino.setups_['setup_output_' + trig_pin] = 'pinMode(' + trig_pin + ', OUTPUT);';
-  Blockly.Arduino.setups_['setup_output_' + echo_pin] = 'pinMode(' + echo_pin + ', INPUT);';
-  Blockly.Arduino.setups_['setup_output_' + reset_pin] = 'pinMode(' + reset_pin + ', OUTPUT);';
+  Blockly.Arduino.definitions_['define_ultrasonic_inst_' + inst_symbol] = 
+    'Ultrasonic ' + inst_symbol + '(' + trig_pin + ', ' + echo_pin + ');\n';
 
-  Blockly.Arduino.definitions_['define_Sonic_Timing'] = 'long Sonic_Timing(){\n'+
-    "  digitalWrite(" + trig_pin + ", LOW);\n" +
-    "  delayMicroseconds(2);\n" +
-    "  digitalWrite(" + trig_pin + ", HIGH);\n" +
-    "  delayMicroseconds(10);\n" +
-    "  digitalWrite(" + trig_pin + ", LOW);\n" +
-    "  long duration = pulseIn(" + echo_pin + ",HIGH,Sonic_Time_out);\n" +
-    "  if ( duration == 0 ){\n" +
-    "    duration = Sonic_Time_out;\n" +
-    "    digitalWrite(" + reset_pin + ", HIGH);\n" +
-    "    delay(25);\n" +
-    "    digitalWrite(" + reset_pin + " ,LOW);\n" +
-    "    delay(225);\n" +
-    "  }\n"+
-    "  return duration;\n"+
-    "}\n";
-
-  var code = '';
-  return code;
-};
-
-Blockly.Arduino.ultrasonic_maxrange = function() {
-  var unit = this.getFieldValue('UNIT');
-  var max_range = this.getFieldValue('MAXRANGE');
-  if(unit == "CM"){
-    Blockly.Arduino.definitions_['define_sonic_timeout'] = 'int Sonic_Time_out = ' + max_range + '*2*29;\n';
-  }else{
-    Blockly.Arduino.definitions_['define_sonic_timeout'] = 'int Sonic_Time_out = ' + max_range + '*2*72;\n';
-  }
-  var code = "";
-  return code;
-}
-
-Blockly.Arduino.ultrasonic_distance = function() {
   var code;
-  var unit = this.getFieldValue('UNIT');
   if(unit == "CM"){
-    code = "Sonic_Timing()/29/2";
+    code = inst_symbol + ".convert(" + inst_symbol + '.timing(), Ultrasonic::' + 'CM)';
   }else{
-    code = "Sonic_Timing()/74/2";
+    code = inst_symbol + ".convert(" + inst_symbol + '.timing(), Ultrasonic::' + 'IN)';
   }
-  return [code,Blockly.Arduino.ORDER_ATOMIC];
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

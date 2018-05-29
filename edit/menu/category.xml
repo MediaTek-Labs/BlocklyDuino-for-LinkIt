@@ -475,6 +475,84 @@
     </value>
 </block>
 </category>
+
+<category id="category_sensor">
+    <block type="adxl345"></block>
+    <block type="dht_read"></block>
+    <block type="htu21d"></block>
+    <block type="ultrasonic"></block>
+    <block type="infra_red_send"></block>
+    <block type="infra_red_receive"></block>
+</category>
+
+<category id="category_display">
+    <block type="oled_display_setting"></block>
+    <block type="oled_display_clear"></block>
+    <block type="oled_display_draw_commands">
+        <statement name="DRAW_CMD">
+            <block type="oled_display_set_cursor">
+                <value name="ROW">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+                <value name="COL">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+                <next>
+                    <block type="oled_display_put">
+                        <value name="VALUE">
+                            <block type="text">
+                                <field name="TEXT">HELLO</field>
+                            </block>
+                        </value>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+    <block type="oled_display_set_cursor">
+        <value name="ROW">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+        <value name="COL">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+    </block>
+    <block type="oled_display_put">
+        <value name="VALUE">
+            <block type="text">
+                <field name="TEXT">HELLO</field>
+            </block>
+        </value>
+    </block>
+
+    <block type="lcd_i2c_setting"></block>
+    <block type="lcd_i2c_light"></block>
+    <block type="lcd_i2c_clear"></block>
+    <block type="lcd_i2c_set_cursor">
+        <value name="ROW">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+        <value name="COL">
+            <block type="math_number">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+    </block>
+    <block type="lcd_i2c_put">
+        <value name="VALUE"></value>
+    </block>
+</category>
+
 <category id="category_external">
     <category id="category_grove">
         <category id="category_grove_sensor">
@@ -1123,11 +1201,6 @@
             <block type="aerobot_setled"></block>
         </category>
     </category>
-    <category id="category_ultrasonic">
-        <block type="ultrasonic_setting"></block>
-        <block type="ultrasonic_maxrange"></block>
-        <block type="ultrasonic_distance"></block>
-    </category>
     <category id="category_lcd">
         <block type="lcd_init"></block>
         <block type="lcd_begin"></block>
@@ -1161,6 +1234,6 @@
         <!--block type="lcd_righttoleft"></block-->
     </category>
     <category id="category_other_sensor">
-        <block type="dht_read"></block>
+        
     </category>
 </category>

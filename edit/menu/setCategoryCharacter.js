@@ -82,4 +82,6 @@ function setCategoryCharacter() {
   // External
   $('#category_external').attr('name',Blockly.Msg.CATEGORY_EXTERNAL);
   $('#category_beta').attr('name',Blockly.Msg.CATEGORY_BETA);
+  $('#category_sensor').attr('name',Blockly.Msg.CATEGORY_SENSOR);
+  $('#category_display').attr('name',Blockly.Msg.CATEGORY_DISPLAY);
 }

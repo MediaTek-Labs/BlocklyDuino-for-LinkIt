@@ -1,10 +1,10 @@
 /**
  * @license
- * Visual Blocks Editor
+ * Blockly for LinkIt 7697
+ * https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt
  *
- * Copyright 2012 Google Inc.
- * https://developers.google.com/blockly/
- *
+ * Copyright 2018 MediaTek Inc.
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,40 +20,44 @@
 
 /**
  * @fileoverview List blocks for Blockly.
- * @author fraser@google.com (Neil Fraser)
+ * @author MediaTek Labs
  */
 'use strict';
 
-goog.provide('Blockly.Blocks.dht');
+goog.provide('Blockly.Blocks.adxl345');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.dht.HUE = 215;
+Blockly.Blocks.adxl345.HUE = 215;
 
-Blockly.Blocks.dht.image = filepath.media+'/dht11.jpg';
-
-Blockly.Blocks['dht_read'] = {
+Blockly.Blocks['adxl345'] = {
   init: function() {
-    this.setHelpUrl(Blockly.Msg.DHT_HELPURL);
-    this.setColour(Blockly.Blocks.dht.HUE);
+    this.setHelpUrl(Blockly.Msg.ADXL345_HELPURL);
+    this.setColour(215);
+    this.setTooltip(Blockly.Msg.ADXL345_TOOLTIP);
+
     this.appendDummyInput()
-      .appendField(Blockly.Msg.DHT_TITLE)
-      .appendField(new Blockly.FieldDropdown(profile.default.dht), "SENSOR");
+        .appendField(Blockly.Msg.ADXL345_TITLE)
+        .appendField(new Blockly.FieldDropdown([["ADXL345", "DUMMY"]]), "SENSOR");
+
     this.appendDummyInput()
       .appendField(Blockly.Msg.SIGNAL_PIN)
-      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
+      .appendField(new Blockly.FieldDropdown([["I2C","PIN"]]), "PIN");
+
     this.appendDummyInput()
       .appendField(Blockly.Msg.MESUREMENT_TYPE)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HUMIDITY_PERCENT,"h"],[Blockly.Msg.TEMPERATURE_CELCIUS,"C"],[Blockly.Msg.TEMPERATURE_FERENHEIT,"F"]]), "TYPE");
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ADXL345_READ_X,"X"],[Blockly.Msg.ADXL345_READ_Y,"Y"],[Blockly.Msg.ADXL345_READ_Z,"Z"]]), "AXIS")
+      .appendField(Blockly.Msg.ADXL345_UNIT);
+      
     this.setInputsInline(true);
     this.setOutput(true, 'Number');
-    this.setTooltip(Blockly.Msg.DHT_TOOLTIP);
+    
   },
   onchange: function() {
     if (!this.workspace) {
-      // Block has en deleted.
+      // Block has beeen deleted.
       return;
     }
-    //this.setWarningText(Blockly.Msg.DHT_WARNING);
+    // this.setWarningText(Blockly.Msg.ADXL345_WARNING);
   }
 };

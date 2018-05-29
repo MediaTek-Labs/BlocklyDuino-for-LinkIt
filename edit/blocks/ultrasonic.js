@@ -30,61 +30,38 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks.ultrasonic.HUE = 215;
 
-Blockly.Blocks.ultrasonic.image = filepath.media+'/ultrasonic.jpg';
-
-Blockly.Blocks['ultrasonic_setting'] = {
+Blockly.Blocks['ultrasonic'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.ULTRASONIC_SETTING_HELPURL);
-    this.setColour(Blockly.Blocks.ultrasonic.HUE);
+    this.setColour(215);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.ultrasonic.image, 64, 64))
-      .appendField(Blockly.Msg.ULTRASONIC_SETTING_TITLE);
+      .appendField(Blockly.Msg.ULTRASONIC_SETTING_TITLE)
+      .appendField(new Blockly.FieldDropdown([["HC-SR04P", "DUMMY"]]), "SENSOR");
+
     this.appendDummyInput()
-      .appendField(Blockly.Msg.ULTRASONIC_SETTING_TRIG);
-    this.appendDummyInput()
+      .appendField(Blockly.Msg.ULTRASONIC_SETTING_TRIG)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "TRIG")
+
     this.appendDummyInput()
-      .appendField(Blockly.Msg.ULTRASONIC_SETTING_ECHO);
-    this.appendDummyInput()
+      .appendField(Blockly.Msg.ULTRASONIC_SETTING_ECHO)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "ECHO")
+
+    //this.appendDummyInput()
+    //  .appendField(Blockly.Msg.ULTRASONIC_SETTING_RESET)
+    //  .appendField(new Blockly.FieldDropdown(profile.default.digital), "RESET")
+
     this.appendDummyInput()
-      .appendField(Blockly.Msg.ULTRASONIC_SETTING_RESET);
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown(profile.default.digital), "RESET")
+        .appendField(Blockly.Msg.MESUREMENT_TYPE)
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.GROVE_ULTRASONIC_RANGER_UNIT_CM,"CM"],[Blockly.Msg.GROVE_ULTRASONIC_RANGER_UNIT_INCH,"INCH"]]), "MEASUREMENT");
+
     this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    this.setOutput(true, 'Number');
     this.setTooltip(Blockly.Msg.ULTRASONIC_SETTING_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['ultrasonic_maxrange'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.ULTRASONIC_MAXRANGE_HELPURL);
-    this.setColour(Blockly.Blocks.ultrasonic.HUE);
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.ultrasonic.image, 64, 64))
-      .appendField(Blockly.Msg.ULTRASONIC_MAXRANGE_TITLE)
-      .appendField(new Blockly.FieldTextInput("20"),"MAXRANGE")
-      .appendField(new Blockly.FieldDropdown([["cm", "CM"], ["inch", "INCH"]]), "UNIT");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.ULTRASONIC_MAXRANGE_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['ultrasonic_distance'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.ULTRASONIC_DISTANCE_HELPURL);
-    this.setColour(Blockly.Blocks.ultrasonic.HUE);
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.ultrasonic.image, 64, 64))
-      .appendField(Blockly.Msg.ULTRASONIC_MAXRANGE_TITLE);
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([["cm", "CM"], ["inch", "INCH"]]), "UNIT");
-    this.setInputsInline(true);
-    this.setOutput(true, "Number");
-    this.setTooltip(Blockly.Msg.ULTRASONIC_MAXRANGE_TOOLTIP);
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has beeen deleted.
+      return;
+    }
   }
 };

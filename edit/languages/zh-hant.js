@@ -203,15 +203,6 @@ Blockly.Msg.DELETE_ALL2 = "積木？";  // untranslated
 Blockly.Msg.DELETE_BLOCK = "刪除積木";
 Blockly.Msg.DELETE_X_BLOCKS = "刪除 %1 塊積木";
 Blockly.Msg.DEVICE_ID = "DeviceID";  // untranslated
-Blockly.Msg.DHT_HELPURL = "https://github.com/adafruit/DHT-sensor-library";  // untranslated
-Blockly.Msg.DHT_READ_C = "°C";
-Blockly.Msg.DHT_READ_F = "°F";
-Blockly.Msg.DHT_READ_H = "濕度 %";  // untranslated
-Blockly.Msg.DHT_READ_PIN = "Pin#";  // untranslated
-Blockly.Msg.DHT_READ_SENSOR = "感應器";
-Blockly.Msg.DHT_READ_TOOLTIP = "The DHT sensors are made of two parts, a capacitive humidity sensor and a thermistor.";  // untranslated
-Blockly.Msg.DHT_READ_TYPE = "內容";
-Blockly.Msg.DHT_WARNING = "Need to install the (adafruit) DHT-sensor-library";  // untranslated
 Blockly.Msg.SETTINGS_OK = "儲存並重新啟動";
 Blockly.Msg.SETTINGS_CANCEL = "取消";
 Blockly.Msg.SETTINGS_VERSION = "版本：";
@@ -1181,12 +1172,12 @@ Blockly.Msg.ULTRASONIC_DISTANCE_TITLE = "距離";
 Blockly.Msg.ULTRASONIC_MAXRANGE_HELPURL = "";  // untranslated
 Blockly.Msg.ULTRASONIC_MAXRANGE_TITLE = "最大範圍";
 Blockly.Msg.ULTRASONIC_MAXRANGE_TOOLTIP = "";  // untranslated
-Blockly.Msg.ULTRASONIC_SETTING_ECHO = "Echo";  // untranslated
+Blockly.Msg.ULTRASONIC_SETTING_ECHO = " 回應腳（Echo）";  // untranslated
 Blockly.Msg.ULTRASONIC_SETTING_HELPURL = "";  // untranslated
-Blockly.Msg.ULTRASONIC_SETTING_RESET = "重設";
-Blockly.Msg.ULTRASONIC_SETTING_TITLE = "Pin#";  // untranslated
+Blockly.Msg.ULTRASONIC_SETTING_RESET = "重設腳（RST）";
+Blockly.Msg.ULTRASONIC_SETTING_TITLE = "超音波測距感應器";  // untranslated
 Blockly.Msg.ULTRASONIC_SETTING_TOOLTIP = "";  // untranslated
-Blockly.Msg.ULTRASONIC_SETTING_TRIG = "Trig";  // untranslated
+Blockly.Msg.ULTRASONIC_SETTING_TRIG = " 觸發腳（Trig）";  // untranslated
 Blockly.Msg.URL = "URL";
 Blockly.Msg.VALUE = "數值";
 Blockly.Msg.VARIABLE = "變數";
@@ -1362,6 +1353,8 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
 
 Blockly.Msg.CATEGORY_EXTERNAL = "外部元件";
 Blockly.Msg.CATEGORY_BETA = "未測試元件";
+Blockly.Msg.CATEGORY_SENSOR = "感應器";
+Blockly.Msg.CATEGORY_DISPLAY = "顯示器";
 
 Blockly.Msg.BUTTON_UPLOAD = "燒錄";
 Blockly.Msg.BUTTON_LAUNCH_IDE = "啟動 Arduino IDE";
@@ -1370,3 +1363,57 @@ Blockly.Msg.TEXT_UPLOADER_STATUS = "燒錄狀態";
 Blockly.Msg.TEXT_BOARD = "開發板";
 Blockly.Msg.TEXT_COM_PORT = "連接埠";
 Blockly.Msg.DROPDOWN_SCANNING = "掃描連接埠當中...";
+
+
+Blockly.Msg.TEMPERATURE_CELCIUS = "溫度（°C）";
+Blockly.Msg.TEMPERATURE_FERENHEIT = "溫度（°F）";
+Blockly.Msg.HUMIDITY_PERCENT = "相對濕度（%）";  // untranslated
+Blockly.Msg.SIGNAL_PIN = "訊號：";  // untranslated
+Blockly.Msg.MESUREMENT_TYPE = "量測數值：";
+
+Blockly.Msg.ADXL345_HELPURL = "https://github.com/adafruit/Adafruit_ADXL345";
+Blockly.Msg.ADXL345_READ_X = "X 軸";
+Blockly.Msg.ADXL345_READ_Y = "Y 軸";
+Blockly.Msg.ADXL345_READ_Z = "Z 軸";
+Blockly.Msg.ADXL345_TITLE = "加速度計";
+Blockly.Msg.ADXL345_TOOLTIP = "ADXL345 加速度計，具備 I2C 介面";
+Blockly.Msg.ADXL345_UNIT = "m/s\u00B2";
+
+Blockly.Msg.DHT_HELPURL = "https://github.com/adafruit/DHT-sensor-library";  // untranslated
+Blockly.Msg.DHT_TITLE = "溫濕度計";
+Blockly.Msg.DHT_TOOLTIP = "The DHT sensors are made of two parts, a capacitive humidity sensor and a thermistor.";  // untranslated
+Blockly.Msg.DHT_WARNING = "Need to install the (adafruit) DHT-sensor-library";  // untranslated
+
+Blockly.Msg.HTU21D_HELPURL = "https://github.com/sparkfun/SparkFun_HTU21D_Breakout_Arduino_Library/blob/master/src/SparkFunHTU21D.h";
+Blockly.Msg.HTU21D_TITLE = "高精度溫濕度計";
+Blockly.Msg.HTU21D_TOOLTIP = "高精度溫濕度計 HTU21D，具備I2C介面，需要安裝 SparkFun HTU21D 函式庫";
+
+Blockly.Msg.INFRA_RED_HELPURL = "#";
+Blockly.Msg.INFRA_RED_SEND_TEXT_PARAM = "發送整數（僅限 P3）"
+Blockly.Msg.INFRA_RED_RECEIVE_TEXT_PARAM = "接收整數"
+Blockly.Msg.INFRA_RED_RECEIVE_DEFAULT_VALUE = "失敗回傳值"
+Blockly.Msg.INFRA_RED_SEND_TITLE = "紅外線發送器";
+Blockly.Msg.INFRA_RED_RECEIVE_TITLE = "紅外線接收器";
+
+Blockly.Msg.OLED_DISPLAY_HELPURL = "http://wiki.seeed.cc/Grove-OLED_Display_0.96inch/";
+Blockly.Msg.OLED_DISPLAY_TITLE = "128x64 OLED 顯示器";
+Blockly.Msg.OLED_DISPLAY_DRAW_COMMANDS = "顯示內容："
+Blockly.Msg.OLED_DISPLAY_CLEAR = "清除畫面";
+Blockly.Msg.OLED_DISPLAY_SET_CURSOR = "設定游標　行：";
+Blockly.Msg.OLED_DISPLAY_SET_CURSOR_SEP = "　列：";
+Blockly.Msg.OLED_DISPLAY_SET_CURSOR_APPEND = "";
+Blockly.Msg.OLED_DISPLAY_PUT = "於游標處列印";
+Blockly.Msg.OLED_DISPLAY_TOOLTIP = "用 u8g2 函式庫來驅動 I2C 介面的 128×64 點陣 OLED 顯示器。支援 SH1106、SH1306 等型號";
+
+Blockly.Msg.LCD_I2C_HELPURL = "http://wiki.seeed.cc/Grove-LCD_I2C_0.96inch/";
+Blockly.Msg.LCD_I2C_TITLE = "背光液晶模組";
+Blockly.Msg.LCD_I2C_CLEAR = "清除畫面";
+Blockly.Msg.LCD_I2C_SET_CURSOR = "設定游標　行：";
+Blockly.Msg.LCD_I2C_SET_CURSOR_SEP = "　列：";
+Blockly.Msg.LCD_I2C_SET_CURSOR_APPEND = "";
+Blockly.Msg.LCD_I2C_PUT = "顯示";
+Blockly.Msg.LCD_I2C_TOOLTIP = "An OLED monochrome 128×64dot matrix display module with Grove 4pin I2C Interface.";
+Blockly.Msg.LCD_I2C_I2C_ADDRESS = "I2C位址";
+Blockly.Msg.LCD_I2C_LIGHT = "背光";
+Blockly.Msg.LCD_I2C_ON = "開";
+Blockly.Msg.LCD_I2C_OFF = "關";

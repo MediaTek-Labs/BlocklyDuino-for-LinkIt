@@ -36,16 +36,13 @@ Blockly.Arduino.dht_read = function() {
   var code = '';
   switch(type){
       case 'h':
-//      code += 'floatToStr(dht_' + pin + '_' + sensor + '.readHumidity()) + "%"';
-        code += '(int)(dht_' + pin + '_' + sensor + '.readHumidity())';
+        code += '(float)(dht_' + pin + '_' + sensor + '.readHumidity())';
       break;
       case 'C':
-//        code += 'floatToStr(dht_' + pin + '_' + sensor + '.readTemperature()) + "C"';
-          code += '(int)(dht_' + pin + '_' + sensor + '.readTemperature())';
+          code += '(float)(dht_' + pin + '_' + sensor + '.readTemperature())';
       break;
       case 'F':
-//        code += 'floatToStr(dht_' + pin + '_' + sensor + '.readTemperature(true)) + "F"';
-          code += '(int)(dht_' + pin + '_' + sensor + '.readTemperature(true))';
+          code += '(float)(dht_' + pin + '_' + sensor + '.readTemperature(true))';
       break;
   }
 
