@@ -477,80 +477,115 @@
 </category>
 
 <category id="category_sensor">
-    <block type="adxl345"></block>
+    <block type="adxl345_read"></block>
     <block type="dht_read"></block>
-    <block type="htu21d"></block>
-    <block type="ultrasonic"></block>
+    <block type="htu21d_read"></block>
+    <block type="ultrasonic_read"></block>
     <block type="infra_red_send"></block>
     <block type="infra_red_receive"></block>
 </category>
 
 <category id="category_display">
-    <block type="oled_display_setting"></block>
-    <block type="oled_display_clear"></block>
-    <block type="oled_display_draw_commands">
-        <statement name="DRAW_CMD">
-            <block type="oled_display_set_cursor">
-                <value name="ROW">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-                <value name="COL">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-                <next>
-                    <block type="oled_display_put">
-                        <value name="VALUE">
-                            <block type="text">
-                                <field name="TEXT">HELLO</field>
-                            </block>
-                        </value>
-                    </block>
-                </next>
-            </block>
-        </statement>
-    </block>
-    <block type="oled_display_set_cursor">
-        <value name="ROW">
-            <block type="math_number">
-                <field name="NUM">0</field>
-            </block>
-        </value>
-        <value name="COL">
-            <block type="math_number">
-                <field name="NUM">0</field>
-            </block>
-        </value>
-    </block>
-    <block type="oled_display_put">
-        <value name="VALUE">
-            <block type="text">
-                <field name="TEXT">HELLO</field>
-            </block>
-        </value>
-    </block>
+    <category id="category_oled">
+        <block type="oled_display_setting"></block>
+        <block type="oled_display_clear"></block>
+        <block type="oled_display_draw_commands">
+            <statement name="DRAW_CMD">
+                <block type="oled_display_set_cursor">
+                    <value name="ROW">
+                        <block type="math_number">
+                            <field name="NUM">0</field>
+                        </block>
+                    </value>
+                    <value name="COL">
+                        <block type="math_number">
+                            <field name="NUM">0</field>
+                        </block>
+                    </value>
+                    <next>
+                        <block type="oled_display_put">
+                            <value name="VALUE">
+                                <block type="text">
+                                    <field name="TEXT">HELLO</field>
+                                </block>
+                            </value>
+                        </block>
+                    </next>
+                </block>
+            </statement>
+        </block>
+        <block type="oled_display_set_cursor">
+            <value name="ROW">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="COL">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="oled_display_put">
+            <value name="VALUE">
+                <block type="text">
+                    <field name="TEXT">HELLO</field>
+                </block>
+            </value>
+        </block>
+    </category>
+    <category id="category_lcd">
+        <block type="lcd_i2c_setting"></block>
+        <block type="lcd_i2c_light"></block>
+        <block type="lcd_i2c_clear"></block>
+        <block type="lcd_i2c_set_cursor">
+            <value name="ROW">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="COL">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="lcd_i2c_put"></block>
+    </category>
 
-    <block type="lcd_i2c_setting"></block>
-    <block type="lcd_i2c_light"></block>
-    <block type="lcd_i2c_clear"></block>
-    <block type="lcd_i2c_set_cursor">
-        <value name="ROW">
-            <block type="math_number">
-                <field name="NUM">0</field>
-            </block>
-        </value>
-        <value name="COL">
-            <block type="math_number">
-                <field name="NUM">0</field>
-            </block>
-        </value>
-    </block>
-    <block type="lcd_i2c_put">
-        <value name="VALUE"></value>
-    </block>
+    <category id="category_neopixel">
+        <block type="neopixel_begin"></block>
+        <block type="neopixel_setpixelcolor">
+            <value name="TARGET">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="neopixel_custom_setpixelcolor">
+            <value name="TARGET">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="R">
+                <block type="math_number">
+                    <field name="NUM">255</field>
+                </block>
+            </value>
+            <value name="G">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="B">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="neopixel_show"></block>
+    </category>
 </category>
 
 <category id="category_external">
@@ -941,40 +976,7 @@
             </block>
             <block type="rgbled_show"></block>
         </category>
-        <category id="category_neopixel">
-            <block type="neopixel_begin"></block>
-            <!--block type="neopixel_setpixelcolor"></block-->
-            <block type="neopixel_setpixelcolor">
-                <value name="TARGET">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-            </block>
-            <block type="neopixel_custom_setpixelcolor">
-                <value name="TARGET">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-                <value name="R">
-                    <block type="math_number">
-                        <field name="NUM">255</field>
-                    </block>
-                </value>
-                <value name="G">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-                <value name="B">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-            </block>
-            <block type="neopixel_show"></block>
-        </category>
+        
         <category id="category_i2c_matrix">
             <block type="i2c_matrix_begin"></block>
             <block type="i2c_matrix_clear"></block>

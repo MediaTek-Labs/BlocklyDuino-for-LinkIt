@@ -24,30 +24,30 @@
  */
 'use strict';
 
-goog.provide('Blockly.Arduino.adxl345');
+goog.provide('Blockly.Arduino.adxl');
 
 goog.require('Blockly.Arduino');
 
-Blockly.Arduino.adxl345 = function() {
-  Blockly.Arduino.definitions_['define_adxl345_inst'] = '#include <Wire.h>\n'
-    + '#include <Adafruit_Sensor.h>\n'
-    + '#include <Adafruit_ADXL345_U.h>\n'
-    + 'Adafruit_ADXL345_Unified adxl345_inst = Adafruit_ADXL345_Unified(12345);\n';
+Blockly.Arduino.adxl345_read = function() {
+  Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>'
+  Blockly.Arduino.definitions_['define_adafruit_sensor_include'] = '#include <Adafruit_Sensor.h>'
+  Blockly.Arduino.definitions_['define_adafruit_adxl345_u'] = '#include <Adafruit_ADXL345_U.h>'
+  Blockly.Arduino.definitions_['define_adafruit_adxl_inst'] = 'Adafruit_ADXL345_Unified adxl345(12345);';
 
-  Blockly.Arduino.setups_['setup_adxl345_inst'] = 'adxl345_inst.begin();\n'
-    + '  adxl345_inst.setDataRate(ADXL345_DATARATE_400_HZ);\n'
-    + '  adxl345_inst.setDataRange(ADXL345_RANGE_16_G);\n';
+  Blockly.Arduino.setups_['setup_adxl345'] = 'adxl345.begin();\n'
+    + '  adxl345.setDataRate(ADXL345_DATARATE_400_HZ);\n'
+    + '  adxl345.setDataRange(ADXL345_RANGE_16_G);\n';
  
   var code = '';
   switch(this.getFieldValue('AXIS')){
       case 'X':
-        code += 'adxl345_inst.getX()';
+        code += 'adxl345.getX()';
       break;
       case 'Y':
-        code += 'adxl345_inst.getY()';
+        code += 'adxl345.getY()';
       break;
       case 'Z':
-        code += 'adxl345_inst.getZ()';
+        code += 'adxl345.getZ()';
       break;
   }
 

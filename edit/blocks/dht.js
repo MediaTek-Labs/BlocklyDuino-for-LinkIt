@@ -28,7 +28,7 @@ goog.provide('Blockly.Blocks.dht');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.dht.HUE = 215;
+Blockly.Blocks.dht.HUE = 70;
 
 Blockly.Blocks.dht.image = filepath.media+'/dht11.jpg';
 
@@ -44,7 +44,7 @@ Blockly.Blocks['dht_read'] = {
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
     this.appendDummyInput()
       .appendField(Blockly.Msg.MESUREMENT_TYPE)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HUMIDITY_PERCENT,"h"],[Blockly.Msg.TEMPERATURE_CELCIUS,"C"],[Blockly.Msg.TEMPERATURE_FERENHEIT,"F"]]), "TYPE");
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.HUMIDITY_PERCENT,"h"],[Blockly.Msg.TEMPERATURE_CELCIUS,"C"]]), "TYPE");
     this.setInputsInline(true);
     this.setOutput(true, 'Number');
     this.setTooltip(Blockly.Msg.DHT_TOOLTIP);

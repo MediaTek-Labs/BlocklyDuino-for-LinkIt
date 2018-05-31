@@ -28,12 +28,12 @@ goog.provide('Blockly.Blocks.ultrasonic');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.ultrasonic.HUE = 215;
+Blockly.Blocks.ultrasonic.HUE = 70;
 
-Blockly.Blocks['ultrasonic'] = {
+Blockly.Blocks['ultrasonic_read'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.ULTRASONIC_SETTING_HELPURL);
-    this.setColour(215);
+    this.setColour(Blockly.Blocks.ultrasonic.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.ULTRASONIC_SETTING_TITLE)
       .appendField(new Blockly.FieldDropdown([["HC-SR04P", "DUMMY"]]), "SENSOR");

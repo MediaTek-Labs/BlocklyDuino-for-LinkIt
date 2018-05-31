@@ -28,10 +28,12 @@ goog.provide('Blockly.Blocks.oled_display');
 
 goog.require('Blockly.Blocks');
 
+Blockly.Blocks.oled_display.HUE = 70;
+
 Blockly.Blocks['oled_display_setting'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.OLED_DISPLAY_HELPURL);
-    this.setColour(215);
+    this.setColour(Blockly.Blocks.oled_display.HUE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.OLED_DISPLAY_TITLE)
         .appendField(new Blockly.FieldDropdown([["SSD1306", "SSD1306"], ["SH1106", "SH1106"]]), "CHIPSET");
@@ -45,7 +47,7 @@ Blockly.Blocks['oled_display_setting'] = {
 Blockly.Blocks['oled_display_clear'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.OLED_DISPLAY_HELPURL);
-    this.setColour(215);
+    this.setColour(Blockly.Blocks.oled_display.HUE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.OLED_DISPLAY_TITLE)
         .appendField(Blockly.Msg.OLED_DISPLAY_CLEAR);
@@ -58,7 +60,7 @@ Blockly.Blocks['oled_display_clear'] = {
 Blockly.Blocks['oled_display_draw_commands'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.OLED_DISPLAY_HELPURL);
-    this.setColour(215);
+    this.setColour(Blockly.Blocks.oled_display.HUE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.OLED_DISPLAY_TITLE)
         .appendField(Blockly.Msg.OLED_DISPLAY_DRAW_COMMANDS)
@@ -74,7 +76,7 @@ Blockly.Blocks['oled_display_draw_commands'] = {
 Blockly.Blocks['oled_display_set_cursor'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.OLED_DISPLAY_HELPURL);
-    this.setColour(215);
+    this.setColour(Blockly.Blocks.oled_display.HUE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.OLED_DISPLAY_TITLE)
     this.appendValueInput('ROW')
@@ -95,7 +97,7 @@ Blockly.Blocks['oled_display_set_cursor'] = {
 Blockly.Blocks['oled_display_put'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.OLED_DISPLAY_HELPURL);
-    this.setColour(215);
+    this.setColour(Blockly.Blocks.oled_display.HUE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.OLED_DISPLAY_TITLE)
         .appendField(Blockly.Msg.OLED_DISPLAY_PUT);

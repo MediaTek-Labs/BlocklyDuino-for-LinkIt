@@ -27,7 +27,7 @@ goog.provide('Blockly.Arduino.infra_red');
 goog.require('Blockly.Arduino');
 
 Blockly.Arduino.infra_red_send = function() {
-  var command_int = this.getFieldValue('COMMAND_INT');
+  var command_int = Blockly.Arduino.valueToCode(this, 'COMMAND_INT', Blockly.Arduino.ORDER_ATOMIC) || '0';
   
   Blockly.Arduino.definitions_['define_infra_red_include'] = 
     '#include <IRremote.h>\n';
@@ -35,7 +35,7 @@ Blockly.Arduino.infra_red_send = function() {
   Blockly.Arduino.definitions_['define_infra_red_send_inst'] = 
     'IRsend irsend;\n';
 
-  var code = 'sendRC5(' + command_int + ', 32);\n';
+  var code = 'irsend.sendRC5(' + command_int + ', 32);\n';
   return code;
 };
 
@@ -55,8 +55,8 @@ Blockly.Arduino.infra_red_receive = function() {
 
   Blockly.Arduino.definitions_['define_infra_red_receive_helper_func'] = 
     'int infra_red_decode(IRrecv& recv, decode_results& results, int default_value) {\n'
-    + '  if (irrecv.decode(&results)) {\n'
-    + '    irrecv.resume(); // Receive the next value\n'
+    + '  if (recv.decode(&results)) {\n'
+    + '    recv.resume(); // Receive the next value\n'
     + '    return results.value;\n'
     + '  }\n'
     + '  return default_value;\n'

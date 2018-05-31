@@ -28,9 +28,8 @@ goog.provide('Blockly.Blocks.neopixel');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.neopixel.HUE = 215;
+Blockly.Blocks.neopixel.HUE = 70;
 
-Blockly.Blocks.neopixel.image = filepath.media + '/neopixel.jpg';
 
 Blockly.Blocks.neopixel.checkBlocks = function(obj) {
   var legal = null;
@@ -57,16 +56,18 @@ Blockly.Blocks['neopixel_begin'] = {
         this.setHelpUrl(Blockly.Msg.NEOPIXEL_BEGIN_HELPURL);
         this.setColour(Blockly.Blocks.neopixel.HUE);
         this.appendDummyInput()
-            .appendField(new Blockly.FieldImage(Blockly.Blocks.neopixel.image, 64, 64))
+            .appendField(Blockly.Msg.NEOPIXEL_TITLE)
             .appendField(Blockly.Msg.NEOPIXEL_BEGIN_SETTING)
             .appendField(Blockly.Msg.NEOPIXEL_BEGIN_NUM)
             .appendField(new Blockly.FieldTextInput("16"), "NUM");
         this.appendDummyInput()
             .appendField(Blockly.Msg.NEOPIXEL_BEGIN_PIN)
             .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
+        
         this.appendDummyInput()
             .appendField(Blockly.Msg.NEOPIXEL_BEGIN_BRIGHTNESS)
             .appendField(new Blockly.FieldTextInput("50"), "BRIGHTNESS");
+
         this.setInputsInline(true);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -77,7 +78,7 @@ Blockly.Blocks['neopixel_begin'] = {
             // Block has been deleted.
             return;
         }
-        this.setWarningText(Blockly.Msg.NEOPIXEL_BEGIN_WARNING);
+        // this.setWarningText(Blockly.Msg.NEOPIXEL_BEGIN_WARNING);
     }
 };
 
@@ -86,7 +87,8 @@ Blockly.Blocks['neopixel_setpixelcolor'] = {
         this.setHelpUrl(Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR_HELPURL);
         this.setColour(Blockly.Blocks.neopixel.HUE);
         this.appendDummyInput()
-            .appendField(new Blockly.FieldImage(Blockly.Blocks.neopixel.image, 64, 64))
+            .appendField(Blockly.Msg.NEOPIXEL_TITLE);
+
         this.appendValueInput("TARGET")
             .setCheck("Number")
             .appendField(Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR_TARGET)
@@ -117,7 +119,8 @@ Blockly.Blocks['neopixel_custom_setpixelcolor'] = {
         this.setHelpUrl(Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR_HELPURL);
         this.setColour(Blockly.Blocks.neopixel.HUE);
         this.appendDummyInput()
-            .appendField(new Blockly.FieldImage(Blockly.Blocks.neopixel.image, 64, 64))
+            .appendField(Blockly.Msg.NEOPIXEL_TITLE);
+
         this.appendValueInput("TARGET")
             .setCheck("Number")
             .appendField(Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR_TARGET)
@@ -153,7 +156,7 @@ Blockly.Blocks['neopixel_show'] = {
         this.setHelpUrl(Blockly.Msg.NEOPIXEL_SHOW_HELPURL);
         this.setColour(Blockly.Blocks.neopixel.HUE);
         this.appendDummyInput()
-            .appendField(new Blockly.FieldImage(Blockly.Blocks.neopixel.image, 64, 64))
+            .appendField(Blockly.Msg.NEOPIXEL_TITLE)
             .appendField(Blockly.Msg.NEOPIXEL_SHOW);
         this.setInputsInline(true);
         this.setPreviousStatement(true);

@@ -24,16 +24,16 @@
  */
 'use strict';
 
-goog.provide('Blockly.Blocks.adxl345');
+goog.provide('Blockly.Blocks.adxl');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.adxl345.HUE = 215;
+Blockly.Blocks.adxl.HUE = 70;
 
-Blockly.Blocks['adxl345'] = {
+Blockly.Blocks['adxl345_read'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.ADXL345_HELPURL);
-    this.setColour(215);
+    this.setColour(Blockly.Blocks.adxl.HUE);
     this.setTooltip(Blockly.Msg.ADXL345_TOOLTIP);
 
     this.appendDummyInput()

@@ -28,12 +28,12 @@ goog.provide('Blockly.Blocks.infra_red');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.infra_red.HUE = 215;
+Blockly.Blocks.infra_red.HUE = 70;
 
 Blockly.Blocks['infra_red_send'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.INFRA_RED_HELPURL);
-    this.setColour(215);
+    this.setColour(Blockly.Blocks.infra_red.HUE);
     // this.setTooltip(Blockly.Msg.INFRA_RED_READ_TOOLTIP);
 
     this.appendValueInput('COMMAND_INT')
@@ -58,7 +58,7 @@ Blockly.Blocks['infra_red_send'] = {
 Blockly.Blocks['infra_red_receive'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.INFRA_RED_HELPURL);
-    this.setColour(215);
+    this.setColour(Blockly.Blocks.infra_red.HUE);
     // this.setTooltip(Blockly.Msg.INFRA_RED_READ_TOOLTIP);
 
     this.appendDummyInput()

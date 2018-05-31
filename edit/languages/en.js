@@ -947,6 +947,7 @@ Blockly.Msg.MPR121_VALUE_TITLE = "Capacitance Value";
 Blockly.Msg.MPR121_VALUE_TOOLTIP = "value of capacitance";
 Blockly.Msg.MPR121_WARNING = "Need to Begin block.";
 Blockly.Msg.NEOPIXEL_BEGIN_BRIGHTNESS = "Brightness";
+Blockly.Msg.NEOPIXEL_TITLE = "RGB LED Stripe"
 Blockly.Msg.NEOPIXEL_BEGIN_HELPURL = "https://github.com/adafruit/Adafruit_NeoPixel";
 Blockly.Msg.NEOPIXEL_BEGIN_NUM = "LED Num";
 Blockly.Msg.NEOPIXEL_BEGIN_PIN = "Pin";
@@ -1390,6 +1391,7 @@ Blockly.Msg.TEMPERATURE_FERENHEIT = "Temperature F";
 Blockly.Msg.HUMIDITY_PERCENT = "Humidity %";
 Blockly.Msg.SIGNAL_PIN = "Pin";
 Blockly.Msg.MESUREMENT_TYPE = "Content";
+Blockly.Msg.CATEGORY_OLED = "OLED Display";
 
 Blockly.Msg.ADXL345_HELPURL = "https://github.com/adafruit/Adafruit_ADXL345";
 Blockly.Msg.ADXL345_READ_X = "X-Axis";

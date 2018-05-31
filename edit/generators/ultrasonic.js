@@ -26,7 +26,7 @@ goog.provide('Blockly.Arduino.ultrasonic');
 
 goog.require('Blockly.Arduino');
 
-Blockly.Arduino.ultrasonic = function() {
+Blockly.Arduino.ultrasonic_read = function() {
   var trig_pin = this.getFieldValue('TRIG');
   var echo_pin = this.getFieldValue('ECHO');
   var unit = this.getFieldValue('MEASUREMENT');

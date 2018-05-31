@@ -28,12 +28,12 @@ goog.provide('Blockly.Blocks.htu21d');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.htu21d.HUE = 215;
+Blockly.Blocks.htu21d.HUE = 70;
 
-Blockly.Blocks['htu21d'] = {
+Blockly.Blocks['htu21d_read'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.HTU21D_HELPURL);
-    this.setColour(215);
+    this.setColour(Blockly.Blocks.htu21d.HUE);
     this.setTooltip(Blockly.Msg.HTU21D_TOOLTIP);
 
     this.appendDummyInput()

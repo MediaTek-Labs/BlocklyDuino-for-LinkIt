@@ -30,10 +30,9 @@ goog.require('Blockly.Arduino');
 
 
 Blockly.Arduino.oled_display_setting = function() {
-  Blockly.Arduino.definitions_['define_u8g2_oled_include'] = '#include <Arduino.h>\n'
-    + '#include "U8g2lib.h"\n'
-    + '#include "Wire.h"\n';
-
+  Blockly.Arduino.definitions_['define_wire'] = '#include "Wire.h"';
+  Blockly.Arduino.definitions_['define_u8g2_oled_include'] = '#include "U8g2lib.h"'
+    
   // model string should be SSD1306 or SH1106
   let modelString = this.getFieldValue('CHIPSET');
   Blockly.Arduino.definitions_['define_u8g2_oled_declare'] = 'U8G2_' + modelString + '_128X64_NONAME_1_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);';
