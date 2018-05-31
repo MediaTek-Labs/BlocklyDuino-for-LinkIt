@@ -1,9 +1,9 @@
 /**
  * @license
- * Visual Blocks Editor
+ * Blockly for LinkIt 7697
  *
- * Copyright 2012 Google Inc.
- * https://developers.google.com/blockly/
+ * Copyright 2018 MediaTek Inc.
+ * https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,8 @@
  */
 
 /**
- * @fileoverview List blocks for Blockly.
- * @author fraser@google.com (Neil Fraser)
+ * @fileoverview Blocks for I2C interface OLED displays.
+ * @author MediaTek Labs
  */
 'use strict';
 

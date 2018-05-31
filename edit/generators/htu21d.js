@@ -1,6 +1,6 @@
 /**
  * @license
- * Blocks for LinkIt 7697
+ * Blockly for LinkIt 7697
  *
  * Copyright 2018 MediaTek Inc.
  * https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt
@@ -19,8 +19,8 @@
  */
 
 /**
- * @fileoverview Generating Arduino for list blocks.
- * @author fraser@google.com (Neil Fraser)
+ * @fileoverview Blocks for I2C interface HTU21D sensors
+ * @author MediaTek Labs
  */
 'use strict';
 
