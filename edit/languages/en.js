@@ -386,6 +386,7 @@ Blockly.Msg.GROVE_OLED_DISPLAY_SET_CURSOR = "setTextXY(";
 Blockly.Msg.GROVE_OLED_DISPLAY_SET_CURSOR_SEP = ",";
 Blockly.Msg.GROVE_OLED_DISPLAY_SET_CURSOR_APPEND = ")";
 Blockly.Msg.GROVE_OLED_DISPLAY_PUT = "Put";
+Blockly.Msg.GROVE_OLED_DISPLAY_RESOLUTION = "Resolution";
 Blockly.Msg.GROVE_OLED_DISPLAY_TOOLTIP = "An OLED monochrome 128×64dot matrix display module with Grove 4pin I2C Interface.";
 Blockly.Msg.OTTO = "Otto";
 Blockly.Msg.OTTO_HELPURL = "http://otto.strikingly.com/";

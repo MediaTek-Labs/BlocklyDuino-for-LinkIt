@@ -35,9 +35,14 @@ Blockly.Blocks['oled_display_setting'] = {
     this.setHelpUrl(Blockly.Msg.OLED_DISPLAY_HELPURL);
     this.setColour(Blockly.Blocks.oled_display.HUE);
     this.appendDummyInput()
+        .appendField(Blockly.Msg.INITIALIZES_SETUP_APPENDTEXT)
         .appendField(Blockly.Msg.OLED_DISPLAY_TITLE)
-        .appendField(new Blockly.FieldDropdown([["SSD1306", "SSD1306"], ["SH1106", "SH1106"]]), "CHIPSET");
-
+        .appendField(new Blockly.FieldDropdown([["SSD1306", "SSD1306"], ["SH1106", "SH1106"]]), "CHIPSET")
+        .appendField(Blockly.Msg.SIGNAL_PIN)
+        .appendField(new Blockly.FieldDropdown([["I2C","PIN"]]), "PIN")
+        .appendField(Blockly.Msg.GROVE_OLED_DISPLAY_RESOLUTION)
+        .appendField(new Blockly.FieldDropdown([["128x64","128x64"]]), "RESOLUTION");
+        
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.OLED_DISPLAY_TOOLTIP);
@@ -98,10 +103,9 @@ Blockly.Blocks['oled_display_put'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.OLED_DISPLAY_HELPURL);
     this.setColour(Blockly.Blocks.oled_display.HUE);
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.OLED_DISPLAY_TITLE)
-        .appendField(Blockly.Msg.OLED_DISPLAY_PUT);
     this.appendValueInput('VALUE')
+        .appendField(Blockly.Msg.OLED_DISPLAY_TITLE)
+        .appendField(Blockly.Msg.OLED_DISPLAY_PUT)
         .setCheck(["Number", "String", "Float"]);
     this.setInputsInline(false);
     this.setPreviousStatement(true);

@@ -56,8 +56,8 @@ Blockly.Blocks['neopixel_begin'] = {
         this.setHelpUrl(Blockly.Msg.NEOPIXEL_BEGIN_HELPURL);
         this.setColour(Blockly.Blocks.neopixel.HUE);
         this.appendDummyInput()
+            .appendField(Blockly.Msg.INITIALIZES_SETUP_APPENDTEXT)
             .appendField(Blockly.Msg.NEOPIXEL_TITLE)
-            .appendField(Blockly.Msg.NEOPIXEL_BEGIN_SETTING)
             .appendField(Blockly.Msg.NEOPIXEL_BEGIN_NUM)
             .appendField(new Blockly.FieldTextInput("16"), "NUM");
         this.appendDummyInput()
@@ -66,7 +66,7 @@ Blockly.Blocks['neopixel_begin'] = {
         
         this.appendDummyInput()
             .appendField(Blockly.Msg.NEOPIXEL_BEGIN_BRIGHTNESS)
-            .appendField(new Blockly.FieldTextInput("50"), "BRIGHTNESS");
+            .appendField(new Blockly.FieldTextInput("30"), "BRIGHTNESS");
 
         this.setInputsInline(true);
         this.setPreviousStatement(true);

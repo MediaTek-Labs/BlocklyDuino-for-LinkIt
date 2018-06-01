@@ -35,8 +35,11 @@ Blockly.Blocks['lcd_i2c_setting'] = {
     this.setHelpUrl(Blockly.Msg.LCD_I2C_HELPURL);
     this.setColour(Blockly.Blocks.lcd_i2c.HUE);
     this.appendDummyInput()
+        .appendField(Blockly.Msg.INITIALIZES_SETUP_APPENDTEXT)
         .appendField(Blockly.Msg.LCD_I2C_TITLE)
         .appendField(new Blockly.FieldDropdown([["1602", "1602"], ["2004", "2004"]]), "LCD_DIM")
+        .appendField(Blockly.Msg.SIGNAL_PIN)
+        .appendField(new Blockly.FieldDropdown([["I2C","PIN"]]), "PIN")
         .appendField(Blockly.Msg.LCD_I2C_I2C_ADDRESS)
         .appendField(new Blockly.FieldDropdown([["0x27", "0x27"], ["0x3F", "0x3F"]]), "I2C_ADDRESS");
 
