@@ -550,7 +550,13 @@
                 </block>
             </value>
         </block>
-        <block type="lcd_i2c_put"></block>
+        <block type="lcd_i2c_put">
+            <value name="VALUE">
+                <block type="text">
+                    <field name="TEXT">HELLO</field>
+                </block>
+            </value>
+        </block>
     </category>
 
     <category id="category_neopixel">

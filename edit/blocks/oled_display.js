@@ -103,7 +103,7 @@ Blockly.Blocks['oled_display_put'] = {
         .appendField(Blockly.Msg.OLED_DISPLAY_PUT);
     this.appendValueInput('VALUE')
         .setCheck(["Number", "String", "Float"]);
-    this.setInputsInline(true);
+    this.setInputsInline(false);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.OLED_DISPLAY_TOOLTIP);
