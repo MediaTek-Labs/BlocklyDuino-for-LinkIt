@@ -36,7 +36,7 @@ Blockly.Arduino.adxl345_read = function() {
 
   Blockly.Arduino.setups_['setup_adxl345'] = 'adxl345.begin();\n'
     + '  adxl345.setDataRate(ADXL345_DATARATE_400_HZ);\n'
-    + '  adxl345.setDataRange(ADXL345_RANGE_16_G);\n';
+    + '  adxl345.setRange(ADXL345_RANGE_16_G);\n';
  
   var code = '';
   switch(this.getFieldValue('AXIS')){
