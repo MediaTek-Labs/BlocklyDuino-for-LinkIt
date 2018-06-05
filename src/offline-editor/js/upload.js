@@ -156,7 +156,7 @@ function selectUploadPort(port) {
   
   portLabel = document.querySelector('#port-selected-text')
   portLabel.textContent = selectedPort + ' ';
-  
+  portLabel.classList.toggle('blinking-text', false);
   console.log("change upload port to " + selectedPort);
 }
 

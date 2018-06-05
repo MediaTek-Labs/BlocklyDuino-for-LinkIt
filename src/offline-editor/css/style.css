@@ -262,3 +262,17 @@ td.tabon,
 .msg-error {
   color: #FF8080;
 }
+
+@keyframes msg-blink-anim {
+  0%   {color: yellow; transform: scale(1.0);}
+  50%  {color: rgb(243,154,30);transform: scale(1.5);}
+  100% {color: yellow;transform: scale(1.0);}
+}
+
+.blinking-text {
+  animation-name: msg-blink-anim;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite
+}
