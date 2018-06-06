@@ -1413,9 +1413,8 @@ Blockly.Msg.HTU21D_TOOLTIP = "Humidity/Temperature (HTU21D I2C)";
 Blockly.Msg.HTU21D_WARNING = "Need to install SparkFun HTU21D library";
 
 Blockly.Msg.INFRA_RED_HELPURL = "#";
-Blockly.Msg.INFRA_RED_SEND_TEXT_PARAM = "Send string"
-Blockly.Msg.INFRA_RED_RECEIVE_TEXT_PARAM = "Receive string"
-Blockly.Msg.INFRA_RED_RECEIVE_DEFAULT_VALUE = "Error value"
+Blockly.Msg.INFRA_RED_SEND_TEXT_PARAM = "Send number (Pin 3 Only)"
+Blockly.Msg.INFRA_RED_RECEIVE_TEXT_PARAM = "Receive number"
 Blockly.Msg.INFRA_RED_SEND_TITLE = "Infrared Transmitter";
 Blockly.Msg.INFRA_RED_RECEIVE_TITLE = "Infrared Receiver";
 

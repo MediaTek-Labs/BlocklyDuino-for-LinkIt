@@ -925,7 +925,7 @@ Blockly.Msg.MPR121_WARNING = "需要「開始」積木。";
 Blockly.Msg.NEOPIXEL_BEGIN_BRIGHTNESS = "亮度";
 Blockly.Msg.NEOPIXEL_TITLE = "彩色燈條 WS2812"
 Blockly.Msg.NEOPIXEL_BEGIN_HELPURL = "https://github.com/adafruit/Adafruit_NeoPixel";  // untranslated
-Blockly.Msg.NEOPIXEL_BEGIN_NUM = "LED 數目";  // untranslated
+Blockly.Msg.NEOPIXEL_BEGIN_NUM = "LED 數目";  // untranslated
 Blockly.Msg.NEOPIXEL_BEGIN_PIN = "Pin";  // untranslated
 Blockly.Msg.NEOPIXEL_BEGIN_SETTING = "初始化";  // untranslated
 Blockly.Msg.NEOPIXEL_BEGIN_TOOLTIP = "初始化燈條上 LED 的數目、使用的訊號腳，以及整體亮度";  // untranslated
@@ -1391,10 +1391,9 @@ Blockly.Msg.HTU21D_HELPURL = "https://github.com/sparkfun/SparkFun_HTU21D_Breako
 Blockly.Msg.HTU21D_TITLE = "高精度溫濕度計";
 Blockly.Msg.HTU21D_TOOLTIP = "高精度溫濕度計 HTU21D，具備I2C介面，需要安裝 SparkFun HTU21D 函式庫";
 
-Blockly.Msg.INFRA_RED_HELPURL = "#";
-Blockly.Msg.INFRA_RED_SEND_TEXT_PARAM = "發送整數（僅限 P3）"
+Blockly.Msg.INFRA_RED_HELPURL = "控制紅外線傳送器與接收器。如果接收失敗，會得到0";
+Blockly.Msg.INFRA_RED_SEND_TEXT_PARAM = "發送整數（僅限 Pin 3）"
 Blockly.Msg.INFRA_RED_RECEIVE_TEXT_PARAM = "接收整數"
-Blockly.Msg.INFRA_RED_RECEIVE_DEFAULT_VALUE = "失敗回傳值"
 Blockly.Msg.INFRA_RED_SEND_TITLE = "紅外線發送器";
 Blockly.Msg.INFRA_RED_RECEIVE_TITLE = "紅外線接收器";
 
