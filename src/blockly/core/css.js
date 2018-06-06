@@ -200,7 +200,7 @@ Blockly.Css.CONTENT = [
   '.blocklyText {',
   '  cursor: default;',
   '  fill: #fff;',
-  '  font-family: sans-serif;',
+  '  font-family: "Microsoft JhengHei", sans-serif;',
   '  font-size: 11pt;',
   '}',
 
@@ -261,8 +261,8 @@ Blockly.Css.CONTENT = [
 
   '.blocklyTooltipText {',
   '  fill: #000;',
-  '  font-family: sans-serif;',
-  '  font-size: 9pt;',
+  '  font-family: "Microsoft JhengHei", sans-serif;',
+  '  font-size: 12pt;',
   '}',
 
   '.blocklyIconShield {',
@@ -284,7 +284,7 @@ Blockly.Css.CONTENT = [
   '.blocklyIconMark {',
   '  cursor: default !important;',
   '  fill: #ccc;',
-  '  font-family: sans-serif;',
+  '  font-family: "Microsoft JhengHei",sans-serif;',
   '  font-size: 9pt;',
   '  font-weight: bold;',
   '  text-anchor: middle;',
@@ -308,7 +308,7 @@ Blockly.Css.CONTENT = [
 
   '.blocklyHtmlInput {',
   '  border: none;',
-  '  font-family: sans-serif;',
+  '  font-family: "Microsoft JhengHei",sans-serif;',
   '  font-size: 11pt;',
   '  outline: none;',
   '  width: 100%',
@@ -466,7 +466,7 @@ Blockly.Css.CONTENT = [
 
   '.blocklyTreeLabel {',
   '  cursor: default;',
-  '  font-family: sans-serif;',
+  '  font-family: "Microsoft JhengHei", sans-serif;',
   '  font-size: 16px;',
   '  padding: 0 3px;',
   '  vertical-align: middle;',
@@ -548,7 +548,7 @@ Blockly.Css.CONTENT = [
   '.blocklyWidgetDiv .goog-date-picker,',
   '.blocklyWidgetDiv .goog-date-picker th,',
   '.blocklyWidgetDiv .goog-date-picker td {',
-  '  font: 13px Arial, sans-serif;',
+  '  font: 13px "Microsoft JhengHei", sans-serif;',
   '}',
 
   '.blocklyWidgetDiv .goog-date-picker {',
@@ -706,7 +706,7 @@ Blockly.Css.CONTENT = [
   '  border-style: solid;',
   '  border-width: 1px;',
   '  cursor: default;',
-  '  font: normal 13px Arial, sans-serif;',
+  '  font: normal 13px "Microsoft JhengHei", sans-serif;',
   '  margin: 0;',
   '  outline: none;',
   '  padding: 4px 0;',
@@ -745,7 +745,7 @@ Blockly.Css.CONTENT = [
    */
   '.blocklyWidgetDiv .goog-menuitem {',
   '  color: #000;',
-  '  font: normal 13px Arial, sans-serif;',
+  '  font: normal 13px "Microsoft JhengHei", sans-serif;',
   '  list-style: none;',
   '  margin: 0;',
      /* 28px on the left for icon or checkbox; 7em on the right for shortcut. */
@@ -777,7 +777,7 @@ Blockly.Css.CONTENT = [
 
   '.blocklyWidgetDiv .goog-menuitem-content {',
   '  color: #000;',
-  '  font: normal 13px Arial, sans-serif;',
+  '  font: normal 13px "Microsoft JhengHei", sans-serif;',
   '}',
 
   /* State: disabled. */
