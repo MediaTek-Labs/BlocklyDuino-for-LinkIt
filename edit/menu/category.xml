@@ -91,13 +91,7 @@
 </category>
 
 <category id="category_serial">
-    <block type="serial_init">
-        <value name="SPEED">
-            <block type="math_number">
-                <field name="NUM">9600</field>
-            </block>
-        </value>
-    </block>
+    <block type="serial_init"></block>
     <block type="serial_available"></block>
     <block type="serial_print">
         <value name="CONTENT">
