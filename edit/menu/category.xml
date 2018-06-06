@@ -475,6 +475,7 @@
     <block type="dht_read"></block>
     <block type="htu21d_read"></block>
     <block type="ultrasonic_read"></block>
+    <block type="pms_read"></block>
     <block type="infra_red_send"></block>
     <block type="infra_red_receive"></block>
 </category>

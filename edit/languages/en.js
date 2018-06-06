@@ -959,6 +959,7 @@ Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR_B = "B";
 Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR_G = "G";
 Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR_HELPURL = "https://github.com/adafruit/Adafruit_NeoPixel";
 Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR_R = "R";
+Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR = "Set next refresh color";
 Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR_TARGET = "Target";
 Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR_TOOLTIP = "pixels.Color takes RGB values, from 0,0,0 up to 255,255,255";
 Blockly.Msg.NEOPIXEL_SETPIXELCOLOR_HELPURL = "https://github.com/adafruit/Adafruit_NeoPixel";
@@ -1439,3 +1440,7 @@ Blockly.Msg.LCD_I2C_I2C_ADDRESS = "I2C address";
 Blockly.Msg.LCD_I2C_LIGHT = "backlight";
 Blockly.Msg.LCD_I2C_ON = "ON";
 Blockly.Msg.LCD_I2C_OFF = "OFF";
+
+Blockly.Msg.PMS_HELPURL = "https://github.com/fu-hsi/PMS";
+Blockly.Msg.PMS_RECEIVE_TITLE = "PM2.5 Sensor";
+Blockly.Msg.PMS_READ_VALIE = "read";

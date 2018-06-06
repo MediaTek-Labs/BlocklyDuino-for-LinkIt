@@ -94,7 +94,7 @@ Blockly.Blocks['neopixel_setpixelcolor'] = {
             .appendField(Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR_TARGET)
         this.appendDummyInput()
             .setAlign(Blockly.ALIGN_RIGHT)
-            .appendField(Blockly.Msg.COLOR)
+            .appendField(Blockly.Msg.NEOPIXEL_CUSTOM_SETPIXELCOLOR)
             .appendField(new Blockly.FieldColour("#00ff00"), "RGB");
         this.setInputsInline(true);
         this.setPreviousStatement(true);
