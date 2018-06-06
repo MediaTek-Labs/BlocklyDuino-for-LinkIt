@@ -68,10 +68,6 @@ Blockly.Blocks['infra_red_receive'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.SIGNAL_PIN)
       .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
-
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.INFRA_RED_RECEIVE_DEFAULT_VALUE)
-      .appendField(new Blockly.FieldDropdown([['0', '0'], ['-1', '-1']]), "DEFAULT_VALUE");
           
     this.setInputsInline(true);
     this.setOutput(true, 'Number');

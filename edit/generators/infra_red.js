@@ -44,7 +44,7 @@ Blockly.Arduino.infra_red_receive = function() {
   var pin = this.getFieldValue('PIN');
   var inst_symbol = 'irrecv_' + pin;
   var result_symbol = inst_symbol + '_result';
-  var default_value = this.getFieldValue('DEFAULT_VALUE');
+  var default_value = 0
   
   Blockly.Arduino.definitions_['define_infra_red_include'] = 
     '#include <IRremote.h>\n';
