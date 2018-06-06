@@ -339,6 +339,18 @@ function setCharacter(){
   $("#label_text_board").text(Blockly.Msg.TEXT_BOARD);
   $("#label_text_com_port").text(Blockly.Msg.TEXT_COM_PORT);
   $("#dropdown_item_scanning").text(Blockly.Msg.DROPDOWN_SCANNING);
+
+  // Load upload COM port setting from local storage
+  try {
+    chrome.storage.local.get(['COM'], function(item) {
+      if(item.COM) {
+        console.log("reload COM port setting to " + item.COM);
+        selectUploadPort(item.COM);
+      }
+    });
+  } catch (err) {
+    console.log(err)
+  } 
   
 }
 

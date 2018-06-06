@@ -157,6 +157,12 @@ function selectUploadPort(port) {
   portLabel = document.querySelector('#port-selected-text')
   portLabel.textContent = selectedPort + ' ';
   portLabel.classList.toggle('blinking-text', false);
+
+  // Save upload COM port setting to local storage
+  chrome.storage.local.set({'COM' : selectedPort}, function() {
+    console.log('store COM port setting to ' + selectedPort);
+  });
+
   console.log("change upload port to " + selectedPort);
 }
 
