@@ -36,9 +36,23 @@ Blockly.Blocks['serial_init'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.SERIAL_INIT_HELPURL);
     this.setColour(Blockly.Blocks.serial.HUE);
-    this.appendValueInput("SPEED")
-      .setCheck("Number")
-      .appendField(Blockly.Msg.SERIAL_INIT);
+
+
+    var baud_list = [ ["9600", "9600"],
+                      ["19200", "19200"],
+                      ["38400", "38400"],
+                      ["57600", "57600"],
+                      ["115200", "115200"],
+                      ["230400", "230400"],
+                      ["460800", "460800"],
+                      ["921600", "921600"],
+                      ["4800", "4800"],
+                    ];
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.SERIAL_INIT)
+      .appendField(new Blockly.FieldDropdown(baud_list), 'SPEED')
+    
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.SERIAL_INIT_TOOLTIP);

@@ -28,9 +28,8 @@ goog.provide('Blockly.Arduino.serial');
 goog.require('Blockly.Arduino');
 
 Blockly.Arduino.serial_init = function() {
-  var speed = Blockly.Arduino.valueToCode(this, 'SPEED', Blockly.Arduino.ORDER_ATOMIC) || profile.default.serial
-  //content = content.replace('(','').replace(')','');
-
+  var speed = this.getFieldValue('SPEED');
+  
   if (Blockly.Arduino.setups_['setup_serial'] == undefined) {
     Blockly.Arduino.setups_['setup_serial'] = 'Serial.begin(' + speed + ');\n';
   }
