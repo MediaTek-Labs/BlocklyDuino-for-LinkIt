@@ -38,7 +38,10 @@ Blockly.Blocks['htu21d_read'] = {
 
     this.appendDummyInput()
       .appendField(Blockly.Msg.HTU21D_TITLE)
-      .appendField(new Blockly.FieldDropdown([["HTU21D", "DUMMY"]]), "SENSOR");
+      .appendField(new Blockly.FieldDropdown([
+        ["HTU21D", "HTU21D"],
+        ["SHT21", "SHT21"],
+      ]), "SENSOR");
 
     this.appendDummyInput()
       .appendField(Blockly.Msg.SIGNAL_PIN)

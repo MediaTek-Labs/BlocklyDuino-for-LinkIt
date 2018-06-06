@@ -30,18 +30,17 @@ goog.require('Blockly.Arduino');
 
 Blockly.Arduino.htu21d_read = function() {
   Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>'
-  Blockly.Arduino.definitions_['define_htu_include'] = '#include <SparkFunHTU21D.h>'
-  Blockly.Arduino.definitions_['define_htu_inst'] = 'HTU21D htu21d;';
+  Blockly.Arduino.definitions_['define_htu_include'] = '#include <SHT2x.h>'
 
-  Blockly.Arduino.setups_['setup_htu_inst'] = 'htu21d.begin();';
+  Blockly.Arduino.setups_['setup_htu_inst'] = 'Wire.begin();';
 
   var code = '';
   switch(this.getFieldValue('MEASUREMENT')){
     case 'HUMIDITY':
-      code += 'htu21d.readHumidity()';
+      code += 'SHT2x.GetHumidity()';
       break;
     case 'TEMPERATURE_C':
-      code += 'htu21d.readTemperature()';
+      code += 'SHT2x.GetTemperature()';
       break;
   }
 
