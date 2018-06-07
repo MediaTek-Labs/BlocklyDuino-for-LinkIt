@@ -86,7 +86,9 @@ function setCategoryCharacter() {
   $('#category_sensor_env').attr('name',Blockly.Msg.CATEGORY_SENSING_ENV);
   $('#category_sensor_dist').attr('name',Blockly.Msg.CATEGORY_SENSING_DIST);
   $('#category_sensor_motion').attr('name',Blockly.Msg.CATEGORY_SENSING_MOTION);
-  $('#category_tranceiver').attr('name',Blockly.Msg.CATEGORY_TRANCEIVER);
+  $('#category_transceiver').attr('name',Blockly.Msg.CATEGORY_TRANSCEIVER);
+  $('#category_infrared').attr('name',Blockly.Msg.CATEGORY_INFRARED);
+  $('#category_rfid').attr('name',Blockly.Msg.CATEGORY_RFID);
   $('#category_display').attr('name',Blockly.Msg.CATEGORY_DISPLAY);
   $('#category_oled').attr('name',Blockly.Msg.CATEGORY_OLED);
   $('#category_neopixel').attr('name',Blockly.Msg.CATEGORY_NEOPIXEL);

@@ -707,12 +707,6 @@
         <block type="adxl345_gesture_detected"></block>
     </category>
 </category>
-
-<category id="category_tranceiver">
-    <block type="infra_red_send"></block>
-    <block type="infra_red_receive"></block>
-</category>
-
 <category id="category_display">
     <category id="category_oled">
         <block type="oled_display_setting"></block>
@@ -821,185 +815,192 @@
         <block type="neopixel_show"></block>
     </category>
 </category>
-
-<category id="category_external">
-    <category id="category_grove">
-        <category id="category_grove_sensor">
-            <block type="grove_light_sensor"></block>
-            <block type="grove_ultrasonic_ranger"></block>
-            <block type="grove_temporature_humidity_sensor"></block>
-        </category>
-        <category id="category_grove_actuator">
-            <block type="grove_relay"></block>
-        </category>
-        <category id="category_grove_display">
-            <block type="grove_led_bar">
-                <value name="LEVEL">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-            </block>
-            <block type="grove_oled_display_clear"></block>
-            <block type="grove_oled_display_set_cursor">
-                <value name="ROW">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-                <value name="COL">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-            </block>
-            <block type="grove_oled_display_put">
-                <value name="VALUE"></value>
-            </block>
-        </category>
+<category id="category_transceiver">
+    <category id="category_infrared">
+        <block type="infra_red_send"></block>
+        <block type="infra_red_receive"></block>
     </category>
-    <category id="category_robot">
-        <category id="category_otto">
-            <block type="otto_init"></block>
-            <block type="otto_calibrate">
-                <value name="YL">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-                <value name="YR">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-                <value name="RL">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-                <value name="RR">
-                    <block type="math_number">
-                        <field name="NUM">0</field>
-                    </block>
-                </value>
-            </block>
-            <block type="otto_home"></block>
-            <block type="otto_walk">
-                <value name="DISTANCE">
-                    <block type="math_number">
-                        <field name="NUM">4</field>
-                    </block>
-                </value>
-                <value name="DURATION">
-                    <block type="math_number">
-                        <field name="NUM">1000</field>
-                    </block>
-                </value>
-            </block>
-            <block type="otto_turn">
-                <value name="DISTANCE">
-                    <block type="math_number">
-                        <field name="NUM">4</field>
-                    </block>
-                </value>
-                <value name="DURATION">
-                    <block type="math_number">
-                        <field name="NUM">1000</field>
-                    </block>
-                </value>
-            </block>
-            <block type="otto_bend">
-                <value name="DISTANCE">
-                    <block type="math_number">
-                        <field name="NUM">1</field>
-                    </block>
-                </value>
-                <value name="DURATION">
-                    <block type="math_number">
-                        <field name="NUM">1400</field>
-                    </block>
-                </value>
-            </block>
-            <block type="otto_shake_leg">
-                <value name="DISTANCE">
-                    <block type="math_number">
-                        <field name="NUM">1</field>
-                    </block>
-                </value>
-                <value name="DURATION">
-                    <block type="math_number">
-                        <field name="NUM">2000</field>
-                    </block>
-                </value>
-            </block>
-            <block type="otto_freestyle">
-                <value name="DISTANCE">
-                    <block type="math_number">
-                        <field name="NUM">1</field>
-                    </block>
-                </value>
-                <value name="DURATION">
-                    <block type="math_number">
-                        <field name="NUM">1000</field>
-                    </block>
-                </value>
-                <value name="HEIGHT">
-                    <block type="otto_height"></block>
-                </value>
-            </block>
-            <block type="otto_moonwalk">
-                <value name="DISTANCE">
-                    <block type="math_number">
-                        <field name="NUM">4</field>
-                    </block>
-                </value>
-                <value name="DURATION">
-                    <block type="math_number">
-                        <field name="NUM">1000</field>
-                    </block>
-                </value>
-                <value name="HEIGHT">
-                    <block type="otto_height"></block>
-                </value>
-            </block>
-            <block type="otto_crusaito">
-                <value name="DISTANCE">
-                    <block type="math_number">
-                        <field name="NUM">4</field>
-                    </block>
-                </value>
-                <value name="DURATION">
-                    <block type="math_number">
-                        <field name="NUM">1000</field>
-                    </block>
-                </value>
-                <value name="HEIGHT">
-                    <block type="otto_height"></block>
-                </value>
-            </block>
-            <block type="otto_flapping">
-                <value name="DISTANCE">
-                    <block type="math_number">
-                        <field name="NUM">4</field>
-                    </block>
-                </value>
-                <value name="DURATION">
-                    <block type="math_number">
-                        <field name="NUM">1000</field>
-                    </block>
-                </value>
-                <value name="HEIGHT">
-                    <block type="otto_height"></block>
-                </value>
-            </block>
-            <block type="otto_height"></block>
-            <block type="otto_ultrasonic_init"></block>
-            <block type="otto_ultrasonic_distance"></block>
-            <block type="otto_buzzer_init"></block>
-            <block type="otto_buzzer_sing"></block>
-            <block type="otto_mouth"></block>
-            <block type="otto_led_matrix_init"></block>
-        </category>
+    <category id="category_rfid">
+    </category>
+</category>
+<sep id="category_sep"></sep>
+<category id="category_grove">
+    <category id="category_grove_sensor">
+        <block type="grove_light_sensor"></block>
+        <block type="grove_ultrasonic_ranger"></block>
+        <block type="grove_temporature_humidity_sensor"></block>
+    </category>
+    <category id="category_grove_actuator">
+        <block type="grove_relay"></block>
+    </category>
+    <category id="category_grove_display">
+        <block type="grove_led_bar">
+            <value name="LEVEL">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="grove_oled_display_clear"></block>
+        <block type="grove_oled_display_set_cursor">
+            <value name="ROW">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="COL">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="grove_oled_display_put">
+            <value name="VALUE"></value>
+        </block>
+    </category>
+</category>
+<sep id="category_sep"></sep>
+<category id="category_external">
+    <category id="category_otto">
+        <block type="otto_init"></block>
+        <block type="otto_calibrate">
+            <value name="YL">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="YR">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="RL">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="RR">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+        </block>
+        <block type="otto_home"></block>
+        <block type="otto_walk">
+            <value name="DISTANCE">
+                <block type="math_number">
+                    <field name="NUM">4</field>
+                </block>
+            </value>
+            <value name="DURATION">
+                <block type="math_number">
+                    <field name="NUM">1000</field>
+                </block>
+            </value>
+        </block>
+        <block type="otto_turn">
+            <value name="DISTANCE">
+                <block type="math_number">
+                    <field name="NUM">4</field>
+                </block>
+            </value>
+            <value name="DURATION">
+                <block type="math_number">
+                    <field name="NUM">1000</field>
+                </block>
+            </value>
+        </block>
+        <block type="otto_bend">
+            <value name="DISTANCE">
+                <block type="math_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+            <value name="DURATION">
+                <block type="math_number">
+                    <field name="NUM">1400</field>
+                </block>
+            </value>
+        </block>
+        <block type="otto_shake_leg">
+            <value name="DISTANCE">
+                <block type="math_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+            <value name="DURATION">
+                <block type="math_number">
+                    <field name="NUM">2000</field>
+                </block>
+            </value>
+        </block>
+        <block type="otto_freestyle">
+            <value name="DISTANCE">
+                <block type="math_number">
+                    <field name="NUM">1</field>
+                </block>
+            </value>
+            <value name="DURATION">
+                <block type="math_number">
+                    <field name="NUM">1000</field>
+                </block>
+            </value>
+            <value name="HEIGHT">
+                <block type="otto_height"></block>
+            </value>
+        </block>
+        <block type="otto_moonwalk">
+            <value name="DISTANCE">
+                <block type="math_number">
+                    <field name="NUM">4</field>
+                </block>
+            </value>
+            <value name="DURATION">
+                <block type="math_number">
+                    <field name="NUM">1000</field>
+                </block>
+            </value>
+            <value name="HEIGHT">
+                <block type="otto_height"></block>
+            </value>
+        </block>
+        <block type="otto_crusaito">
+            <value name="DISTANCE">
+                <block type="math_number">
+                    <field name="NUM">4</field>
+                </block>
+            </value>
+            <value name="DURATION">
+                <block type="math_number">
+                    <field name="NUM">1000</field>
+                </block>
+            </value>
+            <value name="HEIGHT">
+                <block type="otto_height"></block>
+            </value>
+        </block>
+        <block type="otto_flapping">
+            <value name="DISTANCE">
+                <block type="math_number">
+                    <field name="NUM">4</field>
+                </block>
+            </value>
+            <value name="DURATION">
+                <block type="math_number">
+                    <field name="NUM">1000</field>
+                </block>
+            </value>
+            <value name="HEIGHT">
+                <block type="otto_height"></block>
+            </value>
+        </block>
+        <block type="otto_height"></block>
+        <block type="otto_ultrasonic_init"></block>
+        <block type="otto_ultrasonic_distance"></block>
+        <block type="otto_buzzer_init"></block>
+        <block type="otto_buzzer_sing"></block>
+        <block type="otto_mouth"></block>
+        <block type="otto_led_matrix_init"></block>
     </category>
 </category>
 <category id="category_beta">

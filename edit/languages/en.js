@@ -1452,7 +1452,9 @@ Blockly.Msg.CATEGORY_DISPLAY = "Display";
 Blockly.Msg.CATEGORY_SENSING_ENV = "Environment";
 Blockly.Msg.CATEGORY_SENSING_DIST = "Distance";
 Blockly.Msg.CATEGORY_SENSING_MOTION = "Motion";
-Blockly.Msg.CATEGORY_TRANCEIVER = "Tranceiver";
+Blockly.Msg.CATEGORY_TRANSCEIVER = "Tranceiver";
+Blockly.Msg.CATEGORY_INFRARED = "Infrared";
+Blockly.Msg.CATEGORY_RFID = "RFID";
 
 
 Blockly.Msg.BUTTON_UPLOAD = "Upload";
