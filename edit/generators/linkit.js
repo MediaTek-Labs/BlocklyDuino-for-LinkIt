@@ -538,3 +538,312 @@ Blockly.Arduino.linkit_wifi_status = function() {
   var code = this.getFieldValue('String');
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+Blockly.Arduino.linkit_lremote = function() {
+  var orientation = this.getFieldValue('ORIENTATION'); 
+  var deviceid = Blockly.Arduino.valueToCode(this, 'DEVICEID', Blockly.Arduino.ORDER_ATOMIC) || '';
+  var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || '';
+  var column = Blockly.Arduino.valueToCode(this, 'COLUMN', Blockly.Arduino.ORDER_ATOMIC) || '';
+
+  deviceid = deviceid.replace(/\"/g, ""); 
+  row = row.replace(/\"/g, ""); 
+  column = column.replace(/\"/g, ""); 
+
+  Blockly.Arduino.definitions_['define_linkit_lremote_include'] = '#include <LRemote.h>'; 
+
+  var branch = Blockly.Arduino.statementToCode(this, 'CONTENT'); 
+  branch = branch.replace(/(^\s+)|(\s+$)/g, "");
+
+  if(orientation == "vertical")
+  	orientation = "RC_PORTRAIT"; 
+  else if(orientation == "horizontal")
+  	orientation = "RC_LANDSCAPE"; 
+  else
+    orientation = ""; 
+
+  var code =    'LRemote.setName("' + deviceid + '"); \n'; 
+  code = code + 'LRemote.setOrientation(' + orientation + '); \n'; 
+  code = code + 'LRemote.setGrid(' + column + ', ' + row + '); \n'; 
+  code = code + branch + '\n';   
+  code = code + 'LRemote.begin(); \n'; 
+
+  return code; 
+  
+};
+
+Blockly.Arduino.linkit_lremote_settext = function() {
+  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var column = Blockly.Arduino.valueToCode(this, 'COLUMN', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var width = Blockly.Arduino.valueToCode(this, 'WIDTH', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var height = Blockly.Arduino.valueToCode(this, 'HEIGHT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var colour = this.getFieldValue('COLOUR'); 
+
+  name = name.replace(/\"/g, ""); 
+  content = content.replace(/\"/g, ""); 
+  row = row.replace(/\"/g, ""); 
+  column = column.replace(/\"/g, ""); 
+  width = width.replace(/\"/g, ""); 
+  height = height.replace(/\"/g, ""); 
+
+  if(colour == "orange")
+    colour = "RC_ORANGE"; 
+  else if(colour == "blue")
+    colour = "RC_BLUE"; 
+  else if(colour == "green")
+    colour = "RC_GREEN"; 
+  else if(colour == "pink")
+    colour = "RC_PINK"; 
+  else if(colour == "gray")
+    colour = "RC_GREY"; 
+  else if(colour == "yellow")
+    colour = "RC_YELLOW"; 
+  else 
+    colour = ""; 
+
+  Blockly.Arduino.definitions_['define_linkit_lremote_setText'] = 'LRemoteLabel ' + name + '; '; 
+  
+  var code = '\n'; 
+  code = code + name + '.setPos(' + column + ', ' + row + '); \n';
+  code = code + name + '.setText(\"' + content + '\"); \n'; 
+  code = code + name + '.setSize(' + width + ', ' + height + '); \n'; 
+  code = code + name + '.setColor(' + colour + '); \n'; 
+  code = code + 'LRemote.addControl(' + name + '); \n\n'; 
+
+  return code; 
+}
+
+
+Blockly.Arduino.linkit_lremote_setbuttonsquare = function() {
+  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var column = Blockly.Arduino.valueToCode(this, 'COLUMN', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var width = Blockly.Arduino.valueToCode(this, 'WIDTH', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var height = Blockly.Arduino.valueToCode(this, 'HEIGHT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var colour = this.getFieldValue('COLOUR'); 
+
+  name = name.replace(/\"/g, ""); 
+  content = content.replace(/\"/g, ""); 
+  row = row.replace(/\"/g, ""); 
+  column = column.replace(/\"/g, ""); 
+  width = width.replace(/\"/g, ""); 
+  height = height.replace(/\"/g, ""); 
+
+  if(colour == "orange")
+    colour = "RC_ORANGE"; 
+  else if(colour == "blue")
+    colour = "RC_BLUE"; 
+  else if(colour == "green")
+    colour = "RC_GREEN"; 
+  else if(colour == "pink")
+    colour = "RC_PINK"; 
+  else if(colour == "gray")
+    colour = "RC_GREY"; 
+  else if(colour == "yellow")
+    colour = "RC_YELLOW"; 
+  else 
+    colour = ""; 
+
+  Blockly.Arduino.definitions_['define_linkit_lremote_setButtonSquare'] = 'LRemoteButton ' + name + '; '; 
+  
+  var code =  '\n'; 
+  code = code + name + '.setPos(' + column + ', ' + row + '); \n';
+  code = code + name + '.setText(\"' + content + '\"); \n'; 
+  code = code + name + '.setSize(' + width + ', ' + height + '); \n'; 
+  code = code + name + '.setColor(' + colour + '); \n'; 
+  code = code + 'LRemote.addControl(' + name + '); \n\n'; 
+
+  return code; 
+}
+
+Blockly.Arduino.linkit_lremote_setbuttoncircle = function() {
+  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var column = Blockly.Arduino.valueToCode(this, 'COLUMN', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var width = Blockly.Arduino.valueToCode(this, 'WIDTH', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var height = Blockly.Arduino.valueToCode(this, 'HEIGHT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var colour = this.getFieldValue('COLOUR'); 
+
+  name = name.replace(/\"/g, ""); 
+  content = content.replace(/\"/g, ""); 
+  row = row.replace(/\"/g, ""); 
+  column = column.replace(/\"/g, ""); 
+  width = width.replace(/\"/g, ""); 
+  height = height.replace(/\"/g, ""); 
+
+  if(colour == "orange")
+    colour = "RC_ORANGE"; 
+  else if(colour == "blue")
+    colour = "RC_BLUE"; 
+  else if(colour == "green")
+    colour = "RC_GREEN"; 
+  else if(colour == "pink")
+    colour = "RC_PINK"; 
+  else if(colour == "gray")
+    colour = "RC_GREY"; 
+  else if(colour == "yellow")
+    colour = "RC_YELLOW"; 
+  else 
+    colour = ""; 
+
+  Blockly.Arduino.definitions_['define_linkit_lremote_setButtonCircle'] = 'LRemoteCircleButton ' + name + '; '; 
+  
+  var code = '\n'; 
+  code = code + name + '.setPos(' + column + ', ' + row + '); \n';
+  code = code + name + '.setSize(' + width + ', ' + height + '); \n'; 
+  code = code + name + '.setText(\"' + content + '\"); \n'; 
+  code = code + name + '.setColor(' + colour + '); \n'; 
+  code = code + 'LRemote.addControl(' + name + '); \n\n'; 
+
+  return code; 
+}
+
+Blockly.Arduino.linkit_lremote_setswitch = function() {
+  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var column = Blockly.Arduino.valueToCode(this, 'COLUMN', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var width = Blockly.Arduino.valueToCode(this, 'WIDTH', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var height = Blockly.Arduino.valueToCode(this, 'HEIGHT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var colour = this.getFieldValue('COLOUR'); 
+
+  name = name.replace(/\"/g, "");
+  content = content.replace(/\"/g, ""); 
+  row = row.replace(/\"/g, ""); 
+  column = column.replace(/\"/g, ""); 
+  width = width.replace(/\"/g, ""); 
+  height = height.replace(/\"/g, ""); 
+
+  if(colour == "orange")
+    colour = "RC_ORANGE"; 
+  else if(colour == "blue")
+    colour = "RC_BLUE"; 
+  else if(colour == "green")
+    colour = "RC_GREEN"; 
+  else if(colour == "pink")
+    colour = "RC_PINK"; 
+  else if(colour == "gray")
+    colour = "RC_GREY"; 
+  else if(colour == "yellow")
+    colour = "RC_YELLOW"; 
+  else 
+    colour = ""; 
+
+  Blockly.Arduino.definitions_['define_linkit_lremote_setSwitch'] = 'LRemoteSwitch ' + name + '; '; 
+  
+  var code = '\n'; 
+  code = code + name + '.setPos(' + column + ', ' + row + '); \n';
+  code = code + name + '.setSize(' + width + ', ' + height + '); \n'; 
+  code = code + name + '.setText(\"' + content + '\"); \n'; 
+  code = code + name + '.setColor(' + colour + '); \n'; 
+  code = code + 'LRemote.addControl(' + name + '); \n\n'; 
+
+  return code; 
+}
+
+Blockly.Arduino.linkit_lremote_setslider = function() {
+  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var column = Blockly.Arduino.valueToCode(this, 'COLUMN', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var width = Blockly.Arduino.valueToCode(this, 'WIDTH', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var height = Blockly.Arduino.valueToCode(this, 'HEIGHT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var minimum = Blockly.Arduino.valueToCode(this, 'MINIMUM', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var maximum = Blockly.Arduino.valueToCode(this, 'MAXIMUM', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var initial = Blockly.Arduino.valueToCode(this, 'INITIAL', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var colour = this.getFieldValue('COLOUR'); 
+
+  name = name.replace(/\"/g, ""); 
+  content = content.replace(/\"/g, ""); 
+  row = row.replace(/\"/g, ""); 
+  column = column.replace(/\"/g, ""); 
+  width = width.replace(/\"/g, ""); 
+  height = height.replace(/\"/g, ""); 
+  minimum = minimum.replace(/\"/g, ""); 
+  maximum = maximum.replace(/\"/g, ""); 
+  initial = initial.replace(/\"/g, ""); 
+
+  if(colour == "orange")
+    colour = "RC_ORANGE"; 
+  else if(colour == "blue")
+    colour = "RC_BLUE"; 
+  else if(colour == "green")
+    colour = "RC_GREEN"; 
+  else if(colour == "pink")
+    colour = "RC_PINK"; 
+  else if(colour == "gray")
+    colour = "RC_GREY"; 
+  else if(colour == "yellow")
+    colour = "RC_YELLOW"; 
+  else 
+    colour = ""; 
+
+  Blockly.Arduino.definitions_['define_linkit_lremote_setSlider'] = 'LRemoteSlider ' + name + '; '; 
+  
+  var code = '\n'; 
+  code = code + name + '.setPos(' + column + ', ' + row + '); \n';
+  code = code + name + '.setSize(' + width + ', ' + height + '); \n';
+  code = code + name + '.setText(\"' + content + '\"); \n'; 
+  code = code + name + '.setValueRange(' + minimum + ', ' + maximum + ', ' + initial + '); \n'; 
+  code = code + name + '.setColor(' + colour + '); \n'; 
+  code = code + 'LRemote.addControl(' + name + '); \n\n'; 
+
+  return code; 
+}
+
+Blockly.Arduino.linkit_lremote_connect_status = function(){
+  var code = 'LRemote.connected()'; 
+  return [code, Blockly.Arduino.ORDER_ATOMIC]; 
+}
+
+Blockly.Arduino.linkit_lremote_process = function(){
+  var code = 'LRemote.process(); \n'; 
+  return code; 
+}; 
+
+Blockly.Arduino.linkit_lremote_is_written = function(){
+  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var type = this.getFieldValue('TYPE'); 
+  var code; 
+  name = name.replace(/\"/g, ""); 
+
+  if( type!='squarebutton' && type!='circlebutton' && type!='switch' && type!='slider' ){
+    code = ''; 
+  }
+  else{
+    code = name + '.isValueChanged()'; 
+  }
+  return [code, Blockly.Arduino.ORDER_ATOMIC]; 
+}; 
+
+Blockly.Arduino.linkit_lremote_read_value = function(){
+  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var type = this.getFieldValue('TYPE'); 
+  var code; 
+
+  name = name.replace(/\"/g, ""); 
+  
+  if( type!='squarebutton' && type!='circlebutton' && type!='switch' && type!='slider' ){
+    code = ''; 
+  }
+  else{
+    code = name + '.getValue()'; 
+  }
+
+  return [code, Blockly.Arduino.ORDER_ATOMIC]; 
+}; 
+
+Blockly.Arduino.linkit_lremote_update_textlabel = function(){
+  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || '';  
+  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+
+  name = name.replace(/\"/g, ""); 
+  content = content.replace(/\"/g, ""); 
+
+  var code = name + '.updateText(\"' + content + '\"); \n';
+
+  return code; 
+}; 

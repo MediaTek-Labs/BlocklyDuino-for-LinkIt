@@ -139,7 +139,7 @@ function init() {
 
 function buildtoolBox() {
   var loadIds;
-  var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_digital,category_analog,category_serial,category_others,category_time,category_interrupts,category_servo,category_sep,category_linkit_wifi,category_linkit_mcs,category_linkit_ble,category_linkit_ble_ibeacon,category_sep,category_external";
+  var base = "category_logic,category_loops,category_array,category_math,category_text,category_variables,category_functions,category_sep,category_initializes,category_digital,category_analog,category_serial,category_others,category_time,category_interrupts,category_servo,category_sep,category_linkit_wifi,category_linkit_mcs,category_linkit_lremote,category_linkit_ble,category_linkit_ble_ibeacon,category_sep,category_external";
 
   try {
     var manifestData = chrome.runtime.getManifest();
