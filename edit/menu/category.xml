@@ -471,11 +471,23 @@
 </category>
 
 <category id="category_sensor">
-    <block type="adxl345_read"></block>
-    <block type="dht_read"></block>
-    <block type="htu21d_read"></block>
-    <block type="ultrasonic_read"></block>
-    <block type="pms_read"></block>
+    <category id="category_sensor_env">
+        <block type="dht_read"></block>
+        <block type="htu21d_read"></block>
+        <block type="pms_read"></block>
+    </category>
+    <category id="category_sensor_dist">
+        <block type="ultrasonic_read"></block>
+    </category>
+    <category id="category_sensor_motion">
+        <block type="adxl345_read"></block>
+        <block type="adxl345_read_attitude"></block>
+        <block type="adxl345_detect"></block>
+        <block type="adxl345_gesture_detected"></block>
+    </category>
+</category>
+
+<category id="category_tranceiver">
     <block type="infra_red_send"></block>
     <block type="infra_red_receive"></block>
 </category>

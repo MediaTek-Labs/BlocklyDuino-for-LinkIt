@@ -28,28 +28,33 @@ goog.provide('Blockly.Arduino.adxl');
 
 goog.require('Blockly.Arduino');
 
-Blockly.Arduino.adxl345_read = function() {
+Blockly.Arduino.adxl345_setup = function() {
   Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>'
-  Blockly.Arduino.definitions_['define_adafruit_sensor_include'] = '#include <Adafruit_Sensor.h>'
-  Blockly.Arduino.definitions_['define_adafruit_adxl345_u'] = '#include <Adafruit_ADXL345_U.h>'
-  Blockly.Arduino.definitions_['define_adafruit_adxl_inst'] = 'Adafruit_ADXL345_Unified adxl345(12345);';
+  Blockly.Arduino.definitions_['define_sensor_include'] = '#include <adxl345_blockly.h>'
+  Blockly.Arduino.definitions_['define_adxl_inst'] = 'ADXL345Block adxl345;';
+  Blockly.Arduino.setups_['setup_adxl345'] = 'adxl345.begin();';
+}
 
-  Blockly.Arduino.setups_['setup_adxl345'] = 'adxl345.begin();\n'
-    + '  adxl345.setDataRate(ADXL345_DATARATE_400_HZ);\n'
-    + '  adxl345.setRange(ADXL345_RANGE_16_G);\n';
- 
-  var code = '';
-  switch(this.getFieldValue('AXIS')){
-      case 'X':
-        code += 'adxl345.getX()';
-      break;
-      case 'Y':
-        code += 'adxl345.getY()';
-      break;
-      case 'Z':
-        code += 'adxl345.getZ()';
-      break;
-  }
+Blockly.Arduino.adxl345_read = function() {
+  Blockly.Arduino.adxl345_setup();
+  var code = 'adxl345.get' + this.getFieldValue('AXIS') + '()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
 
+Blockly.Arduino.adxl345_read_attitude = function() {
+  Blockly.Arduino.adxl345_setup();
+  var code = 'adxl345.get' + this.getFieldValue('ATTITUDE') + '()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.adxl345_detect = function() {
+  Blockly.Arduino.adxl345_setup();
+  var code = 'adxl345.detectGesture();\n';
+  return code;
+};
+
+Blockly.Arduino.adxl345_gesture_detected = function() {
+  Blockly.Arduino.adxl345_setup();
+  var code = 'adxl345.is' + this.getFieldValue('GESTURE') + 'Detected()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

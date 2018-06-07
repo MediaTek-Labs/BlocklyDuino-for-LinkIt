@@ -106,7 +106,7 @@ Blockly.Msg.CATEGORY_INITIALIZES = "程式流程";
 Blockly.Msg.CATEGORY_INOUT = "輸入/輸出";
 Blockly.Msg.CATEGORY_INTERRUPTS = "中斷訊號";
 Blockly.Msg.CATEGORY_INVOLT = "involt";  // untranslated
-Blockly.Msg.CATEGORY_LCD = "液晶顯示模組";  // untranslated
+Blockly.Msg.CATEGORY_LCD = "液晶顯示";  // untranslated
 Blockly.Msg.CATEGORY_LOGIC = "邏輯";
 Blockly.Msg.CATEGORY_LOOPS = "迴圈";  // untranslated
 Blockly.Msg.CATEGORY_M2X = "M2X";  // untranslated
@@ -378,7 +378,7 @@ Blockly.Msg.GROVE_LED_BAR_TITLE = "LED 燈條";
 Blockly.Msg.GROVE_LED_BAR_LEVEL = "階層（0 - 10）";
 Blockly.Msg.GROVE_LED_BAR_TOOLTIP = "LED 燈條由一組 10 階層之規桿型 LED 模組及一顆 MY9221 控制晶片構成。";
 Blockly.Msg.GROVE_OLED_DISPLAY_HELPURL = "http://wiki.seeed.cc/Grove-OLED_Display_0.96inch/";
-Blockly.Msg.GROVE_OLED_DISPLAY_TITLE = "OLED顯示模組";
+Blockly.Msg.GROVE_OLED_DISPLAY_TITLE = "OLED顯示";
 Blockly.Msg.GROVE_OLED_DISPLAY_CLEAR = "清除畫面";
 Blockly.Msg.GROVE_OLED_DISPLAY_SET_CURSOR = "設定游標 行：";
 Blockly.Msg.GROVE_OLED_DISPLAY_SET_CURSOR_SEP = " 列：";
@@ -1356,8 +1356,12 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
 
 Blockly.Msg.CATEGORY_EXTERNAL = "其他元件";
 Blockly.Msg.CATEGORY_BETA = "未測試元件";
-Blockly.Msg.CATEGORY_SENSOR = "感應模組";
+Blockly.Msg.CATEGORY_SENSOR = "感測模組";
 Blockly.Msg.CATEGORY_DISPLAY = "顯示模組";
+Blockly.Msg.CATEGORY_SENSING_ENV = "環境感測";
+Blockly.Msg.CATEGORY_SENSING_DIST = "距離感測";
+Blockly.Msg.CATEGORY_SENSING_MOTION = "動態感測";
+Blockly.Msg.CATEGORY_TRANCEIVER = "傳輸模組";
 
 Blockly.Msg.BUTTON_UPLOAD = "燒錄";
 Blockly.Msg.BUTTON_LAUNCH_IDE = "啟動 Arduino IDE";
@@ -1373,7 +1377,7 @@ Blockly.Msg.TEMPERATURE_FERENHEIT = "溫度（°F）";
 Blockly.Msg.HUMIDITY_PERCENT = "相對濕度（%）";  // untranslated
 Blockly.Msg.SIGNAL_PIN = "訊號：";  // untranslated
 Blockly.Msg.MESUREMENT_TYPE = "量測數值：";
-Blockly.Msg.CATEGORY_OLED = "OLED顯示模組";
+Blockly.Msg.CATEGORY_OLED = "OLED顯示";
 
 Blockly.Msg.ADXL345_HELPURL = "https://github.com/adafruit/Adafruit_ADXL345";
 Blockly.Msg.ADXL345_READ_X = "X 軸";
@@ -1381,7 +1385,17 @@ Blockly.Msg.ADXL345_READ_Y = "Y 軸";
 Blockly.Msg.ADXL345_READ_Z = "Z 軸";
 Blockly.Msg.ADXL345_TITLE = "加速度計";
 Blockly.Msg.ADXL345_TOOLTIP = "ADXL345 加速度計，具備 I2C 介面";
-Blockly.Msg.ADXL345_UNIT = "m/s\u00B2";
+Blockly.Msg.ADXL345_UNIT = "G值";
+Blockly.Msg.ADXL345_DETECT = "偵測動作、手勢";
+Blockly.Msg.ADXL345_GESTURE_DETECTED = "已經偵測到";
+Blockly.Msg.ADXL345_TAP = "點一下";
+Blockly.Msg.ADXL345_DOUBLE_TAP = "點兩下";
+Blockly.Msg.ADXL345_MOTION = "移動";
+Blockly.Msg.ADXL345_ATTITUDE = "取得姿態：";
+Blockly.Msg.ADXL345_PITCH = "俯仰";
+Blockly.Msg.ADXL345_ROLL = "翻滾";
+Blockly.Msg.ADXL345_DEGREE = "角度\u00b0";
+
 
 Blockly.Msg.DHT_HELPURL = "https://github.com/adafruit/DHT-sensor-library";  // untranslated
 Blockly.Msg.DHT_TITLE = "溫濕度計";
@@ -1399,7 +1413,7 @@ Blockly.Msg.INFRA_RED_SEND_TITLE = "紅外線發送器";
 Blockly.Msg.INFRA_RED_RECEIVE_TITLE = "紅外線接收器";
 
 Blockly.Msg.OLED_DISPLAY_HELPURL = "http://wiki.seeed.cc/Grove-OLED_Display_0.96inch/";
-Blockly.Msg.OLED_DISPLAY_TITLE = "OLED顯示模組";
+Blockly.Msg.OLED_DISPLAY_TITLE = "OLED顯示";
 Blockly.Msg.OLED_DISPLAY_DRAW_COMMANDS = "顯示內容："
 Blockly.Msg.OLED_DISPLAY_CLEAR = "清除畫面";
 Blockly.Msg.OLED_DISPLAY_SET_CURSOR = "設定游標　行：";
@@ -1409,7 +1423,7 @@ Blockly.Msg.OLED_DISPLAY_PUT = "於游標處列印";
 Blockly.Msg.OLED_DISPLAY_TOOLTIP = "用 u8g2 函式庫來驅動 I2C 介面的 128×64 點陣 OLED 顯示器。支援 SH1106、SH1306 等型號";
 
 Blockly.Msg.LCD_I2C_HELPURL = "http://wiki.seeed.cc/Grove-LCD_I2C_0.96inch/";
-Blockly.Msg.LCD_I2C_TITLE = "液晶顯示模組";
+Blockly.Msg.LCD_I2C_TITLE = "液晶顯示";
 Blockly.Msg.LCD_I2C_CLEAR = "清除畫面";
 Blockly.Msg.LCD_I2C_SET_CURSOR = "設定游標　行：";
 Blockly.Msg.LCD_I2C_SET_CURSOR_SEP = "　列：";

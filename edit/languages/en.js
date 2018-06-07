@@ -1379,6 +1379,11 @@ Blockly.Msg.CATEGORY_EXTERNAL = "External";
 Blockly.Msg.CATEGORY_BETA = "Untested";
 Blockly.Msg.CATEGORY_SENSOR = "Sensor";
 Blockly.Msg.CATEGORY_DISPLAY = "Display";
+Blockly.Msg.CATEGORY_SENSING_ENV = "Environment";
+Blockly.Msg.CATEGORY_SENSING_DIST = "Distance";
+Blockly.Msg.CATEGORY_SENSING_MOTION = "Motion";
+Blockly.Msg.CATEGORY_TRANCEIVER = "Tranceiver";
+
 
 Blockly.Msg.BUTTON_UPLOAD = "Upload";
 Blockly.Msg.BUTTON_LAUNCH_IDE = "Launch Arduino IDE";
@@ -1401,7 +1406,17 @@ Blockly.Msg.ADXL345_READ_Y = "Y-Axis";
 Blockly.Msg.ADXL345_READ_Z = "Z-Axis";
 Blockly.Msg.ADXL345_TITLE = "Accelerometer";
 Blockly.Msg.ADXL345_TOOLTIP = "ADXL345 is a 3-Axis Accelerometer with I2C interface";
-Blockly.Msg.ADXL345_UNIT = " m/s\u00B2";
+Blockly.Msg.ADXL345_UNIT = " G";
+Blockly.Msg.ADXL345_DETECT = "Detect motion and gestures";
+Blockly.Msg.ADXL345_GESTURE_DETECTED = "has detected";
+Blockly.Msg.ADXL345_TAP = "tap";
+Blockly.Msg.ADXL345_DOUBLE_TAP = "double tap";
+Blockly.Msg.ADXL345_MOTION = "motion";
+Blockly.Msg.ADXL345_ATTITUDE = "read attitude:";
+Blockly.Msg.ADXL345_PITCH = "pitch";
+Blockly.Msg.ADXL345_ROLL = "roll";
+Blockly.Msg.ADXL345_DEGREE = "\u00b0";
+
 
 Blockly.Msg.DHT_HELPURL = "https://github.com/adafruit/DHT-sensor-library";
 Blockly.Msg.DHT_TITLE = "Sensor";

@@ -61,3 +61,91 @@ Blockly.Blocks['adxl345_read'] = {
     // this.setWarningText(Blockly.Msg.ADXL345_WARNING);
   }
 };
+
+Blockly.Blocks['adxl345_read_attitude'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.ADXL345_HELPURL);
+    this.setColour(Blockly.Blocks.adxl.HUE);
+    this.setTooltip(Blockly.Msg.ADXL345_TOOLTIP);
+
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.ADXL345_TITLE)
+        .appendField(new Blockly.FieldDropdown([["ADXL345", "DUMMY"]]), "SENSOR");
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.SIGNAL_PIN)
+      .appendField(new Blockly.FieldDropdown([["I2C","PIN"]]), "PIN");
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.ADXL345_ATTITUDE)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.ADXL345_PITCH,"Pitch"],
+        [Blockly.Msg.ADXL345_ROLL,"Roll"],
+      ]), "ATTITUDE")
+      .appendField(Blockly.Msg.ADXL345_DEGREE);
+      
+    this.setInputsInline(true);
+    this.setOutput(true, 'Number');
+    
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has beeen deleted.
+      return;
+    }
+    // this.setWarningText(Blockly.Msg.ADXL345_WARNING);
+  }
+};
+
+Blockly.Blocks['adxl345_detect'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.ADXL345_HELPURL);
+    this.setColour(Blockly.Blocks.adxl.HUE);
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.ADXL345_TITLE)
+      .appendField(new Blockly.FieldDropdown([["ADXL345", "DUMMY"]]), "SENSOR")
+      .appendField(Blockly.Msg.ADXL345_DETECT)
+
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has beeen deleted.
+      return;
+    }
+  }
+};
+
+Blockly.Blocks['adxl345_gesture_detected'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.ADXL345_HELPURL);
+    this.setColour(Blockly.Blocks.adxl.HUE);
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.ADXL345_TITLE)
+      .appendField(new Blockly.FieldDropdown([["ADXL345", "DUMMY"]]), "SENSOR")
+      .appendField(Blockly.Msg.ADXL345_GESTURE_DETECTED)
+    
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.ADXL345_TAP, 'Tap'],
+        [Blockly.Msg.ADXL345_DOUBLE_TAP, 'DoubleTap'],
+        [Blockly.Msg.ADXL345_MOTION, 'Activity'],
+      ]), "GESTURE");
+          
+    this.setInputsInline(true);
+    this.setOutput(true, 'Boolean');
+    
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has beeen deleted.
+      return;
+    }
+  }
+};
+
