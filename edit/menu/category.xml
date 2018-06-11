@@ -705,6 +705,11 @@
         <block type="adxl345_read_attitude"></block>
         <block type="adxl345_detect"></block>
         <block type="adxl345_gesture_detected"></block>
+
+        <block type="mpu9250_read_acc"></block>
+        <block type="mpu9250_read_gyro"></block>
+        <block type="mpu9250_read_mag"></block>
+        <block type="mpu9250_read_north"></block>
     </category>
 </category>
 <category id="category_display">
