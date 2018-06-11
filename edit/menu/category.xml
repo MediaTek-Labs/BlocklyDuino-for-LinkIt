@@ -378,11 +378,6 @@
 	</value>
 </block>
 <block type="linkit_lremote_settext">
-	<value name="NAME">
-		<block type="text">
-			<field name="TEXT">Label1</field>
-		</block>
-	</value>
 	<value name="CONTENT">
 		<block type="text">
 			<field name="TEXT"></field>
@@ -826,6 +821,7 @@
         <block type="infra_red_receive"></block>
     </category>
     <category id="category_rfid">
+        <block type="mfrc522_read"></block>
     </category>
 </category>
 <sep id="category_sep"></sep>

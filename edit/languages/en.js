@@ -1551,3 +1551,8 @@ Blockly.Msg.MPU9250_PITCH = "pitch";
 Blockly.Msg.MPU9250_ROLL = "roll";
 Blockly.Msg.MPU9250_YAW = "yaw";
 Blockly.Msg.MPU9250_NORTH = "degrees between X-Axis and magnetic north pole";
+
+Blockly.Msg.MFRC522_RFID_HELPURL = "https://github.com/miguelbalboa/rfid";  // untranslated
+Blockly.Msg.MFRC522_RFID_TITLE = "RFID";
+Blockly.Msg.MFRC522_RFID_READ = "read identifier"
+Blockly.Msg.MFRC522_RFID_TOOLTIP = "Returns ID string if an RFID card is detected. Empty string is returned otherwise."
