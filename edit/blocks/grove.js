@@ -50,6 +50,7 @@ Blockly.Blocks.grove.ultrasonic_ranger_image = filepath.media + '/grove_ultrason
 Blockly.Blocks.grove.temporature_humidity_sensor_image = filepath.media + '/grove_temporature_humidity_sensor.jpg';
 Blockly.Blocks.grove.led_bar_image = filepath.media + '/grove_led_bar.jpg';
 Blockly.Blocks.grove.oled_display_image = filepath.media + '/grove_oled_display.jpg';
+Blockly.Blocks.grove.imu_9dof = filepath.media + '/grove_imu_9dof.jpg';
 
 Blockly.Blocks.grove.rgb_lcd_checkBlocks = function(obj) {
   var legal = null;
@@ -1166,5 +1167,129 @@ Blockly.Blocks['grove_oled_display_put'] = {
     this.setPreviousStatement(true);
     this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.GROVE_OLED_DISPLAY_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['grove_imu_9dof_read_acc'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.GROVE_IMU_9DOF_HELPURL);
+    this.setColour(Blockly.Blocks.grove.HUE);
+    this.setTooltip(Blockly.Msg.GROVE_IMU_9DOF_TOOLTIP);
+
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.GROVE_IMU_9DOF_TITLE)
+        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.imu_9dof, 64, 48));
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.GROVE_PORT)
+      .appendField(new Blockly.FieldDropdown([["I2C","PIN"]]), "PIN");
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.GROVE_IMU_9DOF_ACC)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.GROVE_IMU_9DOF_READ_X,"X"],[Blockly.Msg.GROVE_IMU_9DOF_READ_Y,"Y"],[Blockly.Msg.GROVE_IMU_9DOF_READ_Z,"Z"]]), "AXIS")
+      .appendField(Blockly.Msg.GROVE_IMU_9DOF_ACC_UNIT);
+      
+    this.setInputsInline(true);
+    this.setOutput(true, 'Number');
+    
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has beeen deleted.
+      return;
+    }
+    // this.setWarningText(Blockly.Msg.GROVE_IMU_9DOF_WARNING);
+  }
+};
+
+Blockly.Blocks['grove_imu_9dof_read_gyro'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.GROVE_IMU_9DOF_HELPURL);
+    this.setColour(Blockly.Blocks.grove.HUE);
+    this.setTooltip(Blockly.Msg.GROVE_IMU_9DOF_TOOLTIP);
+
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.GROVE_IMU_9DOF_TITLE)
+        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.imu_9dof, 64, 48));
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.GROVE_PORT)
+      .appendField(new Blockly.FieldDropdown([["I2C","PIN"]]), "PIN");
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.GROVE_IMU_9DOF_GYRO)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.GROVE_IMU_9DOF_READ_X,"X"],[Blockly.Msg.GROVE_IMU_9DOF_READ_Y,"Y"],[Blockly.Msg.GROVE_IMU_9DOF_READ_Z,"Z"]]), "AXIS")
+      .appendField(Blockly.Msg.GROVE_IMU_9DOF_GYRO_UNIT);
+      
+    this.setInputsInline(true);
+    this.setOutput(true, 'Number');
+    
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has beeen deleted.
+      return;
+    }
+    // this.setWarningText(Blockly.Msg.GROVE_IMU_9DOF_WARNING);
+  }
+};
+
+Blockly.Blocks['grove_imu_9dof_read_mag'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.GROVE_IMU_9DOF_HELPURL);
+    this.setColour(Blockly.Blocks.grove.HUE);
+    this.setTooltip(Blockly.Msg.GROVE_IMU_9DOF_TOOLTIP);
+
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.GROVE_IMU_9DOF_TITLE)
+        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.imu_9dof, 64, 48));
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.GROVE_PORT)
+      .appendField(new Blockly.FieldDropdown([["I2C","PIN"]]), "PIN");
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.GROVE_IMU_9DOF_MAG)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.GROVE_IMU_9DOF_READ_X,"X"],[Blockly.Msg.GROVE_IMU_9DOF_READ_Y,"Y"],[Blockly.Msg.GROVE_IMU_9DOF_READ_Z,"Z"]]), "AXIS")
+      .appendField(Blockly.Msg.GROVE_IMU_9DOF_MAG_UNIT);
+      
+    this.setInputsInline(true);
+    this.setOutput(true, 'Number');
+    
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has beeen deleted.
+      return;
+    }
+    // this.setWarningText(Blockly.Msg.GROVE_IMU_9DOF_WARNING);
+  }
+};
+
+Blockly.Blocks['grove_imu_9dof_read_north'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.GROVE_IMU_9DOF_HELPURL);
+    this.setColour(Blockly.Blocks.grove.HUE);
+    this.setTooltip(Blockly.Msg.GROVE_IMU_9DOF_TOOLTIP);
+
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.GROVE_IMU_9DOF_TITLE)
+        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.imu_9dof, 64, 48));
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.GROVE_PORT)
+      .appendField(new Blockly.FieldDropdown([["I2C","PIN"]]), "PIN");
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.GROVE_IMU_9DOF_NORTH)
+      
+    this.setInputsInline(true);
+    this.setOutput(true, 'Number');
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has beeen deleted.
+      return;
+    }
   }
 };

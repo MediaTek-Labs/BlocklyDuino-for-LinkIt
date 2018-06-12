@@ -1552,6 +1552,26 @@ Blockly.Msg.MPU9250_ROLL = "roll";
 Blockly.Msg.MPU9250_YAW = "yaw";
 Blockly.Msg.MPU9250_NORTH = "degrees between X-Axis and magnetic north pole";
 
+Blockly.Msg.GROVE_IMU_9DOF_HELPURL = "https://github.com/sparkfun/SparkFun_MPU-9250_Breakout_Arduino_Library";
+Blockly.Msg.GROVE_IMU_9DOF_READ_X = "X Axis";
+Blockly.Msg.GROVE_IMU_9DOF_READ_Y = "Y Axis";
+Blockly.Msg.GROVE_IMU_9DOF_READ_Z = "Z Axis";
+Blockly.Msg.GROVE_IMU_9DOF_TITLE = "Inertia Sensor 9DOF";
+Blockly.Msg.GROVE_IMU_9DOF_GROVE_TITLE = "Inertia Sensor 9DOF";
+Blockly.Msg.GROVE_IMU_9DOF_TOOLTIP = "GROVE_IMU_9DOF Inertia Sensor with I2C interface";
+Blockly.Msg.GROVE_IMU_9DOF_DEGREE = "\u00b0";
+Blockly.Msg.GROVE_IMU_9DOF_ACC = "read acceleration";
+Blockly.Msg.GROVE_IMU_9DOF_ACC_UNIT = "G";
+Blockly.Msg.GROVE_IMU_9DOF_GYRO = "read angular velocity";
+Blockly.Msg.GROVE_IMU_9DOF_GYRO_UNIT = "degrees/sec";
+Blockly.Msg.GROVE_IMU_9DOF_MAG = "read magnetic intensity";
+Blockly.Msg.GROVE_IMU_9DOF_MAG_UNIT = "gauss";
+Blockly.Msg.GROVE_IMU_9DOF_ATTITUDE = "get attitude";
+Blockly.Msg.GROVE_IMU_9DOF_PITCH = "pitch";
+Blockly.Msg.GROVE_IMU_9DOF_ROLL = "roll";
+Blockly.Msg.GROVE_IMU_9DOF_YAW = "yaw";
+Blockly.Msg.GROVE_IMU_9DOF_NORTH = "degrees between X-Axis and magnetic north pole";
+
 Blockly.Msg.MFRC522_RFID_HELPURL = "https://github.com/miguelbalboa/rfid";  // untranslated
 Blockly.Msg.MFRC522_RFID_TITLE = "RFID";
 Blockly.Msg.MFRC522_RFID_READ = "read identifier"

@@ -774,3 +774,34 @@ Blockly.Arduino.grove_oled_display_put = function() {
   var code = 'SeeedOled.put' + type + '(' + value + ');\n';
   return code;
 };
+
+Blockly.Arduino.grove_imu_9dof_setup = function() {
+  Blockly.Arduino.definitions_['define_wire'] = '#include <Wire.h>'
+  Blockly.Arduino.definitions_['define_sensor_include'] = '#include <mpu9250_blockly.h>'
+  Blockly.Arduino.definitions_['define_mpu9250_inst'] = 'MPU9250Block mpu9250;';
+  Blockly.Arduino.setups_['setup_mpu9250'] = 'mpu9250.begin();';
+}
+
+Blockly.Arduino.grove_imu_9dof_read_acc = function() {
+  Blockly.Arduino.grove_imu_9dof_setup();
+  var code = 'mpu9250.getAcc' + this.getFieldValue('AXIS') + '()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.grove_imu_9dof_read_gyro = function() {
+  Blockly.Arduino.grove_imu_9dof_setup();
+  var code = 'mpu9250.getGyro' + this.getFieldValue('AXIS') + '()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.grove_imu_9dof_read_mag = function() {
+  Blockly.Arduino.grove_imu_9dof_setup();
+  var code = 'mpu9250.getMag' + this.getFieldValue('AXIS') + '()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.grove_imu_9dof_read_north = function() {
+  Blockly.Arduino.grove_imu_9dof_setup();
+  var code = 'mpu9250.getDegreeToMagNorth()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};

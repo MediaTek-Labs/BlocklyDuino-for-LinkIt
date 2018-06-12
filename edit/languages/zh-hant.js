@@ -1536,6 +1536,26 @@ Blockly.Msg.MPU9250_ROLL = "翻滾";
 Blockly.Msg.MPU9250_YAW = "偏擺";
 Blockly.Msg.MPU9250_NORTH = "取得X軸與磁北極夾角";
 
+Blockly.Msg.GROVE_IMU_9DOF_HELPURL = "https://github.com/sparkfun/SparkFun_MPU-9250_Breakout_Arduino_Library";
+Blockly.Msg.GROVE_IMU_9DOF_READ_X = "X 軸";
+Blockly.Msg.GROVE_IMU_9DOF_READ_Y = "Y 軸";
+Blockly.Msg.GROVE_IMU_9DOF_READ_Z = "Z 軸";
+Blockly.Msg.GROVE_IMU_9DOF_TITLE = "慣性感應器9DOF";
+Blockly.Msg.GROVE_IMU_9DOF_GROVE_TITLE = "慣性感應器9DOF";
+Blockly.Msg.GROVE_IMU_9DOF_TOOLTIP = "MPU9250慣性感測單元，具備I2C介面";
+Blockly.Msg.GROVE_IMU_9DOF_DEGREE = "角度\u00b0";
+Blockly.Msg.GROVE_IMU_9DOF_ACC = "量測加速度：";
+Blockly.Msg.GROVE_IMU_9DOF_ACC_UNIT = "G值";
+Blockly.Msg.GROVE_IMU_9DOF_GYRO = "量測角速度：";
+Blockly.Msg.GROVE_IMU_9DOF_GYRO_UNIT = "度/秒";
+Blockly.Msg.GROVE_IMU_9DOF_MAG = "量測磁強度：";
+Blockly.Msg.GROVE_IMU_9DOF_MAG_UNIT = "高斯";
+Blockly.Msg.GROVE_IMU_9DOF_ATTITUDE = "取得姿態：";
+Blockly.Msg.GROVE_IMU_9DOF_PITCH = "俯仰";
+Blockly.Msg.GROVE_IMU_9DOF_ROLL = "翻滾";
+Blockly.Msg.GROVE_IMU_9DOF_YAW = "偏擺";
+Blockly.Msg.GROVE_IMU_9DOF_NORTH = "取得X軸與磁北極夾角";
+
 Blockly.Msg.MFRC522_RFID_HELPURL = "https://github.com/miguelbalboa/rfid";  // untranslated
 Blockly.Msg.MFRC522_RFID_TITLE = "RFID";
 Blockly.Msg.MFRC522_RFID_READ = "讀取識別碼"
