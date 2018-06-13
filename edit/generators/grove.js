@@ -800,6 +800,12 @@ Blockly.Arduino.grove_imu_9dof_read_mag = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.grove_imu_9dof_read_attitude = function() {
+  Blockly.Arduino.grove_imu_9dof_setup();
+  var code = 'mpu9250.get' + this.getFieldValue('ATTITUDE') + '()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino.grove_imu_9dof_read_north = function() {
   Blockly.Arduino.grove_imu_9dof_setup();
   var code = 'mpu9250.getDegreeToMagNorth()';

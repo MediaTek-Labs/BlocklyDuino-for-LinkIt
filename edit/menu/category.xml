@@ -704,6 +704,7 @@
         <block type="mpu9250_read_acc"></block>
         <block type="mpu9250_read_gyro"></block>
         <block type="mpu9250_read_mag"></block>
+        <block type="mpu9250_read_attitude"></block>
         <block type="mpu9250_read_north"></block>
     </category>
 </category>
@@ -833,6 +834,7 @@
         <block type="grove_imu_9dof_read_acc"></block>
         <block type="grove_imu_9dof_read_gyro"></block>
         <block type="grove_imu_9dof_read_mag"></block>
+        <block type="grove_imu_9dof_read_attitude"></block>
         <block type="grove_imu_9dof_read_north"></block>
     </category>
     <category id="category_grove_actuator">

@@ -94,6 +94,41 @@ Blockly.Blocks['mpu9250_read_gyro'] = {
   }
 };
 
+Blockly.Blocks['mpu9250_read_attitude'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MPU9250_HELPURL);
+    this.setColour(Blockly.Blocks.adxl.HUE);
+    this.setTooltip(Blockly.Msg.MPU9250_TOOLTIP);
+
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.MPU9250_TITLE)
+        .appendField(new Blockly.FieldDropdown([["MPU9250", "DUMMY"]]), "SENSOR");
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.SIGNAL_PIN)
+      .appendField(new Blockly.FieldDropdown([["I2C","PIN"]]), "PIN");
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.MPU9250_ATTITUDE)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.MPU9250_PITCH,"Pitch"],
+        [Blockly.Msg.MPU9250_ROLL,"Roll"],
+      ]), "ATTITUDE")
+      .appendField(Blockly.Msg.MPU9250_DEGREE);
+      
+    this.setInputsInline(true);
+    this.setOutput(true, 'Number');
+    
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has beeen deleted.
+      return;
+    }
+    // this.setWarningText(Blockly.Msg.MPU9250_WARNING);
+  }
+};
+
 Blockly.Blocks['mpu9250_read_mag'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.MPU9250_HELPURL);

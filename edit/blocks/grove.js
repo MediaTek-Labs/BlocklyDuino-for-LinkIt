@@ -1293,3 +1293,38 @@ Blockly.Blocks['grove_imu_9dof_read_north'] = {
     }
   }
 };
+
+
+Blockly.Blocks['grove_imu_9dof_read_attitude'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.GROVE_IMU_9DOF_HELPURL);
+    this.setColour(Blockly.Blocks.grove.HUE);
+    this.setTooltip(Blockly.Msg.GROVE_IMU_9DOF_TOOLTIP);
+
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.GROVE_IMU_9DOF_TITLE)
+        .appendField(new Blockly.FieldImage(Blockly.Blocks.grove.imu_9dof, 64, 48));
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.SIGNAL_PIN)
+      .appendField(new Blockly.FieldDropdown([["I2C","PIN"]]), "PIN");
+
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.GROVE_IMU_9DOF_ATTITUDE)
+      .appendField(new Blockly.FieldDropdown([
+        [Blockly.Msg.GROVE_IMU_9DOF_PITCH,"Pitch"],
+        [Blockly.Msg.GROVE_IMU_9DOF_ROLL,"Roll"],
+      ]), "ATTITUDE")
+      .appendField(Blockly.Msg.GROVE_IMU_9DOF_DEGREE);
+      
+    this.setInputsInline(true);
+    this.setOutput(true, 'Number');
+    
+  },
+  onchange: function() {
+    if (!this.workspace) {
+      // Block has beeen deleted.
+      return;
+    }
+  }
+};

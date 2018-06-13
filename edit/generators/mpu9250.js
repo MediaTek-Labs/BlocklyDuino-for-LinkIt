@@ -47,6 +47,12 @@ Blockly.Arduino.mpu9250_read_gyro = function() {
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.mpu9250_read_attitude = function() {
+  Blockly.Arduino.mpu9250_setup();
+  var code = 'mpu9250.get' + this.getFieldValue('ATTITUDE') + '()';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino.mpu9250_read_mag = function() {
   Blockly.Arduino.mpu9250_setup();
   var code = 'mpu9250.getMag' + this.getFieldValue('AXIS') + '()';
