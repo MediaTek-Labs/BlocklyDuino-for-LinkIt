@@ -3,6 +3,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#button_upload').addEventListener("click", handleUploadButton);
   document.querySelector('#button_launch_ide').addEventListener("click", openArduinoIDE);
+  document.querySelector('#button_launch_serial').addEventListener("click", openSerialMonitor);
+  
 });
 
 var nwGui = require('nw.gui')
@@ -28,19 +30,40 @@ var tmpInoFilename ='tmp.ino';
 var tmpBuildDir = 'build/tmp/';
 
 function handleUploadButton() {
+  startUploadProcess = function(){
   fs.ensureDirSync(tmpBuildDir);
   writeInoFile(tmpInoDir, tmpInoFilename);
   startUploading(tmpInoDir + tmpInoFilename);
+  }
+  closeSerialMonitor(startUploadProcess);
 }
 
 function openArduinoIDE() {
+  launchIDE = function() {
   writeInoFile(tmpInoDir, tmpInoFilename);
   let command = '"arduino-1.8.5\\arduino.exe"'
   let parameter =  tmpInoDir + tmpInoFilename;
   
   process = exec(command + ' ' + parameter, {encoding: 'buffer'});
   console.log(process);
+  }
+  closeSerialMonitor(launchIDE);
+}
 
+function closeSerialMonitor(exitCallback) {
+  process = exec('taskkill /F /IM putty.exe', {encoding: 'buffer'});
+  // wait for taskkill to terminate
+  process.on('exit', function() {
+    exitCallback();
+  })
+}
+
+function openSerialMonitor() {
+  launchPutty = function() {
+  process = exec('putty.exe -serial ' + selectedPort, {encoding: 'buffer'});
+  console.log(process);
+  }
+  closeSerialMonitor(launchPutty); 
 }
 
 function outputUploaderMsg(message, className=null) {
