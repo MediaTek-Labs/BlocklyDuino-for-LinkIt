@@ -84,12 +84,12 @@ Blockly.Blocks['lcd_i2c_set_cursor'] = {
     this.appendDummyInput()
         .appendField(Blockly.Msg.LCD_I2C_TITLE)
 
-    this.appendValueInput('ROW')
+    this.appendValueInput('COL')
         .setCheck('Number')
         .appendField(Blockly.Msg.LCD_I2C_SET_CURSOR)
         
 
-    this.appendValueInput('COL')
+    this.appendValueInput('ROW')
         .setCheck('Number')
         .appendField(Blockly.Msg.LCD_I2C_SET_CURSOR_SEP)
     
