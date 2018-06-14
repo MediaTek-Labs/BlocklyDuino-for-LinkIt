@@ -602,7 +602,7 @@ Blockly.Arduino.linkit_lremote_settext = function() {
   else 
     colour = ""; 
 
-  Blockly.Arduino.definitions_['define_linkit_lremote_setText'] = 'LRemoteLabel ' + name + '; '; 
+  Blockly.Arduino.definitions_['define_linkit_lremote_setText_' + name] = 'LRemoteLabel ' + name + '; '; 
   
   var code = '\n'; 
   code = code + name + '.setPos(' + column + ', ' + row + '); \n';
@@ -646,7 +646,7 @@ Blockly.Arduino.linkit_lremote_setbuttonsquare = function() {
   else 
     colour = ""; 
 
-  Blockly.Arduino.definitions_['define_linkit_lremote_setButtonSquare'] = 'LRemoteButton ' + name + '; '; 
+  Blockly.Arduino.definitions_['define_linkit_lremote_setButtonSquare_' + name] = 'LRemoteButton ' + name + '; '; 
   
   var code =  '\n'; 
   code = code + name + '.setPos(' + column + ', ' + row + '); \n';
@@ -689,7 +689,7 @@ Blockly.Arduino.linkit_lremote_setbuttoncircle = function() {
   else 
     colour = ""; 
 
-  Blockly.Arduino.definitions_['define_linkit_lremote_setButtonCircle'] = 'LRemoteCircleButton ' + name + '; '; 
+  Blockly.Arduino.definitions_['define_linkit_lremote_setButtonCircle_' + name] = 'LRemoteCircleButton ' + name + '; '; 
   
   var code = '\n'; 
   code = code + name + '.setPos(' + column + ', ' + row + '); \n';
@@ -732,7 +732,7 @@ Blockly.Arduino.linkit_lremote_setswitch = function() {
   else 
     colour = ""; 
 
-  Blockly.Arduino.definitions_['define_linkit_lremote_setSwitch'] = 'LRemoteSwitch ' + name + '; '; 
+  Blockly.Arduino.definitions_['define_linkit_lremote_setSwitch_' + name] = 'LRemoteSwitch ' + name + '; '; 
   
   var code = '\n'; 
   code = code + name + '.setPos(' + column + ', ' + row + '); \n';
@@ -781,7 +781,7 @@ Blockly.Arduino.linkit_lremote_setslider = function() {
   else 
     colour = ""; 
 
-  Blockly.Arduino.definitions_['define_linkit_lremote_setSlider'] = 'LRemoteSlider ' + name + '; '; 
+  Blockly.Arduino.definitions_['define_linkit_lremote_setSlider_' + name] = 'LRemoteSlider ' + name + '; '; 
   
   var code = '\n'; 
   code = code + name + '.setPos(' + column + ', ' + row + '); \n';
