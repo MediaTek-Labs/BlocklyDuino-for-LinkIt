@@ -712,24 +712,45 @@
     <category id="category_oled">
         <block type="oled_display_setting"></block>
         <block type="oled_display_clear"></block>
+        
         <block type="oled_display_draw_commands">
             <statement name="DRAW_CMD">
-                <block type="oled_display_set_cursor">
-                    <value name="ROW">
+                <block type="oled_display_draw_text">
+                    <value name="START_X">
                         <block type="math_number">
                             <field name="NUM">0</field>
                         </block>
                     </value>
-                    <value name="COL">
+                    <value name="START_Y">
                         <block type="math_number">
                             <field name="NUM">0</field>
+                        </block>
+                    </value>
+                    <value name="CONTENT">
+                        <block type="text">
+                            <field name="TEXT">HELLO</field>
                         </block>
                     </value>
                     <next>
-                        <block type="oled_display_put">
-                            <value name="VALUE">
-                                <block type="text">
-                                    <field name="TEXT">HELLO</field>
+                        <block type="oled_display_draw_line">
+                            <value name="START_X">
+                                <block type="math_number">
+                                    <field name="NUM">0</field>
+                                </block>
+                            </value>
+                            <value name="START_Y">
+                                <block type="math_number">
+                                    <field name="NUM">11</field>
+                                </block>
+                            </value>
+                            <value name="END_X">
+                                <block type="math_number">
+                                    <field name="NUM">30</field>
+                                </block>
+                            </value>
+                            <value name="END_Y">
+                                <block type="math_number">
+                                    <field name="NUM">11</field>
                                 </block>
                             </value>
                         </block>
@@ -737,20 +758,121 @@
                 </block>
             </statement>
         </block>
-        <block type="oled_display_set_cursor">
-            <value name="ROW">
+
+        <block type="oled_display_draw_line">
+            <value name="START_X">
                 <block type="math_number">
                     <field name="NUM">0</field>
                 </block>
             </value>
-            <value name="COL">
+            <value name="START_Y">
                 <block type="math_number">
                     <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="END_X">
+                <block type="math_number">
+                    <field name="NUM">40</field>
+                </block>
+            </value>
+            <value name="END_Y">
+                <block type="math_number">
+                    <field name="NUM">40</field>
                 </block>
             </value>
         </block>
-        <block type="oled_display_put">
-            <value name="VALUE">
+        <block type="oled_display_draw_box">
+            <value name="START_X">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="START_Y">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="END_X">
+                <block type="math_number">
+                    <field name="NUM">40</field>
+                </block>
+            </value>
+            <value name="END_Y">
+                <block type="math_number">
+                    <field name="NUM">40</field>
+                </block>
+            </value>
+        </block>
+        <block type="oled_display_draw_frame">
+            <value name="START_X">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="START_Y">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="END_X">
+                <block type="math_number">
+                    <field name="NUM">40</field>
+                </block>
+            </value>
+            <value name="END_Y">
+                <block type="math_number">
+                    <field name="NUM">40</field>
+                </block>
+            </value>
+        </block>
+        <block type="oled_display_draw_disc">
+            <value name="CENTER_X">
+                <block type="math_number">
+                    <field name="NUM">20</field>
+                </block>
+            </value>
+            <value name="CENTER_Y">
+                <block type="math_number">
+                    <field name="NUM">20</field>
+                </block>
+            </value>
+            <value name="RADIUS">
+                <block type="math_number">
+                    <field name="NUM">15</field>
+                </block>
+            </value>
+        </block>
+        <block type="oled_display_draw_circle">
+            <value name="CENTER_X">
+                <block type="math_number">
+                    <field name="NUM">20</field>
+                </block>
+            </value>
+            <value name="CENTER_Y">
+                <block type="math_number">
+                    <field name="NUM">20</field>
+                </block>
+            </value>
+            <value name="RADIUS">
+                <block type="math_number">
+                    <field name="NUM">15</field>
+                </block>
+            </value>
+        </block>
+        <block type="oled_display_set_font">
+        </block>
+        <block type="oled_display_draw_text">
+            <value name="START_X">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="START_Y">
+                <block type="math_number">
+                    <field name="NUM">0</field>
+                </block>
+            </value>
+            <value name="CONTENT">
                 <block type="text">
                     <field name="TEXT">HELLO</field>
                 </block>

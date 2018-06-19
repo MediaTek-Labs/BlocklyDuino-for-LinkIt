@@ -49,7 +49,7 @@ Blockly.Arduino.oled_display_setting = function() {
 
 
 Blockly.Arduino.oled_display_clear = function() {
-  return 'u8g2.clearDisplay();';
+  return 'u8g2.clearDisplay();\n';
 };
 
 Blockly.Arduino.oled_display_draw_commands = function() {
@@ -63,23 +63,66 @@ Blockly.Arduino.oled_display_draw_commands = function() {
   return code;
 };
 
-
-Blockly.Arduino.oled_display_set_cursor = function() {
-  var code = ''
-
-  var rowVal = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_NONE) || "0";
-  var colVal = Blockly.Arduino.valueToCode(this, 'COL', Blockly.Arduino.ORDER_NONE) || "0";
-
-  code += 'u8g2.setCursor(' + rowVal + ', ' + colVal + ');\n';
-
+Blockly.Arduino.oled_display_draw_line = function() {
+  var startX = Blockly.Arduino.valueToCode(this, 'START_X', Blockly.Arduino.ORDER_NONE) || "0";
+  var startY = Blockly.Arduino.valueToCode(this, 'START_Y', Blockly.Arduino.ORDER_NONE) || "0";
+  var endX = Blockly.Arduino.valueToCode(this, 'END_X', Blockly.Arduino.ORDER_NONE) || "0";
+  var endY = Blockly.Arduino.valueToCode(this, 'END_Y', Blockly.Arduino.ORDER_NONE) || "0";
+  
+  var code = `u8g2.drawLine(${startX}, ${startY}, ${endX}, ${endY});\n`;
   return code;
 };
 
-Blockly.Arduino.oled_display_put = function() {
-  var code = ''
+Blockly.Arduino.oled_display_draw_box = function() {
+  var startX = Blockly.Arduino.valueToCode(this, 'START_X', Blockly.Arduino.ORDER_NONE) || "0";
+  var startY = Blockly.Arduino.valueToCode(this, 'START_Y', Blockly.Arduino.ORDER_NONE) || "0";
+  var endX = Blockly.Arduino.valueToCode(this, 'END_X', Blockly.Arduino.ORDER_NONE) || "0";
+  var endY = Blockly.Arduino.valueToCode(this, 'END_Y', Blockly.Arduino.ORDER_NONE) || "0";
+  
+  var code = `u8g2.drawBox(${startX}, ${startY}, ${endX}, ${endY});\n`;
+  return code;
+};
 
-  let valueCode = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC) || '""';
-  code += 'u8g2.print(' + valueCode + ');\n';
+Blockly.Arduino.oled_display_draw_frame = function() {
+  var startX = Blockly.Arduino.valueToCode(this, 'START_X', Blockly.Arduino.ORDER_NONE) || "0";
+  var startY = Blockly.Arduino.valueToCode(this, 'START_Y', Blockly.Arduino.ORDER_NONE) || "0";
+  var endX = Blockly.Arduino.valueToCode(this, 'END_X', Blockly.Arduino.ORDER_NONE) || "0";
+  var endY = Blockly.Arduino.valueToCode(this, 'END_Y', Blockly.Arduino.ORDER_NONE) || "0";
+  
+  var code = `u8g2.drawFrame(${startX}, ${startY}, ${endX}, ${endY});\n`;
+  return code;
+};
 
+Blockly.Arduino.oled_display_draw_disc = function() {
+  var centerX = Blockly.Arduino.valueToCode(this, 'CENTER_X', Blockly.Arduino.ORDER_NONE) || "0";
+  var centerY = Blockly.Arduino.valueToCode(this, 'CENTER_Y', Blockly.Arduino.ORDER_NONE) || "0";
+  var radius = Blockly.Arduino.valueToCode(this, 'RADIUS', Blockly.Arduino.ORDER_NONE) || "0";
+  
+  var code = `u8g2.drawDisc(${centerX}, ${centerY}, ${radius});\n`;
+  return code;
+};
+
+Blockly.Arduino.oled_display_draw_circle = function() {
+  var centerX = Blockly.Arduino.valueToCode(this, 'CENTER_X', Blockly.Arduino.ORDER_NONE) || "0";
+  var centerY = Blockly.Arduino.valueToCode(this, 'CENTER_Y', Blockly.Arduino.ORDER_NONE) || "0";
+  var radius = Blockly.Arduino.valueToCode(this, 'RADIUS', Blockly.Arduino.ORDER_NONE) || "0";
+  
+  var code = `u8g2.drawCircle(${centerX}, ${centerY}, ${radius});\n`;
+  return code;
+};
+
+Blockly.Arduino.oled_display_draw_text = function() {
+  var startX = Blockly.Arduino.valueToCode(this, 'START_X', Blockly.Arduino.ORDER_NONE) || "0";
+  var startY = Blockly.Arduino.valueToCode(this, 'START_Y', Blockly.Arduino.ORDER_NONE) || "0";
+  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_NONE) || '""';
+  
+  var code = `u8g2.drawStr(${startX}, ${startY}, ${content});\n`;
+  return code;
+};
+
+Blockly.Arduino.oled_display_set_font = function() {
+  let font = this.getFieldValue('FONT');
+  
+  var code = `u8g2.setFont(${font});\n`;
   return code;
 };

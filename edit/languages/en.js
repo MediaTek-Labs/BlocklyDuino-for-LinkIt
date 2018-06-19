@@ -1515,6 +1515,22 @@ Blockly.Msg.OLED_DISPLAY_SET_CURSOR_APPEND = ")";
 Blockly.Msg.OLED_DISPLAY_PUT = "Put";
 Blockly.Msg.OLED_DISPLAY_TOOLTIP = "An OLED monochrome 128×64dot matrix display module with Grove 4pin I2C Interface.";
 
+Blockly.Msg.OLED_DISPLAY_DRAW_LINE_START = "Draw line start:";
+Blockly.Msg.OLED_DISPLAY_DRAW_LINE_END = "end:";
+Blockly.Msg.OLED_DISPLAY_DRAW_BOX_START = "Draw box (left, top):";
+Blockly.Msg.OLED_DISPLAY_DRAW_BOX_END = "(right, bottom):";
+Blockly.Msg.OLED_DISPLAY_DRAW_FRAME_START = "Draw frame (left, top):";
+Blockly.Msg.OLED_DISPLAY_DRAW_FRAME_END = "(right, bottom):";
+Blockly.Msg.OLED_DISPLAY_DRAW_DISC_CENTER = "Draw disc centered at:";
+Blockly.Msg.OLED_DISPLAY_DRAW_DISC_RADIUS = "with radius:";
+Blockly.Msg.OLED_DISPLAY_DRAW_CIRCLE_CENTER = "Draw circle centered at:";
+Blockly.Msg.OLED_DISPLAY_DRAW_CIRCLE_RADIUS = "with radius:";
+Blockly.Msg.OLED_DISPLAY_SET_FONT = "Set font";
+Blockly.Msg.OLED_DISPLAY_SET_FONT_LARGE = "Large";
+Blockly.Msg.OLED_DISPLAY_SET_FONT_SMALL = "Small";
+Blockly.Msg.OLED_DISPLAY_DRAW_TEXT_START = "Draw text at:";
+Blockly.Msg.OLED_DISPLAY_DRAW_TEXT_CONTENT = "content:";
+
 Blockly.Msg.LCD_I2C_HELPURL = "http://wiki.seeed.cc/Grove-LCD_I2C_0.96inch/";
 Blockly.Msg.LCD_I2C_TITLE = "LCD Backlight";
 Blockly.Msg.LCD_I2C_CLEAR = "Clear screen";

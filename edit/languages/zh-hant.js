@@ -1499,6 +1499,22 @@ Blockly.Msg.OLED_DISPLAY_SET_CURSOR_APPEND = "";
 Blockly.Msg.OLED_DISPLAY_PUT = "於游標處列印";
 Blockly.Msg.OLED_DISPLAY_TOOLTIP = "用 u8g2 函式庫來驅動 I2C 介面的 128×64 點陣 OLED 顯示器。支援 SH1106、SH1306 等型號";
 
+Blockly.Msg.OLED_DISPLAY_DRAW_LINE_START = "畫線 起點：";
+Blockly.Msg.OLED_DISPLAY_DRAW_LINE_END = "終點：";
+Blockly.Msg.OLED_DISPLAY_DRAW_BOX_START = "繪製實心方塊 左上角：";
+Blockly.Msg.OLED_DISPLAY_DRAW_BOX_END = "右下角：";
+Blockly.Msg.OLED_DISPLAY_DRAW_FRAME_START = "繪製方框 左上角：";
+Blockly.Msg.OLED_DISPLAY_DRAW_FRAME_END = "右下角：";
+Blockly.Msg.OLED_DISPLAY_DRAW_DISC_CENTER = "繪製實心圓盤 中心點：";
+Blockly.Msg.OLED_DISPLAY_DRAW_DISC_RADIUS = "半徑：";
+Blockly.Msg.OLED_DISPLAY_DRAW_CIRCLE_CENTER = "繪製圓形 中心點：";
+Blockly.Msg.OLED_DISPLAY_DRAW_CIRCLE_RADIUS = "半徑：";
+Blockly.Msg.OLED_DISPLAY_SET_FONT = "設定文字大小";
+Blockly.Msg.OLED_DISPLAY_SET_FONT_LARGE = "大";
+Blockly.Msg.OLED_DISPLAY_SET_FONT_SMALL = "小";
+Blockly.Msg.OLED_DISPLAY_DRAW_TEXT_START = "繪製文字 起點：";
+Blockly.Msg.OLED_DISPLAY_DRAW_TEXT_CONTENT = "內容文字：";
+
 Blockly.Msg.LCD_I2C_HELPURL = "http://wiki.seeed.cc/Grove-LCD_I2C_0.96inch/";
 Blockly.Msg.LCD_I2C_TITLE = "液晶顯示";
 Blockly.Msg.LCD_I2C_CLEAR = "清除畫面";
