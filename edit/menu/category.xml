@@ -817,10 +817,6 @@
     </category>
 </category>
 <category id="category_transceiver">
-    <category id="category_infrared">
-        <block type="infra_red_send"></block>
-        <block type="infra_red_receive"></block>
-    </category>
     <category id="category_rfid">
         <block type="mfrc522_read"></block>
     </category>
@@ -1478,6 +1474,9 @@
         <!--block type="lcd_righttoleft"></block-->
     </category>
     <category id="category_other_sensor">
-        
+        <category id="category_infrared">
+            <block type="infra_red_send"></block>
+            <block type="infra_red_receive"></block>
+        </category>
     </category>
 </category>
