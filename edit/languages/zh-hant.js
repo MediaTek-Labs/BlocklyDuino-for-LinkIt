@@ -1010,6 +1010,7 @@ Blockly.Msg.RIGHT = "右";  // untranslated
 Blockly.Msg.RISING = "Rising";  // untranslated
 Blockly.Msg.ROW = "Row";  // untranslated
 Blockly.Msg.SAVE_XML = "儲存 XML";  // untranslated
+Blockly.Msg.SAVE_FIRST = "請先儲存檔案，方能在IDE中開啟"
 Blockly.Msg.SERIAL_INIT = "初始化序列埠";
 Blockly.Msg.SERIAL_INIT_HELPURL = "https://www.arduino.cc/en/Serial/Begin";
 Blockly.Msg.SERIAL_INIT_TOOLTIP = "Sets the data rate in bits per second (baud) for serial data transmission.";

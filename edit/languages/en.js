@@ -1035,6 +1035,7 @@ Blockly.Msg.RIGHT = "Right";
 Blockly.Msg.RISING = "Rising";
 Blockly.Msg.ROW = "Row";
 Blockly.Msg.SAVE_XML = "Save XML";
+Blockly.Msg.SAVE_FIRST = "Save the file first to open it in Arduino IDE"
 Blockly.Msg.SERIAL_INIT = "Serial Begin";
 Blockly.Msg.SERIAL_INIT_HELPURL = "https://www.arduino.cc/en/Serial/Begin";
 Blockly.Msg.SERIAL_INIT_TOOLTIP = "Sets the data rate in bits per second (baud) for serial data transmission.";

@@ -1,24 +1,23 @@
-"user strict"
+'user strict'
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('#button_upload').addEventListener("click", handleUploadButton);
-  document.querySelector('#button_launch_ide').addEventListener("click", openArduinoIDE);
-  document.querySelector('#button_launch_serial').addEventListener("click", openSerialMonitor);
-  
+  document.querySelector('#button_upload')
+      .addEventListener('click', handleUploadButton);
+  document.querySelector('#button_launch_ide')
+      .addEventListener('click', openArduinoIDE);
+  document.querySelector('#button_launch_serial')
+      .addEventListener('click', openSerialMonitor);
+
 });
 
-var nwGui = require('nw.gui')
-, nwShell = nwGui.Shell
-, child_process = require('child_process')
-, exec = child_process.exec
-, execSync = child_process.execSync
-, execFile = child_process.execFile
-, execFileSync = child_process.execFileSync
-, spawn = child_process.spawn
-;
+var nwGui = require('nw.gui'), nwShell = nwGui.Shell,
+    child_process = require('child_process'), exec = child_process.exec,
+    execSync = child_process.execSync, execFile = child_process.execFile,
+    execFileSync = child_process.execFileSync, spawn = child_process.spawn;
 var iconv = require('iconv-lite');
 // var fs = require('fs');
 var fs = require('fs-extra');
+var path = require('path');
 
 var availPorts = [], nextAvailPorts = [];
 var selectedPort = null;
@@ -26,50 +25,72 @@ var cmd_encoding = 'Big5';
 var process;
 
 var tmpInoDir = 'sketches/tmp/';
-var tmpInoFilename ='tmp.ino';
+var tmpInoFilename = 'tmp.ino';
 var tmpBuildDir = 'build/tmp/';
 
+function closeSerialMonitor() {
+  return new Promise(function(resolve, reject) {
+    process = exec('taskkill /F /IM putty.exe', {encoding: 'buffer'});
+    // wait for taskkill to terminate
+    process.on('exit', resolve);
+  });
+}
+
 function handleUploadButton() {
-  startUploadProcess = function(){
-  fs.ensureDirSync(tmpBuildDir);
-  writeInoFile(tmpInoDir, tmpInoFilename);
-  startUploading(tmpInoDir + tmpInoFilename);
-  }
-  closeSerialMonitor(startUploadProcess);
+  closeSerialMonitor().then(function() {
+    fs.ensureDirSync(tmpBuildDir);
+    writeInoFile(tmpInoDir, tmpInoFilename);
+    startUploading(tmpInoDir + tmpInoFilename);
+  });
 }
 
 function openArduinoIDE() {
-  launchIDE = function() {
-  writeInoFile(tmpInoDir, tmpInoFilename);
-  let command = '"arduino-1.8.5\\arduino.exe"'
-  let parameter =  tmpInoDir + tmpInoFilename;
-  
-  process = exec(command + ' ' + parameter, {encoding: 'buffer'});
-  console.log(process);
+  // check if user has saved the INO file
+  if (!fileEntry) {
+    Materialize.toast(
+        Blockly.Msg.SAVE_FIRST, 4000)  // 4000 is the duration of the toast
+    return
   }
-  closeSerialMonitor(launchIDE);
-}
 
-function closeSerialMonitor(exitCallback) {
-  process = exec('taskkill /F /IM putty.exe', {encoding: 'buffer'});
-  // wait for taskkill to terminate
-  process.on('exit', function() {
-    exitCallback();
-  })
+  // Open the INO file with Arduino.exe
+  closeSerialMonitor().then(function() {
+    // the "fileEntry" is actually a directly entry.
+    // so we search the INO file name within the directory entry first
+    var filename = document.getElementById('info_title').innerHTML;
+    var dirname = filename.split('.')[0]
+    var searchname = filename
+    if(Entryflg==2){
+      searchname = dirname + '/' + filename
+    }
+    fileEntry.getFile(searchname, {create: false}, function(inoEntry) {
+      // The inoEntry is a chrome-specific file path
+      // we need to convert it to the "display path",
+      // which is UNC Path under Windows,
+      // before passing the path to Arduino.exe
+      chrome.fileSystem.getDisplayPath(inoEntry, function(inoPath) {
+        console.log('arduino.exe ' + inoPath);
+        let command = '"arduino-1.8.5\\arduino.exe"'
+        let parameter = inoPath;
+        var process = exec(command + ' ' + parameter, {encoding: 'buffer'});
+      });
+    }, errorHandler);
+  });
 }
 
 function openSerialMonitor() {
-  launchPutty = function() {
-  process = exec('putty.exe -serial ' + selectedPort, {encoding: 'buffer'});
-  console.log(process);
-  }
-  closeSerialMonitor(launchPutty); 
+  closeSerialMonitor().then(function() {
+    var process =
+        exec('putty.exe -serial ' + selectedPort, {encoding: 'buffer'});
+    console.log(process);
+  });
 }
 
-function outputUploaderMsg(message, className=null) {
-  let el_output = document.getElementById("terminal-body");
-  let node = document.createElement("DIV");
-  if (className) {node.classList.add(className);}
+function outputUploaderMsg(message, className = null) {
+  let el_output = document.getElementById('terminal-body');
+  let node = document.createElement('DIV');
+  if (className) {
+    node.classList.add(className);
+  }
   let textnode = document.createTextNode(message);
   node.appendChild(textnode);
   el_output.appendChild(node);
@@ -77,23 +98,29 @@ function outputUploaderMsg(message, className=null) {
 }
 
 function clearUploaderMsg() {
-  $("#terminal-body").empty();
+  $('#terminal-body').empty();
 }
 
-function generateCommand(inoPath, board, port, isVerbose=true) {
-  let command = "arduino-1.8.5\\arduino_debug.exe";
-  command += " --upload " + inoPath;
-  if (board) { command += " --board " + board; }
-  if (port) { command += " --port " + port; }
-  command += " --pref build.path=" + tmpBuildDir;
-  if (isVerbose) { command += " --verbose-build"; }
+function generateCommand(inoPath, board, port, isVerbose = true) {
+  let command = 'arduino-1.8.5\\arduino_debug.exe';
+  command += ' --upload ' + inoPath;
+  if (board) {
+    command += ' --board ' + board;
+  }
+  if (port) {
+    command += ' --port ' + port;
+  }
+  command += ' --pref build.path=' + tmpBuildDir;
+  if (isVerbose) {
+    command += ' --verbose-build';
+  }
 
-  console.log("build command=" + command);
+  console.log('build command=' + command);
   return command;
 }
 
 // by default, convert 'Big5' to 'utf8'
-function decode(buf, encoding=cmd_encoding) {
+function decode(buf, encoding = cmd_encoding) {
   return iconv.decode(buf, encoding);
 }
 
@@ -101,7 +128,7 @@ function startUploading(inoPath) {
   uiStartUploading();
   clearUploaderMsg()
 
-  let board = document.getElementById("board-selector").value;
+  let board = document.getElementById('board-selector').value;
   let port = selectedPort;
   let command = generateCommand(inoPath, board, port, true);
 
@@ -119,7 +146,7 @@ function startUploading(inoPath) {
   process.stderr.on('data', function(data) {
     let msg = decode(data);
     console.log(msg);
-    outputUploaderMsg(msg, "msg-warning");
+    outputUploaderMsg(msg, 'msg-warning');
   });
 
   process.on('exit', function(data) {
@@ -136,13 +163,13 @@ function startUploading(inoPath) {
 }
 
 function uiStartUploading() {
-  $("#button_upload").hide();
-  $("#uploading-spinner").addClass("active");
+  $('#button_upload').hide();
+  $('#uploading-spinner').addClass('active');
 }
 
 function uiFinishUploading() {
-  $("#uploading-spinner").removeClass("active");
-  $("#button_upload").show();
+  $('#uploading-spinner').removeClass('active');
+  $('#button_upload').show();
 }
 
 /* port detect */
@@ -165,7 +192,8 @@ function parsePorts(str) {
 
 function updateAvailPorts() {
   // check if availPorts equal to nextAvailPorts
-  if (availPorts.length == nextAvailPorts.length && availPorts.every((v,i)=> v === nextAvailPorts[i])) {
+  if (availPorts.length == nextAvailPorts.length &&
+      availPorts.every((v, i) => v === nextAvailPorts[i])) {
     console.log('Available ports is not changed.');
     return;
   }
@@ -176,29 +204,28 @@ function updateAvailPorts() {
 
 function selectUploadPort(port) {
   selectedPort = port;
-  
+
   portLabel = document.querySelector('#port-selected-text')
   portLabel.textContent = selectedPort + ' ';
   portLabel.classList.toggle('blinking-text', false);
 
   // Save upload COM port setting to local storage
-  chrome.storage.local.set({'COM' : selectedPort}, function() {
+  chrome.storage.local.set({'COM': selectedPort}, function() {
     console.log('store COM port setting to ' + selectedPort);
   });
 
-  console.log("change upload port to " + selectedPort);
+  console.log('change upload port to ' + selectedPort);
 }
 
 function updatePortSelector(availPorts, selectedPort) {
-  
   let $dropdownPort = $('#dropdownPort');
   $dropdownPort.empty();
 
-  if(availPorts.length) {
+  if (availPorts.length) {
     availPorts.forEach(port => {
       // upload dropdown button's list
       let item_str = '<li><a href="#!" onclick="selectUploadPort(\'' + port + '\')">' + port + '</a>'
-      item_str += '<li class="divider">'
+    item_str += '<li class="divider">'
       $dropdownPort.append($(item_str))
     });
   } else {
