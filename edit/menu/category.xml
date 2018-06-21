@@ -378,6 +378,11 @@
 	</value>
 </block>
 <block type="linkit_lremote_settext">
+    <value name="NAME">
+		<block type="text">
+			<field name="TEXT">label1</field>
+		</block>
+	</value>
 	<value name="CONTENT">
 		<block type="text">
 			<field name="TEXT"></field>
@@ -407,7 +412,7 @@
 <block type="linkit_lremote_setbuttonsquare">
 	<value name="NAME">
 		<block type="text">
-			<field name="TEXT">SquareButton1</field>
+			<field name="TEXT">button1</field>
 		</block>
 	</value>
 	<value name="CONTENT">
@@ -439,7 +444,7 @@
 <block type="linkit_lremote_setbuttoncircle">
 	<value name="NAME">
 		<block type="text">
-			<field name="TEXT">CircleButton1</field>
+			<field name="TEXT">circle1</field>
 		</block>
 	</value>
 	<value name="CONTENT">
@@ -471,7 +476,7 @@
 <block type="linkit_lremote_setswitch">
 	<value name="NAME">
 		<block type="text">
-			<field name="TEXT">Switch1</field>
+			<field name="TEXT">switch1</field>
 		</block>
 	</value>
 	<value name="CONTENT">
@@ -503,7 +508,7 @@
 <block type="linkit_lremote_setslider">
 	<value name="NAME">
 		<block type="text">
-			<field name="TEXT">Slider1</field>
+			<field name="TEXT">slider1</field>
 		</block>
 	</value>
 	<value name="CONTENT">
@@ -550,24 +555,10 @@
 <block type="linkit_lremote_connect_status"></block>
 <block type="linkit_lremote_process"></block>
 <block type="linkit_lremote_is_written">
-	<value name="NAME">
-		<block type="text">
-			<field name="TEXT"></field>
-		</block>
-	</value>
 </block>
 <block type="linkit_lremote_read_value">
-	<value name="NAME">
-		<block type="text">
-			<field name="TEXT"></field>
-		</block>
 </block>
 <block type="linkit_lremote_update_textlabel">
-	<value name="NAME">
-		<block type="text">
-			<field name="TEXT"></field>
-		</block>
-	</value>
 	<value name="CONTENT">
 		<block type="text">
 			<field name="TEXT"></field>

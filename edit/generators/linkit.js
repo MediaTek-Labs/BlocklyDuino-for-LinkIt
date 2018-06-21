@@ -564,7 +564,7 @@ Blockly.Arduino.linkit_lremote = function() {
   var code =    'LRemote.setName("' + deviceid + '"); \n'; 
   code = code + 'LRemote.setOrientation(' + orientation + '); \n'; 
   code = code + 'LRemote.setGrid(' + column + ', ' + row + '); \n'; 
-  code = code + branch + '\n';   
+  code = code + '  ' + branch + '\n';   
   code = code + 'LRemote.begin(); \n'; 
 
   return code; 
@@ -800,50 +800,29 @@ Blockly.Arduino.linkit_lremote_connect_status = function(){
 }
 
 Blockly.Arduino.linkit_lremote_process = function(){
-  var code = 'LRemote.process(); \n'; 
+  var code = 'LRemote.process();\n'; 
   return code; 
 }; 
 
 Blockly.Arduino.linkit_lremote_is_written = function(){
-  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || ''; 
-  var type = this.getFieldValue('TYPE'); 
-  var code; 
-  name = name.replace(/\"/g, ""); 
-
-  if( type!='squarebutton' && type!='circlebutton' && type!='switch' && type!='slider' ){
-    code = ''; 
-  }
-  else{
-    code = name + '.isValueChanged()'; 
-  }
+  var name = this.getFieldValue('NAME');
+  name = name.replace(/\"/g, "");
+  var code = name + '.isValueChanged()'; 
   return [code, Blockly.Arduino.ORDER_ATOMIC]; 
 }; 
 
 Blockly.Arduino.linkit_lremote_read_value = function(){
-  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || ''; 
-  var type = this.getFieldValue('TYPE'); 
-  var code; 
-
+  var name = this.getFieldValue('NAME'); 
   name = name.replace(/\"/g, ""); 
-  
-  if( type!='squarebutton' && type!='circlebutton' && type!='switch' && type!='slider' ){
-    code = ''; 
-  }
-  else{
-    code = name + '.getValue()'; 
-  }
-
+  var code = name + '.getValue()'; 
   return [code, Blockly.Arduino.ORDER_ATOMIC]; 
 }; 
 
 Blockly.Arduino.linkit_lremote_update_textlabel = function(){
-  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || '';  
-  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
-
+  var name = this.getFieldValue('NAME');
+  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || '';
   name = name.replace(/\"/g, ""); 
-  content = content.replace(/\"/g, ""); 
-
-  var code = name + '.updateText(\"' + content + '\"); \n';
-
+  content = content.replace(/\"/g, "");
+  var code = name + '.updateText(String(' + content + '));\n';
   return code; 
 }; 
