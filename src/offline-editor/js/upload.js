@@ -80,7 +80,9 @@ function openArduinoIDE() {
 function openSerialMonitor() {
   closeSerialMonitor().then(function() {
     var process =
-        exec('putty.exe -serial ' + selectedPort, {encoding: 'buffer'});
+        execFile('putty.exe',  
+          ['-serial', selectedPort]
+          , {encoding: 'buffer'});
     console.log(process);
   });
 }
@@ -101,24 +103,6 @@ function clearUploaderMsg() {
   $('#terminal-body').empty();
 }
 
-function generateCommand(inoPath, board, port, isVerbose = true) {
-  let command = 'arduino-1.8.5\\arduino_debug.exe';
-  command += ' --upload ' + inoPath;
-  if (board) {
-    command += ' --board ' + board;
-  }
-  if (port) {
-    command += ' --port ' + port;
-  }
-  command += ' --pref build.path=' + tmpBuildDir;
-  if (isVerbose) {
-    command += ' --verbose-build';
-  }
-
-  console.log('build command=' + command);
-  return command;
-}
-
 // by default, convert 'Big5' to 'utf8'
 function decode(buf, encoding = cmd_encoding) {
   return iconv.decode(buf, encoding);
@@ -130,17 +114,43 @@ function startUploading(inoPath) {
 
   let board = document.getElementById('board-selector').value;
   let port = selectedPort;
-  let command = generateCommand(inoPath, board, port, true);
 
-  outputUploaderMsg(command);
+  outputUploaderMsg('Launching Arduino.exe...', 'msg-warning');
+  // TODO:
+  // we use arduino_debug.exe because 
+  // it wait until arduino_builder to complete. 
+  // The non-debug version terminates immediately.
+  //
+  // Also we need to turn off the verbose-build mode,
+  // because arduino_debug.exe will "exit" early
+  // when there are excessive stdout messages printed.
+  // This seems to be a bug in the node.js childprocess module.
+  // The child process (arduino_debug.exe) is actually
+  // alive and well, but node.js sends an "exit" event
+  // and stops piping stdout / stderr messages.
+  process = execFile(
+    'arduino-1.8.5\\arduino_debug.exe', 
+    [
+      '--upload', inoPath,
+      '--board', board,
+      '--port', port,
+      '--pref', 'build.path=' + tmpBuildDir,
+      //'--verbose-build' --> verbose-build is disabled to keep arduino_debug.exe "alive".
+    ], {encoding: 'buffer'});
 
-  process = exec(command, {encoding: 'buffer'});
-  console.log(process);
-
+  console.log("Arduino PID=", process.pid);
+  
   process.stdout.on('data', function(data) {
-    let msg = decode(data);
+    let msg = decode(data);  
+    let re = /[\w+\.]+\.o|.+\.\.\.|Build\s.+all/;
+    //let re = /.+\.\.\./;
+    let matched = msg.match(re);
     console.log(msg);
-    outputUploaderMsg(msg);
+    if(matched){
+      console.log(matched[0])
+      outputUploaderMsg(matched[0]);
+    }
+    
   });
 
   process.stderr.on('data', function(data) {
@@ -149,20 +159,16 @@ function startUploading(inoPath) {
     outputUploaderMsg(msg, 'msg-warning');
   });
 
-  process.on('exit', function(data) {
+  process.on('exit', function(code, signal) {
     uiFinishUploading();
-    console.log(data);
-    // // the returned code may not reflect the success/failure of uploading
-    // // so we just don't show it.
-    // if (data == 0) {
-    //   outputUploaderMsg("Upload Completed!", "msg-success");
-    // } else {
-    //   outputUploaderMsg("Upload Failed", "msg-error");
-    // }
+    console.log('!!!!onExit of Arduino.exe!!!!');
+    outputUploaderMsg('Arduino.exe exited with ' + code + ' and ' + signal, 'msg-warning');
   });
 }
 
 function uiStartUploading() {
+  clearInterval(detectTimer);
+
   $('#button_upload').hide();
   $('#uploading-spinner').addClass('active');
 }
@@ -170,6 +176,7 @@ function uiStartUploading() {
 function uiFinishUploading() {
   $('#uploading-spinner').removeClass('active');
   $('#button_upload').show();
+  detectTimer = setInterval(detectPort, 5000);
 }
 
 /* port detect */
@@ -180,9 +187,7 @@ function detectPort() {
   exec(command, {encoding: 'buffer'}, (error, stdout, stderr) => {
     let output = decode(stdout);
     nextAvailPorts = parsePorts(output);
-    console.log('nextAvailPorts:', nextAvailPorts);
     updateAvailPorts();
-    // outputUploaderMsg('Available Ports: ' + nextAvailPorts);
   })
 }
 
@@ -194,10 +199,10 @@ function updateAvailPorts() {
   // check if availPorts equal to nextAvailPorts
   if (availPorts.length == nextAvailPorts.length &&
       availPorts.every((v, i) => v === nextAvailPorts[i])) {
-    console.log('Available ports is not changed.');
     return;
   }
   console.log('Available ports is changed. Update port-selector...');
+  console.log('nextAvailPorts:', nextAvailPorts);
   availPorts = nextAvailPorts;
   updatePortSelector(availPorts, selectedPort);
 }
@@ -236,7 +241,7 @@ function updatePortSelector(availPorts, selectedPort) {
 }
 
 detectPort();
-setInterval(detectPort, 5000);
+detectTimer = setInterval(detectPort, 5000);
 
 function writeInoFile(dir, filename) {
   fs.ensureDirSync(dir);
