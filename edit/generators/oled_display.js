@@ -116,7 +116,7 @@ Blockly.Arduino.oled_display_draw_text = function() {
   var startY = Blockly.Arduino.valueToCode(this, 'START_Y', Blockly.Arduino.ORDER_NONE) || "0";
   var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_NONE) || '""';
   
-  var code = `u8g2.drawStr(${startX}, ${startY}, ${content});\n`;
+  var code = `u8g2.drawStr(${startX}, ${startY}, String(${content}).c_str());\n`;
   return code;
 };
 
