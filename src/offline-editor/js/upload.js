@@ -77,11 +77,31 @@ function openArduinoIDE() {
   });
 }
 
+function getSerialBaudRate() {
+  // This function scans for "serial.begin" blocks and determines the 
+  // baudrate of the sketch.
+  var baudrate = 9600;
+
+  // get the converted code
+  var code = Blockly.Arduino.workspaceToCode();
+  // scan for the Serial
+  var matches = code.match(/Serial\.begin\((\d+)\)/);
+  if(matches) {
+    // extract sub-string matches, if any.
+    baudrate = matches[1]
+  }
+  
+  return baudrate.toString()
+}
+
 function openSerialMonitor() {
   closeSerialMonitor().then(function() {
     var process =
         execFile('putty.exe',  
-          ['-serial', selectedPort]
+          [
+            '-serial', selectedPort,
+            '-sercfg', getSerialBaudRate() + ',8,n,1,N',
+          ]
           , {encoding: 'buffer'});
     console.log(process);
   });
