@@ -31,7 +31,7 @@ Blockly.Arduino.mfrc522_read = function() {
 
   Blockly.Arduino.definitions_['define_spi_include'] = '#include <SPI.h>\n';
   Blockly.Arduino.definitions_['define_mfrc522_include'] = '#include <MFRC522.h>\n';
-  Blockly.Arduino.definitions_['define_mfrc522_inst'] = 'MFRC522 rfid(/*SS_PIN*/ 10, /*RST_PIN*/ 9);\n';
+  Blockly.Arduino.definitions_['define_mfrc522_inst'] = 'MFRC522 rfid(/*SS_PIN*/ 10, /*RST_PIN*/ UINT8_MAX);\n';
   Blockly.Arduino.definitions_['define_mfrc522_readid'] = `
 String mfrc522_readID()
 {
