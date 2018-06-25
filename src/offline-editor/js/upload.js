@@ -116,18 +116,21 @@ function startUploading(inoPath) {
   let port = selectedPort;
 
   outputUploaderMsg('Launching Arduino.exe...', 'msg-warning');
+  
   // TODO:
   // we use arduino_debug.exe because 
-  // it wait until arduino_builder to complete. 
-  // The non-debug version terminates immediately.
+  // it waits for the completion of child processes javaw and arduino_builder. 
+  // The non-debug version(arduon.exe) terminates immediately.
   //
-  // Also we need to turn off the verbose-build mode,
+  // Furthermore, we need to turn off the verbose-build mode,
   // because arduino_debug.exe will "exit" early
   // when there are excessive stdout messages printed.
+  // 
   // This seems to be a bug in the node.js childprocess module.
   // The child process (arduino_debug.exe) is actually
-  // alive and well, but node.js sends an "exit" event
-  // and stops piping stdout / stderr messages.
+  // alive and well, but node.js sends an `exit` event
+  // and stops piping stdout / stderr messages to
+  // our event callbacks.
   process = execFile(
     'arduino-1.8.5\\arduino_debug.exe', 
     [
