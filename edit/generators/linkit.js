@@ -821,8 +821,7 @@ Blockly.Arduino.linkit_lremote_read_value = function(){
 Blockly.Arduino.linkit_lremote_update_textlabel = function(){
   var name = this.getFieldValue('NAME');
   var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || '';
-  name = name.replace(/\"/g, ""); 
-  content = content.replace(/\"/g, "");
+  name = name.replace(/\"/g, "");
   var code = name + '.updateText(String(' + content + '));\n';
   return code; 
 }; 
