@@ -167,6 +167,12 @@ Blockly.Arduino.tone = function() {
   return code;
 };
 
+Blockly.Arduino.no_tone = function() {
+  var value_pin = this.getFieldValue('PIN');
+  var code = 'noTone(' + value_pin + ');\n';
+  return code;
+};
+
 Blockly.Arduino.inout_digitalpin = function() {
   var pin = this.getFieldValue('PIN');
   Blockly.Arduino.setups_['setup_output_' + pin] = 'pinMode(' + pin + ', OUTPUT);';

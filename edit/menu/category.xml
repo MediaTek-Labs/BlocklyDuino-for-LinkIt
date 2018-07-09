@@ -71,6 +71,7 @@
 <category id="category_others">
     <!--<block type="pulsein"></block>-->
     <block type="tone"></block>
+    <block type="no_tone"></block>
     <block type="custom_tone">
         <value name="PIN">
             <block type="math_number">

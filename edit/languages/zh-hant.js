@@ -614,6 +614,7 @@ Blockly.Msg.INOUT_PULSEIN_TOOLTIP = "Reads a pulse (either HIGH or LOW) on a pin
 Blockly.Msg.INOUT_TONE_APPENDTEXT_DURATION = "時長（毫秒）";
 Blockly.Msg.INOUT_TONE_APPENDTEXT_FREQ = "頻率";
 Blockly.Msg.INOUT_TONE_APPENDTEXT_PIN = "音調 Pin";  // untranslated
+Blockly.Msg.INOUT_NO_TONE_APPENDTEXT_PIN = "停止音調 Pin";  // untranslated
 Blockly.Msg.INOUT_TONE_HELPURL = "http://arduino.cc/en/reference/tone";  // untranslated
 Blockly.Msg.INOUT_TONE_TOOLTIP = "此接腳可被連接至壓電蜂鳴器或其他可發聲之周邊設備，來放送特殊頻率的聲音。";  // untranslated
 Blockly.Msg.INTEGER = "整數";

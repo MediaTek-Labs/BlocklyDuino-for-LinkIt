@@ -266,6 +266,20 @@ Blockly.Blocks['tone'] = {
   }
 };
 
+Blockly.Blocks['no_tone'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.INOUT_TONE_HELPURL);
+    this.setColour(Blockly.Blocks.inout.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.INOUT_NO_TONE_APPENDTEXT_PIN)
+      .appendField(new Blockly.FieldDropdown(profile.default.digital), "PIN");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(Blockly.Msg.INOUT_TONE_TOOLTIP);
+  }
+};
+
 Blockly.Blocks['inout_digitalpin'] = {
   init: function() {
     this.setHelpUrl('');

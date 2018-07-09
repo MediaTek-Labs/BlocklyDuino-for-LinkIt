@@ -616,6 +616,7 @@ Blockly.Msg.INOUT_PULSEIN_TOOLTIP = "Reads a pulse (either HIGH or LOW) on a pin
 Blockly.Msg.INOUT_TONE_APPENDTEXT_DURATION = "duration (ms)";
 Blockly.Msg.INOUT_TONE_APPENDTEXT_FREQ = "frequency";
 Blockly.Msg.INOUT_TONE_APPENDTEXT_PIN = "Tone pin";
+Blockly.Msg.INOUT_NO_TONE_APPENDTEXT_PIN = "No Tone pin";
 Blockly.Msg.INOUT_TONE_HELPURL = "http://arduino.cc/en/reference/tone";
 Blockly.Msg.INOUT_TONE_TOOLTIP = "The pin can be connected to a piezo buzzer or other speaker to play tones.";
 Blockly.Msg.INTEGER = "Integer";
