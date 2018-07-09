@@ -55,3 +55,18 @@ Blockly.Arduino.text_charAt = function(){
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino.text_join = function() {
+  // Create a String() to ensure that following expressions,
+  // string or integers, can be applied to the Arduino String's add method.
+  var code = 'String()';
+  for (var n = 0; n < this.itemCount_; n++) {
+    var expression = Blockly.Arduino.valueToCode(this, 'ADD' + n,
+                      Blockly.Arduino.ORDER_COMMA);
+    if(expression) {
+      code += ' + ' + expression;
+    }
+  }
+  
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+

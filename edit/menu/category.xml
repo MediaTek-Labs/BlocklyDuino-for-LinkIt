@@ -252,6 +252,7 @@
 </category>
 <category id="category_text">
     <block type="text"></block>
+    <block type="text_join"></block>
     <block type="text_commentout"></block>
     <block type="text_length"></block>
     <block type="text_charAt">
