@@ -40,7 +40,7 @@ Blockly.Blocks['ifttt_get_url'] = {
     this.setColour(Blockly.Blocks.ifttt.HUE);
     this.appendDummyInput()
       .appendField(Blockly.Msg.IFTTT_GET_URL_TITLE)
-      .appendField(new Blockly.FieldImage(Blockly.Blocks.ifttt.image, 64, 64));
+      
     this.appendValueInput("EVENT")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
@@ -50,18 +50,17 @@ Blockly.Blocks['ifttt_get_url'] = {
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.IFTTT_KEY);
     this.appendValueInput("VALUE1")
-      .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.IFTTT_VALUE1);
     this.appendValueInput("VALUE2")
-      .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.IFTTT_VALUE2);
     this.appendValueInput("VALUE3")
-      .setCheck("Number")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.IFTTT_VALUE3);
-    this.setOutput(true, 'String');
+    
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
     this.setTooltip(Blockly.Msg.IFTTT_GET_URL_TOOLTIP);
   }
 };

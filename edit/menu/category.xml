@@ -1120,6 +1120,20 @@
         <block type="otto_mouth"></block>
         <block type="otto_led_matrix_init"></block>
     </category>
+    <category id="category_ifttt">
+        <block type="ifttt_get_url">
+            <value name="EVENT">
+                <block type="text">
+                    <field name="TEXT">event name</field>
+                </block>
+            </value>
+            <value name="KEY">
+                <block type="text">
+                    <field name="TEXT">your IFTTT key</field>
+                </block>
+            </value>
+        </block>
+    </category>
 </category>
 <category id="category_beta">
     <category id="category_grove">
@@ -1186,23 +1200,6 @@
         </category>
     </category>
     <category id="category_cloud_service">
-        <category id="category_ifttt">
-            <block type="text">
-                <field name="TEXT">maker.ifttt.com</field>
-            </block>
-            <block type="ifttt_get_url">
-                <value name="EVENT">
-                    <block type="text">
-                        <field name="TEXT"></field>
-                    </block>
-                </value>
-                <value name="KEY">
-                    <block type="text">
-                        <field name="TEXT"></field>
-                    </block>
-                </value>
-            </block>
-        </category>
         <category id="category_m2x">
             <block type="m2x_begin">
                 <value name="ID">
