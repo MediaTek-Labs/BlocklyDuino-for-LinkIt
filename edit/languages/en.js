@@ -1196,6 +1196,25 @@ Blockly.Msg.TIMES_MICROS_TOOLTIP = "Returns the number of microseconds since the
 Blockly.Msg.TIMES_MILLIS_APPENDTEXT = "millis";
 Blockly.Msg.TIMES_MILLIS_HELPURL = "hhttp://arduino.cc/en/Reference/Millis";
 Blockly.Msg.TIMES_MILLIS_TOOLTIP = "Returns the number of milliseconds since the Arduino board began running the current program.";
+Blockly.Msg.TIMES_DATETIME_FROM_WIFI_APPENDTEXT = "Retreive current time from internet (UTC+8)";
+Blockly.Msg.TIMES_DATETIME_FROM_WIFI_HELPURL = "https://en.wikipedia.org/wiki/Network_Time_Protocol";
+Blockly.Msg.TIMES_DATETIME_FROM_WIFI_TOOLTIP = "Please connect to Wi-Fi network first. This block retreives time with NTP protocol. The resulting string format is:YY-MM-DDTHH:MM:SS";
+Blockly.Msg.TIMES_DATETIME_RTC_HELPURL = "https://en.wikipedia.org/wiki/Real-time_clock";
+Blockly.Msg.TIMES_DATETIME_SET_RTC_STRING_APPENDTEXT = "Set RTC Date and Time with String";
+Blockly.Msg.TIMES_DATETIME_SET_RTC_STRING_TOOLTIP = "Set date and time to RTC(Real-time Clock) with a string. The string must be of format:YY-MM-DDTHH:MM:SS";
+Blockly.Msg.TIMES_DATETIME_SET_RTC_NUMBER_APPENDTEXT = "Set date and time of RTC with";
+Blockly.Msg.TIMES_DATETIME_SET_RTC_NUMBER_TOOLTIP = "Set the year/month/day/hour/minute/second of RTC with seperate numbers";
+Blockly.Msg.TIMES_DATETIME_GET_RTC = "Retreive Current Date Time from RTC";
+Blockly.Msg.TIMES_DATETIME_GET_RTC_TOOLTIP = "The resulting string format is:YY-MM-DDTHH:MM:SS";
+Blockly.Msg.TIMES_DATETIME_GET_RTC_UNIT = "Get Field from Time String:";
+Blockly.Msg.TIMES_DATETIME_GET_RTC_UNIT_TOOLTIP = "Get a single field from time string as a number。Please choose the field to get (year/month/day/hour/minute/second)";
+Blockly.Msg.TIMES_DATETIME_RTC_APPENDTEXT_YEAR = "Year";
+Blockly.Msg.TIMES_DATETIME_RTC_APPENDTEXT_MONTH = "Month";
+Blockly.Msg.TIMES_DATETIME_RTC_APPENDTEXT_DAY = "Day";
+Blockly.Msg.TIMES_DATETIME_RTC_APPENDTEXT_HOUR = "Hour";
+Blockly.Msg.TIMES_DATETIME_RTC_APPENDTEXT_MIN = "Minute";
+Blockly.Msg.TIMES_DATETIME_RTC_APPENDTEXT_SEC = "Second";
+
 Blockly.Msg.TODAY = "Today";
 Blockly.Msg.ULTRASONIC_DISTANCE_HELPURL = "";
 Blockly.Msg.ULTRASONIC_DISTANCE_TITLE = "Distance";
@@ -1284,6 +1303,7 @@ Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECTION_LOST = "Connection Lost";
 Blockly.Msg.LINKIT_SET_WIFI_STATUS_DISCONNECTED = "Disconnected";
 Blockly.Msg.LINKIT_SET_WIFI_READY_TITLE = "Wi-Fi Connected";
 Blockly.Msg.LINKIT_SET_WIFI_UNTIL_READY_TITLE = "Connect to Wi-Fi AP";
+Blockly.Msg.LINKIT_GET_WIFI_IP_TITLE = "Get Wi-Fi IP Address";
 // MCS
 Blockly.Msg.LINKIT_SET_MCS_HELPURL = "";
 Blockly.Msg.LINKIT_SET_MCS_TOOLTIP = "";
@@ -1376,6 +1396,7 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL = "URL（includes protocol, non-protoco
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY_URL_INVALID = "Invalid Eddy Stone URL. Correct form should be either http://domain.com or https://domain.com.";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP = "http://";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
+Blockly.Msg.LINKIT_GET_BLE_ADDRESS = "Get BLE Device Address"
 
 //lremote
 Blockly.Msg.CATEGORY_LINKIT_LREMOTE = "Remote"; 

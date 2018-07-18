@@ -227,6 +227,12 @@
             </block>
         </value>
     </block>
+
+    <block type="ntp_get_datetime"></block>
+    <block type="rtc_set_time_from_string"></block>
+    <block type="rtc_get_time"></block>
+    <block type="rtc_get_time_field"></block>
+    <block type="rtc_set_time_from_number"></block>
 </category>
 <category id="category_array">
     <block type="array_create_with"></block>
@@ -288,6 +294,7 @@
     </value>
 </block>
 <block type="linkit_wifi_disconnect"></block>
+<block type="linkit_wifi_ip_address"></block>
 </category>
 <category id="category_linkit_mcs">
 <block type="mcs">
@@ -616,6 +623,8 @@
         </block>
     </value>
 </block>
+
+<block type="linkit_ble_get_address"></block>
 
 <block type="linkit_ble_Characteristic">
     <value name="CHARACTERISTIC">

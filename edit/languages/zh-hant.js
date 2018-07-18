@@ -1171,6 +1171,25 @@ Blockly.Msg.TIMES_MICROS_TOOLTIP = "Returns the number of microseconds since the
 Blockly.Msg.TIMES_MILLIS_APPENDTEXT = "當前毫秒";
 Blockly.Msg.TIMES_MILLIS_HELPURL = "http://arduino.cc/en/Reference/Millis";  // untranslated
 Blockly.Msg.TIMES_MILLIS_TOOLTIP = "Returns the number of milliseconds since the Arduino board began running the current program.";  // untranslated
+Blockly.Msg.TIMES_DATETIME_FROM_WIFI_APPENDTEXT = "從網際網路取得目前的時間字串（UTC+8時區）";
+Blockly.Msg.TIMES_DATETIME_FROM_WIFI_HELPURL = "https://en.wikipedia.org/wiki/Network_Time_Protocol";
+Blockly.Msg.TIMES_DATETIME_FROM_WIFI_TOOLTIP = "請先連接至 Wi-Fi 網路。此方塊透過 NTP 協議取得 UTC+8 時區的目前時間。回傳的字串格式是:YY-MM-DDTHH:MM:SS";
+Blockly.Msg.TIMES_DATETIME_RTC_HELPURL = "https://zh.wikipedia.org/wiki/%E5%AF%A6%E6%99%82%E6%99%82%E9%90%98";
+Blockly.Msg.TIMES_DATETIME_SET_RTC_STRING_APPENDTEXT = "用字串設定 RTC（硬體時鐘）的日期與時間";
+Blockly.Msg.TIMES_DATETIME_SET_RTC_STRING_TOOLTIP = "用字串設定 RTC（硬體時鐘）目前的時間。字串格式必須是:YY-MM-DDTHH:MM:SS";
+Blockly.Msg.TIMES_DATETIME_SET_RTC_NUMBER_APPENDTEXT = "用數字設定 RTC（硬體時鐘）的";
+Blockly.Msg.TIMES_DATETIME_SET_RTC_NUMBER_TOOLTIP = "用數字個別設定 RTC（硬體時鐘）目前的年、月、日、時、分、秒";
+Blockly.Msg.TIMES_DATETIME_GET_RTC = "抓取　RTC（硬體時鐘）目前的時間";
+Blockly.Msg.TIMES_DATETIME_GET_RTC_TOOLTIP = "取得 RTC（硬體時鐘）目前的日期時間字串。回傳的字串格式是:YY-MM-DDTHH:MM:SS";
+Blockly.Msg.TIMES_DATETIME_GET_RTC_UNIT = "取得日期時間字串中的";
+Blockly.Msg.TIMES_DATETIME_GET_RTC_UNIT_TOOLTIP = "取得日期時間字串中的一個欄位，並轉換為數字。請選擇要抓取的單位（年、月、日、時、分、秒）";
+Blockly.Msg.TIMES_DATETIME_RTC_APPENDTEXT_YEAR = "年";
+Blockly.Msg.TIMES_DATETIME_RTC_APPENDTEXT_MONTH = "月";
+Blockly.Msg.TIMES_DATETIME_RTC_APPENDTEXT_DAY = "日";
+Blockly.Msg.TIMES_DATETIME_RTC_APPENDTEXT_HOUR = "時";
+Blockly.Msg.TIMES_DATETIME_RTC_APPENDTEXT_MIN = "分";
+Blockly.Msg.TIMES_DATETIME_RTC_APPENDTEXT_SEC = "秒";
+
 Blockly.Msg.TODAY = "今天";
 Blockly.Msg.ULTRASONIC_DISTANCE_HELPURL = "";  // untranslated
 Blockly.Msg.ULTRASONIC_DISTANCE_TITLE = "距離";
@@ -1259,6 +1278,7 @@ Blockly.Msg.LINKIT_SET_WIFI_STATUS_CONNECTION_LOST = "連線中斷";
 Blockly.Msg.LINKIT_SET_WIFI_STATUS_DISCONNECTED = "未連線";
 Blockly.Msg.LINKIT_SET_WIFI_READY_TITLE = "Wi-Fi 已就緒";
 Blockly.Msg.LINKIT_SET_WIFI_UNTIL_READY_TITLE = "連線到 Wi-Fi AP";
+Blockly.Msg.LINKIT_GET_WIFI_IP_TITLE = "取得 Wi-Fi IP 位址";
 // MCS
 Blockly.Msg.LINKIT_SET_MCS_HELPURL = "";
 Blockly.Msg.LINKIT_SET_MCS_TOOLTIP = "";
@@ -1355,6 +1375,7 @@ Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_URL = "URL（含協定，非協定部分小
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_EDDY_URL_INVALID = "不正確的 Eddy Stone URL，正確格式應為： http://domain.com 或 https://domain.com。";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTP = "http://";
 Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HTTPS = "https://";
+Blockly.Msg.LINKIT_GET_BLE_ADDRESS = "取得 BLE 裝置位址"
 
 //lremote
 Blockly.Msg.CATEGORY_LINKIT_LREMOTE = "遙控器"; 

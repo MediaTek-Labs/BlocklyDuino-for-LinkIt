@@ -137,6 +137,18 @@ Blockly.Blocks['linkit_ble_periphral'] = {
   }
 };
 
+Blockly.Blocks['linkit_ble_get_address'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_GET_BLE_ADDRESS);
+    this.setOutput(true, 'String');
+    this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_PERIPHRAL_TOOLTIP);
+  }
+};
+
+
 /*
 Blockly.Blocks['linkit_ble_periphral'] = {
   init: function() {
@@ -242,17 +254,6 @@ Blockly.Blocks['linkit_ble_wait_until_ready'] = {
       .appendField(Blockly.Msg.LINKIT_SET_BLE_UNTIL_READY_TITLE);
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_TOOLTIP);
-  }
-};
-
-Blockly.Blocks['linkit_ble_get_address'] = {
-  init: function() {
-    this.setHelpUrl(Blockly.Msg.LINKIT_SET_BLE_HELPURL);
-    this.setColour(Blockly.Blocks.linkit.HUE);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.LINKIT_SET_BLE_GET_ADDRESS_TITLE);
-    this.setOutput(true, 'String');
     this.setTooltip(Blockly.Msg.LINKIT_SET_BLE_TOOLTIP);
   }
 };
@@ -770,6 +771,17 @@ Blockly.Blocks['linkit_wifi_ready'] = {
     this.appendDummyInput()
       .appendField(Blockly.Msg.LINKIT_SET_WIFI_READY_TITLE);
     this.setOutput(true, 'Boolean');
+    this.setTooltip(Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP);
+  }
+};
+
+Blockly.Blocks['linkit_wifi_ip_address'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_SET_WIFI_HELPURL);
+    this.setColour(Blockly.Blocks.linkit.HUE);
+    this.appendDummyInput()
+      .appendField(Blockly.Msg.LINKIT_GET_WIFI_IP_TITLE);
+    this.setOutput(true, 'String');
     this.setTooltip(Blockly.Msg.LINKIT_SET_WIFI_TOOLTIP);
   }
 };

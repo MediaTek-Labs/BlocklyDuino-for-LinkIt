@@ -137,6 +137,14 @@ Blockly.Arduino.linkit_ble_periphral = function() {
   return code;
 };
 
+Blockly.Arduino.linkit_ble_get_address = function() {
+  Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
+  Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
+  
+  var code = "LBLE.getDeviceAddress().toString()"
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 /* origin:
 Blockly.Arduino.linkit_ble_periphral = function() {
 
@@ -246,16 +254,6 @@ Blockly.Arduino.linkit_ble_wait_until_ready = function() {
 
   var code = "\n";
   return code;
-};
-
-Blockly.Arduino.linkit_ble_get_address = function() {
-
-  Blockly.Arduino.definitions_['define_linkit_ble_include'] = '#include <LBLE.h>';
-
-  Blockly.Arduino.setups_['define_linkit_ble_setup'] = 'LBLE.begin();';
-
-  var code = "LBLE.getDeviceAddress()";
-  return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino.linkit_ble_ready = function() {
@@ -490,6 +488,11 @@ Blockly.Arduino.linkit_wifi_ready_advanced = function() {
   Blockly.Arduino.definitions_['define_linkit_wifi_pass'] = 'char _lwifi_pass[] = "' + password + '";';
 
   var code = "(WiFi.begin(_lwifi_ssid, _lwifi_pass) == WL_CONNECTED)";
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino.linkit_wifi_ip_address = function() {
+  var code = "WiFi.localIP().toString()";
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
