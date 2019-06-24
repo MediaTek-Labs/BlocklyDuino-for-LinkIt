@@ -803,6 +803,7 @@ Blockly.Msg.LOGIC_TERNARY_IF_TRUE = "if true";
 Blockly.Msg.LOGIC_TERNARY_TOOLTIP = "Check the condition in 'test'. If the condition is true, returns the 'if true' value; otherwise returns the 'if false' value.";
 Blockly.Msg.LONGITUDE = "Longitude";
 Blockly.Msg.LOW = "Low";
+Blockly.Msg.HIGH = "High";
 Blockly.Msg.M2X_BEGIN_TITLE = "Begin";
 Blockly.Msg.M2X_BEGIN_TOOLTIP = "Set Config.";
 Blockly.Msg.M2X_CUSTOM_LIST_VALUE_TOOLTIP = "";

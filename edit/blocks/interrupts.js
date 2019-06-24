@@ -31,12 +31,12 @@ goog.provide('Blockly.Blocks.interrupts');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.interrupts.HUE = 190;
+// Blockly.Blocks.interrupts.HUE = 0;
 
 Blockly.Blocks['interrupts_attach'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.INTERRUPTS_ATTACH_HELPURL);
-    this.setColour(190);
+    this.setColour(290);
     this.appendDummyInput()
       .appendField(Blockly.Msg.INTERRUPTS_ATTACH_TITLE);
     this.appendDummyInput()
@@ -44,7 +44,12 @@ Blockly.Blocks['interrupts_attach'] = {
       .appendField(new Blockly.FieldDropdown(profile.default.interrupt), "PIN");
     this.appendDummyInput()
       .appendField(Blockly.Msg.MODE)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.LOW, "LOW"],[Blockly.Msg.CHANGE, "CHANGE"],[Blockly.Msg.RISING, "RISING"],[Blockly.Msg.FALLING, "FALLING"]]), "MODE");
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.CHANGE, "CHANGE"],
+                                              [Blockly.Msg.RISING, "RISING"],
+                                              [Blockly.Msg.FALLING, "FALLING"],
+                                              [Blockly.Msg.LOW, "LOW"],
+                                              [Blockly.Msg.HIGH, "HIGH"]
+                                             ]), "MODE");
     this.appendStatementInput("CONTENT");
     this.setInputsInline(true);
     this.setTooltip(Blockly.Msg.INTERRUPTS_ATTACH_TOOLTIP);
@@ -54,7 +59,7 @@ Blockly.Blocks['interrupts_attach'] = {
 Blockly.Blocks['interrupts_detach'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.INTERRUPTS_DETACH_HELPURL);
-    this.setColour(190);
+    this.setColour(290);
     this.appendDummyInput()
       .appendField(Blockly.Msg.INTERRUPTS_DETACH_TITLE);
     this.appendDummyInput()
@@ -69,7 +74,7 @@ Blockly.Blocks['interrupts_detach'] = {
 Blockly.Blocks['interrupts'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.INTERRUPTS_HELPURL);
-    this.setColour(190);
+    this.setColour(290);
     this.appendDummyInput()
       .appendField(Blockly.Msg.INTERRUPTS_TITLE);
     this.setPreviousStatement(true, null);
@@ -81,7 +86,7 @@ Blockly.Blocks['interrupts'] = {
 Blockly.Blocks['interrupts_no'] = {
   init: function() {
     this.setHelpUrl(Blockly.Msg.INTERRUPTS_NO_HELPURL);
-    this.setColour(190);
+    this.setColour(290);
     this.appendDummyInput()
       .appendField(Blockly.Msg.INTERRUPTS_NO_TITLE);
     this.setPreviousStatement(true, null);

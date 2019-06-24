@@ -150,12 +150,12 @@
         <!--block type="ethernet_post_request"></block-->
     </category>
 </category>
-<!--<category id="category_interrupts">
+<<category id="category_interrupts">
     <block type="interrupts_attach"></block>
     <block type="interrupts_detach"></block>
     <block type="interrupts"></block>
     <block type="interrupts_no"></block>
-</category>-->
+</category>
 <sep id="category_sep"></sep>
 <category id="category_servo">
     <block type="servo_write">
