@@ -271,7 +271,7 @@
 </category>
 <sep></sep>
 <category id="category_variables" custom="VARIABLE"></category>
-<!--<category id="category_functions" custom="PROCEDURE"></category>-->
+<category id="category_functions" custom="PROCEDURE"></category>
 <sep></sep>
 <!--category id="category_involt">
 <block type="involt_directmode"></block>
@@ -556,6 +556,38 @@
 		</block>
 	</value>
 	<value name="INITIAL">
+		<block type="math_number">
+			<field name="NUM">1</field>
+		</block>
+	</value>
+</block>
+<block type="linkit_lremote_setjoystick">
+	<value name="NAME">
+		<block type="text">
+			<field name="TEXT">joystick1</field>
+		</block>
+	</value>
+	<value name="CONTENT">
+		<block type="text">
+			<field name="TEXT"></field>
+		</block>
+	</value>
+	<value name="COLUMN">
+		<block type="math_number">
+			<field name="NUM">0</field>
+		</block>
+	</value>
+	<value name="ROW">
+		<block type="math_number">
+			<field name="NUM">0</field>
+		</block>
+	</value>
+	<value name="WIDTH">
+		<block type="math_number">
+			<field name="NUM">1</field>
+		</block>
+	</value>
+	<value name="HEIGHT">
 		<block type="math_number">
 			<field name="NUM">1</field>
 		</block>

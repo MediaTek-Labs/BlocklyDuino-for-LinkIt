@@ -797,6 +797,49 @@ Blockly.Arduino.linkit_lremote_setslider = function() {
   return code; 
 }
 
+Blockly.Arduino.linkit_lremote_setjoystick = function() {
+  var name = Blockly.Arduino.valueToCode(this, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var content = Blockly.Arduino.valueToCode(this, 'CONTENT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var column = Blockly.Arduino.valueToCode(this, 'COLUMN', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var row = Blockly.Arduino.valueToCode(this, 'ROW', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var width = Blockly.Arduino.valueToCode(this, 'WIDTH', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var height = Blockly.Arduino.valueToCode(this, 'HEIGHT', Blockly.Arduino.ORDER_ATOMIC) || ''; 
+  var colour = this.getFieldValue('COLOUR'); 
+
+  name = name.replace(/\"/g, ""); 
+  content = content.replace(/\"/g, ""); 
+  row = row.replace(/\"/g, ""); 
+  column = column.replace(/\"/g, ""); 
+  width = width.replace(/\"/g, ""); 
+  height = height.replace(/\"/g, ""); 
+
+  if(colour == "orange")
+    colour = "RC_ORANGE"; 
+  else if(colour == "blue")
+    colour = "RC_BLUE"; 
+  else if(colour == "green")
+    colour = "RC_GREEN"; 
+  else if(colour == "pink")
+    colour = "RC_PINK"; 
+  else if(colour == "gray")
+    colour = "RC_GREY"; 
+  else if(colour == "yellow")
+    colour = "RC_YELLOW"; 
+  else 
+    colour = ""; 
+
+  Blockly.Arduino.definitions_['define_linkit_lremote_setJoystick_' + name] = 'LRemoteJoyStick ' + name + '; '; 
+  
+  var code = '\n'; 
+  code = code + name + '.setPos(' + column + ', ' + row + '); \n';
+  code = code + name + '.setSize(' + width + ', ' + height + '); \n';
+  code = code + name + '.setText(\"' + content + '\"); \n';
+  code = code + name + '.setColor(' + colour + '); \n'; 
+  code = code + 'LRemote.addControl(' + name + '); \n\n'; 
+
+  return code; 
+}
+
 Blockly.Arduino.linkit_lremote_connect_status = function(){
   var code = 'LRemote.connected()'; 
   return [code, Blockly.Arduino.ORDER_ATOMIC]; 
@@ -816,8 +859,14 @@ Blockly.Arduino.linkit_lremote_is_written = function(){
 
 Blockly.Arduino.linkit_lremote_read_value = function(){
   var name = this.getFieldValue('NAME'); 
-  name = name.replace(/\"/g, ""); 
-  var code = name + '.getValue()'; 
+  name = name.replace(/\"/g, "");
+  // joystick may send names like "joystick1 X" or "joystick1 Y"
+  var nameElements = name.split(" ");
+  var code = nameElements[0] + '.getValue()';
+  if (nameElements.length > 1) {
+    code = code + ".";
+    code = code + nameElements[1].toLowerCase();
+  }
   return [code, Blockly.Arduino.ORDER_ATOMIC]; 
 }; 
 

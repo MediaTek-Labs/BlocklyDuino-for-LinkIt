@@ -1074,6 +1074,45 @@ Blockly.Blocks['linkit_lremote_setslider'] = {
   }
 }
 
+Blockly.Blocks['linkit_lremote_setjoystick'] = {
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.LINKIT_LREMOTE_CONTROL_HELPFUL); 
+	this.setColour(Blockly.Blocks.linkit.HUE); 
+	this.appendDummyInput()
+	  .appendField(Blockly.Msg.LINKIT_LREMOTE_ADD)
+	  .appendField(Blockly.Msg.LINKIT_LREMOTE_SETJOYSTICK); 
+	this.appendValueInput("NAME")
+	  .setCheck("String"); 
+	this.appendValueInput("CONTENT")
+	  .setCheck("String")
+	  .appendField(Blockly.Msg.LINKIT_LREMOTE_SETJOYSTICK_CONTENT); 
+	this.appendValueInput("COLUMN")
+	  .setCheck("Number")
+	  .appendField(Blockly.Msg.LINKIT_LREMOTE_SETJOYSTICK_SITE); 
+	this.appendValueInput("ROW")
+	  .setCheck("Number"); 
+	this.appendValueInput("WIDTH")
+	  .setCheck("Number")
+	  .appendField(Blockly.Msg.LINKIT_LREMOTE_SETJOYSTICK_SIZE); 
+	this.appendValueInput("HEIGHT")
+	  .setCheck("Number"); 
+	this.appendDummyInput()
+	  .appendField(Blockly.Msg.LINKIT_LREMOTE_COLOUR)
+	  .appendField(new Blockly.FieldDropdown([
+	    [Blockly.Msg.LINKIT_LREMOTE_COLOUR_ORANGE, "orange"], 
+		[Blockly.Msg.LINKIT_LREMOTE_COLOUR_BLUE, "blue"], 
+		[Blockly.Msg.LINKIT_LREMOTE_COLOUR_GREEN, "green"], 
+		[Blockly.Msg.LINKIT_LREMOTE_COLOUR_PINK, "pink"], 
+		[Blockly.Msg.LINKIT_LREMOTE_COLOUR_GRAY, "gray"], 
+		[Blockly.Msg.LINKIT_LREMOTE_COLOUR_YELLOW, "yellow"]
+	  ]), "COLOUR"); 
+    this.setInputsInline(true); 
+	this.setPreviousStatement(true); 
+	this.setNextStatement(true); 
+	this.setTooltip(Blockly.Msg.LINKIT_LREMOTE_SETJOYSTICK_TOOLTIP); 
+  }
+}
+
 Blockly.Blocks['linkit_lremote_connect_status'] = {
   init: function(){
     this.setHelpUrl(Blockly.Msg.LINKIT_LREMOTE_CONNECT_STATUS_HELPURL); 
@@ -1131,6 +1170,42 @@ function getLRemoteLables() {
   });
 }
 
+function getLRemoteReadValues() {
+  var controlNames = []
+  Blockly.mainWorkspace.getAllBlocks().forEach(function(b) {
+    var block_type = b.type;
+    // get all "LRemot Set" blocks expect Text labels
+    if (!b.isInFlyout && 
+        block_type.includes('linkit_lremote_set') && 
+        !block_type.includes('linkit_lremote_settext')) {
+      console.log('type=' + b.type);
+      var blockName = Blockly.Arduino.valueToCode(b, 'NAME', Blockly.Arduino.ORDER_ATOMIC) || '';
+      // remove surrounding double quotes and white spaces
+      blockName = blockName.slice(1, -1);
+      blockName = blockName.trim();
+
+      // joystick's getValue() is not primitive data type,
+      // so we have to use multiple labels here
+      if (block_type.includes('linkit_lremote_setjoystick')) {
+        console.log('joystickName=' + blockName);
+        controlNames.push([blockName + ' X', blockName + ' X']);
+        controlNames.push([blockName + ' Y', blockName + ' Y']);
+      } else {
+        console.log('blockName=' + blockName);
+        controlNames.push([blockName, blockName]);
+      }
+
+      
+    }
+  });
+
+  if (controlNames.length == 0) {
+    controlNames.push(['-', '-']);
+  }
+
+  return controlNames;
+}
+
 Blockly.Blocks['linkit_lremote_is_written'] = {
   init: function(){
     this.setHelpUrl(Blockly.Msg.LINKIT_LREMOTE_IS_WRITTEN_HELPURL); 
@@ -1150,7 +1225,7 @@ Blockly.Blocks['linkit_lremote_read_value'] = {
 	this.setColour(Blockly.Blocks.linkit.HUE); 
   this.appendDummyInput()
     .appendField(Blockly.Msg.LINKIT_LREMOTE_READ_FROM)
-	  .appendField(new Blockly.FieldDropdown(getLRemoteBlocks), "NAME")
+	  .appendField(new Blockly.FieldDropdown(getLRemoteReadValues), "NAME")
     .appendField(Blockly.Msg.LINKIT_LREMOTE_READ_VALUE);
 	this.setInputsInline(true); 
 	this.setOutput(true, ["Number", "String"]); 
