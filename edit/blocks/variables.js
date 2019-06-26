@@ -199,6 +199,12 @@ Blockly.Blocks['variables_set'] = {
    */
   setType: function(type) {
     this.setFieldValue(type, 'TYPE');
+    
+    // we should allow boolean to cast into numerical types
+    if (profile.common.number_type.includes(type)) {
+      type = ['Boolean'].concat(profile.common.number_type);
+    }
+    
     this.getInput('VALUE').setCheck(type);
   },
   /**

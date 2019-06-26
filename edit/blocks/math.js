@@ -102,7 +102,7 @@ Blockly.Blocks['math_single'] = {
          ['10^', 'POW10']];
     this.setHelpUrl(Blockly.Msg.MATH_SINGLE_HELPURL);
     this.setColour(Blockly.Blocks.math.HUE);
-    this.setOutput(true, 'Number');
+    this.setOutput(true, profile.common.number_type);
     this.interpolateMsg('%1 %2',
         ['OP', new Blockly.FieldDropdown(OPERATORS)],
         ['NUM', 'Number', Blockly.ALIGN_RIGHT],
