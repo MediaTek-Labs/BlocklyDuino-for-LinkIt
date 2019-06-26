@@ -150,12 +150,19 @@
         <!--block type="ethernet_post_request"></block-->
     </category>
 </category>
-<<category id="category_interrupts">
+<category id="category_interrupts">
     <block type="interrupts_attach"></block>
-    <block type="interrupts_detach"></block>
-    <block type="interrupts"></block>
+    <!--block type="interrupts_detach"></block-->
     <block type="interrupts_no"></block>
+    <block type="interrupts"></block>
 </category>
+
+<category id="category_eeprom">
+    <block type="eeprom_getsize"></block>
+    <block type="eeprom_read"></block>
+    <block type="eeprom_write"></block>
+</category>
+
 <sep id="category_sep"></sep>
 <category id="category_servo">
     <block type="servo_write">

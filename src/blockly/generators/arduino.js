@@ -95,7 +95,7 @@ var profile = {
     led_backpack_address: [["0x70","0x70"],["0x71","0x71"],["0x72","0x72"],["0x73","0x73"]],
     blynk_merge_index: [["0","0"],["1","1"],["2","2"]],
     shield_bot_sensor: [["1","1"],["2","2"],["3","3"],["4","4"],["5","5"]],
-    interrupt:[["2","0"],["3","1"]],
+    interrupt:[["6","6"],["1","1"],["2","2"],["3","3"]],
     ir_remote_button:[['Power', 'POWER'],['A', 'A'],['B', 'B'],['C', 'C'],['Up', 'UP'],['Down', 'DOWN'],['Left', 'LEFT'],['Right', 'RIGHT'],['Select', 'SELECT']]
   },
   arduino_mega: {

@@ -5,6 +5,7 @@ function setCategoryCharacter() {
   $('#category_analog').attr('name',Blockly.Msg.CATEGORY_ANALOG);
   $('#category_others').attr('name',Blockly.Msg.CATEGORY_OTHERS);
   $('#category_interrupts').attr('name',Blockly.Msg.CATEGORY_INTERRUPTS);
+  $('#category_eeprom').attr('name',Blockly.Msg.CATEGORY_EEPROM);
   $('#category_ethernet').attr('name',Blockly.Msg.CATEGORY_ETHERNET);
   $('#category_ethernet_init').attr('name',Blockly.Msg.CATEGORY_ETHERNET_INIT);
   $('#category_ethernet_client').attr('name',Blockly.Msg.CATEGORY_ETHERNET_CLIENT);
