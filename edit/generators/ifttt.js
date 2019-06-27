@@ -100,6 +100,8 @@ void invokeIFTTT(const String& key, const String& event, const String& p1, const
 
       client.println();
       delay(300);
+  } else {
+    // Serial.println("failed to connect to IFTTT");
   }
 
   // wait for server response
@@ -114,8 +116,12 @@ void invokeIFTTT(const String& key, const String& event, const String& p1, const
   // if the server's disconnected, stop the client:
   if (!client.connected()) {
       //Serial.println();
-      //Serial.println("disconnecting from server.");
+      //Serial.println("disconnecting from server passively.");
       client.stop();
+  } else {
+    // otherwise we actively stop the connection. we'll reconnect next time.
+    //Serial.println("disconnecting from server.");
+    client.stop();
   }
 }  
 `;
