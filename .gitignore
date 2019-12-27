@@ -1,6 +1,9 @@
-_build
 _keys
 *.pyc
+
+src/_build/win32-ide/
+src/_build/win64-ide/
+src/_build/nwjs-v0.31.5-osx-x64/
 
 src/blockly/msg/js/
 src/blockly/apps/blocklyduino/category.xml
